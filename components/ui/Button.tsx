@@ -2,7 +2,7 @@ import { ButtonHTMLAttributes, forwardRef } from 'react';
 import { cn } from '@/lib/utils/cn';
 
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: 'primary' | 'secondary' | 'outline' | 'ghost' | 'link' | 'dark';
+  variant?: 'primary' | 'secondary' | 'outline' | 'ghost' | 'link' | 'dark' | 'gradient';
   size?: 'sm' | 'md' | 'lg' | 'xl';
   isLoading?: boolean;
 }
@@ -18,6 +18,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       ghost: 'text-neutral-700 hover:bg-neutral-100 focus:ring-neutral-500 dark:text-neutral-300 dark:hover:bg-neutral-800',
       link: 'text-primary-600 hover:text-primary-700 hover:underline p-0 dark:text-primary-400',
       dark: 'bg-neutral-900 text-white hover:bg-neutral-800 focus:ring-neutral-500 dark:bg-white dark:text-neutral-900 dark:hover:bg-neutral-100',
+      gradient: 'bg-gradient-to-r from-sky-500 to-purple-600 text-white hover:from-sky-600 hover:to-purple-700 shadow-md hover:shadow-lg hover:shadow-sky-500/25 dark:hover:shadow-sky-500/40',
     };
 
     const sizes = {

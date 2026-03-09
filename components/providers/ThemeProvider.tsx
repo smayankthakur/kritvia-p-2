@@ -18,10 +18,22 @@ export function ThemeProvider({ children, ...props }: ThemeProviderProps) {
     setMounted(true);
   }, []);
 
-  // Prevent flash of wrong theme
+  // Prevent flash of wrong theme and enable smooth transitions
   useEffect(() => {
     if (mounted) {
-      document.documentElement.classList.remove('no-transitions');
+      // Remove no-transitions class after theme is applied
+      const timer = setTimeout(() => {
+        document.documentElement.classList.remove('no-transitions');
+      }, 100);
+      
+      return () => clearTimeout(timer);
+    }
+  }, [mounted]);
+
+  // Add transition class to html for smooth theme switching
+  useEffect(() => {
+    if (mounted) {
+      document.documentElement.classList.add('theme-transition');
     }
   }, [mounted]);
 
@@ -31,6 +43,7 @@ export function ThemeProvider({ children, ...props }: ThemeProviderProps) {
       defaultTheme="light"
       enableSystem={false}
       disableTransitionOnChange={false}
+      storageKey="kritvia-theme"
       {...props}
     >
       {children}
