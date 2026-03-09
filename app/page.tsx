@@ -334,6 +334,198 @@ const processSteps = [
   },
 ];
 
+// Product story sections - alternating layout
+const storySections = [
+  {
+    id: 1,
+    align: 'left',
+    overline: 'The Problem',
+    title: 'Enterprise Technology is Broken',
+    description: 'Traditional software development is too slow. Legacy systems are too rigid. AI adoption is too fragmented. Companies lose millions annually because their technology stack cannot keep pace with market demands.',
+    highlight: '67% of enterprise projects fail to deliver expected value',
+    image: (
+      <div className="relative w-full h-full bg-neutral-900/80 border border-neutral-800 rounded-2xl p-6 overflow-hidden">
+        {/* Problem visualization */}
+        <div className="space-y-4">
+          <div className="flex items-center gap-4">
+            <div className="w-12 h-12 rounded-xl bg-red-500/20 flex items-center justify-center">
+              <svg className="w-6 h-6 text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <div className="flex-1">
+              <div className="h-2 w-3/4 bg-neutral-700 rounded mb-2" />
+              <div className="h-2 w-1/2 bg-neutral-800 rounded" />
+            </div>
+          </div>
+          <div className="flex items-center gap-4 opacity-60">
+            <div className="w-12 h-12 rounded-xl bg-neutral-800 flex items-center justify-center">
+              <svg className="w-6 h-6 text-neutral-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <div className="flex-1">
+              <div className="h-2 w-2/3 bg-neutral-700 rounded mb-2" />
+              <div className="h-2 w-1/3 bg-neutral-800 rounded" />
+            </div>
+          </div>
+          <div className="flex items-center gap-4 opacity-40">
+            <div className="w-12 h-12 rounded-xl bg-neutral-800 flex items-center justify-center">
+              <svg className="w-6 h-6 text-neutral-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+              </svg>
+            </div>
+            <div className="flex-1">
+              <div className="h-2 w-full bg-neutral-700 rounded mb-2" />
+              <div className="h-2 w-2/3 bg-neutral-800 rounded" />
+            </div>
+          </div>
+        </div>
+        {/* Red warning bar */}
+        <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-red-500 to-orange-500" />
+      </div>
+    ),
+  },
+  {
+    id: 2,
+    align: 'right',
+    overline: 'The Solution',
+    title: 'Kritvia: Engineering at the Speed of Thought',
+    description: 'We\'ve built a proprietary development methodology that combines AI-augmented engineering, battle-tested infrastructure patterns, and elite technical leadership. The result: enterprise-grade software delivered in weeks, not months.',
+    highlight: '3x faster time-to-market with 40% less complexity',
+    image: (
+      <div className="relative w-full h-full bg-neutral-900/80 border border-neutral-800 rounded-2xl p-6 overflow-hidden">
+        {/* Solution visualization - workflow */}
+        <div className="flex items-center justify-center h-full">
+          <div className="flex items-center gap-3">
+            {/* Step 1 */}
+            <div className="flex flex-col items-center gap-2">
+              <div className="w-14 h-14 rounded-xl bg-blue-500/20 border border-blue-500/40 flex items-center justify-center">
+                <svg className="w-7 h-7 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+              </div>
+              <span className="text-xs text-neutral-500">AI Analysis</span>
+            </div>
+            {/* Arrow */}
+            <svg className="w-6 h-6 text-neutral-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+            {/* Step 2 */}
+            <div className="flex flex-col items-center gap-2">
+              <div className="w-14 h-14 rounded-xl bg-cyan-500/20 border border-cyan-500/40 flex items-center justify-center">
+                <svg className="w-7 h-7 text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+                </svg>
+              </div>
+              <span className="text-xs text-neutral-500">Architecture</span>
+            </div>
+            {/* Arrow */}
+            <svg className="w-6 h-6 text-neutral-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+            {/* Step 3 */}
+            <div className="flex flex-col items-center gap-2">
+              <div className="w-14 h-14 rounded-xl bg-green-500/20 border border-green-500/40 flex items-center justify-center">
+                <svg className="w-7 h-7 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                </svg>
+              </div>
+              <span className="text-xs text-neutral-500">Deploy</span>
+            </div>
+          </div>
+        </div>
+        {/* Green success bar */}
+        <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-green-500 to-cyan-500" />
+      </div>
+    ),
+  },
+  {
+    id: 3,
+    align: 'left',
+    overline: 'The Platform',
+    title: 'Trinity OS: Your Complete AI Infrastructure',
+    description: 'Built from our years of serving enterprise clients, Trinity OS is our unified platform that provides AI integration, cloud infrastructure, and operational intelligence — all in one cohesive system.',
+    highlight: 'Single pane of glass for all your AI & cloud operations',
+    image: (
+      <div className="relative w-full h-full bg-neutral-900/80 border border-neutral-800 rounded-2xl p-6 overflow-hidden">
+        {/* Dashboard preview */}
+        <div className="grid grid-cols-3 gap-3 mb-4">
+          <div className="col-span-2 bg-gradient-to-br from-blue-500/10 to-purple-500/10 rounded-xl border border-blue-500/20 p-4">
+            <div className="flex items-center gap-2 mb-3">
+              <div className="w-3 h-3 rounded-full bg-blue-500" />
+              <div className="h-2 w-20 bg-blue-500/30 rounded" />
+            </div>
+            <div className="flex items-end gap-1 h-16">
+              {[40, 65, 45, 80, 55, 90, 70, 85, 60, 75, 95, 80].map((h, i) => (
+                <div key={i} className="flex-1 bg-gradient-to-t from-blue-500/40 to-blue-500/10 rounded-t" style={{ height: `${h}%` }} />
+              ))}
+            </div>
+          </div>
+          <div className="space-y-3">
+            <div className="bg-neutral-800/50 rounded-xl border border-neutral-700/50 p-3">
+              <div className="h-2 w-12 bg-cyan-500/30 rounded mb-2" />
+              <div className="h-4 w-8 bg-cyan-400/50 rounded" />
+            </div>
+            <div className="bg-neutral-800/50 rounded-xl border border-neutral-700/50 p-3">
+              <div className="h-2 w-12 bg-green-500/30 rounded mb-2" />
+              <div className="h-4 w-10 bg-green-400/50 rounded" />
+            </div>
+          </div>
+        </div>
+        <div className="grid grid-cols-4 gap-2">
+          {[1, 2, 3, 4].map((i) => (
+            <div key={i} className="bg-neutral-800/30 rounded-lg border border-neutral-700/30 p-2 text-center">
+              <div className="h-1 w-full bg-neutral-700 rounded mb-1" />
+              <div className="h-1 w-2/3 bg-neutral-800 rounded mx-auto" />
+            </div>
+          ))}
+        </div>
+      </div>
+    ),
+  },
+];
+
+// Platform features for Trinity OS showcase
+const platformFeatures = [
+  {
+    icon: (
+      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+      </svg>
+    ),
+    title: 'AI Command Center',
+    description: 'Unified interface for managing LLMs, RAG pipelines, and AI agents across your entire organization.',
+  },
+  {
+    icon: (
+      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
+      </svg>
+    ),
+    title: 'Cloud Orchestration',
+    description: 'Multi-cloud infrastructure management with intelligent cost optimization and auto-scaling.',
+  },
+  {
+    icon: (
+      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+      </svg>
+    ),
+    title: 'Observability Suite',
+    description: 'Real-time monitoring, logging, and alerting with AI-powered anomaly detection.',
+  },
+  {
+    icon: (
+      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+      </svg>
+    ),
+    title: 'Security Fabric',
+    description: 'Zero-trust security model with automated compliance monitoring and threat detection.',
+  },
+];
+
 export default function HomePage() {
   return (
     <>
@@ -347,6 +539,10 @@ export default function HomePage() {
 
         {/* ===== ANIMATED GRID OVERLAY ===== */}
         <div className="absolute inset-0 grid-overlay [mask-image:radial-gradient(ellipse_70%_70%_at_50%_50%,#000_40%,transparent_100%)]" />
+        <div className="absolute inset-0 grid-overlay-premium opacity-50" />
+
+        {/* ===== NOISE TEXTURE ===== */}
+        <div className="absolute inset-0 noise-texture pointer-events-none" />
 
         {/* ===== FLOATING GLOW ORBS ===== */}
         {/* Top left - Blue orb */}
@@ -385,16 +581,16 @@ export default function HomePage() {
             </div>
 
             {/* ===== MAIN HEADLINE - Extra Large & Impactful ===== */}
-            <h1 className="text-6xl sm:text-7xl lg:text-8xl font-bold text-white leading-[0.95] tracking-tight mb-10 animate-slide-up">
+            <h1 className="text-7xl sm:text-8xl lg:text-[5.5rem] xl:text-[6rem] font-bold text-white leading-[0.92] tracking-tight mb-10 animate-slide-up">
               Engineering{' '}
               <span className="relative inline-block">
                 <span className="gradient-text relative z-10">
                   AI-Powered
                 </span>
                 {/* Glow underline effect */}
-                <svg className="absolute -bottom-4 left-0 w-full h-4 text-blue-400/20" viewBox="0 0 300 20" preserveAspectRatio="none">
-                  <path d="M0 15 Q75 5 150 15 T300 15" stroke="currentColor" strokeWidth="3" fill="none" />
-                  <path d="M0 18 Q75 8 150 18 T300 18" stroke="currentColor" strokeWidth="1" fill="none" opacity="0.5" />
+                <svg className="absolute -bottom-5 left-0 w-full h-5 text-blue-400/30" viewBox="0 0 300 20" preserveAspectRatio="none">
+                  <path d="M0 15 Q75 5 150 15 T300 15" stroke="currentColor" strokeWidth="4" fill="none" />
+                  <path d="M0 18 Q75 8 150 18 T300 18" stroke="currentColor" strokeWidth="1.5" fill="none" opacity="0.5" />
                 </svg>
               </span>
               <br className="hidden sm:block" />
@@ -468,6 +664,254 @@ export default function HomePage() {
       </section>
 
       {/* ═══════════════════════════════════════════════════════════
+          PRODUCT STORY SECTION - Alternating layout with problem/solution narrative
+      ═══════════════════════════════════════════════════════════ */}
+      <Section className="bg-neutral-950 relative overflow-hidden">
+        {/* Background atmosphere */}
+        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-blue-500/30 to-transparent" />
+        <div className="absolute top-0 left-1/4 w-[600px] h-[600px] bg-blue-500/5 rounded-full blur-[120px] pointer-events-none" />
+        <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-purple-500/5 rounded-full blur-[100px] pointer-events-none" />
+        
+        {/* Grid overlay */}
+        <div className="absolute inset-0 grid-overlay-premium opacity-30" />
+
+        <Container className="relative z-10 py-24">
+          <div className="text-center mb-20">
+            <div className="inline-block px-4 py-1.5 rounded-full bg-gradient-to-r from-amber-500/10 to-orange-500/10 border border-amber-500/20 text-amber-400 text-xs font-semibold uppercase tracking-wider mb-4">
+              Our Story
+            </div>
+            <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6 tracking-tight">
+              From Vision to <span className="gradient-text">Reality</span>
+            </h2>
+            <p className="text-xl text-neutral-400 max-w-2xl mx-auto">
+              The story of how we're transforming enterprise technology — one breakthrough at a time.
+            </p>
+          </div>
+
+          <div className="space-y-24">
+            {storySections.map((story, index) => (
+              <div 
+                key={story.id} 
+                className={`flex flex-col lg:flex-row gap-12 lg:gap-20 items-center ${story.align === 'right' ? 'lg:flex-row-reverse' : ''}`}
+              >
+                {/* Content */}
+                <div className={`flex-1 ${story.align === 'right' ? 'lg:text-right' : 'lg:text-left'}`}>
+                  <div className="inline-block px-3 py-1 rounded-full bg-neutral-800 border border-neutral-700 text-neutral-400 text-xs font-semibold uppercase tracking-wider mb-4">
+                    {story.overline}
+                  </div>
+                  <h3 className="text-3xl lg:text-4xl font-bold text-white mb-6 leading-tight">
+                    {story.title}
+                  </h3>
+                  <p className="text-lg text-neutral-400 mb-6 leading-relaxed">
+                    {story.description}
+                  </p>
+                  <div className={`inline-flex items-center gap-3 px-5 py-3 rounded-xl bg-gradient-to-r ${story.id === 1 ? 'from-red-500/10 to-orange-500/10' : story.id === 2 ? 'from-green-500/10 to-cyan-500/10' : 'from-blue-500/10 to-purple-500/10'} border ${story.id === 1 ? 'border-red-500/20' : story.id === 2 ? 'border-green-500/20' : 'border-blue-500/20'}`}>
+                    <svg className={`w-5 h-5 ${story.id === 1 ? 'text-red-400' : story.id === 2 ? 'text-green-400' : 'text-blue-400'}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                    </svg>
+                    <span className={`font-semibold ${story.id === 1 ? 'text-red-300' : story.id === 2 ? 'text-green-300' : 'text-blue-300'}`}>
+                      {story.highlight}
+                    </span>
+                  </div>
+                </div>
+
+                {/* Visual/Image */}
+                <div className="flex-1 w-full">
+                  <div className="relative group">
+                    {/* Glow effect */}
+                    <div className={`absolute -inset-2 rounded-3xl bg-gradient-to-r ${story.id === 1 ? 'from-red-500/20 to-orange-500/20' : story.id === 2 ? 'from-green-500/20 to-cyan-500/20' : 'from-blue-500/20 to-purple-500/20'} opacity-0 group-hover:opacity-100 blur-xl transition-all duration-500`} />
+                    
+                    <div className="relative h-[320px] lg:h-[380px] bg-neutral-900/50 rounded-2xl border border-neutral-800/80 overflow-hidden group-hover:border-neutral-700 transition-colors">
+                      {/* Decorative elements */}
+                      <div className="absolute top-4 left-4 right-4 flex items-center gap-2">
+                        <div className="w-3 h-3 rounded-full bg-red-500/60" />
+                        <div className="w-3 h-3 rounded-full bg-yellow-500/60" />
+                        <div className="w-3 h-3 rounded-full bg-green-500/60" />
+                      </div>
+                      
+                      {/* Content */}
+                      <div className="pt-16 px-6 h-full">
+                        {story.image}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </Container>
+
+        {/* Bottom gradient */}
+        <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-purple-500/30 to-transparent" />
+      </Section>
+
+      {/* ═══════════════════════════════════════════════════════════
+          PLATFORM SHOWCASE - Trinity OS
+      ═══════════════════════════════════════════════════════════ */}
+      <Section className="bg-neutral-900/50 relative overflow-hidden">
+        {/* Background elements */}
+        <div className="absolute top-1/2 left-0 -translate-y-1/2 w-[700px] h-[700px] bg-blue-500/5 rounded-full blur-[120px] pointer-events-none" />
+        <div className="absolute top-1/2 right-0 -translate-y-1/2 w-[500px] h-[500px] bg-cyan-500/5 rounded-full blur-[100px] pointer-events-none" />
+        
+        {/* Grid pattern */}
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,#ffffff02_1px,transparent_1px)] bg-[size:32px_32px]" />
+
+        <Container className="relative z-10 py-24">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            {/* Left: Platform info */}
+            <div>
+              <div className="inline-block px-4 py-1.5 rounded-full bg-gradient-to-r from-cyan-500/10 to-blue-500/10 border border-cyan-500/20 text-cyan-400 text-xs font-semibold uppercase tracking-wider mb-4">
+                Introducing Trinity OS
+              </div>
+              <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6 tracking-tight">
+                Your Complete AI & Cloud <span className="gradient-text">Operating System</span>
+              </h2>
+              <p className="text-lg text-neutral-400 mb-8 leading-relaxed">
+                Trinity OS consolidates your AI infrastructure, cloud operations, and observability into a single, intelligent platform. Built for enterprises that demand the best.
+              </p>
+
+              {/* Feature highlights */}
+              <div className="grid sm:grid-cols-2 gap-4 mb-8">
+                {platformFeatures.map((feature, index) => (
+                  <div 
+                    key={feature.title} 
+                    className="group flex gap-4 p-4 rounded-xl bg-neutral-900/60 border border-neutral-800/60 hover:border-cyan-500/20 hover:bg-neutral-800/40 transition-all duration-300"
+                  >
+                    <div className="w-10 h-10 rounded-lg bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400 flex-shrink-0 group-hover:scale-110 group-hover:shadow-[0_0_20px_rgba(34,211,238,0.2)] transition-all duration-300">
+                      {feature.icon}
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-white mb-1 group-hover:text-cyan-300 transition-colors">
+                        {feature.title}
+                      </h4>
+                      <p className="text-sm text-neutral-500 leading-relaxed">
+                        {feature.description}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              <div className="flex flex-wrap gap-4">
+                <Link
+                  href="/platform"
+                  className="group relative inline-flex items-center gap-3 px-7 py-3.5 font-semibold rounded-xl text-neutral-950 overflow-hidden transition-all duration-300 hover:shadow-[0_0_30px_rgba(34,211,238,0.3)]"
+                >
+                  <span className="absolute inset-0 bg-gradient-to-r from-cyan-500 via-blue-500 to-cyan-500 bg-[length:200%_100%] group-hover:bg-[length:100%_100%] transition-all duration-500" />
+                  <span className="relative flex items-center gap-2">
+                    Explore Trinity OS
+                    <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                  </span>
+                </Link>
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center gap-3 px-7 py-3.5 font-semibold rounded-xl text-white transition-all duration-300 hover:bg-white/10 border border-white/10 hover:border-white/20 glass group"
+                >
+                  <span>Request Demo</span>
+                </Link>
+              </div>
+            </div>
+
+            {/* Right: Platform visual/dashboard */}
+            <div className="relative">
+              {/* Glow */}
+              <div className="absolute -inset-4 rounded-3xl bg-gradient-to-r from-cyan-500/20 via-blue-500/20 to-purple-500/20 opacity-0 group-hover:opacity-100 blur-xl transition-all duration-500" />
+              
+              <div className="relative bg-neutral-900/80 border border-neutral-800 rounded-2xl overflow-hidden shadow-2xl">
+                {/* Dashboard header */}
+                <div className="px-6 py-4 border-b border-neutral-800 bg-neutral-900/50">
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-3">
+                      <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center">
+                        <span className="text-white font-bold text-sm">T</span>
+                      </div>
+                      <span className="text-white font-semibold">Trinity OS</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
+                      <span className="text-xs text-neutral-500">System Online</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Dashboard content */}
+                <div className="p-6 space-y-4">
+                  {/* Main stats row */}
+                  <div className="grid grid-cols-3 gap-4">
+                    <div className="bg-neutral-800/50 rounded-xl p-4 border border-neutral-700/50">
+                      <div className="text-xs text-neutral-500 mb-1">AI Models</div>
+                      <div className="text-2xl font-bold text-white">24</div>
+                      <div className="text-xs text-green-400 flex items-center gap-1 mt-1">
+                        <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 10l7-7m0 0l7 7m-7-7v18" />
+                        </svg>
+                        +3 this week
+                      </div>
+                    </div>
+                    <div className="bg-neutral-800/50 rounded-xl p-4 border border-neutral-700/50">
+                      <div className="text-xs text-neutral-500 mb-1">Requests/day</div>
+                      <div className="text-2xl font-bold text-white">1.2M</div>
+                      <div className="text-xs text-cyan-400 flex items-center gap-1 mt-1">
+                        <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 10l7-7m0 0l7 7m-7-7v18" />
+                        </svg>
+                        99.9% uptime
+                      </div>
+                    </div>
+                    <div className="bg-neutral-800/50 rounded-xl p-4 border border-neutral-700/50">
+                      <div className="text-xs text-neutral-500 mb-1">Cost Savings</div>
+                      <div className="text-2xl font-bold text-white">42%</div>
+                      <div className="text-xs text-green-400 flex items-center gap-1 mt-1">
+                        <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 10l7-7m0 0l7 7m-7-7v18" />
+                        </svg>
+                        vs. previous
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Chart */}
+                  <div className="bg-neutral-800/30 rounded-xl p-4 border border-neutral-700/30">
+                    <div className="flex items-center justify-between mb-3">
+                      <span className="text-sm text-neutral-400">API Performance</span>
+                      <span className="text-xs px-2 py-1 rounded bg-green-500/20 text-green-400">Healthy</span>
+                    </div>
+                    <div className="flex items-end gap-1 h-20">
+                      {[35, 55, 45, 70, 50, 85, 65, 90, 75, 95, 80, 88, 92, 85, 78, 95, 82, 90].map((h, i) => (
+                        <div 
+                          key={i} 
+                          className="flex-1 bg-gradient-to-t from-blue-600/60 to-cyan-500/40 rounded-t transition-all duration-300 hover:from-blue-500 hover:to-cyan-400"
+                          style={{ height: `${h}%` }}
+                        />
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Mini stats */}
+                  <div className="grid grid-cols-4 gap-2">
+                    {[
+                      { label: 'CPU', value: '34%', color: 'bg-blue-500' },
+                      { label: 'Memory', value: '62%', color: 'bg-purple-500' },
+                      { label: 'Disk', value: '45%', color: 'bg-cyan-500' },
+                      { label: 'Network', value: '28%', color: 'bg-green-500' },
+                    ].map((stat) => (
+                      <div key={stat.label} className="bg-neutral-800/30 rounded-lg p-2 border border-neutral-700/30 text-center">
+                        <div className="text-xs text-neutral-500 mb-1">{stat.label}</div>
+                        <div className="text-sm font-semibold text-white">{stat.value}</div>
+                        <div className={`h-1 mt-1 rounded-full ${stat.color}/50`} style={{ width: stat.value }} />
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </Container>
+      </Section>
+
+      {/* ═══════════════════════════════════════════════════════════
           SOCIAL PROOF SECTION - Enhanced premium trust section
       ═══════════════════════════════════════════════════════════ */}
       <div className="relative border-y border-white/5 bg-neutral-950/50 py-16 overflow-hidden">
@@ -503,6 +947,7 @@ export default function HomePage() {
       <Section className="bg-neutral-950 relative">
         {/* Background accent */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-blue-500/5 rounded-full blur-[100px] pointer-events-none" />
+        <div className="absolute inset-0 grid-overlay-premium opacity-20" />
 
         <Container className="relative z-10">
           <div className="text-center mb-16">
@@ -526,9 +971,11 @@ export default function HomePage() {
               >
                 {/* Gradient corner accent */}
                 <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-bl from-blue-500/10 via-transparent to-transparent rounded-tr-2xl opacity-0 group-hover:opacity-100 transition-opacity" />
+                {/* Bottom gradient on hover */}
+                <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-blue-500/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
 
                 <div className="relative z-10">
-                  <div className="w-12 h-12 rounded-xl bg-neutral-800/80 border border-neutral-700/50 flex items-center justify-center text-blue-400 mb-4 group-hover:scale-110 group-hover:shadow-[0_0_20px_rgba(59,130,246,0.2)] transition-all duration-300">
+                  <div className="w-12 h-12 rounded-xl bg-neutral-800/80 border border-neutral-700/50 flex items-center justify-center text-blue-400 mb-4 group-hover:scale-110 group-hover:shadow-[0_0_20px_rgba(59,130,246,0.2)] group-hover:border-blue-500/30 transition-all duration-300">
                     {service.icon}
                   </div>
                   <h3 className="text-lg font-bold text-white mb-2 group-hover:text-primary-300 transition-colors">
@@ -537,7 +984,7 @@ export default function HomePage() {
                   <p className="text-neutral-400 text-sm leading-relaxed mb-4">{service.description}</p>
                   <div className="flex flex-wrap gap-2">
                     {service.tags.map((tag) => (
-                      <span key={tag} className="text-xs px-2.5 py-1 rounded-full bg-neutral-800/60 border border-neutral-700/30 text-neutral-500">
+                      <span key={tag} className="text-xs px-2.5 py-1 rounded-full bg-neutral-800/60 border border-neutral-700/30 text-neutral-500 group-hover:text-neutral-400 transition-colors">
                         {tag}
                       </span>
                     ))}
@@ -661,7 +1108,7 @@ export default function HomePage() {
               >
                 {/* Animated border gradient */}
                 <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-transparent via-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-                
+
                 {/* Content */}
                 <div className="relative z-10">
                   <div className="flex items-center justify-between mb-5">
@@ -674,10 +1121,10 @@ export default function HomePage() {
                       ))}
                     </div>
                   </div>
-                  
+
                   <div className="text-sm font-medium text-neutral-400 mb-1">{cs.client}</div>
                   <h3 className="text-xl font-bold text-white mb-5 group-hover:text-primary-200 transition-colors">{cs.title}</h3>
-                  
+
                   {/* Prominent metric display */}
                   <div className="border-t border-neutral-800/60 pt-5 mt-5">
                     <div className="flex items-baseline gap-3 mb-2">
@@ -697,7 +1144,7 @@ export default function HomePage() {
                       {cs.result}
                     </div>
                   </div>
-                  
+
                   {/* Read more indicator */}
                   <div className="mt-6 flex items-center gap-2 text-primary-400 text-sm font-medium opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
                     Read full case study
@@ -755,7 +1202,7 @@ export default function HomePage() {
               >
                 {/* Glow effect on hover */}
                 <div className={`absolute -inset-px rounded-2xl bg-gradient-to-br ${benefit.color} opacity-0 group-hover:opacity-15 blur-xl transition-all duration-500`} />
-                
+
                 {/* Gradient accent border */}
                 <div className="absolute inset-0 rounded-2xl border-2 border-transparent group-hover:border-transparent transition-all duration-500">
                   <div className={`absolute inset-0 rounded-2xl bg-gradient-to-r ${benefit.color} opacity-0 group-hover:opacity-20 transition-opacity duration-500 [mask:linear-gradient(#fff_0_0)_padding-box,linear-gradient(#fff_0_0)] [mask-composite:xor] [border-radius:16px] border-2 border-transparent`} />
@@ -766,14 +1213,14 @@ export default function HomePage() {
                   <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${benefit.color} flex items-center justify-center text-white mb-5 group-hover:scale-110 group-hover:shadow-lg transition-all duration-500`}>
                     {benefit.icon}
                   </div>
-                  
+
                   <h3 className="text-xl font-bold text-white mb-3 group-hover:text-primary-100 transition-colors">
                     {benefit.title}
                   </h3>
                   <p className="text-neutral-400 text-sm leading-relaxed mb-5">
                     {benefit.description}
                   </p>
-                  
+
                   {/* Metric badge */}
                   <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-neutral-800/80 border border-neutral-700/30">
                     <svg className={`w-4 h-4 bg-gradient-to-br ${benefit.color} bg-clip-text text-transparent`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -805,8 +1252,13 @@ export default function HomePage() {
       {/* ═══════════════════════════════════════════════════════════
           PROCESS SECTION - How we work
       ═══════════════════════════════════════════════════════════ */}
-      <Section className="bg-neutral-900/50">
-        <Container>
+      <Section className="bg-neutral-900/50 relative overflow-hidden">
+        {/* Background accents */}
+        <div className="absolute top-0 left-1/4 w-[400px] h-[400px] bg-primary-500/5 rounded-full blur-[100px] pointer-events-none" />
+        <div className="absolute bottom-0 right-1/4 w-[300px] h-[300px] bg-secondary-500/5 rounded-full blur-[80px] pointer-events-none" />
+        <div className="absolute inset-0 grid-overlay-premium opacity-15" />
+
+        <Container className="relative z-10">
           <div className="text-center mb-14">
             <h2 className="text-4xl lg:text-5xl font-bold text-white mb-4">Our Proven Process</h2>
             <p className="text-xl text-neutral-400 max-w-2xl mx-auto">
@@ -846,9 +1298,11 @@ export default function HomePage() {
       {/* ═══════════════════════════════════════════════════════════
           PRODUCTS SECTION - Future SaaS products
       ═══════════════════════════════════════════════════════════ */}
-      <Section className="bg-neutral-900/30 relative">
+      <Section className="bg-neutral-900/30 relative overflow-hidden">
         {/* Background */}
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,#ffffff02_1px,transparent_1px)] bg-[size:32px_32px]" />
+        <div className="absolute top-0 left-1/3 w-[500px] h-[500px] bg-purple-500/5 rounded-full blur-[100px] pointer-events-none" />
+        <div className="absolute bottom-0 right-1/3 w-[400px] h-[400px] bg-pink-500/5 rounded-full blur-[80px] pointer-events-none" />
 
         <Container className="relative z-10">
           <div className="text-center mb-16">
@@ -986,10 +1440,10 @@ export default function HomePage() {
           <div className="absolute top-0 right-0 w-[700px] h-[700px] bg-blue-500/10 rounded-full blur-[120px] animate-pulse" />
           <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-purple-500/10 rounded-full blur-[100px] animate-pulse" style={{ animationDelay: '1s' }} />
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-indigo-500/5 rounded-full blur-[150px]" />
-          
+
           {/* Grid overlay */}
           <div className="absolute inset-0 grid-overlay opacity-30" />
-          
+
           {/* Radial gradient for depth */}
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,#000_100%)]" />
         </div>
@@ -1018,11 +1472,11 @@ export default function HomePage() {
                 </svg>
               </span>
             </h2>
-            
+
             <p className="text-xl lg:text-2xl text-neutral-400 mb-12 max-w-2xl mx-auto leading-relaxed">
               Join <span className="text-white font-semibold">50+ companies</span> that trust Kritvia to build the technology that powers their growth. Start with a free 60-minute strategy session.
             </p>
-            
+
             {/* Premium CTA buttons */}
             <div className="flex flex-wrap gap-5 justify-center mb-10">
               {/* Primary gradient button with glow */}
@@ -1039,7 +1493,7 @@ export default function HomePage() {
                   </svg>
                 </span>
               </Link>
-              
+
               {/* Secondary glass button */}
               <Link
                 href="/pricing"
@@ -1051,7 +1505,7 @@ export default function HomePage() {
                 </svg>
               </Link>
             </div>
-            
+
             {/* Trust indicator */}
             <div className="flex items-center justify-center gap-6 text-neutral-600">
               <div className="flex items-center gap-2">
