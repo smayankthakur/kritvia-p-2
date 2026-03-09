@@ -56,27 +56,23 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning className="dark">
       <head>
         <script
           dangerouslySetInnerHTML={{
             __html: `
               try {
-                if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-                  document.documentElement.classList.add('dark')
-                } else {
-                  document.documentElement.classList.remove('dark')
-                }
+                document.documentElement.classList.add('dark')
               } catch (_) {}
             `,
           }}
         />
       </head>
-      <body className={`${inter.variable} min-h-screen flex flex-col font-sans bg-white dark:bg-neutral-950 text-neutral-900 dark:text-neutral-100`}>
+      <body className={`${inter.variable} min-h-screen flex flex-col font-sans bg-[rgb(var(--background-primary))] text-[rgb(var(--text-primary))]`}>
         <ThemeProvider
           attribute="class"
-          defaultTheme="system"
-          enableSystem
+          defaultTheme="dark"
+          enableSystem={false}
           disableTransitionOnChange
         >
           <Navbar />

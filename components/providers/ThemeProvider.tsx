@@ -5,7 +5,7 @@ import { ReactNode, useEffect, useState } from 'react';
 
 interface ThemeProviderProps {
   children: ReactNode;
-  attribute?: 'class' | 'data-theme' | string;
+  attribute?: 'class' | 'data-theme';
   defaultTheme?: string;
   enableSystem?: boolean;
   disableTransitionOnChange?: boolean;
@@ -18,9 +18,11 @@ export function ThemeProvider({ children, ...props }: ThemeProviderProps) {
     setMounted(true);
   }, []);
 
-  // Prevent flash of wrong theme and enable smooth transitions
+  // Set dark class on mount and prevent flash
   useEffect(() => {
     if (mounted) {
+      document.documentElement.classList.add('dark');
+      
       // Remove no-transitions class after theme is applied
       const timer = setTimeout(() => {
         document.documentElement.classList.remove('no-transitions');
@@ -40,10 +42,11 @@ export function ThemeProvider({ children, ...props }: ThemeProviderProps) {
   return (
     <NextThemesProvider
       attribute="class"
-      defaultTheme="light"
+      defaultTheme="dark"
       enableSystem={false}
       disableTransitionOnChange={false}
       storageKey="kritvia-theme"
+      themes={['dark']}
       {...props}
     >
       {children}

@@ -14,7 +14,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
     return (
       <div className="w-full">
         {label && (
-          <label htmlFor={inputId} className="block text-sm font-medium text-neutral-700 dark:text-neutral-300 mb-2">
+          <label htmlFor={inputId} className="block text-sm font-medium text-gray-300 mb-2">
             {label}
           </label>
         )}
@@ -23,19 +23,19 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
           id={inputId}
           className={cn(
             'w-full px-4 py-3 rounded-xl border transition-colors duration-200',
-            'focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent',
-            'bg-white dark:bg-neutral-900',
-            'text-neutral-900 dark:text-neutral-100',
-            'placeholder:text-neutral-400 dark:placeholder:text-neutral-500',
+            'focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent',
+            'bg-[rgb(var(--surface-2))] border-[rgb(var(--border-primary))]',
+            'text-gray-100',
+            'placeholder:text-gray-500',
             error
               ? 'border-red-500 focus:ring-red-500'
-              : 'border-neutral-300 dark:border-neutral-700 hover:border-neutral-400 dark:hover:border-neutral-600',
+              : 'border-[rgb(var(--border-primary))] hover:border-[rgb(var(--border-secondary))]',
             className
           )}
           {...props}
         />
         {error && <p className="mt-2 text-sm text-red-500">{error}</p>}
-        {helperText && !error && <p className="mt-2 text-sm text-neutral-500 dark:text-neutral-400">{helperText}</p>}
+        {helperText && !error && <p className="mt-2 text-sm text-gray-400">{helperText}</p>}
       </div>
     );
   }
@@ -56,7 +56,7 @@ const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
     return (
       <div className="w-full">
         {label && (
-          <label htmlFor={textareaId} className="block text-sm font-medium text-neutral-700 dark:text-neutral-300 mb-2">
+          <label htmlFor={textareaId} className="block text-sm font-medium text-gray-300 mb-2">
             {label}
           </label>
         )}
@@ -65,19 +65,19 @@ const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
           id={textareaId}
           className={cn(
             'w-full px-4 py-3 rounded-xl border transition-colors duration-200 resize-none',
-            'focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent',
-            'bg-white dark:bg-neutral-900',
-            'text-neutral-900 dark:text-neutral-100',
-            'placeholder:text-neutral-400 dark:placeholder:text-neutral-500',
+            'focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent',
+            'bg-[rgb(var(--surface-2))] border-[rgb(var(--border-primary))]',
+            'text-gray-100',
+            'placeholder:text-gray-500',
             error
               ? 'border-red-500 focus:ring-red-500'
-              : 'border-neutral-300 dark:border-neutral-700 hover:border-neutral-400 dark:hover:border-neutral-600',
+              : 'border-[rgb(var(--border-primary))] hover:border-[rgb(var(--border-secondary))]',
             className
           )}
           {...props}
         />
         {error && <p className="mt-2 text-sm text-red-500">{error}</p>}
-        {helperText && !error && <p className="mt-2 text-sm text-neutral-500 dark:text-neutral-400">{helperText}</p>}
+        {helperText && !error && <p className="mt-2 text-sm text-gray-400">{helperText}</p>}
       </div>
     );
   }

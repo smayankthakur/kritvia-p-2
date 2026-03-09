@@ -1,7 +1,7 @@
 import type { Config } from 'tailwindcss';
 
 const config: Config = {
-  darkMode: ['class', 'data-theme'],
+  darkMode: 'class',
   content: [
     './app/**/*.{js,ts,jsx,tsx,mdx}',
     './components/**/*.{js,ts,jsx,tsx,mdx}',
@@ -9,49 +9,35 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Primary colors
+        // Primary colors (Blue)
         primary: {
-          50: '#f0f9ff',
-          100: '#e0f2fe',
-          200: '#bae6fd',
-          300: '#7dd3fc',
-          400: '#38bdf8',
-          500: '#0ea5e9',
-          600: '#0284c7',
-          700: '#0369a1',
-          800: '#075985',
-          900: '#0c4a6e',
-          950: '#082f49',
+          50: '#eff6ff',
+          100: '#dbeafe',
+          200: '#bfdbfe',
+          300: '#93c5fd',
+          400: '#60a5fa',
+          500: '#3b82f6',
+          600: '#2563eb',
+          700: '#1d4ed8',
+          800: '#1e40af',
+          900: '#1e3a8a',
+          950: '#172554',
         },
-        // Secondary colors (Purple)
+        // Secondary colors (Violet/Purple)
         secondary: {
-          50: '#faf5ff',
-          100: '#f3e8ff',
-          200: '#e9d5ff',
-          300: '#d8b4fe',
-          400: '#c084fc',
-          500: '#a855f7',
-          600: '#9333ea',
-          700: '#7e22ce',
-          800: '#6b21a8',
-          900: '#581c87',
-          950: '#3b0764',
+          50: '#f5f3ff',
+          100: '#ede9fe',
+          200: '#ddd6fe',
+          300: '#c4b5fd',
+          400: '#a78bfa',
+          500: '#8b5cf6',
+          600: '#7c3aed',
+          700: '#6d28d9',
+          800: '#5b21b6',
+          900: '#4c1d95',
+          950: '#2e1065',
         },
-        // Neutral colors
-        neutral: {
-          50: '#fafafa',
-          100: '#f5f5f5',
-          200: '#e5e5e5',
-          300: '#d4d4d4',
-          400: '#a3a3a3',
-          500: '#737373',
-          600: '#525252',
-          700: '#404040',
-          800: '#262626',
-          900: '#171717',
-          950: '#0a0a0a',
-        },
-        // Accent colors
+        // Accent colors (Cyan)
         accent: {
           50: '#ecfeff',
           100: '#cffafe',
@@ -64,37 +50,33 @@ const config: Config = {
           800: '#155e75',
           900: '#164e63',
         },
+        // Surface colors for dark theme
+        surface: {
+          1: 'rgb(var(--surface-1) / <alpha-value>)',
+          2: 'rgb(var(--surface-2) / <alpha-value>)',
+          3: 'rgb(var(--surface-3) / <alpha-value>)',
+          4: 'rgb(var(--surface-4) / <alpha-value>)',
+        },
         // Semantic colors
         success: '#22c55e',
         warning: '#f59e0b',
         error: '#ef4444',
         info: '#3b82f6',
         
-        // Premium theme colors - Light
-        light: {
-          bg: '#FFFFFF',
-          bgSecondary: '#F8FAFC',
-          bgTertiary: '#F1F5F9',
-          text: '#0F172A',
-          textSecondary: '#475569',
-          textMuted: '#94A3B8',
-          border: '#E2E8F0',
-          card: '#FFFFFF',
-          cardBorder: '#E2E8F0',
-        },
-        // Premium theme colors - Dark
+        // Dark theme colors
         dark: {
-          bg: '#020617',
-          bgSecondary: '#0B1120',
-          bgTertiary: '#111827',
+          bg: '#0A0A0B',
+          bgSecondary: '#0F0F14',
+          bgTertiary: '#141419',
           text: '#E5E7EB',
           textSecondary: '#9CA3AF',
           textMuted: '#6B7280',
-          border: '#1E293B',
-          card: '#111827',
-          cardBorder: '#1E293B',
+          border: '#282830',
+          card: '#141419',
+          cardBorder: '#282830',
           glow: '#3B82F6',
           glowPurple: '#8B5CF6',
+          glowCyan: '#06B6D4',
         },
       },
       fontFamily: {
@@ -162,7 +144,10 @@ const config: Config = {
         'glow-lg': '0 0 40px rgba(59, 130, 246, 0.6)',
         'glow-purple': '0 0 20px rgba(139, 92, 246, 0.5)',
         'glow-purple-lg': '0 0 40px rgba(139, 92, 246, 0.6)',
-        'glow-accent': '0 0 20px rgba(6, 182, 212, 0.5)',
+        'glow-cyan': '0 0 20px rgba(6, 182, 212, 0.5)',
+        'glow-cyan-lg': '0 0 40px rgba(6, 182, 212, 0.6)',
+        'glow-violet': '0 0 20px rgba(168, 85, 247, 0.5)',
+        'glow-violet-lg': '0 0 40px rgba(168, 85, 247, 0.6)',
         'glow-gradient': '0 0 30px rgba(59, 130, 246, 0.3), 0 0 60px rgba(139, 92, 246, 0.2)',
         'glow-gradient-lg': '0 0 50px rgba(59, 130, 246, 0.4), 0 0 80px rgba(139, 92, 246, 0.3)',
       },
@@ -220,8 +205,7 @@ const config: Config = {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
         'gradient-premium': 'linear-gradient(135deg, #3B82F6 0%, #8B5CF6 50%, #06B6D4 100%)',
-        'gradient-premium-light': 'linear-gradient(135deg, #0EA5E9 0%, #A855F7 50%, #06B6D4 100%)',
-        'gradient-dark': 'linear-gradient(135deg, #1E3A5F 0%, #2D1B4E 50%, #0F172A 100%)',
+        'gradient-dark': 'linear-gradient(135deg, #0F172A 0%, #1E1B4B 50%, #0F172A 100%)',
       },
     },
   },

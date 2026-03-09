@@ -1,4 +1,5 @@
-import { HTMLAttributes, forwardRef } from 'react';
+import type { HTMLAttributes } from 'react';
+import { forwardRef } from 'react';
 import { cn } from '@/lib/utils/cn';
 
 export interface CardProps extends HTMLAttributes<HTMLDivElement> {
@@ -11,14 +12,14 @@ const Card = forwardRef<HTMLDivElement, CardProps>(
     const baseStyles = 'rounded-2xl';
 
     const variants = {
-      default: 'bg-white dark:bg-[rgb(var(--card-background))] shadow-soft dark:shadow-none border border-transparent dark:border-[rgb(var(--card-border))]',
-      bordered: 'bg-white dark:bg-[rgb(var(--card-background))] border border-neutral-200 dark:border-[rgb(var(--card-border))]',
-      elevated: 'bg-white dark:bg-[rgb(var(--card-background))] shadow-medium dark:shadow-none border border-transparent dark:border-[rgb(var(--card-border))]',
-      glass: 'bg-white/80 dark:bg-[rgb(var(--glass-background))] backdrop-blur-xl border border-neutral-200/50 dark:border-[rgb(var(--glass-border))]',
-      glow: 'bg-white dark:bg-[rgb(var(--card-background))] border border-transparent dark:border-[rgb(var(--card-border))] dark:hover:shadow-[0_0_30px_rgba(var(--glow-color),0.3)] transition-all duration-300',
+      default: 'bg-[rgb(var(--card-background))] border border-[rgb(var(--card-border))] shadow-lg shadow-black/5',
+      bordered: 'bg-[rgb(var(--card-background))] border border-[rgb(var(--card-border))]',
+      elevated: 'bg-[rgb(var(--card-background))] border border-[rgb(var(--card-border))] shadow-xl shadow-black/10',
+      glass: 'bg-[rgb(var(--glass-background))] backdrop-blur-xl border border-[rgb(var(--glass-border))]',
+      glow: 'bg-[rgb(var(--card-background))] border border-[rgb(var(--card-border))] hover:shadow-[0_0_30px_rgba(var(--glow-blue),0.3)] transition-all duration-300',
     };
 
-    const hoverStyles = hover ? 'transition-all duration-300 hover:shadow-medium dark:hover:shadow-[0_0_30px_rgba(var(--glow-color),0.2)] hover:border-primary-300 dark:hover:border-[rgb(var(--accent-primary))] cursor-pointer' : '';
+    const hoverStyles = hover ? 'transition-all duration-300 hover:shadow-xl hover:shadow-blue-500/10 hover:border-blue-500/30 cursor-pointer' : '';
 
     return (
       <div

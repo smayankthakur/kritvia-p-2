@@ -1,8 +1,9 @@
-import { HTMLAttributes, forwardRef } from 'react';
+import type { HTMLAttributes } from 'react';
+import { forwardRef } from 'react';
 import { cn } from '@/lib/utils/cn';
 
 export interface SectionProps extends HTMLAttributes<HTMLElement> {
-  variant?: 'default' | 'muted' | 'primary' | 'secondary' | 'dark';
+  variant?: 'default' | 'muted' | 'primary' | 'secondary' | 'dark' | 'surface';
   size?: 'sm' | 'md' | 'lg' | 'xl';
   as?: 'section' | 'div' | 'main' | 'footer' | 'header';
 }
@@ -10,11 +11,12 @@ export interface SectionProps extends HTMLAttributes<HTMLElement> {
 const Section = forwardRef<HTMLElement, SectionProps>(
   ({ className, variant = 'default', size = 'lg', as: Component = 'section', children, ...props }, ref) => {
     const variants = {
-      default: 'bg-white dark:bg-neutral-950',
-      muted: 'bg-neutral-50 dark:bg-neutral-900',
-      primary: 'bg-primary-600 text-white',
-      secondary: 'bg-secondary-600 text-white',
-      dark: 'bg-neutral-900 dark:bg-black',
+      default: 'bg-[rgb(var(--background-primary))]',
+      muted: 'bg-[rgb(var(--background-secondary))]',
+      primary: 'bg-blue-600 text-white',
+      secondary: 'bg-violet-600 text-white',
+      dark: 'bg-[rgb(var(--background-tertiary))]',
+      surface: 'bg-[rgb(var(--surface-2))]',
     };
 
     const sizes = {
@@ -26,7 +28,7 @@ const Section = forwardRef<HTMLElement, SectionProps>(
 
     return (
       <Component
-        ref={ref as React.RefObject<HTMLElement>}
+        ref={ref}
         className={cn(variants[variant], sizes[size], className)}
         {...props}
       >
