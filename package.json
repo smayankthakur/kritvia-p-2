@@ -15,7 +15,6 @@
   },
   "dependencies": {
     "@clerk/nextjs": "^5.7.5",
-    "@next/swc-win32-x64-msvc": "^16.1.6",
     "@sanity/client": "^6.15.0",
     "@sanity/image-url": "^1.0.2",
     "@supabase/supabase-js": "^2.98.0",
