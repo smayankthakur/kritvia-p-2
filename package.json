@@ -1,0 +1,49 @@
+{
+  "name": "kritvia-site",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --port 3000",
+    "dev:studio": "sanity dev --port 3333",
+    "dev:all": "start \"Next.js\" cmd /k npm run dev && start \"Sanity Studio\" cmd /k npm run dev:studio",
+    "build": "next build",
+    "build:studio": "sanity build",
+    "start": "next start",
+    "lint": "next lint",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
+  },
+  "dependencies": {
+    "@clerk/nextjs": "^5.7.5",
+    "@next/swc-win32-x64-msvc": "^16.1.6",
+    "@sanity/client": "^6.15.0",
+    "@sanity/image-url": "^1.0.2",
+    "@supabase/supabase-js": "^2.98.0",
+    "@vercel/analytics": "^1.2.2",
+    "clsx": "^2.1.0",
+    "langchain": "^1.2.30",
+    "next": "14.1.0",
+    "next-sanity": "^7.0.0",
+    "next-themes": "^0.4.6",
+    "openai": "^6.27.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "resend": "^6.9.3",
+    "sanity": "^3.29.0",
+    "tailwind-merge": "^2.2.1",
+    "zod": "^4.3.6",
+    "zustand": "^5.0.11"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0",
+    "autoprefixer": "^10.4.17",
+    "eslint": "^8.56.0",
+    "eslint-config-next": "14.1.0",
+    "postcss": "^8.4.33",
+    "prettier": "^3.8.1",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5.3.3"
+  }
+}
