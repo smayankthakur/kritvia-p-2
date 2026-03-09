@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useTheme } from 'next-themes';
 import { cn } from '@/lib/utils/cn';
-import { Container, Button } from '@/components/ui';
+import { Container } from '@/components/ui';
 
 const navigation = {
   platform: [
@@ -44,7 +44,7 @@ function DropdownItem({ item }: { item: { name: string; href: string; descriptio
   return (
     <Link
       href={item.href}
-      className="block px-4 py-3 hover:bg-neutral-50 dark:hover:bg-neutral-800 transition-colors"
+      className="block px-4 py-3 rounded-lg hover:bg-neutral-50 dark:hover:bg-neutral-800 transition-colors"
     >
       <div className="font-medium text-neutral-900 dark:text-white">{item.name}</div>
       <div className="text-sm text-neutral-500 dark:text-neutral-400">{item.description}</div>
@@ -80,10 +80,10 @@ function Dropdown({
     >
       <button
         className={cn(
-          'px-4 py-2 text-sm font-medium transition-colors flex items-center gap-1',
+          'px-4 py-2 text-sm font-medium transition-colors flex items-center gap-1 rounded-lg',
           isActive
-            ? 'text-primary-600 dark:text-primary-400'
-            : 'text-neutral-600 dark:text-neutral-300 hover:text-neutral-900 dark:hover:text-white'
+            ? 'text-primary-600 dark:text-primary-400 bg-primary-50 dark:bg-primary-900/20'
+            : 'text-neutral-600 dark:text-neutral-300 hover:text-neutral-900 dark:hover:text-white hover:bg-neutral-50 dark:hover:bg-neutral-800'
         )}
         aria-haspopup="true"
         aria-expanded={isActive}
@@ -104,7 +104,7 @@ function Dropdown({
       {/* Mega Menu Dropdown */}
       <div 
         className={cn(
-          'absolute top-full left-0 mt-1 w-72 bg-white dark:bg-neutral-900 rounded-xl shadow-xl border border-neutral-100 dark:border-neutral-800 py-2 z-50',
+          'absolute top-full left-0 mt-2 w-72 bg-white dark:bg-neutral-900 rounded-xl shadow-2xl border border-neutral-100 dark:border-neutral-800 py-2 z-50',
           'opacity-0 invisible transition-all duration-200',
           isActive && 'opacity-100 visible'
         )}
@@ -188,15 +188,18 @@ export function Navbar() {
       className={cn(
         'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
         isScrolled
-          ? 'bg-white/95 dark:bg-neutral-950/95 backdrop-blur-md shadow-sm'
+          ? 'bg-white/95 dark:bg-neutral-950/95 backdrop-blur-md shadow-sm border-b border-neutral-200 dark:border-neutral-800'
           : 'bg-white/80 dark:bg-neutral-950/80 backdrop-blur-md'
       )}
     >
       <Container>
         <nav className="flex items-center justify-between h-20">
-          {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2">
-            <span className="text-2xl font-bold text-neutral-900 dark:text-white">Kritvia</span>
+          {/* Logo - Premium Style */}
+          <Link href="/" className="flex items-center space-x-2 group">
+            <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-primary-500 to-secondary-500 flex items-center justify-center text-white font-bold text-lg group-hover:scale-105 transition-transform">
+              K
+            </div>
+            <span className="text-xl font-bold text-neutral-900 dark:text-white">Kritvia</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -225,10 +228,10 @@ export function Navbar() {
             <Link
               href="/industries"
               className={cn(
-                'px-4 py-2 text-sm font-medium transition-colors',
+                'px-4 py-2 text-sm font-medium transition-colors rounded-lg',
                 pathname === '/industries'
-                  ? 'text-primary-600 dark:text-primary-400'
-                  : 'text-neutral-600 dark:text-neutral-300 hover:text-neutral-900 dark:hover:text-white'
+                  ? 'text-primary-600 dark:text-primary-400 bg-primary-50 dark:bg-primary-900/20'
+                  : 'text-neutral-600 dark:text-neutral-300 hover:text-neutral-900 dark:hover:text-white hover:bg-neutral-50 dark:hover:bg-neutral-800'
               )}
             >
               Industries
@@ -236,10 +239,10 @@ export function Navbar() {
             <Link
               href="/case-studies"
               className={cn(
-                'px-4 py-2 text-sm font-medium transition-colors',
+                'px-4 py-2 text-sm font-medium transition-colors rounded-lg',
                 pathname === '/case-studies'
-                  ? 'text-primary-600 dark:text-primary-400'
-                  : 'text-neutral-600 dark:text-neutral-300 hover:text-neutral-900 dark:hover:text-white'
+                  ? 'text-primary-600 dark:text-primary-400 bg-primary-50 dark:bg-primary-900/20'
+                  : 'text-neutral-600 dark:text-neutral-300 hover:text-neutral-900 dark:hover:text-white hover:bg-neutral-50 dark:hover:bg-neutral-800'
               )}
             >
               Case Studies
@@ -261,10 +264,10 @@ export function Navbar() {
             <Link
               href="/pricing"
               className={cn(
-                'px-4 py-2 text-sm font-medium transition-colors',
+                'px-4 py-2 text-sm font-medium transition-colors rounded-lg',
                 pathname === '/pricing'
-                  ? 'text-primary-600 dark:text-primary-400'
-                  : 'text-neutral-600 dark:text-neutral-300 hover:text-neutral-900 dark:hover:text-white'
+                  ? 'text-primary-600 dark:text-primary-400 bg-primary-50 dark:bg-primary-900/20'
+                  : 'text-neutral-600 dark:text-neutral-300 hover:text-neutral-900 dark:hover:text-white hover:bg-neutral-50 dark:hover:bg-neutral-800'
               )}
             >
               Pricing
@@ -272,10 +275,16 @@ export function Navbar() {
           </div>
 
           {/* CTA Button + Theme Toggle */}
-          <div className="hidden lg:flex items-center gap-2">
+          <div className="hidden lg:flex items-center gap-3">
             <ThemeToggle />
-            <Link href="/contact">
-              <Button size="sm">Get Started</Button>
+            <Link 
+              href="/contact"
+              className="inline-flex items-center gap-2 px-5 py-2.5 bg-neutral-900 dark:bg-white text-white dark:text-neutral-900 font-semibold rounded-lg text-sm hover:bg-neutral-800 dark:hover:bg-neutral-100 transition-colors"
+            >
+              Get Started
+              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
             </Link>
           </div>
 
@@ -366,7 +375,9 @@ export function Navbar() {
               <div className="flex items-center gap-2 px-2 pt-2">
                 <ThemeToggle />
                 <Link href="/contact" className="flex-1">
-                  <Button className="w-full">Get Started</Button>
+                  <div className="w-full inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-neutral-900 dark:bg-white text-white dark:text-neutral-900 font-semibold rounded-lg text-sm">
+                    Get Started
+                  </div>
                 </Link>
               </div>
             </div>
