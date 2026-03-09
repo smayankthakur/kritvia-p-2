@@ -18,6 +18,10 @@ export const metadata: Metadata = {
   },
   description: 'Kritvia delivers enterprise AI development, cloud architecture, and custom software solutions to transform businesses at scale.',
   metadataBase: new URL('https://kritvia.com'),
+  icons: {
+    icon: '/logo.png',
+    apple: '/logo.png',
+  },
   openGraph: {
     type: 'website',
     locale: 'en_US',
