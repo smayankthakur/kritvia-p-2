@@ -17,19 +17,16 @@ body {
   color: rgb(var(--foreground));
 }
 
-/* Smooth transitions for theme changes */
 * {
   transition-property: background-color, border-color, color, fill, stroke;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 200ms;
 }
 
-/* Prevent transition on page load */
 html.no-transitions * {
   transition: none !important;
 }
 
-/* Dark mode scrollbar */
 .dark ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
@@ -48,7 +45,6 @@ html.no-transitions * {
   background: #6b7280;
 }
 
-/* Custom animations */
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -86,7 +82,6 @@ html.no-transitions * {
   50% { background-position: 100% 50%; }
 }
 
-/* Utility classes for animations */
 .animate-fade-in-up {
   animation: fadeInUp 0.5s ease-out forwards;
 }
@@ -100,12 +95,10 @@ html.no-transitions * {
   animation: gradientShift 4s ease infinite;
 }
 
-/* Slide in from bottom (used by AI chat) */
 .animate-in.slide-in-from-bottom-4 {
   animation: slideInFromBottom 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-/* Thin scrollbar utility */
 .scrollbar-thin {
   scrollbar-width: thin;
 }
@@ -117,7 +110,6 @@ html.no-transitions * {
   display: none;
 }
 
-/* Line clamp utilities */
 .line-clamp-2 {
   display: -webkit-box;
   -webkit-line-clamp: 2;
@@ -132,14 +124,12 @@ html.no-transitions * {
   overflow: hidden;
 }
 
-/* Glass morphism */
 .glass {
   backdrop-filter: blur(16px) saturate(180%);
   background-color: rgba(0, 0, 0, 0.4);
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* Gradient text helper */
 .gradient-text {
   background: linear-gradient(135deg, #38bdf8, #a855f7);
   -webkit-background-clip: text;
@@ -147,7 +137,6 @@ html.no-transitions * {
   background-clip: text;
 }
 
-/* Focus styles */
 a:focus-visible,
 button:focus-visible,
 input:focus-visible,
