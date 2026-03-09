@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { useTheme } from 'next-themes';
 import { cn } from '@/lib/utils/cn';
@@ -196,8 +197,15 @@ export function Navbar() {
         <nav className="flex items-center justify-between h-20">
           {/* Logo - Premium Style */}
           <Link href="/" className="flex items-center space-x-2 group">
-            <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-primary-500 to-secondary-500 flex items-center justify-center text-white font-bold text-lg group-hover:scale-105 transition-transform">
-              K
+            <div className="relative w-10 h-10">
+              <Image
+                src="/logo.png"
+                alt="Kritvia"
+                width={40}
+                height={40}
+                className="object-contain"
+                priority
+              />
             </div>
             <span className="text-xl font-bold text-neutral-900 dark:text-white">Kritvia</span>
           </Link>
