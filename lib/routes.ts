@@ -3,148 +3,130 @@
  * 
  * This file acts as the canonical registry of every route in the platform.
  * All systems must reference this registry for route information.
- * 
- * IMPORTANT: When a new page is added, removed, or renamed in the `/app` directory,
- * this file must be updated immediately.
- * 
- * Run `npm run generate-routes` to auto-update this file.
  */
 
 export interface Route {
-  path: string
-  name: string
-  category: 'core' | 'company' | 'products' | 'solutions' | 'industries' | 'platform' | 'resources' | 'legal' | 'developers'
+  slug: string
+  title: string
   description?: string
+  category: 'core' | 'products' | 'platform' | 'solutions' | 'developers' | 'resources' | 'company' | 'legal'
+  hasCustomPage?: boolean
+  keywords?: string[]
 }
 
+// Complete route map for the platform
 export const routes: Route[] = [
   // Core Pages
-  { path: '/', name: 'Home', category: 'core', description: 'Kritvia - AI Infrastructure Platform' },
-  { path: '/about', name: 'About', category: 'core', description: 'Learn about Kritvia' },
-  { path: '/services', name: 'Services', category: 'core', description: 'Our digital services' },
-  { path: '/solutions', name: 'Solutions', category: 'core', description: 'Business solutions' },
-  { path: '/products', name: 'Products', category: 'core', description: 'Our products' },
-  { path: '/case-studies', name: 'Case Studies', category: 'core', description: 'Success stories' },
-  { path: '/blog', name: 'Blog', category: 'core', description: 'Latest insights' },
-  { path: '/research', name: 'Research', category: 'core', description: 'Research & innovation' },
-  { path: '/pricing', name: 'Pricing', category: 'core', description: 'Pricing plans' },
-  { path: '/contact', name: 'Contact', category: 'core', description: 'Get in touch' },
+  { slug: '', title: 'Home', description: 'Kritvia - AI Infrastructure Platform', category: 'core', hasCustomPage: true },
+  { slug: 'about', title: 'About', description: 'Learn about Kritvia - leading AI infrastructure company', category: 'core', hasCustomPage: true },
+  { slug: 'services', title: 'Services', description: 'Our digital services', category: 'core', hasCustomPage: true },
+  { slug: 'solutions', title: 'Solutions', description: 'Business solutions for AI transformation', category: 'core', hasCustomPage: true },
+  { slug: 'products', title: 'Products', description: 'Explore Kritvia AI products', category: 'core', hasCustomPage: true },
+  { slug: 'case-studies', title: 'Case Studies', description: 'Client success stories', category: 'core', hasCustomPage: true },
+  { slug: 'blog', title: 'Blog', description: 'Latest insights and news', category: 'core', hasCustomPage: true },
+  { slug: 'research', title: 'Research', description: 'Research and innovation', category: 'core', hasCustomPage: true },
+  { slug: 'pricing', title: 'Pricing', description: 'Pricing plans for AI infrastructure', category: 'core', hasCustomPage: true },
+  { slug: 'contact', title: 'Contact', description: 'Get in touch with us', category: 'core', hasCustomPage: true },
   
   // Company
-  { path: '/company/about', name: 'About Us', category: 'company', description: 'About Kritvia' },
-  { path: '/company/team', name: 'Team', category: 'company', description: 'Meet our team' },
-  { path: '/company/careers', name: 'Careers', category: 'company', description: 'Join our team' },
+  { slug: 'company/about', title: 'About Us', description: 'About Kritvia', category: 'company', hasCustomPage: true },
+  { slug: 'company/team', title: 'Team', description: 'Meet our team', category: 'company', hasCustomPage: true },
+  { slug: 'company/careers', title: 'Careers', description: 'Join our team', category: 'company', hasCustomPage: true },
+  { slug: 'founder', title: 'Founder', description: 'About our founder', category: 'company', hasCustomPage: true },
   
-  // Founder (New)
-  { path: '/founder', name: 'Founder', category: 'company', description: 'About our founder' },
+  // Platform
+  { slug: 'platform', title: 'Platform', description: 'Kritvia Platform Overview', category: 'platform', hasCustomPage: true },
+  { slug: 'platform/ai-tools', title: 'AI Tools', description: 'AI-powered development tools', category: 'platform', hasCustomPage: true },
+  { slug: 'platform/dashboard', title: 'Dashboard', description: 'Analytics dashboard', category: 'platform', hasCustomPage: true },
+  { slug: 'platform/developers', title: 'Developers', description: 'Developer resources', category: 'platform', hasCustomPage: true },
+  { slug: 'platform/invoices', title: 'Invoices', description: 'Invoice management', category: 'platform', hasCustomPage: true },
+  { slug: 'platform/projects', title: 'Projects', description: 'Project management', category: 'platform', hasCustomPage: true },
+  { slug: 'platform/startup-builder', title: 'Startup Builder', description: 'Build your startup', category: 'platform', hasCustomPage: true },
+  { slug: 'platform/architecture', title: 'Architecture', description: 'Platform architecture', category: 'platform' },
+  { slug: 'platform/security', title: 'Security', description: 'Platform security', category: 'platform' },
+  { slug: 'platform/infrastructure', title: 'Infrastructure', description: 'Platform infrastructure', category: 'platform' },
+  { slug: 'platform/ai-stack', title: 'AI Stack', description: 'AI technology stack', category: 'platform' },
   
-  // Platform (SaaS Features)
-  { path: '/platform', name: 'Platform', category: 'platform', description: 'Kritvia Platform Overview' },
-  { path: '/platform/ai-tools', name: 'AI Tools', category: 'platform', description: 'AI-powered development tools' },
-  { path: '/platform/dashboard', name: 'Dashboard', category: 'platform', description: 'Analytics dashboard' },
-  { path: '/platform/developers', name: 'Developers', category: 'platform', description: 'Developer resources' },
-  { path: '/platform/invoices', name: 'Invoices', category: 'platform', description: 'Invoice management' },
-  { path: '/platform/projects', name: 'Projects', category: 'platform', description: 'Project management' },
-  { path: '/platform/startup-builder', name: 'Startup Builder', category: 'platform', description: 'Build your startup' },
+  // Products
+  { slug: 'products/trinity-os', title: 'Trinity OS', description: 'AI Operating System', category: 'products' },
+  { slug: 'products/ai-cloud', title: 'AI Cloud', description: 'Cloud Infrastructure', category: 'products' },
+  { slug: 'products/agents', title: 'Kritvia Agents', description: 'Autonomous AI Agents', category: 'products' },
+  { slug: 'products/dev-platform', title: 'Dev Platform', description: 'Developer Tools', category: 'products' },
+  { slug: 'products/kritvia-ai', title: 'Kritvia AI', description: 'AI-Powered Analytics', category: 'products' },
+  { slug: 'products/kritvia-cloud', title: 'Kritvia Cloud', description: 'Cloud Management', category: 'products' },
+  { slug: 'products/kritvia-crm', title: 'Kritvia CRM', description: 'Intelligent CRM', category: 'products' },
   
-  // Products (with dynamic slugs)
-  { path: '/products', name: 'Products', category: 'products', description: 'All products' },
+  // Solutions
+  { slug: 'solutions/ai-startups', title: 'AI Startups', description: 'For AI startups', category: 'solutions' },
+  { slug: 'solutions/enterprise', title: 'Enterprise', description: 'Enterprise solutions', category: 'solutions' },
+  { slug: 'solutions/developers', title: 'Developers', description: 'For developers', category: 'solutions' },
+  { slug: 'solutions/research', title: 'Research', description: 'Research solutions', category: 'solutions' },
+  { slug: 'solutions/ai-development', title: 'AI Development', description: 'AI development services', category: 'solutions' },
+  { slug: 'solutions/web-development', title: 'Web Development', description: 'Web development services', category: 'solutions' },
+  { slug: 'solutions/saas-development', title: 'SaaS Development', description: 'SaaS development services', category: 'solutions' },
+  { slug: 'solutions/cloud-architecture', title: 'Cloud Architecture', description: 'Cloud architecture services', category: 'solutions' },
+  { slug: 'solutions/automation', title: 'Automation', description: 'Automation solutions', category: 'solutions' },
   
-  // Industries (with dynamic slugs)
-  { path: '/industries', name: 'Industries', category: 'industries', description: 'Industry solutions' },
+  // Developers
+  { slug: 'developers', title: 'Developers', description: 'Developer portal', category: 'developers', hasCustomPage: true },
+  { slug: 'developers/docs', title: 'Documentation', description: 'API documentation', category: 'developers' },
+  { slug: 'developers/api', title: 'API Reference', description: 'API reference', category: 'developers' },
+  { slug: 'developers/tutorials', title: 'Tutorials', description: 'Tutorials', category: 'developers' },
+  { slug: 'developers/quickstarts', title: 'Quickstarts', description: 'Quick start guides', category: 'developers' },
+  { slug: 'developers/sdk', title: 'SDK', description: 'SDK downloads', category: 'developers' },
+  { slug: 'developers/cli', title: 'CLI', description: 'Command line tools', category: 'developers' },
+  { slug: 'developers/open-source', title: 'Open Source', description: 'Open source projects', category: 'developers' },
   
-  // Solutions (with dynamic slugs)
-  { path: '/solutions', name: 'Solutions', category: 'solutions', description: 'All solutions' },
+  // Industries
+  { slug: 'industries', title: 'Industries', description: 'Industry solutions', category: 'core', hasCustomPage: true },
+  { slug: 'industries/fintech', title: 'Fintech', description: 'Financial technology', category: 'solutions' },
+  { slug: 'industries/healthcare', title: 'Healthcare', description: 'Healthcare tech', category: 'solutions' },
+  { slug: 'industries/ecommerce', title: 'E-commerce', description: 'E-commerce solutions', category: 'solutions' },
+  { slug: 'industries/saas', title: 'SaaS', description: 'SaaS industry', category: 'solutions' },
   
   // Resources
-  { path: '/resources', name: 'Resources', category: 'resources', description: 'All resources' },
-  { path: '/resources/blog', name: 'Blog', category: 'resources', description: 'Blog articles' },
-  { path: '/resources/guides', name: 'Guides', category: 'resources', description: 'How-to guides' },
-  { path: '/resources/whitepapers', name: 'Whitepapers', category: 'resources', description: 'Research papers' },
+  { slug: 'resources', title: 'Resources', description: 'All resources', category: 'resources', hasCustomPage: true },
+  { slug: 'resources/blog', title: 'Blog', description: 'Blog articles', category: 'resources', hasCustomPage: true },
+  { slug: 'resources/guides', title: 'Guides', description: 'How-to guides', category: 'resources', hasCustomPage: true },
+  { slug: 'resources/whitepapers', title: 'Whitepapers', description: 'Research papers', category: 'resources', hasCustomPage: true },
   
-  // Developers (New)
-  { path: '/developers', name: 'Developers', category: 'developers', description: 'Developer documentation' },
-  { path: '/developers/docs', name: 'Documentation', category: 'developers', description: 'API documentation' },
-  { path: '/developers/api', name: 'API Reference', category: 'developers', description: 'API reference' },
-  { path: '/developers/tutorials', name: 'Tutorials', category: 'developers', description: 'Tutorials' },
-  { path: '/developers/quickstarts', name: 'Quickstarts', category: 'developers', description: 'Quick start guides' },
-  { path: '/developers/sdk', name: 'SDK', category: 'developers', description: 'SDK downloads' },
-  { path: '/developers/cli', name: 'CLI', category: 'developers', description: 'Command line tools' },
-  
-  // Legal
-  { path: '/privacy', name: 'Privacy Policy', category: 'legal', description: 'Privacy policy' },
-  { path: '/terms', name: 'Terms of Service', category: 'legal', description: 'Terms of service' },
-  
-  // Status & Changelog
-  { path: '/status', name: 'Status', category: 'developers', description: 'System status' },
-  { path: '/changelog', name: 'Changelog', category: 'developers', description: 'Release notes' },
+  // Legal & Status
+  { slug: 'privacy', title: 'Privacy Policy', description: 'Privacy policy', category: 'legal', hasCustomPage: true },
+  { slug: 'terms', title: 'Terms of Service', description: 'Terms of service', category: 'legal', hasCustomPage: true },
+  { slug: 'status', title: 'Status', description: 'System status', category: 'developers' },
+  { slug: 'changelog', title: 'Changelog', description: 'Release notes', category: 'developers' },
+  { slug: 'community', title: 'Developer Community', description: 'Developer community', category: 'developers' },
+  { slug: 'security', title: 'Security', description: 'Security information', category: 'legal' },
+  { slug: 'compliance', title: 'Compliance', description: 'Compliance information', category: 'legal' },
 ]
 
-// Static routes for sitemap (excluding dynamic routes)
-export const staticRoutes = [
-  '/',
-  '/about',
-  '/services',
-  '/solutions',
-  '/products',
-  '/case-studies',
-  '/blog',
-  '/research',
-  '/pricing',
-  '/contact',
-  '/founder',
-  '/company/about',
-  '/company/team',
-  '/company/careers',
-  '/platform',
-  '/platform/ai-tools',
-  '/platform/dashboard',
-  '/platform/developers',
-  '/platform/invoices',
-  '/platform/projects',
-  '/platform/startup-builder',
-  '/industries',
-  '/resources',
-  '/resources/blog',
-  '/resources/guides',
-  '/resources/whitepapers',
-  '/developers',
-  '/developers/docs',
-  '/developers/api',
-  '/developers/tutorials',
-  '/developers/quickstarts',
-  '/developers/sdk',
-  '/developers/cli',
-  '/privacy',
-  '/terms',
-  '/status',
-  '/changelog',
-]
-
-// Dynamic route patterns
-export const dynamicRoutes = [
-  { pattern: '/products/[slug]', generator: () => ['/products/trinity-os', '/products/ai-cloud', '/products/agents', '/products/dev-platform'] },
-  { pattern: '/solutions/[slug]', generator: () => ['/solutions/ai-startups', '/solutions/enterprise', '/solutions/developers', '/solutions/research'] },
-  { pattern: '/industries/[slug]', generator: () => ['/industries/fintech', '/industries/healthcare', '/industries/ecommerce', '/industries/saas'] },
-]
-
-// Helper function to get all routes including generated dynamic routes
-export function getAllRoutes(): string[] {
-  const allRoutes = [...staticRoutes]
-  
-  dynamicRoutes.forEach(dynamic => {
-    allRoutes.push(...dynamic.generator())
-  })
-  
-  return allRoutes
+// Helper to get route by slug
+export function getRouteBySlug(slug: string): Route | undefined {
+  return routes.find(route => route.slug === slug)
 }
 
-// Helper function to get routes by category
+// Helper to get all routes for static generation
+export function getAllRouteSlugs(): string[] {
+  return routes.map(route => route.slug)
+}
+
+// Helper to get routes by category
 export function getRoutesByCategory(category: Route['category']): Route[] {
   return routes.filter(route => route.category === category)
 }
 
-// Helper function to find route by path
-export function findRouteByPath(path: string): Route | undefined {
-  return routes.find(route => route.path === path)
+// Get navigation links (for header/footer)
+export function getNavigationRoutes() {
+  return {
+    products: routes.filter(r => r.category === 'products'),
+    platform: routes.filter(r => r.category === 'platform'),
+    solutions: routes.filter(r => r.category === 'solutions' && r.slug.startsWith('solutions/')),
+    developers: routes.filter(r => r.category === 'developers'),
+    company: routes.filter(r => r.category === 'company'),
+    resources: routes.filter(r => r.category === 'resources'),
+  }
 }
+
+// Legacy exports for backward compatibility with sitemap.ts
+export const staticRoutes = routes.map(r => r.slug === '' ? '/' : '/' + r.slug)
+export const dynamicRoutes: { pattern: string; generator: () => string[] }[] = []
