@@ -1,4 +1,5 @@
-import { Metadata } from 'next';
+'use client';
+
 import Link from 'next/link';
 import { Container, Section, Button } from '@/components/ui';
 import { TestimonialCarousel, TechStack } from '@/components/features';
@@ -6,16 +7,8 @@ import { LogoCloud } from '@/components/home/LogoCloud';
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 
-export const metadata: Metadata = {
-  title: 'Kritvia — Engineering AI-Powered Digital Platforms',
-  description:
-    'Kritvia partners with enterprises to build AI-native products, scalable cloud infrastructure, and custom software that creates competitive advantage. Trusted by 50+ companies worldwide.',
-  openGraph: {
-    title: 'Kritvia — Engineering AI-Powered Digital Platforms',
-    description: 'Build AI-native products, scalable cloud infrastructure, and custom software with Kritvia.',
-    images: [{ url: '/og-home.jpg', width: 1200, height: 630 }],
-  },
-};
+// Page is now a client component for Framer Motion animations
+// Metadata is handled in layout.tsx
 
 // Stats for trust section
 const stats = [
