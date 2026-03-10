@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import { Container, Section, Button } from '@/components/ui';
 import { TestimonialCarousel, TechStack } from '@/components/features';
+import { LogoCloud } from '@/components/home/LogoCloud';
 
 export const metadata: Metadata = {
   title: 'Kritvia — Engineering AI-Powered Digital Platforms',
@@ -13,16 +14,6 @@ export const metadata: Metadata = {
     images: [{ url: '/og-home.jpg', width: 1200, height: 630 }],
   },
 };
-
-// Premium client logos for trust section
-const trustedClients = [
-  { name: 'Stripe', logo: 'S' },
-  { name: 'Vercel', logo: 'V' },
-  { name: 'Linear', logo: 'L' },
-  { name: 'Notion', logo: 'N' },
-  { name: 'Figma', logo: 'F' },
-  { name: 'Slack', logo: 'S' },
-];
 
 // Stats for trust section
 const stats = [
@@ -912,34 +903,9 @@ export default function HomePage() {
       </Section>
 
       {/* ═══════════════════════════════════════════════════════════
-          SOCIAL PROOF SECTION - Enhanced premium trust section
+          LOGO CLOUD SECTION - Real company logos with grayscale to color on hover
       ═══════════════════════════════════════════════════════════ */}
-      <div className="relative border-y border-white/5 bg-neutral-950/50 py-16 overflow-hidden">
-        {/* Subtle gradient background */}
-        <div className="absolute inset-0 bg-gradient-to-b from-neutral-950 via-neutral-900/30 to-neutral-950" />
-
-        <Container className="relative z-10">
-          <div className="text-center mb-12">
-            <p className="text-sm font-semibold text-neutral-500 uppercase tracking-widest">
-              Trusted by forward-thinking companies
-            </p>
-          </div>
-          <div className="flex flex-wrap items-center justify-center gap-8 md:gap-16">
-            {trustedClients.map((client, index) => (
-              <div
-                key={client.name}
-                className="group flex items-center gap-3 text-neutral-500 hover:text-white transition-all duration-300 cursor-pointer"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                <div className="w-12 h-12 rounded-xl bg-neutral-900/80 border border-neutral-800 group-hover:border-primary-500/30 flex items-center justify-center font-bold text-lg group-hover:scale-110 group-hover:shadow-[0_0_20px_rgba(59,130,246,0.2)] transition-all duration-300">
-                  {client.logo}
-                </div>
-                <span className="text-base font-medium group-hover:text-white transition-colors">{client.name}</span>
-              </div>
-            ))}
-          </div>
-        </Container>
-      </div>
+      <LogoCloud />
 
       {/* ═══════════════════════════════════════════════════════════
           SERVICES SECTION - 6 service cards with premium design
