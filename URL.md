@@ -10,7 +10,7 @@ This document lists every public URL available in the Kritvia website. It acts a
 
 | Path | Description |
 |------|-------------|
-| `/` | Homepage - Kritvia Digital Transformation Platform |
+| `/` | Homepage - Kritvia AI Infrastructure Platform |
 | `/about` | About page |
 | `/services` | Digital services we offer |
 | `/solutions` | Business solutions |
@@ -25,11 +25,12 @@ This document lists every public URL available in the Kritvia website. It acts a
 
 ## Company
 
-| Path | Description |
-|------|-------------|
-| `/company/about` | About Kritvia |
+||------|-------------|
+| `/company/about` | About Path | Description |
+ Kritvia |
 | `/company/team` | Meet our team |
 | `/company/careers` | Join our team |
+| `/founder` | About our founder |
 
 ---
 
@@ -44,6 +45,22 @@ This document lists every public URL available in the Kritvia website. It acts a
 | `/platform/projects` | Project management |
 | `/platform/invoices` | Invoice management |
 | `/platform/startup-builder` | Startup builder |
+
+---
+
+## Developers
+
+| Path | Description |
+|------|-------------|
+| `/developers` | Developer portal |
+| `/developers/docs` | Documentation |
+| `/developers/api` | API Reference |
+| `/developers/tutorials` | Tutorials |
+| `/developers/quickstarts` | Quick start guides |
+| `/developers/sdk` | SDK downloads |
+| `/developers/cli` | Command line tools |
+| `/status` | System status |
+| `/changelog` | Release notes |
 
 ---
 
@@ -64,10 +81,10 @@ This document lists every public URL available in the Kritvia website. It acts a
 | Path | Description |
 |------|-------------|
 | `/solutions` | All solutions |
-| `/solutions/ai-development` | AI development services |
-| `/solutions/web-development` | Web development services |
-| `/solutions/saas-development` | SaaS development services |
-| `/solutions/cloud-architecture` | Cloud architecture services |
+| `/solutions/ai-startups` | AI Startups |
+| `/solutions/enterprise` | Enterprise solutions |
+| `/solutions/developers` | Developer solutions |
+| `/solutions/research` | Research solutions |
 
 ---
 
@@ -76,9 +93,10 @@ This document lists every public URL available in the Kritvia website. It acts a
 | Path | Description |
 |------|-------------|
 | `/products` | All products |
-| `/products/kritvia-ai` | Kritvia AI product |
-| `/products/kritvia-cloud` | Kritvia Cloud product |
-| `/products/kritvia-crm` | Kritvia CRM product |
+| `/products/trinity-os` | Trinity OS |
+| `/products/ai-cloud` | AI Cloud |
+| `/products/agents` | AI Agents |
+| `/products/dev-platform` | Developer Platform |
 
 ---
 
@@ -104,9 +122,9 @@ This document lists every public URL available in the Kritvia website. It acts a
 
 ## Route Count
 
-- **Static Routes:** 26
-- **Dynamic Routes:** 11
-- **Total Routes:** 37
+- **Static Routes:** 42
+- **Dynamic Routes:** 12
+- **Total Routes:** 54
 
 ---
 

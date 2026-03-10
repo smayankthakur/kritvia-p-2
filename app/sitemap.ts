@@ -6,6 +6,7 @@ const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://kritvia.com'
 // Priority mapping based on route importance
 const priorityMap: Record<string, number> = {
   '/': 1,
+  '/founder': 0.9,
   '/services': 0.9,
   '/solutions': 0.9,
   '/products': 0.8,
@@ -24,6 +25,13 @@ const priorityMap: Record<string, number> = {
   '/platform/projects': 0.7,
   '/platform/invoices': 0.7,
   '/platform/startup-builder': 0.8,
+  '/developers': 0.9,
+  '/developers/docs': 0.8,
+  '/developers/api': 0.8,
+  '/developers/tutorials': 0.8,
+  '/developers/quickstarts': 0.8,
+  '/developers/sdk': 0.8,
+  '/developers/cli': 0.8,
   '/industries': 0.7,
   '/resources': 0.7,
   '/resources/blog': 0.7,
@@ -31,6 +39,8 @@ const priorityMap: Record<string, number> = {
   '/resources/whitepapers': 0.6,
   '/privacy': 0.3,
   '/terms': 0.3,
+  '/status': 0.5,
+  '/changelog': 0.6,
 }
 
 // Change frequency mapping
@@ -42,6 +52,7 @@ const changeFrequencyMap: Record<string, MetadataRoute.Sitemap[number]['changeFr
   '/company/careers': 'weekly',
   '/resources': 'weekly',
   '/resources/guides': 'weekly',
+  '/changelog': 'weekly',
 }
 
 function getPriority(route: string): number {
