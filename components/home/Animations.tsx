@@ -229,8 +229,7 @@ export function StaggerContainer({
   return (
     <motion.div
       initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, amount: 0.1 }}
+      animate="visible"
       variants={{
         hidden: { opacity: 0 },
         visible: {
@@ -440,8 +439,7 @@ export function AnimatedCounter({ value, suffix = '' }: AnimatedCounterProps) {
   return (
     <motion.span
       initial={{ opacity: 0, scale: 0.8 }}
-      whileInView={{ opacity: 1, scale: 1 }}
-      viewport={{ once: true }}
+      animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.5, type: "spring" }}
     >
       {value}{suffix}

@@ -127,8 +127,7 @@ export function ArchitectureDiagram() {
             <motion.button
               key={node.id}
               initial={{ scale: 0, opacity: 0 }}
-              whileInView={{ scale: 1, opacity: 1 }}
-              viewport={{ once: true }}
+              animate={{ scale: 1, opacity: 1 }}
               transition={{ delay: node.position.y / 100 }}
               onClick={() => setActiveNode(activeNode === node.id ? null : node.id)}
               className={`absolute transform -translate-x-1/2 -translate-y-1/2 transition-all ${

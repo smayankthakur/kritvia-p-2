@@ -122,16 +122,14 @@ export function ClientPortfolio() {
       <div className="text-center mb-12">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          animate={{ opacity: 1, y: 0 }}
           className="inline-block px-4 py-1.5 rounded-full bg-gradient-to-r from-blue-500/10 to-purple-500/10 border border-blue-500/20 text-blue-400 text-xs font-semibold uppercase tracking-wider mb-4"
         >
           Our Work
         </motion.div>
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1 }}
           className="text-4xl lg:text-5xl font-bold text-white mb-6 tracking-tight"
         >
@@ -139,8 +137,7 @@ export function ClientPortfolio() {
         </motion.h2>
         <motion.p
           initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
           className="text-xl text-neutral-400 max-w-2xl mx-auto"
         >
@@ -181,8 +178,7 @@ export function ClientPortfolio() {
               target="_blank"
               rel="noopener noreferrer"
               initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1 }}
               className="group relative bg-[#0D0D0D] border border-[#1A1A1A] rounded-2xl overflow-hidden hover:border-[#6366F1]/30 transition-all hover:-translate-y-2"
             >

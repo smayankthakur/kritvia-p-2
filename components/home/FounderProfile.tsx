@@ -59,8 +59,7 @@ export function FounderProfile() {
         {/* Profile Image */}
         <motion.div
           initial={{ opacity: 0, x: -30 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
+          animate={{ opacity: 1, x: 0 }}
           className="relative"
         >
           <div className="relative aspect-[4/5] rounded-3xl overflow-hidden">
@@ -94,8 +93,7 @@ export function FounderProfile() {
         {/* Profile Content */}
         <motion.div
           initial={{ opacity: 0, x: 30 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
+          animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.2 }}
         >
           {/* Label */}
@@ -144,8 +142,7 @@ export function FounderProfile() {
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
+                animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3 + index * 0.1 }}
                 className="text-center p-4 bg-[#0D0D0D] border border-[#1A1A1A] rounded-xl"
               >
