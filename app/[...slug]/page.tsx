@@ -1,10 +1,15 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
-import { notFound } from 'next/navigation'
+import { notFound, redirect } from 'next/navigation'
 import { routes, getRouteBySlug, Route } from '@/lib/routes'
 
 interface PageProps {
   params: Promise<{ slug: string[] }>
+}
+
+// Redirect mapping for old routes
+const redirectMap: Record<string, string> = {
+  'developers': '/platform/developers',
 }
 
 // Generate static params for all routes
@@ -138,6 +143,12 @@ function PageContent({ page }: { page: Route }) {
 export default async function DynamicPage({ params }: PageProps) {
   const { slug } = await params
   const path = slug.join('/')
+  
+  // Check for redirect
+  if (redirectMap[path]) {
+    redirect(redirectMap[path])
+  }
+  
   const page = getRouteBySlug(path)
   
   // If no route found, show 404

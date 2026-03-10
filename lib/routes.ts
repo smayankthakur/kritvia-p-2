@@ -98,6 +98,18 @@ export const routes: Route[] = [
   { slug: 'community', title: 'Developer Community', description: 'Developer community', category: 'developers' },
   { slug: 'security', title: 'Security', description: 'Security information', category: 'legal' },
   { slug: 'compliance', title: 'Compliance', description: 'Compliance information', category: 'legal' },
+  
+  // Legal subroutes
+  { slug: 'legal/privacy', title: 'Privacy Policy', description: 'Privacy policy', category: 'legal' },
+  { slug: 'legal/terms', title: 'Terms of Service', description: 'Terms of service', category: 'legal' },
+  
+  // Case Studies subroutes
+  { slug: 'case-studies/fintech-fraud-detection', title: 'Fintech Fraud Detection', description: 'How we helped a fintech company detect fraud with AI', category: 'core' },
+  { slug: 'case-studies/healthtech-clinical-ai', title: 'HealthTech Clinical AI', description: 'AI-powered clinical decision support system', category: 'core' },
+  { slug: 'case-studies/retail-personalization', title: 'Retail Personalization', description: 'Personalized shopping experience with AI', category: 'core' },
+  { slug: 'case-studies/cloudscale-migration', title: 'CloudScale Migration', description: 'Seamless cloud migration for enterprise', category: 'core' },
+  { slug: 'case-studies/legal-document-automation', title: 'Legal Document Automation', description: 'AI-powered legal document processing', category: 'core' },
+  { slug: 'case-studies/logistics-analytics', title: 'Logistics Analytics', description: 'Real-time logistics optimization with AI', category: 'core' },
 ]
 
 // Helper to get route by slug
