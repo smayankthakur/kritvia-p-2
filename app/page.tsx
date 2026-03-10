@@ -3,6 +3,8 @@ import Link from 'next/link';
 import { Container, Section, Button } from '@/components/ui';
 import { TestimonialCarousel, TechStack } from '@/components/features';
 import { LogoCloud } from '@/components/home/LogoCloud';
+import { motion, useInView } from 'framer-motion';
+import { useRef } from 'react';
 
 export const metadata: Metadata = {
   title: 'Kritvia — Engineering AI-Powered Digital Platforms',
@@ -560,8 +562,11 @@ export default function HomePage() {
         <Container className="relative z-10 py-24">
           <div className="max-w-6xl mx-auto text-center">
             {/* ===== PREMIUM BADGE ===== */}
-            <div
-              className="inline-flex items-center gap-2.5 px-5 py-2.5 rounded-full glass text-sm font-medium mb-12 animate-fade-in"
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0 }}
+              className="inline-flex items-center gap-2.5 px-5 py-2.5 rounded-full glass text-sm font-medium mb-12"
             >
               <span className="relative flex h-2.5 w-2.5">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75" />
@@ -569,10 +574,15 @@ export default function HomePage() {
               </span>
               <span className="text-neutral-300">Now offering AI strategy workshops</span>
               <span className="text-neutral-500">→</span>
-            </div>
+            </motion.div>
 
             {/* ===== MAIN HEADLINE - Extra Large & Impactful ===== */}
-            <h1 className="text-7xl sm:text-8xl lg:text-[5.5rem] xl:text-[6rem] font-bold text-white leading-[0.92] tracking-tight mb-10 animate-slide-up">
+            <motion.h1 
+              initial={{ opacity: 0, y: 40 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.1, ease: [0.25, 0.1, 0.25, 1] }}
+              className="text-7xl sm:text-8xl lg:text-[5.5rem] xl:text-[6rem] font-bold text-white leading-[0.92] tracking-tight mb-10"
+            >
               Engineering{' '}
               <span className="relative inline-block">
                 <span className="gradient-text relative z-10">
@@ -586,16 +596,26 @@ export default function HomePage() {
               </span>
               <br className="hidden sm:block" />
               <span className="gradient-text-slow">Digital Platforms</span>
-            </h1>
+            </motion.h1>
 
             {/* ===== SUBHEADLINE ===== */}
-            <p className="text-lg lg:text-2xl text-neutral-400 max-w-3xl mx-auto leading-relaxed mb-14 animate-slide-up" style={{ animationDelay: '0.1s' }}>
+            <motion.p 
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="text-lg lg:text-2xl text-neutral-400 max-w-3xl mx-auto leading-relaxed mb-14"
+            >
               Kritvia partners with technology leaders to architect, build, and deploy{' '}
               <span className="text-white font-medium">AI-powered systems</span> that create lasting competitive advantage — from concept to production in weeks, not months.
-            </p>
+            </motion.p>
 
             {/* ===== PREMIUM CTA BUTTONS ===== */}
-            <div className="flex flex-wrap gap-5 justify-center mb-24 animate-slide-up" style={{ animationDelay: '0.2s' }}>
+            <motion.div 
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.5 }}
+              className="flex flex-wrap gap-5 justify-center mb-24"
+            >
               {/* Primary gradient button with glow */}
               <Link
                 href="/contact"
@@ -624,7 +644,7 @@ export default function HomePage() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
               </Link>
-            </div>
+            </motion.div>
 
             {/* ===== STATS ROW ===== */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto pt-10 border-t border-white/10 animate-slide-up" style={{ animationDelay: '0.3s' }}>
@@ -667,7 +687,13 @@ export default function HomePage() {
         <div className="absolute inset-0 grid-overlay-premium opacity-30" />
 
         <Container className="relative z-10 py-24">
-          <div className="text-center mb-20">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-20"
+          >
             <div className="inline-block px-4 py-1.5 rounded-full bg-gradient-to-r from-amber-500/10 to-orange-500/10 border border-amber-500/20 text-amber-400 text-xs font-semibold uppercase tracking-wider mb-4">
               Our Story
             </div>
@@ -677,7 +703,7 @@ export default function HomePage() {
             <p className="text-xl text-neutral-400 max-w-2xl mx-auto">
               The story of how we're transforming enterprise technology — one breakthrough at a time.
             </p>
-          </div>
+          </motion.div>
 
           <div className="space-y-24">
             {storySections.map((story, index) => (

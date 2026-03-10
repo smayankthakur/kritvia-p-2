@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { Container } from '@/components/ui';
+import { motion } from 'framer-motion';
 
 const logos = [
   {
@@ -67,31 +68,51 @@ const logos = [
 export function LogoCloud() {
   return (
     <div className="relative border-y border-white/5 bg-neutral-950/50 py-16 overflow-hidden">
-      {/* Subtle gradient background */}
       <div className="absolute inset-0 bg-gradient-to-b from-neutral-950 via-neutral-900/30 to-neutral-950" />
-
       <Container className="relative z-10">
-        <div className="text-center mb-12">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-12"
+        >
           <p className="text-sm font-semibold text-neutral-500 uppercase tracking-widest">
             Trusted by forward-thinking companies
           </p>
-        </div>
+        </motion.div>
         <div className="flex flex-wrap items-center justify-center gap-x-12 gap-y-8">
-          {logos.map((logo) => (
-            <Link
+          {logos.map((logo, index) => (
+            <motion.div
               key={logo.name}
-              href={logo.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group flex items-center gap-3 text-neutral-500 hover:text-white transition-all duration-300"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ 
+                duration: 0.5, 
+                delay: index * 0.1,
+                ease: [0.25, 0.1, 0.25, 1]
+              }}
             >
-              <div className="w-14 h-14 rounded-xl bg-neutral-900/80 border border-neutral-800 group-hover:border-primary-500/30 flex items-center justify-center group-hover:scale-110 group-hover:shadow-[0_0_20px_rgba(59,130,246,0.2)] transition-all duration-300 grayscale group-hover:grayscale-0">
-                {logo.svg}
-              </div>
-              <span className="text-base font-medium group-hover:text-white transition-colors">
-                {logo.name}
-              </span>
-            </Link>
+              <Link
+                href={logo.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex items-center gap-3 text-neutral-500 hover:text-white transition-all duration-300"
+              >
+                <motion.div 
+                  className="w-14 h-14 rounded-xl bg-neutral-900/80 border border-neutral-800 group-hover:border-primary-500/30 flex items-center justify-center transition-all duration-300 grayscale group-hover:grayscale-0"
+                  whileHover={{ scale: 1.1 }}
+                  transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  {logo.svg}
+                </motion.div>
+                <span className="text-base font-medium group-hover:text-white transition-colors">
+                  {logo.name}
+                </span>
+              </Link>
+            </motion.div>
           ))}
         </div>
       </Container>
