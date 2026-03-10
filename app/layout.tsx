@@ -18,6 +18,11 @@ export const metadata: Metadata = {
   },
   description: 'Kritvia delivers enterprise AI development, cloud architecture, and custom software solutions to transform businesses at scale.',
   metadataBase: new URL('https://kritvia.com'),
+  viewport: {
+    width: 'device-width',
+    initialScale: 1,
+    maximumScale: 5,
+  },
   icons: {
     icon: '/logo.png',
     apple: '/logo.png',
@@ -27,26 +32,29 @@ export const metadata: Metadata = {
     locale: 'en_US',
     url: 'https://kritvia.com',
     siteName: 'Kritvia',
-    title: 'Kritvia - Modern Tech Solutions',
-    description: 'Building the future of technology through innovative solutions and cutting-edge development.',
+    title: 'Kritvia - Enterprise AI & Technology Consulting',
+    description: 'Kritvia delivers enterprise AI development, cloud architecture, and custom software solutions to transform businesses at scale.',
     images: [
       {
         url: '/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'Kritvia',
+        alt: 'Kritvia - AI-Powered Digital Platforms',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Kritvia - Modern Tech Solutions',
-    description: 'Building the future of technology through innovative solutions and cutting-edge development.',
+    title: 'Kritvia - Enterprise AI & Technology Consulting',
+    description: 'Kritvia delivers enterprise AI development, cloud architecture, and custom software solutions.',
     images: ['/og-image.jpg'],
   },
   robots: {
     index: true,
     follow: true,
+  },
+  verification: {
+    google: 'google-site-verification-code',
   },
 };
 
@@ -81,7 +89,7 @@ export default function RootLayout({
           </main>
           <Footer />
           <AIAssistant />
-          <Analytics />
+          {process.env.NODE_ENV === 'production' && <Analytics />}
         </ThemeProvider>
       </body>
     </html>
