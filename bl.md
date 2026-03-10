@@ -1,1684 +1,1305 @@
 # Link Audit Report
 
-| Source Page | Anchor Text | Target URL | Link Type | Status Code | Redirect |
-| ----------- | ----------- | ---------- | --------- | ----------- | -------- |
-| / | Kritvia | / | Internal | 200 ✅ | - |
-| / | Products | /products | Internal | 200 ✅ | - |
-| / | Solutions | /solutions | Internal | 200 ✅ | - |
-| / | Industries | /industries | Internal | 200 ✅ | - |
-| / | Developers | /platform/developers | Internal | 200 ✅ | - |
-| / | Resources | /resources | Internal | 200 ✅ | - |
-| / | Pricing | /pricing | Internal | 200 ✅ | - |
-| / | Login | /platform/dashboard | Internal | 200 ✅ | - |
-| / | Start Project | /contact | Internal | 200 ✅ | - |
-| / | Learn more → | /products/ai-cloud | Internal | 200 ✅ | - |
-| / | Start Building Free | /contact | Internal | 200 ✅ | - |
-| / | View Documentation | /platform | Internal | 200 ✅ | - |
-| / | 🧠Trinity OSAI Operating Syste | /products/trinity-os | Internal | 200 ✅ | - |
-| / | ☁️Kritvia AI CloudCloud Infras | /products/kritvia-ai cloud | Internal | 200 ✅ | - |
-| / | 🤖Kritvia AgentsAutonomous AI  | /products/kritvia-agents | Internal | 200 ✅ | - |
-| / | 🛠️Dev PlatformDeveloper Tools | /products/dev-platform | Internal | 200 ✅ | - |
-| / | Explore Developer Docs → | /developers | Internal | 200 ✅ | - |
-| / | 🚀AI StartupsBuild and scale A | /solutions/ai-startups | Internal | 200 ✅ | - |
-| / | 🏢EnterpriseSecure AI for larg | /solutions/enterprise | Internal | 200 ✅ | - |
-| / | 💻DevelopersTools for builders | /solutions/developers | Internal | 200 ✅ | - |
-| / | 🔬Research LabsCompute for AI  | /solutions/research | Internal | 200 ✅ | - |
-| / | Join Accelerator | /solutions/ai-startups | Internal | 200 ✅ | - |
-| / | View Success Stories | /case-studies | Internal | 200 ✅ | - |
-| / | Contact Sales | /solutions/enterprise | Internal | 200 ✅ | - |
-| / | Explore Marketplace → | /marketplace | Internal | 200 ✅ | - |
-| / | View all cases → | /case-studies | Internal | 200 ✅ | - |
-| / | TechCorpTechCorp3xFaster Deplo | /case-studies | Internal | 200 ✅ | - |
-| / | DataFlowDataFlow70%Cost Reduct | /case-studies | Internal | 200 ✅ | - |
-| / | InnovateLabsInnovateLabs150%Re | /case-studies | Internal | 200 ✅ | - |
-| / | Read the Founder Story | /founder | Internal | 200 ✅ | - |
-| / | Visit Personal Website | https://mayank.sitelytc.com | External | 200 ✅ | - |
-| / | Read Documentation | /developers | Internal | 200 ✅ | - |
-| / | Try Quickstarts | /developers/quickstarts | Internal | 200 ✅ | - |
-| / | Start Building Free | /contact | Internal | 200 ✅ | - |
-| / | Contact Sales | /contact | Internal | 200 ✅ | - |
-| / | KKritvia | / | Internal | 200 ✅ | - |
-| / |  | https://twitter.com/kritvia | External | 200 ✅ | - |
-| / |  | https://linkedin.com/company/kritvia | External | 200 ✅ | - |
-| / |  | https://github.com/kritvia | External | 200 ✅ | - |
-| / | Trinity OS | /products/trinity-os | Internal | 200 ✅ | - |
-| / | AI Cloud | /products/ai-cloud | Internal | 200 ✅ | - |
-| / | Agents | /products/agents | Internal | 200 ✅ | - |
-| / | Dev Platform | /products/dev-platform | Internal | 200 ✅ | - |
-| / | SDK | /developers/sdk | Internal | 200 ✅ | - |
-| / | CLI | /developers/cli | Internal | 200 ✅ | - |
-| / | Architecture | /platform/architecture | Internal | 200 ✅ | - |
-| / | Security | /platform/security | Internal | 200 ✅ | - |
-| / | Infrastructure | /platform/infrastructure | Internal | 200 ✅ | - |
-| / | AI Stack | /platform/ai-stack | Internal | 200 ✅ | - |
-| / | AI Startups | /solutions/ai-startups | Internal | 200 ✅ | - |
-| / | Enterprise | /solutions/enterprise | Internal | 200 ✅ | - |
-| / | Developers | /solutions/developers | Internal | 200 ✅ | - |
-| / | Research | /solutions/research | Internal | 200 ✅ | - |
-| / | Documentation | /developers/docs | Internal | 200 ✅ | - |
-| / | API Reference | /developers/api | Internal | 200 ✅ | - |
-| / | Tutorials | /developers/tutorials | Internal | 200 ✅ | - |
-| / | Quickstarts | /developers/quickstarts | Internal | 200 ✅ | - |
-| / | About | /company/about | Internal | 200 ✅ | - |
-| / | Founder | /founder | Internal | 200 ✅ | - |
-| / | Team | /company/team | Internal | 200 ✅ | - |
-| / | Careers | /company/careers | Internal | 200 ✅ | - |
-| / | Contact | /contact | Internal | 200 ✅ | - |
-| / | Blog | /resources/blog | Internal | 200 ✅ | - |
-| / | Guides | /resources/guides | Internal | 200 ✅ | - |
-| / | Case Studies | /case-studies | Internal | 200 ✅ | - |
-| / | Whitepapers | /resources/whitepapers | Internal | 200 ✅ | - |
-| / | Open Source | /developers/open-source | Internal | 200 ✅ | - |
-| / | GitHub Repositories | https://github.com/kritvia | External | 200 ✅ | - |
-| / | SDK Downloads | /developers/sdk | Internal | 200 ✅ | - |
-| / | API Status | /status | Internal | 200 ✅ | - |
-| / | System Status | /status | Internal | 200 ✅ | - |
-| / | Changelog | /changelog | Internal | 200 ✅ | - |
-| / | Release Notes | /changelog | Internal | 200 ✅ | - |
-| / | Developer Community | /community | Internal | 200 ✅ | - |
-| / | Privacy Policy | /legal/privacy | Internal | 200 ✅ | - |
-| / | Terms of Service | /legal/terms | Internal | 200 ✅ | - |
-| / | Security | /security | Internal | 200 ✅ | - |
-| / | Compliance | /compliance | Internal | 200 ✅ | - |
-| /about | Kritvia | / | Internal | 200 ✅ | - |
-| /about | Products | /products | Internal | 200 ✅ | - |
-| /about | Solutions | /solutions | Internal | 200 ✅ | - |
-| /about | Industries | /industries | Internal | 200 ✅ | - |
-| /about | Developers | /platform/developers | Internal | 200 ✅ | - |
-| /about | Resources | /resources | Internal | 200 ✅ | - |
-| /about | Pricing | /pricing | Internal | 200 ✅ | - |
-| /about | Login | /platform/dashboard | Internal | 200 ✅ | - |
-| /about | Start Project | /contact | Internal | 200 ✅ | - |
-| /about | KKritvia | / | Internal | 200 ✅ | - |
-| /about |  | https://twitter.com/kritvia | External | 200 ✅ | - |
-| /about |  | https://linkedin.com/company/kritvia | External | 200 ✅ | - |
-| /about |  | https://github.com/kritvia | External | 200 ✅ | - |
-| /about | Trinity OS | /products/trinity-os | Internal | 200 ✅ | - |
-| /about | AI Cloud | /products/ai-cloud | Internal | 200 ✅ | - |
-| /about | Agents | /products/agents | Internal | 200 ✅ | - |
-| /about | Dev Platform | /products/dev-platform | Internal | 200 ✅ | - |
-| /about | SDK | /developers/sdk | Internal | 200 ✅ | - |
-| /about | CLI | /developers/cli | Internal | 200 ✅ | - |
-| /about | Architecture | /platform/architecture | Internal | 200 ✅ | - |
-| /about | Security | /platform/security | Internal | 200 ✅ | - |
-| /about | Infrastructure | /platform/infrastructure | Internal | 200 ✅ | - |
-| /about | AI Stack | /platform/ai-stack | Internal | 200 ✅ | - |
-| /about | AI Startups | /solutions/ai-startups | Internal | 200 ✅ | - |
-| /about | Enterprise | /solutions/enterprise | Internal | 200 ✅ | - |
-| /about | Developers | /solutions/developers | Internal | 200 ✅ | - |
-| /about | Research | /solutions/research | Internal | 200 ✅ | - |
-| /about | Documentation | /developers/docs | Internal | 200 ✅ | - |
-| /about | API Reference | /developers/api | Internal | 200 ✅ | - |
-| /about | Tutorials | /developers/tutorials | Internal | 200 ✅ | - |
-| /about | Quickstarts | /developers/quickstarts | Internal | 200 ✅ | - |
-| /about | About | /company/about | Internal | 200 ✅ | - |
-| /about | Founder | /founder | Internal | 200 ✅ | - |
-| /about | Team | /company/team | Internal | 200 ✅ | - |
-| /about | Careers | /company/careers | Internal | 200 ✅ | - |
-| /about | Contact | /contact | Internal | 200 ✅ | - |
-| /about | Blog | /resources/blog | Internal | 200 ✅ | - |
-| /about | Guides | /resources/guides | Internal | 200 ✅ | - |
-| /about | Case Studies | /case-studies | Internal | 200 ✅ | - |
-| /about | Whitepapers | /resources/whitepapers | Internal | 200 ✅ | - |
-| /about | Open Source | /developers/open-source | Internal | 200 ✅ | - |
-| /about | GitHub Repositories | https://github.com/kritvia | External | 200 ✅ | - |
-| /about | SDK Downloads | /developers/sdk | Internal | 200 ✅ | - |
-| /about | API Status | /status | Internal | 200 ✅ | - |
-| /about | System Status | /status | Internal | 200 ✅ | - |
-| /about | Changelog | /changelog | Internal | 200 ✅ | - |
-| /about | Release Notes | /changelog | Internal | 200 ✅ | - |
-| /about | Developer Community | /community | Internal | 200 ✅ | - |
-| /about | Privacy Policy | /legal/privacy | Internal | 200 ✅ | - |
-| /about | Terms of Service | /legal/terms | Internal | 200 ✅ | - |
-| /about | Security | /security | Internal | 200 ✅ | - |
-| /about | Compliance | /compliance | Internal | 200 ✅ | - |
-| /services | Kritvia | / | Internal | 200 ✅ | - |
-| /services | Products | /products | Internal | 200 ✅ | - |
-| /services | Solutions | /solutions | Internal | 200 ✅ | - |
-| /services | Industries | /industries | Internal | 200 ✅ | - |
-| /services | Developers | /platform/developers | Internal | 200 ✅ | - |
-| /services | Resources | /resources | Internal | 200 ✅ | - |
-| /services | Pricing | /pricing | Internal | 200 ✅ | - |
-| /services | Login | /platform/dashboard | Internal | 200 ✅ | - |
-| /services | Start Project | /contact | Internal | 200 ✅ | - |
-| /services | Start a Project | /contact | Internal | 200 ✅ | - |
-| /services | View Our Work | /case-studies | Internal | 200 ✅ | - |
-| /services | Discuss this service → | /contact | Internal | 200 ✅ | - |
-| /services | Discuss this service → | /contact | Internal | 200 ✅ | - |
-| /services | Discuss this service → | /contact | Internal | 200 ✅ | - |
-| /services | Discuss this service → | /contact | Internal | 200 ✅ | - |
-| /services | Discuss this service → | /contact | Internal | 200 ✅ | - |
-| /services | Discuss this service → | /contact | Internal | 200 ✅ | - |
-| /services | Schedule Free Assessment | /contact | Internal | 200 ✅ | - |
-| /services | KKritvia | / | Internal | 200 ✅ | - |
-| /services |  | https://twitter.com/kritvia | External | 200 ✅ | - |
-| /services |  | https://linkedin.com/company/kritvia | External | 200 ✅ | - |
-| /services |  | https://github.com/kritvia | External | 200 ✅ | - |
-| /services | Trinity OS | /products/trinity-os | Internal | 200 ✅ | - |
-| /services | AI Cloud | /products/ai-cloud | Internal | 200 ✅ | - |
-| /services | Agents | /products/agents | Internal | 200 ✅ | - |
-| /services | Dev Platform | /products/dev-platform | Internal | 200 ✅ | - |
-| /services | SDK | /developers/sdk | Internal | 200 ✅ | - |
-| /services | CLI | /developers/cli | Internal | 200 ✅ | - |
-| /services | Architecture | /platform/architecture | Internal | 200 ✅ | - |
-| /services | Security | /platform/security | Internal | 200 ✅ | - |
-| /services | Infrastructure | /platform/infrastructure | Internal | 200 ✅ | - |
-| /services | AI Stack | /platform/ai-stack | Internal | 200 ✅ | - |
-| /services | AI Startups | /solutions/ai-startups | Internal | 200 ✅ | - |
-| /services | Enterprise | /solutions/enterprise | Internal | 200 ✅ | - |
-| /services | Developers | /solutions/developers | Internal | 200 ✅ | - |
-| /services | Research | /solutions/research | Internal | 200 ✅ | - |
-| /services | Documentation | /developers/docs | Internal | 200 ✅ | - |
-| /services | API Reference | /developers/api | Internal | 200 ✅ | - |
-| /services | Tutorials | /developers/tutorials | Internal | 200 ✅ | - |
-| /services | Quickstarts | /developers/quickstarts | Internal | 200 ✅ | - |
-| /services | About | /company/about | Internal | 200 ✅ | - |
-| /services | Founder | /founder | Internal | 200 ✅ | - |
-| /services | Team | /company/team | Internal | 200 ✅ | - |
-| /services | Careers | /company/careers | Internal | 200 ✅ | - |
-| /services | Contact | /contact | Internal | 200 ✅ | - |
-| /services | Blog | /resources/blog | Internal | 200 ✅ | - |
-| /services | Guides | /resources/guides | Internal | 200 ✅ | - |
-| /services | Case Studies | /case-studies | Internal | 200 ✅ | - |
-| /services | Whitepapers | /resources/whitepapers | Internal | 200 ✅ | - |
-| /services | Open Source | /developers/open-source | Internal | 200 ✅ | - |
-| /services | GitHub Repositories | https://github.com/kritvia | External | 200 ✅ | - |
-| /services | SDK Downloads | /developers/sdk | Internal | 200 ✅ | - |
-| /services | API Status | /status | Internal | 200 ✅ | - |
-| /services | System Status | /status | Internal | 200 ✅ | - |
-| /services | Changelog | /changelog | Internal | 200 ✅ | - |
-| /services | Release Notes | /changelog | Internal | 200 ✅ | - |
-| /services | Developer Community | /community | Internal | 200 ✅ | - |
-| /services | Privacy Policy | /legal/privacy | Internal | 200 ✅ | - |
-| /services | Terms of Service | /legal/terms | Internal | 200 ✅ | - |
-| /services | Security | /security | Internal | 200 ✅ | - |
-| /services | Compliance | /compliance | Internal | 200 ✅ | - |
-| /solutions | Kritvia | / | Internal | 200 ✅ | - |
-| /solutions | Products | /products | Internal | 200 ✅ | - |
-| /solutions | Solutions | /solutions | Internal | 200 ✅ | - |
-| /solutions | Industries | /industries | Internal | 200 ✅ | - |
-| /solutions | Developers | /platform/developers | Internal | 200 ✅ | - |
-| /solutions | Resources | /resources | Internal | 200 ✅ | - |
-| /solutions | Pricing | /pricing | Internal | 200 ✅ | - |
-| /solutions | Login | /platform/dashboard | Internal | 200 ✅ | - |
-| /solutions | Start Project | /contact | Internal | 200 ✅ | - |
-| /solutions | AI Development | /solutions/ai-development | Internal | 200 ✅ | - |
-| /solutions | Learn More | /solutions/ai-development | Internal | 200 ✅ | - |
-| /solutions | Web Development | /solutions/web-development | Internal | 200 ✅ | - |
-| /solutions | Learn More | /solutions/web-development | Internal | 200 ✅ | - |
-| /solutions | SaaS Development | /solutions/saas-development | Internal | 200 ✅ | - |
-| /solutions | Learn More | /solutions/saas-development | Internal | 200 ✅ | - |
-| /solutions | Cloud Architecture | /solutions/cloud-architecture | Internal | 200 ✅ | - |
-| /solutions | Learn More | /solutions/cloud-architecture | Internal | 200 ✅ | - |
-| /solutions | Automation | /solutions/automation | Internal | 200 ✅ | - |
-| /solutions | Learn More | /solutions/automation | Internal | 200 ✅ | - |
-| /solutions | Get in Touch | /contact | Internal | 200 ✅ | - |
-| /solutions | KKritvia | / | Internal | 200 ✅ | - |
-| /solutions |  | https://twitter.com/kritvia | External | 200 ✅ | - |
-| /solutions |  | https://linkedin.com/company/kritvia | External | 200 ✅ | - |
-| /solutions |  | https://github.com/kritvia | External | 200 ✅ | - |
-| /solutions | Trinity OS | /products/trinity-os | Internal | 200 ✅ | - |
-| /solutions | AI Cloud | /products/ai-cloud | Internal | 200 ✅ | - |
-| /solutions | Agents | /products/agents | Internal | 200 ✅ | - |
-| /solutions | Dev Platform | /products/dev-platform | Internal | 200 ✅ | - |
-| /solutions | SDK | /developers/sdk | Internal | 200 ✅ | - |
-| /solutions | CLI | /developers/cli | Internal | 200 ✅ | - |
-| /solutions | Architecture | /platform/architecture | Internal | 200 ✅ | - |
-| /solutions | Security | /platform/security | Internal | 200 ✅ | - |
-| /solutions | Infrastructure | /platform/infrastructure | Internal | 200 ✅ | - |
-| /solutions | AI Stack | /platform/ai-stack | Internal | 200 ✅ | - |
-| /solutions | AI Startups | /solutions/ai-startups | Internal | 200 ✅ | - |
-| /solutions | Enterprise | /solutions/enterprise | Internal | 200 ✅ | - |
-| /solutions | Developers | /solutions/developers | Internal | 200 ✅ | - |
-| /solutions | Research | /solutions/research | Internal | 200 ✅ | - |
-| /solutions | Documentation | /developers/docs | Internal | 200 ✅ | - |
-| /solutions | API Reference | /developers/api | Internal | 200 ✅ | - |
-| /solutions | Tutorials | /developers/tutorials | Internal | 200 ✅ | - |
-| /solutions | Quickstarts | /developers/quickstarts | Internal | 200 ✅ | - |
-| /solutions | About | /company/about | Internal | 200 ✅ | - |
-| /solutions | Founder | /founder | Internal | 200 ✅ | - |
-| /solutions | Team | /company/team | Internal | 200 ✅ | - |
-| /solutions | Careers | /company/careers | Internal | 200 ✅ | - |
-| /solutions | Contact | /contact | Internal | 200 ✅ | - |
-| /solutions | Blog | /resources/blog | Internal | 200 ✅ | - |
-| /solutions | Guides | /resources/guides | Internal | 200 ✅ | - |
-| /solutions | Case Studies | /case-studies | Internal | 200 ✅ | - |
-| /solutions | Whitepapers | /resources/whitepapers | Internal | 200 ✅ | - |
-| /solutions | Open Source | /developers/open-source | Internal | 200 ✅ | - |
-| /solutions | GitHub Repositories | https://github.com/kritvia | External | 200 ✅ | - |
-| /solutions | SDK Downloads | /developers/sdk | Internal | 200 ✅ | - |
-| /solutions | API Status | /status | Internal | 200 ✅ | - |
-| /solutions | System Status | /status | Internal | 200 ✅ | - |
-| /solutions | Changelog | /changelog | Internal | 200 ✅ | - |
-| /solutions | Release Notes | /changelog | Internal | 200 ✅ | - |
-| /solutions | Developer Community | /community | Internal | 200 ✅ | - |
-| /solutions | Privacy Policy | /legal/privacy | Internal | 200 ✅ | - |
-| /solutions | Terms of Service | /legal/terms | Internal | 200 ✅ | - |
-| /solutions | Security | /security | Internal | 200 ✅ | - |
-| /solutions | Compliance | /compliance | Internal | 200 ✅ | - |
-| /products | Kritvia | / | Internal | 200 ✅ | - |
-| /products | Products | /products | Internal | 200 ✅ | - |
-| /products | Solutions | /solutions | Internal | 200 ✅ | - |
-| /products | Industries | /industries | Internal | 200 ✅ | - |
-| /products | Developers | /platform/developers | Internal | 200 ✅ | - |
-| /products | Resources | /resources | Internal | 200 ✅ | - |
-| /products | Pricing | /pricing | Internal | 200 ✅ | - |
-| /products | Login | /platform/dashboard | Internal | 200 ✅ | - |
-| /products | Start Project | /contact | Internal | 200 ✅ | - |
-| /products | View Details | /products/kritvia-ai | Internal | 200 ✅ | - |
-| /products | View Details | /products/kritvia-cloud | Internal | 200 ✅ | - |
-| /products | View Details | /products/kritvia-crm | Internal | 200 ✅ | - |
-| /products | Contact Sales | /contact | Internal | 200 ✅ | - |
-| /products | KKritvia | / | Internal | 200 ✅ | - |
-| /products |  | https://twitter.com/kritvia | External | 200 ✅ | - |
-| /products |  | https://linkedin.com/company/kritvia | External | 200 ✅ | - |
-| /products |  | https://github.com/kritvia | External | 200 ✅ | - |
-| /products | Trinity OS | /products/trinity-os | Internal | 200 ✅ | - |
-| /products | AI Cloud | /products/ai-cloud | Internal | 200 ✅ | - |
-| /products | Agents | /products/agents | Internal | 200 ✅ | - |
-| /products | Dev Platform | /products/dev-platform | Internal | 200 ✅ | - |
-| /products | SDK | /developers/sdk | Internal | 200 ✅ | - |
-| /products | CLI | /developers/cli | Internal | 200 ✅ | - |
-| /products | Architecture | /platform/architecture | Internal | 200 ✅ | - |
-| /products | Security | /platform/security | Internal | 200 ✅ | - |
-| /products | Infrastructure | /platform/infrastructure | Internal | 200 ✅ | - |
-| /products | AI Stack | /platform/ai-stack | Internal | 200 ✅ | - |
-| /products | AI Startups | /solutions/ai-startups | Internal | 200 ✅ | - |
-| /products | Enterprise | /solutions/enterprise | Internal | 200 ✅ | - |
-| /products | Developers | /solutions/developers | Internal | 200 ✅ | - |
-| /products | Research | /solutions/research | Internal | 200 ✅ | - |
-| /products | Documentation | /developers/docs | Internal | 200 ✅ | - |
-| /products | API Reference | /developers/api | Internal | 200 ✅ | - |
-| /products | Tutorials | /developers/tutorials | Internal | 200 ✅ | - |
-| /products | Quickstarts | /developers/quickstarts | Internal | 200 ✅ | - |
-| /products | About | /company/about | Internal | 200 ✅ | - |
-| /products | Founder | /founder | Internal | 200 ✅ | - |
-| /products | Team | /company/team | Internal | 200 ✅ | - |
-| /products | Careers | /company/careers | Internal | 200 ✅ | - |
-| /products | Contact | /contact | Internal | 200 ✅ | - |
-| /products | Blog | /resources/blog | Internal | 200 ✅ | - |
-| /products | Guides | /resources/guides | Internal | 200 ✅ | - |
-| /products | Case Studies | /case-studies | Internal | 200 ✅ | - |
-| /products | Whitepapers | /resources/whitepapers | Internal | 200 ✅ | - |
-| /products | Open Source | /developers/open-source | Internal | 200 ✅ | - |
-| /products | GitHub Repositories | https://github.com/kritvia | External | 200 ✅ | - |
-| /products | SDK Downloads | /developers/sdk | Internal | 200 ✅ | - |
-| /products | API Status | /status | Internal | 200 ✅ | - |
-| /products | System Status | /status | Internal | 200 ✅ | - |
-| /products | Changelog | /changelog | Internal | 200 ✅ | - |
-| /products | Release Notes | /changelog | Internal | 200 ✅ | - |
-| /products | Developer Community | /community | Internal | 200 ✅ | - |
-| /products | Privacy Policy | /legal/privacy | Internal | 200 ✅ | - |
-| /products | Terms of Service | /legal/terms | Internal | 200 ✅ | - |
-| /products | Security | /security | Internal | 200 ✅ | - |
-| /products | Compliance | /compliance | Internal | 200 ✅ | - |
-| /case-studies | Kritvia | / | Internal | 200 ✅ | - |
-| /case-studies | Products | /products | Internal | 200 ✅ | - |
-| /case-studies | Solutions | /solutions | Internal | 200 ✅ | - |
-| /case-studies | Industries | /industries | Internal | 200 ✅ | - |
-| /case-studies | Developers | /platform/developers | Internal | 200 ✅ | - |
-| /case-studies | Resources | /resources | Internal | 200 ✅ | - |
-| /case-studies | Pricing | /pricing | Internal | 200 ✅ | - |
-| /case-studies | Login | /platform/dashboard | Internal | 200 ✅ | - |
-| /case-studies | Start Project | /contact | Internal | 200 ✅ | - |
-| /case-studies | Read full case study → | /case-studies/fintech-fraud-detection | Internal | 200 ✅ | - |
-| /case-studies | Read full case study → | /case-studies/healthtech-clinical-ai | Internal | 200 ✅ | - |
-| /case-studies | Read full case study → | /case-studies/retail-personalization | Internal | 200 ✅ | - |
-| /case-studies | Read full case study → | /case-studies/cloudscale-migration | Internal | 200 ✅ | - |
-| /case-studies | Read full case study → | /case-studies/legal-document-automation | Internal | 200 ✅ | - |
-| /case-studies | Read full case study → | /case-studies/logistics-analytics | Internal | 200 ✅ | - |
-| /case-studies | Start Your Project | /contact | Internal | 200 ✅ | - |
-| /case-studies | KKritvia | / | Internal | 200 ✅ | - |
-| /case-studies |  | https://twitter.com/kritvia | External | 200 ✅ | - |
-| /case-studies |  | https://linkedin.com/company/kritvia | External | 200 ✅ | - |
-| /case-studies |  | https://github.com/kritvia | External | 200 ✅ | - |
-| /case-studies | Trinity OS | /products/trinity-os | Internal | 200 ✅ | - |
-| /case-studies | AI Cloud | /products/ai-cloud | Internal | 200 ✅ | - |
-| /case-studies | Agents | /products/agents | Internal | 200 ✅ | - |
-| /case-studies | Dev Platform | /products/dev-platform | Internal | 200 ✅ | - |
-| /case-studies | SDK | /developers/sdk | Internal | 200 ✅ | - |
-| /case-studies | CLI | /developers/cli | Internal | 200 ✅ | - |
-| /case-studies | Architecture | /platform/architecture | Internal | 200 ✅ | - |
-| /case-studies | Security | /platform/security | Internal | 200 ✅ | - |
-| /case-studies | Infrastructure | /platform/infrastructure | Internal | 200 ✅ | - |
-| /case-studies | AI Stack | /platform/ai-stack | Internal | 200 ✅ | - |
-| /case-studies | AI Startups | /solutions/ai-startups | Internal | 200 ✅ | - |
-| /case-studies | Enterprise | /solutions/enterprise | Internal | 200 ✅ | - |
-| /case-studies | Developers | /solutions/developers | Internal | 200 ✅ | - |
-| /case-studies | Research | /solutions/research | Internal | 200 ✅ | - |
-| /case-studies | Documentation | /developers/docs | Internal | 200 ✅ | - |
-| /case-studies | API Reference | /developers/api | Internal | 200 ✅ | - |
-| /case-studies | Tutorials | /developers/tutorials | Internal | 200 ✅ | - |
-| /case-studies | Quickstarts | /developers/quickstarts | Internal | 200 ✅ | - |
-| /case-studies | About | /company/about | Internal | 200 ✅ | - |
-| /case-studies | Founder | /founder | Internal | 200 ✅ | - |
-| /case-studies | Team | /company/team | Internal | 200 ✅ | - |
-| /case-studies | Careers | /company/careers | Internal | 200 ✅ | - |
-| /case-studies | Contact | /contact | Internal | 200 ✅ | - |
-| /case-studies | Blog | /resources/blog | Internal | 200 ✅ | - |
-| /case-studies | Guides | /resources/guides | Internal | 200 ✅ | - |
-| /case-studies | Case Studies | /case-studies | Internal | 200 ✅ | - |
-| /case-studies | Whitepapers | /resources/whitepapers | Internal | 200 ✅ | - |
-| /case-studies | Open Source | /developers/open-source | Internal | 200 ✅ | - |
-| /case-studies | GitHub Repositories | https://github.com/kritvia | External | 200 ✅ | - |
-| /case-studies | SDK Downloads | /developers/sdk | Internal | 200 ✅ | - |
-| /case-studies | API Status | /status | Internal | 200 ✅ | - |
-| /case-studies | System Status | /status | Internal | 200 ✅ | - |
-| /case-studies | Changelog | /changelog | Internal | 200 ✅ | - |
-| /case-studies | Release Notes | /changelog | Internal | 200 ✅ | - |
-| /case-studies | Developer Community | /community | Internal | 200 ✅ | - |
-| /case-studies | Privacy Policy | /legal/privacy | Internal | 200 ✅ | - |
-| /case-studies | Terms of Service | /legal/terms | Internal | 200 ✅ | - |
-| /case-studies | Security | /security | Internal | 200 ✅ | - |
-| /case-studies | Compliance | /compliance | Internal | 200 ✅ | - |
-| /blog | Kritvia | / | Internal | 200 ✅ | - |
-| /blog | Products | /products | Internal | 200 ✅ | - |
-| /blog | Solutions | /solutions | Internal | 200 ✅ | - |
-| /blog | Industries | /industries | Internal | 200 ✅ | - |
-| /blog | Developers | /platform/developers | Internal | 200 ✅ | - |
-| /blog | Resources | /resources | Internal | 200 ✅ | - |
-| /blog | Pricing | /pricing | Internal | 200 ✅ | - |
-| /blog | Login | /platform/dashboard | Internal | 200 ✅ | - |
-| /blog | Start Project | /contact | Internal | 200 ✅ | - |
-| /blog | FeaturedAI/MLBuilding Producti | /blog/building-rag-systems | Internal | 200 ✅ | - |
-| /blog | SaaSWhy Most SaaS Startups Get | /blog/saas-multi-tenancy | Internal | 200 ✅ | - |
-| /blog | StrategyThe 2026 State of Ente | /blog/enterprise-ai-2026 | Internal | 200 ✅ | - |
-| /blog | CloudKubernetes Cost Optimizat | /blog/kubernetes-cost-optimization | Internal | 200 ✅ | - |
-| /blog | EngineeringTypeScript Design P | /blog/typescript-nextjs-patterns | Internal | 200 ✅ | - |
-| /blog | AI/MLPrompt Engineering in Pro | /blog/prompt-engineering-production | Internal | 200 ✅ | - |
-| /blog | KKritvia | / | Internal | 200 ✅ | - |
-| /blog |  | https://twitter.com/kritvia | External | 200 ✅ | - |
-| /blog |  | https://linkedin.com/company/kritvia | External | 200 ✅ | - |
-| /blog |  | https://github.com/kritvia | External | 200 ✅ | - |
-| /blog | Trinity OS | /products/trinity-os | Internal | 200 ✅ | - |
-| /blog | AI Cloud | /products/ai-cloud | Internal | 200 ✅ | - |
-| /blog | Agents | /products/agents | Internal | 200 ✅ | - |
-| /blog | Dev Platform | /products/dev-platform | Internal | 200 ✅ | - |
-| /blog | SDK | /developers/sdk | Internal | 200 ✅ | - |
-| /blog | CLI | /developers/cli | Internal | 200 ✅ | - |
-| /blog | Architecture | /platform/architecture | Internal | 200 ✅ | - |
-| /blog | Security | /platform/security | Internal | 200 ✅ | - |
-| /blog | Infrastructure | /platform/infrastructure | Internal | 200 ✅ | - |
-| /blog | AI Stack | /platform/ai-stack | Internal | 200 ✅ | - |
-| /blog | AI Startups | /solutions/ai-startups | Internal | 200 ✅ | - |
-| /blog | Enterprise | /solutions/enterprise | Internal | 200 ✅ | - |
-| /blog | Developers | /solutions/developers | Internal | 200 ✅ | - |
-| /blog | Research | /solutions/research | Internal | 200 ✅ | - |
-| /blog | Documentation | /developers/docs | Internal | 200 ✅ | - |
-| /blog | API Reference | /developers/api | Internal | 200 ✅ | - |
-| /blog | Tutorials | /developers/tutorials | Internal | 200 ✅ | - |
-| /blog | Quickstarts | /developers/quickstarts | Internal | 200 ✅ | - |
-| /blog | About | /company/about | Internal | 200 ✅ | - |
-| /blog | Founder | /founder | Internal | 200 ✅ | - |
-| /blog | Team | /company/team | Internal | 200 ✅ | - |
-| /blog | Careers | /company/careers | Internal | 200 ✅ | - |
-| /blog | Contact | /contact | Internal | 200 ✅ | - |
-| /blog | Blog | /resources/blog | Internal | 200 ✅ | - |
-| /blog | Guides | /resources/guides | Internal | 200 ✅ | - |
-| /blog | Case Studies | /case-studies | Internal | 200 ✅ | - |
-| /blog | Whitepapers | /resources/whitepapers | Internal | 200 ✅ | - |
-| /blog | Open Source | /developers/open-source | Internal | 200 ✅ | - |
-| /blog | GitHub Repositories | https://github.com/kritvia | External | 200 ✅ | - |
-| /blog | SDK Downloads | /developers/sdk | Internal | 200 ✅ | - |
-| /blog | API Status | /status | Internal | 200 ✅ | - |
-| /blog | System Status | /status | Internal | 200 ✅ | - |
-| /blog | Changelog | /changelog | Internal | 200 ✅ | - |
-| /blog | Release Notes | /changelog | Internal | 200 ✅ | - |
-| /blog | Developer Community | /community | Internal | 200 ✅ | - |
-| /blog | Privacy Policy | /legal/privacy | Internal | 200 ✅ | - |
-| /blog | Terms of Service | /legal/terms | Internal | 200 ✅ | - |
-| /blog | Security | /security | Internal | 200 ✅ | - |
-| /blog | Compliance | /compliance | Internal | 200 ✅ | - |
-| /research | Kritvia | / | Internal | 200 ✅ | - |
-| /research | Products | /products | Internal | 200 ✅ | - |
-| /research | Solutions | /solutions | Internal | 200 ✅ | - |
-| /research | Industries | /industries | Internal | 200 ✅ | - |
-| /research | Developers | /platform/developers | Internal | 200 ✅ | - |
-| /research | Resources | /resources | Internal | 200 ✅ | - |
-| /research | Pricing | /pricing | Internal | 200 ✅ | - |
-| /research | Login | /platform/dashboard | Internal | 200 ✅ | - |
-| /research | Start Project | /contact | Internal | 200 ✅ | - |
-| /research | Research PaperAI/MLEvaluating  | /research/rag-architectures | Internal | 200 ✅ | - |
-| /research | WhitepaperCloudThe True Cost o | /research/finops-framework | Internal | 200 ✅ | - |
-| /research | January 2026Case AnalysisSaaSM | /research/multi-tenant-patterns | Internal | 200 ✅ | - |
-| /research | December 2025Technical ReportA | /research/llm-finetuning-vs-rag | Internal | 200 ✅ | - |
-| /research | November 2025WhitepaperSecurit | /research/zero-trust-ai | Internal | 200 ✅ | - |
-| /research | October 2025ResearchDevOpsMLOp | /research/mlops-maturity-model | Internal | 200 ✅ | - |
-| /research | KKritvia | / | Internal | 200 ✅ | - |
-| /research |  | https://twitter.com/kritvia | External | 200 ✅ | - |
-| /research |  | https://linkedin.com/company/kritvia | External | 200 ✅ | - |
-| /research |  | https://github.com/kritvia | External | 200 ✅ | - |
-| /research | Trinity OS | /products/trinity-os | Internal | 200 ✅ | - |
-| /research | AI Cloud | /products/ai-cloud | Internal | 200 ✅ | - |
-| /research | Agents | /products/agents | Internal | 200 ✅ | - |
-| /research | Dev Platform | /products/dev-platform | Internal | 200 ✅ | - |
-| /research | SDK | /developers/sdk | Internal | 200 ✅ | - |
-| /research | CLI | /developers/cli | Internal | 200 ✅ | - |
-| /research | Architecture | /platform/architecture | Internal | 200 ✅ | - |
-| /research | Security | /platform/security | Internal | 200 ✅ | - |
-| /research | Infrastructure | /platform/infrastructure | Internal | 200 ✅ | - |
-| /research | AI Stack | /platform/ai-stack | Internal | 200 ✅ | - |
-| /research | AI Startups | /solutions/ai-startups | Internal | 200 ✅ | - |
-| /research | Enterprise | /solutions/enterprise | Internal | 200 ✅ | - |
-| /research | Developers | /solutions/developers | Internal | 200 ✅ | - |
-| /research | Research | /solutions/research | Internal | 200 ✅ | - |
-| /research | Documentation | /developers/docs | Internal | 200 ✅ | - |
-| /research | API Reference | /developers/api | Internal | 200 ✅ | - |
-| /research | Tutorials | /developers/tutorials | Internal | 200 ✅ | - |
-| /research | Quickstarts | /developers/quickstarts | Internal | 200 ✅ | - |
-| /research | About | /company/about | Internal | 200 ✅ | - |
-| /research | Founder | /founder | Internal | 200 ✅ | - |
-| /research | Team | /company/team | Internal | 200 ✅ | - |
-| /research | Careers | /company/careers | Internal | 200 ✅ | - |
-| /research | Contact | /contact | Internal | 200 ✅ | - |
-| /research | Blog | /resources/blog | Internal | 200 ✅ | - |
-| /research | Guides | /resources/guides | Internal | 200 ✅ | - |
-| /research | Case Studies | /case-studies | Internal | 200 ✅ | - |
-| /research | Whitepapers | /resources/whitepapers | Internal | 200 ✅ | - |
-| /research | Open Source | /developers/open-source | Internal | 200 ✅ | - |
-| /research | GitHub Repositories | https://github.com/kritvia | External | 200 ✅ | - |
-| /research | SDK Downloads | /developers/sdk | Internal | 200 ✅ | - |
-| /research | API Status | /status | Internal | 200 ✅ | - |
-| /research | System Status | /status | Internal | 200 ✅ | - |
-| /research | Changelog | /changelog | Internal | 200 ✅ | - |
-| /research | Release Notes | /changelog | Internal | 200 ✅ | - |
-| /research | Developer Community | /community | Internal | 200 ✅ | - |
-| /research | Privacy Policy | /legal/privacy | Internal | 200 ✅ | - |
-| /research | Terms of Service | /legal/terms | Internal | 200 ✅ | - |
-| /research | Security | /security | Internal | 200 ✅ | - |
-| /research | Compliance | /compliance | Internal | 200 ✅ | - |
-| /pricing | Kritvia | / | Internal | 200 ✅ | - |
-| /pricing | Products | /products | Internal | 200 ✅ | - |
-| /pricing | Solutions | /solutions | Internal | 200 ✅ | - |
-| /pricing | Industries | /industries | Internal | 200 ✅ | - |
-| /pricing | Developers | /platform/developers | Internal | 200 ✅ | - |
-| /pricing | Resources | /resources | Internal | 200 ✅ | - |
-| /pricing | Pricing | /pricing | Internal | 200 ✅ | - |
-| /pricing | Login | /platform/dashboard | Internal | 200 ✅ | - |
-| /pricing | Start Project | /contact | Internal | 200 ✅ | - |
-| /pricing | Start with Starter | /contact?plan=starter | Internal | 200 ✅ | - |
-| /pricing | Start Growth Plan | /contact?plan=growth | Internal | 200 ✅ | - |
-| /pricing | Contact Sales | /contact?plan=enterprise | Internal | 200 ✅ | - |
-| /pricing | Get Exact Quote → | /contact | Internal | 200 ✅ | - |
-| /pricing | View Pricing Plans | /pricing | Internal | 200 ✅ | - |
-| /pricing | Book Free Consultation | /contact | Internal | 200 ✅ | - |
-| /pricing | KKritvia | / | Internal | 200 ✅ | - |
-| /pricing |  | https://twitter.com/kritvia | External | 200 ✅ | - |
-| /pricing |  | https://linkedin.com/company/kritvia | External | 200 ✅ | - |
-| /pricing |  | https://github.com/kritvia | External | 200 ✅ | - |
-| /pricing | Trinity OS | /products/trinity-os | Internal | 200 ✅ | - |
-| /pricing | AI Cloud | /products/ai-cloud | Internal | 200 ✅ | - |
-| /pricing | Agents | /products/agents | Internal | 200 ✅ | - |
-| /pricing | Dev Platform | /products/dev-platform | Internal | 200 ✅ | - |
-| /pricing | SDK | /developers/sdk | Internal | 200 ✅ | - |
-| /pricing | CLI | /developers/cli | Internal | 200 ✅ | - |
-| /pricing | Architecture | /platform/architecture | Internal | 200 ✅ | - |
-| /pricing | Security | /platform/security | Internal | 200 ✅ | - |
-| /pricing | Infrastructure | /platform/infrastructure | Internal | 200 ✅ | - |
-| /pricing | AI Stack | /platform/ai-stack | Internal | 200 ✅ | - |
-| /pricing | AI Startups | /solutions/ai-startups | Internal | 200 ✅ | - |
-| /pricing | Enterprise | /solutions/enterprise | Internal | 200 ✅ | - |
-| /pricing | Developers | /solutions/developers | Internal | 200 ✅ | - |
-| /pricing | Research | /solutions/research | Internal | 200 ✅ | - |
-| /pricing | Documentation | /developers/docs | Internal | 200 ✅ | - |
-| /pricing | API Reference | /developers/api | Internal | 200 ✅ | - |
-| /pricing | Tutorials | /developers/tutorials | Internal | 200 ✅ | - |
-| /pricing | Quickstarts | /developers/quickstarts | Internal | 200 ✅ | - |
-| /pricing | About | /company/about | Internal | 200 ✅ | - |
-| /pricing | Founder | /founder | Internal | 200 ✅ | - |
-| /pricing | Team | /company/team | Internal | 200 ✅ | - |
-| /pricing | Careers | /company/careers | Internal | 200 ✅ | - |
-| /pricing | Contact | /contact | Internal | 200 ✅ | - |
-| /pricing | Blog | /resources/blog | Internal | 200 ✅ | - |
-| /pricing | Guides | /resources/guides | Internal | 200 ✅ | - |
-| /pricing | Case Studies | /case-studies | Internal | 200 ✅ | - |
-| /pricing | Whitepapers | /resources/whitepapers | Internal | 200 ✅ | - |
-| /pricing | Open Source | /developers/open-source | Internal | 200 ✅ | - |
-| /pricing | GitHub Repositories | https://github.com/kritvia | External | 200 ✅ | - |
-| /pricing | SDK Downloads | /developers/sdk | Internal | 200 ✅ | - |
-| /pricing | API Status | /status | Internal | 200 ✅ | - |
-| /pricing | System Status | /status | Internal | 200 ✅ | - |
-| /pricing | Changelog | /changelog | Internal | 200 ✅ | - |
-| /pricing | Release Notes | /changelog | Internal | 200 ✅ | - |
-| /pricing | Developer Community | /community | Internal | 200 ✅ | - |
-| /pricing | Privacy Policy | /legal/privacy | Internal | 200 ✅ | - |
-| /pricing | Terms of Service | /legal/terms | Internal | 200 ✅ | - |
-| /pricing | Security | /security | Internal | 200 ✅ | - |
-| /pricing | Compliance | /compliance | Internal | 200 ✅ | - |
-| /contact | Kritvia | / | Internal | 200 ✅ | - |
-| /contact | Products | /products | Internal | 200 ✅ | - |
-| /contact | Solutions | /solutions | Internal | 200 ✅ | - |
-| /contact | Industries | /industries | Internal | 200 ✅ | - |
-| /contact | Developers | /platform/developers | Internal | 200 ✅ | - |
-| /contact | Resources | /resources | Internal | 200 ✅ | - |
-| /contact | Pricing | /pricing | Internal | 200 ✅ | - |
-| /contact | Login | /platform/dashboard | Internal | 200 ✅ | - |
-| /contact | Start Project | /contact | Internal | 200 ✅ | - |
-| /contact | 💬LinkedInlinkedin.com/company | https://linkedin.com/company/kritvia | External | 200 ✅ | - |
-| /contact | KKritvia | / | Internal | 200 ✅ | - |
-| /contact |  | https://twitter.com/kritvia | External | 200 ✅ | - |
-| /contact |  | https://linkedin.com/company/kritvia | External | 200 ✅ | - |
-| /contact |  | https://github.com/kritvia | External | 200 ✅ | - |
-| /contact | Trinity OS | /products/trinity-os | Internal | 200 ✅ | - |
-| /contact | AI Cloud | /products/ai-cloud | Internal | 200 ✅ | - |
-| /contact | Agents | /products/agents | Internal | 200 ✅ | - |
-| /contact | Dev Platform | /products/dev-platform | Internal | 200 ✅ | - |
-| /contact | SDK | /developers/sdk | Internal | 200 ✅ | - |
-| /contact | CLI | /developers/cli | Internal | 200 ✅ | - |
-| /contact | Architecture | /platform/architecture | Internal | 200 ✅ | - |
-| /contact | Security | /platform/security | Internal | 200 ✅ | - |
-| /contact | Infrastructure | /platform/infrastructure | Internal | 200 ✅ | - |
-| /contact | AI Stack | /platform/ai-stack | Internal | 200 ✅ | - |
-| /contact | AI Startups | /solutions/ai-startups | Internal | 200 ✅ | - |
-| /contact | Enterprise | /solutions/enterprise | Internal | 200 ✅ | - |
-| /contact | Developers | /solutions/developers | Internal | 200 ✅ | - |
-| /contact | Research | /solutions/research | Internal | 200 ✅ | - |
-| /contact | Documentation | /developers/docs | Internal | 200 ✅ | - |
-| /contact | API Reference | /developers/api | Internal | 200 ✅ | - |
-| /contact | Tutorials | /developers/tutorials | Internal | 200 ✅ | - |
-| /contact | Quickstarts | /developers/quickstarts | Internal | 200 ✅ | - |
-| /contact | About | /company/about | Internal | 200 ✅ | - |
-| /contact | Founder | /founder | Internal | 200 ✅ | - |
-| /contact | Team | /company/team | Internal | 200 ✅ | - |
-| /contact | Careers | /company/careers | Internal | 200 ✅ | - |
-| /contact | Contact | /contact | Internal | 200 ✅ | - |
-| /contact | Blog | /resources/blog | Internal | 200 ✅ | - |
-| /contact | Guides | /resources/guides | Internal | 200 ✅ | - |
-| /contact | Case Studies | /case-studies | Internal | 200 ✅ | - |
-| /contact | Whitepapers | /resources/whitepapers | Internal | 200 ✅ | - |
-| /contact | Open Source | /developers/open-source | Internal | 200 ✅ | - |
-| /contact | GitHub Repositories | https://github.com/kritvia | External | 200 ✅ | - |
-| /contact | SDK Downloads | /developers/sdk | Internal | 200 ✅ | - |
-| /contact | API Status | /status | Internal | 200 ✅ | - |
-| /contact | System Status | /status | Internal | 200 ✅ | - |
-| /contact | Changelog | /changelog | Internal | 200 ✅ | - |
-| /contact | Release Notes | /changelog | Internal | 200 ✅ | - |
-| /contact | Developer Community | /community | Internal | 200 ✅ | - |
-| /contact | Privacy Policy | /legal/privacy | Internal | 200 ✅ | - |
-| /contact | Terms of Service | /legal/terms | Internal | 200 ✅ | - |
-| /contact | Security | /security | Internal | 200 ✅ | - |
-| /contact | Compliance | /compliance | Internal | 200 ✅ | - |
-| /founder | Kritvia | / | Internal | 200 ✅ | - |
-| /founder | Products | /products | Internal | 200 ✅ | - |
-| /founder | Solutions | /solutions | Internal | 200 ✅ | - |
-| /founder | Industries | /industries | Internal | 200 ✅ | - |
-| /founder | Developers | /platform/developers | Internal | 200 ✅ | - |
-| /founder | Resources | /resources | Internal | 200 ✅ | - |
-| /founder | Pricing | /pricing | Internal | 200 ✅ | - |
-| /founder | Login | /platform/dashboard | Internal | 200 ✅ | - |
-| /founder | Start Project | /contact | Internal | 200 ✅ | - |
-| /founder | Visit Website | https://mayank.sitelytc.com | External | 200 ✅ | - |
-| /founder | Follow the Journey | https://mayank.sitelytc.com | External | 200 ✅ | - |
-| /founder | Start Your Project | /contact | Internal | 200 ✅ | - |
-| /founder | Learn More About Us | /about | Internal | 200 ✅ | - |
-| /founder | KKritvia | / | Internal | 200 ✅ | - |
-| /founder |  | https://twitter.com/kritvia | External | 200 ✅ | - |
-| /founder |  | https://linkedin.com/company/kritvia | External | 200 ✅ | - |
-| /founder |  | https://github.com/kritvia | External | 200 ✅ | - |
-| /founder | Trinity OS | /products/trinity-os | Internal | 200 ✅ | - |
-| /founder | AI Cloud | /products/ai-cloud | Internal | 200 ✅ | - |
-| /founder | Agents | /products/agents | Internal | 200 ✅ | - |
-| /founder | Dev Platform | /products/dev-platform | Internal | 200 ✅ | - |
-| /founder | SDK | /developers/sdk | Internal | 200 ✅ | - |
-| /founder | CLI | /developers/cli | Internal | 200 ✅ | - |
-| /founder | Architecture | /platform/architecture | Internal | 200 ✅ | - |
-| /founder | Security | /platform/security | Internal | 200 ✅ | - |
-| /founder | Infrastructure | /platform/infrastructure | Internal | 200 ✅ | - |
-| /founder | AI Stack | /platform/ai-stack | Internal | 200 ✅ | - |
-| /founder | AI Startups | /solutions/ai-startups | Internal | 200 ✅ | - |
-| /founder | Enterprise | /solutions/enterprise | Internal | 200 ✅ | - |
-| /founder | Developers | /solutions/developers | Internal | 200 ✅ | - |
-| /founder | Research | /solutions/research | Internal | 200 ✅ | - |
-| /founder | Documentation | /developers/docs | Internal | 200 ✅ | - |
-| /founder | API Reference | /developers/api | Internal | 200 ✅ | - |
-| /founder | Tutorials | /developers/tutorials | Internal | 200 ✅ | - |
-| /founder | Quickstarts | /developers/quickstarts | Internal | 200 ✅ | - |
-| /founder | About | /company/about | Internal | 200 ✅ | - |
-| /founder | Founder | /founder | Internal | 200 ✅ | - |
-| /founder | Team | /company/team | Internal | 200 ✅ | - |
-| /founder | Careers | /company/careers | Internal | 200 ✅ | - |
-| /founder | Contact | /contact | Internal | 200 ✅ | - |
-| /founder | Blog | /resources/blog | Internal | 200 ✅ | - |
-| /founder | Guides | /resources/guides | Internal | 200 ✅ | - |
-| /founder | Case Studies | /case-studies | Internal | 200 ✅ | - |
-| /founder | Whitepapers | /resources/whitepapers | Internal | 200 ✅ | - |
-| /founder | Open Source | /developers/open-source | Internal | 200 ✅ | - |
-| /founder | GitHub Repositories | https://github.com/kritvia | External | 200 ✅ | - |
-| /founder | SDK Downloads | /developers/sdk | Internal | 200 ✅ | - |
-| /founder | API Status | /status | Internal | 200 ✅ | - |
-| /founder | System Status | /status | Internal | 200 ✅ | - |
-| /founder | Changelog | /changelog | Internal | 200 ✅ | - |
-| /founder | Release Notes | /changelog | Internal | 200 ✅ | - |
-| /founder | Developer Community | /community | Internal | 200 ✅ | - |
-| /founder | Privacy Policy | /legal/privacy | Internal | 200 ✅ | - |
-| /founder | Terms of Service | /legal/terms | Internal | 200 ✅ | - |
-| /founder | Security | /security | Internal | 200 ✅ | - |
-| /founder | Compliance | /compliance | Internal | 200 ✅ | - |
-| /company/about | Kritvia | / | Internal | 200 ✅ | - |
-| /company/about | Products | /products | Internal | 200 ✅ | - |
-| /company/about | Solutions | /solutions | Internal | 200 ✅ | - |
-| /company/about | Industries | /industries | Internal | 200 ✅ | - |
-| /company/about | Developers | /platform/developers | Internal | 200 ✅ | - |
-| /company/about | Resources | /resources | Internal | 200 ✅ | - |
-| /company/about | Pricing | /pricing | Internal | 200 ✅ | - |
-| /company/about | Login | /platform/dashboard | Internal | 200 ✅ | - |
-| /company/about | Start Project | /contact | Internal | 200 ✅ | - |
-| /company/about | KKritvia | / | Internal | 200 ✅ | - |
-| /company/about |  | https://twitter.com/kritvia | External | 200 ✅ | - |
-| /company/about |  | https://linkedin.com/company/kritvia | External | 200 ✅ | - |
-| /company/about |  | https://github.com/kritvia | External | 200 ✅ | - |
-| /company/about | Trinity OS | /products/trinity-os | Internal | 200 ✅ | - |
-| /company/about | AI Cloud | /products/ai-cloud | Internal | 200 ✅ | - |
-| /company/about | Agents | /products/agents | Internal | 200 ✅ | - |
-| /company/about | Dev Platform | /products/dev-platform | Internal | 200 ✅ | - |
-| /company/about | SDK | /developers/sdk | Internal | 200 ✅ | - |
-| /company/about | CLI | /developers/cli | Internal | 200 ✅ | - |
-| /company/about | Architecture | /platform/architecture | Internal | 200 ✅ | - |
-| /company/about | Security | /platform/security | Internal | 200 ✅ | - |
-| /company/about | Infrastructure | /platform/infrastructure | Internal | 200 ✅ | - |
-| /company/about | AI Stack | /platform/ai-stack | Internal | 200 ✅ | - |
-| /company/about | AI Startups | /solutions/ai-startups | Internal | 200 ✅ | - |
-| /company/about | Enterprise | /solutions/enterprise | Internal | 200 ✅ | - |
-| /company/about | Developers | /solutions/developers | Internal | 200 ✅ | - |
-| /company/about | Research | /solutions/research | Internal | 200 ✅ | - |
-| /company/about | Documentation | /developers/docs | Internal | 200 ✅ | - |
-| /company/about | API Reference | /developers/api | Internal | 200 ✅ | - |
-| /company/about | Tutorials | /developers/tutorials | Internal | 200 ✅ | - |
-| /company/about | Quickstarts | /developers/quickstarts | Internal | 200 ✅ | - |
-| /company/about | About | /company/about | Internal | 200 ✅ | - |
-| /company/about | Founder | /founder | Internal | 200 ✅ | - |
-| /company/about | Team | /company/team | Internal | 200 ✅ | - |
-| /company/about | Careers | /company/careers | Internal | 200 ✅ | - |
-| /company/about | Contact | /contact | Internal | 200 ✅ | - |
-| /company/about | Blog | /resources/blog | Internal | 200 ✅ | - |
-| /company/about | Guides | /resources/guides | Internal | 200 ✅ | - |
-| /company/about | Case Studies | /case-studies | Internal | 200 ✅ | - |
-| /company/about | Whitepapers | /resources/whitepapers | Internal | 200 ✅ | - |
-| /company/about | Open Source | /developers/open-source | Internal | 200 ✅ | - |
-| /company/about | GitHub Repositories | https://github.com/kritvia | External | 200 ✅ | - |
-| /company/about | SDK Downloads | /developers/sdk | Internal | 200 ✅ | - |
-| /company/about | API Status | /status | Internal | 200 ✅ | - |
-| /company/about | System Status | /status | Internal | 200 ✅ | - |
-| /company/about | Changelog | /changelog | Internal | 200 ✅ | - |
-| /company/about | Release Notes | /changelog | Internal | 200 ✅ | - |
-| /company/about | Developer Community | /community | Internal | 200 ✅ | - |
-| /company/about | Privacy Policy | /legal/privacy | Internal | 200 ✅ | - |
-| /company/about | Terms of Service | /legal/terms | Internal | 200 ✅ | - |
-| /company/about | Security | /security | Internal | 200 ✅ | - |
-| /company/about | Compliance | /compliance | Internal | 200 ✅ | - |
-| /company/team | Kritvia | / | Internal | 200 ✅ | - |
-| /company/team | Products | /products | Internal | 200 ✅ | - |
-| /company/team | Solutions | /solutions | Internal | 200 ✅ | - |
-| /company/team | Industries | /industries | Internal | 200 ✅ | - |
-| /company/team | Developers | /platform/developers | Internal | 200 ✅ | - |
-| /company/team | Resources | /resources | Internal | 200 ✅ | - |
-| /company/team | Pricing | /pricing | Internal | 200 ✅ | - |
-| /company/team | Login | /platform/dashboard | Internal | 200 ✅ | - |
-| /company/team | Start Project | /contact | Internal | 200 ✅ | - |
-| /company/team | KKritvia | / | Internal | 200 ✅ | - |
-| /company/team |  | https://twitter.com/kritvia | External | 200 ✅ | - |
-| /company/team |  | https://linkedin.com/company/kritvia | External | 200 ✅ | - |
-| /company/team |  | https://github.com/kritvia | External | 200 ✅ | - |
-| /company/team | Trinity OS | /products/trinity-os | Internal | 200 ✅ | - |
-| /company/team | AI Cloud | /products/ai-cloud | Internal | 200 ✅ | - |
-| /company/team | Agents | /products/agents | Internal | 200 ✅ | - |
-| /company/team | Dev Platform | /products/dev-platform | Internal | 200 ✅ | - |
-| /company/team | SDK | /developers/sdk | Internal | 200 ✅ | - |
-| /company/team | CLI | /developers/cli | Internal | 200 ✅ | - |
-| /company/team | Architecture | /platform/architecture | Internal | 200 ✅ | - |
-| /company/team | Security | /platform/security | Internal | 200 ✅ | - |
-| /company/team | Infrastructure | /platform/infrastructure | Internal | 200 ✅ | - |
-| /company/team | AI Stack | /platform/ai-stack | Internal | 200 ✅ | - |
-| /company/team | AI Startups | /solutions/ai-startups | Internal | 200 ✅ | - |
-| /company/team | Enterprise | /solutions/enterprise | Internal | 200 ✅ | - |
-| /company/team | Developers | /solutions/developers | Internal | 200 ✅ | - |
-| /company/team | Research | /solutions/research | Internal | 200 ✅ | - |
-| /company/team | Documentation | /developers/docs | Internal | 200 ✅ | - |
-| /company/team | API Reference | /developers/api | Internal | 200 ✅ | - |
-| /company/team | Tutorials | /developers/tutorials | Internal | 200 ✅ | - |
-| /company/team | Quickstarts | /developers/quickstarts | Internal | 200 ✅ | - |
-| /company/team | About | /company/about | Internal | 200 ✅ | - |
-| /company/team | Founder | /founder | Internal | 200 ✅ | - |
-| /company/team | Team | /company/team | Internal | 200 ✅ | - |
-| /company/team | Careers | /company/careers | Internal | 200 ✅ | - |
-| /company/team | Contact | /contact | Internal | 200 ✅ | - |
-| /company/team | Blog | /resources/blog | Internal | 200 ✅ | - |
-| /company/team | Guides | /resources/guides | Internal | 200 ✅ | - |
-| /company/team | Case Studies | /case-studies | Internal | 200 ✅ | - |
-| /company/team | Whitepapers | /resources/whitepapers | Internal | 200 ✅ | - |
-| /company/team | Open Source | /developers/open-source | Internal | 200 ✅ | - |
-| /company/team | GitHub Repositories | https://github.com/kritvia | External | 200 ✅ | - |
-| /company/team | SDK Downloads | /developers/sdk | Internal | 200 ✅ | - |
-| /company/team | API Status | /status | Internal | 200 ✅ | - |
-| /company/team | System Status | /status | Internal | 200 ✅ | - |
-| /company/team | Changelog | /changelog | Internal | 200 ✅ | - |
-| /company/team | Release Notes | /changelog | Internal | 200 ✅ | - |
-| /company/team | Developer Community | /community | Internal | 200 ✅ | - |
-| /company/team | Privacy Policy | /legal/privacy | Internal | 200 ✅ | - |
-| /company/team | Terms of Service | /legal/terms | Internal | 200 ✅ | - |
-| /company/team | Security | /security | Internal | 200 ✅ | - |
-| /company/team | Compliance | /compliance | Internal | 200 ✅ | - |
-| /company/careers | Kritvia | / | Internal | 200 ✅ | - |
-| /company/careers | Products | /products | Internal | 200 ✅ | - |
-| /company/careers | Solutions | /solutions | Internal | 200 ✅ | - |
-| /company/careers | Industries | /industries | Internal | 200 ✅ | - |
-| /company/careers | Developers | /platform/developers | Internal | 200 ✅ | - |
-| /company/careers | Resources | /resources | Internal | 200 ✅ | - |
-| /company/careers | Pricing | /pricing | Internal | 200 ✅ | - |
-| /company/careers | Login | /platform/dashboard | Internal | 200 ✅ | - |
-| /company/careers | Start Project | /contact | Internal | 200 ✅ | - |
-| /company/careers | KKritvia | / | Internal | 200 ✅ | - |
-| /company/careers |  | https://twitter.com/kritvia | External | 200 ✅ | - |
-| /company/careers |  | https://linkedin.com/company/kritvia | External | 200 ✅ | - |
-| /company/careers |  | https://github.com/kritvia | External | 200 ✅ | - |
-| /company/careers | Trinity OS | /products/trinity-os | Internal | 200 ✅ | - |
-| /company/careers | AI Cloud | /products/ai-cloud | Internal | 200 ✅ | - |
-| /company/careers | Agents | /products/agents | Internal | 200 ✅ | - |
-| /company/careers | Dev Platform | /products/dev-platform | Internal | 200 ✅ | - |
-| /company/careers | SDK | /developers/sdk | Internal | 200 ✅ | - |
-| /company/careers | CLI | /developers/cli | Internal | 200 ✅ | - |
-| /company/careers | Architecture | /platform/architecture | Internal | 200 ✅ | - |
-| /company/careers | Security | /platform/security | Internal | 200 ✅ | - |
-| /company/careers | Infrastructure | /platform/infrastructure | Internal | 200 ✅ | - |
-| /company/careers | AI Stack | /platform/ai-stack | Internal | 200 ✅ | - |
-| /company/careers | AI Startups | /solutions/ai-startups | Internal | 200 ✅ | - |
-| /company/careers | Enterprise | /solutions/enterprise | Internal | 200 ✅ | - |
-| /company/careers | Developers | /solutions/developers | Internal | 200 ✅ | - |
-| /company/careers | Research | /solutions/research | Internal | 200 ✅ | - |
-| /company/careers | Documentation | /developers/docs | Internal | 200 ✅ | - |
-| /company/careers | API Reference | /developers/api | Internal | 200 ✅ | - |
-| /company/careers | Tutorials | /developers/tutorials | Internal | 200 ✅ | - |
-| /company/careers | Quickstarts | /developers/quickstarts | Internal | 200 ✅ | - |
-| /company/careers | About | /company/about | Internal | 200 ✅ | - |
-| /company/careers | Founder | /founder | Internal | 200 ✅ | - |
-| /company/careers | Team | /company/team | Internal | 200 ✅ | - |
-| /company/careers | Careers | /company/careers | Internal | 200 ✅ | - |
-| /company/careers | Contact | /contact | Internal | 200 ✅ | - |
-| /company/careers | Blog | /resources/blog | Internal | 200 ✅ | - |
-| /company/careers | Guides | /resources/guides | Internal | 200 ✅ | - |
-| /company/careers | Case Studies | /case-studies | Internal | 200 ✅ | - |
-| /company/careers | Whitepapers | /resources/whitepapers | Internal | 200 ✅ | - |
-| /company/careers | Open Source | /developers/open-source | Internal | 200 ✅ | - |
-| /company/careers | GitHub Repositories | https://github.com/kritvia | External | 200 ✅ | - |
-| /company/careers | SDK Downloads | /developers/sdk | Internal | 200 ✅ | - |
-| /company/careers | API Status | /status | Internal | 200 ✅ | - |
-| /company/careers | System Status | /status | Internal | 200 ✅ | - |
-| /company/careers | Changelog | /changelog | Internal | 200 ✅ | - |
-| /company/careers | Release Notes | /changelog | Internal | 200 ✅ | - |
-| /company/careers | Developer Community | /community | Internal | 200 ✅ | - |
-| /company/careers | Privacy Policy | /legal/privacy | Internal | 200 ✅ | - |
-| /company/careers | Terms of Service | /legal/terms | Internal | 200 ✅ | - |
-| /company/careers | Security | /security | Internal | 200 ✅ | - |
-| /company/careers | Compliance | /compliance | Internal | 200 ✅ | - |
-| /platform | Kritvia | / | Internal | 200 ✅ | - |
-| /platform | Products | /products | Internal | 200 ✅ | - |
-| /platform | Solutions | /solutions | Internal | 200 ✅ | - |
-| /platform | Industries | /industries | Internal | 200 ✅ | - |
-| /platform | Developers | /platform/developers | Internal | 200 ✅ | - |
-| /platform | Resources | /resources | Internal | 200 ✅ | - |
-| /platform | Pricing | /pricing | Internal | 200 ✅ | - |
-| /platform | Login | /platform/dashboard | Internal | 200 ✅ | - |
-| /platform | Start Project | /contact | Internal | 200 ✅ | - |
-| /platform | Go to Dashboard → | /platform/dashboard | Internal | 200 ✅ | - |
-| /platform | Try Startup Builder | /platform/startup-builder | Internal | 200 ✅ | - |
-| /platform | 📊Client DashboardTrack all yo | /platform/dashboard | Internal | 200 ✅ | - |
-| /platform | 🤖AI ToolsGenerate content, an | /platform/ai-tools | Internal | 200 ✅ | - |
-| /platform | 🚀Startup BuilderPlan your Saa | /platform/startup-builder | Internal | 200 ✅ | - |
-| /platform | 👨‍💻Developer PortalBuild wit | /platform/developers | Internal | 200 ✅ | - |
-| /platform | Talk to Sales | /contact | Internal | 200 ✅ | - |
-| /platform | KKritvia | / | Internal | 200 ✅ | - |
-| /platform |  | https://twitter.com/kritvia | External | 200 ✅ | - |
-| /platform |  | https://linkedin.com/company/kritvia | External | 200 ✅ | - |
-| /platform |  | https://github.com/kritvia | External | 200 ✅ | - |
-| /platform | Trinity OS | /products/trinity-os | Internal | 200 ✅ | - |
-| /platform | AI Cloud | /products/ai-cloud | Internal | 200 ✅ | - |
-| /platform | Agents | /products/agents | Internal | 200 ✅ | - |
-| /platform | Dev Platform | /products/dev-platform | Internal | 200 ✅ | - |
-| /platform | SDK | /developers/sdk | Internal | 200 ✅ | - |
-| /platform | CLI | /developers/cli | Internal | 200 ✅ | - |
-| /platform | Architecture | /platform/architecture | Internal | 200 ✅ | - |
-| /platform | Security | /platform/security | Internal | 200 ✅ | - |
-| /platform | Infrastructure | /platform/infrastructure | Internal | 200 ✅ | - |
-| /platform | AI Stack | /platform/ai-stack | Internal | 200 ✅ | - |
-| /platform | AI Startups | /solutions/ai-startups | Internal | 200 ✅ | - |
-| /platform | Enterprise | /solutions/enterprise | Internal | 200 ✅ | - |
-| /platform | Developers | /solutions/developers | Internal | 200 ✅ | - |
-| /platform | Research | /solutions/research | Internal | 200 ✅ | - |
-| /platform | Documentation | /developers/docs | Internal | 200 ✅ | - |
-| /platform | API Reference | /developers/api | Internal | 200 ✅ | - |
-| /platform | Tutorials | /developers/tutorials | Internal | 200 ✅ | - |
-| /platform | Quickstarts | /developers/quickstarts | Internal | 200 ✅ | - |
-| /platform | About | /company/about | Internal | 200 ✅ | - |
-| /platform | Founder | /founder | Internal | 200 ✅ | - |
-| /platform | Team | /company/team | Internal | 200 ✅ | - |
-| /platform | Careers | /company/careers | Internal | 200 ✅ | - |
-| /platform | Contact | /contact | Internal | 200 ✅ | - |
-| /platform | Blog | /resources/blog | Internal | 200 ✅ | - |
-| /platform | Guides | /resources/guides | Internal | 200 ✅ | - |
-| /platform | Case Studies | /case-studies | Internal | 200 ✅ | - |
-| /platform | Whitepapers | /resources/whitepapers | Internal | 200 ✅ | - |
-| /platform | Open Source | /developers/open-source | Internal | 200 ✅ | - |
-| /platform | GitHub Repositories | https://github.com/kritvia | External | 200 ✅ | - |
-| /platform | SDK Downloads | /developers/sdk | Internal | 200 ✅ | - |
-| /platform | API Status | /status | Internal | 200 ✅ | - |
-| /platform | System Status | /status | Internal | 200 ✅ | - |
-| /platform | Changelog | /changelog | Internal | 200 ✅ | - |
-| /platform | Release Notes | /changelog | Internal | 200 ✅ | - |
-| /platform | Developer Community | /community | Internal | 200 ✅ | - |
-| /platform | Privacy Policy | /legal/privacy | Internal | 200 ✅ | - |
-| /platform | Terms of Service | /legal/terms | Internal | 200 ✅ | - |
-| /platform | Security | /security | Internal | 200 ✅ | - |
-| /platform | Compliance | /compliance | Internal | 200 ✅ | - |
-| /platform/ai-tools | Kritvia | / | Internal | 200 ✅ | - |
-| /platform/ai-tools | Products | /products | Internal | 200 ✅ | - |
-| /platform/ai-tools | Solutions | /solutions | Internal | 200 ✅ | - |
-| /platform/ai-tools | Industries | /industries | Internal | 200 ✅ | - |
-| /platform/ai-tools | Developers | /platform/developers | Internal | 200 ✅ | - |
-| /platform/ai-tools | Resources | /resources | Internal | 200 ✅ | - |
-| /platform/ai-tools | Pricing | /pricing | Internal | 200 ✅ | - |
-| /platform/ai-tools | Login | /platform/dashboard | Internal | 200 ✅ | - |
-| /platform/ai-tools | Start Project | /contact | Internal | 200 ✅ | - |
-| /platform/ai-tools | KritviaPlatform | /platform/dashboard | Internal | 200 ✅ | - |
-| /platform/ai-tools | 📊Dashboard | /platform/dashboard | Internal | 200 ✅ | - |
-| /platform/ai-tools | 🚀Projects | /platform/projects | Internal | 200 ✅ | - |
-| /platform/ai-tools | 🤖AI Tools | /platform/ai-tools | Internal | 200 ✅ | - |
-| /platform/ai-tools | 💳Invoices | /platform/invoices | Internal | 200 ✅ | - |
-| /platform/ai-tools | 📁Files | /platform/files | Internal | 200 ✅ | - |
-| /platform/ai-tools | 💬Messages3 | /platform/messages | Internal | 200 ✅ | - |
-| /platform/ai-tools | 📦Deliverables | /platform/deliverables | Internal | 200 ✅ | - |
-| /platform/ai-tools | ⚙️Settings | /platform/settings | Internal | 200 ✅ | - |
-| /platform/ai-tools | ❓Help | /platform/help | Internal | 200 ✅ | - |
-| /platform/ai-tools | KKritvia | / | Internal | 200 ✅ | - |
-| /platform/ai-tools |  | https://twitter.com/kritvia | External | 200 ✅ | - |
-| /platform/ai-tools |  | https://linkedin.com/company/kritvia | External | 200 ✅ | - |
-| /platform/ai-tools |  | https://github.com/kritvia | External | 200 ✅ | - |
-| /platform/ai-tools | Trinity OS | /products/trinity-os | Internal | 200 ✅ | - |
-| /platform/ai-tools | AI Cloud | /products/ai-cloud | Internal | 200 ✅ | - |
-| /platform/ai-tools | Agents | /products/agents | Internal | 200 ✅ | - |
-| /platform/ai-tools | Dev Platform | /products/dev-platform | Internal | 200 ✅ | - |
-| /platform/ai-tools | SDK | /developers/sdk | Internal | 200 ✅ | - |
-| /platform/ai-tools | CLI | /developers/cli | Internal | 200 ✅ | - |
-| /platform/ai-tools | Architecture | /platform/architecture | Internal | 200 ✅ | - |
-| /platform/ai-tools | Security | /platform/security | Internal | 200 ✅ | - |
-| /platform/ai-tools | Infrastructure | /platform/infrastructure | Internal | 200 ✅ | - |
-| /platform/ai-tools | AI Stack | /platform/ai-stack | Internal | 200 ✅ | - |
-| /platform/ai-tools | AI Startups | /solutions/ai-startups | Internal | 200 ✅ | - |
-| /platform/ai-tools | Enterprise | /solutions/enterprise | Internal | 200 ✅ | - |
-| /platform/ai-tools | Developers | /solutions/developers | Internal | 200 ✅ | - |
-| /platform/ai-tools | Research | /solutions/research | Internal | 200 ✅ | - |
-| /platform/ai-tools | Documentation | /developers/docs | Internal | 200 ✅ | - |
-| /platform/ai-tools | API Reference | /developers/api | Internal | 200 ✅ | - |
-| /platform/ai-tools | Tutorials | /developers/tutorials | Internal | 200 ✅ | - |
-| /platform/ai-tools | Quickstarts | /developers/quickstarts | Internal | 200 ✅ | - |
-| /platform/ai-tools | About | /company/about | Internal | 200 ✅ | - |
-| /platform/ai-tools | Founder | /founder | Internal | 200 ✅ | - |
-| /platform/ai-tools | Team | /company/team | Internal | 200 ✅ | - |
-| /platform/ai-tools | Careers | /company/careers | Internal | 200 ✅ | - |
-| /platform/ai-tools | Contact | /contact | Internal | 200 ✅ | - |
-| /platform/ai-tools | Blog | /resources/blog | Internal | 200 ✅ | - |
-| /platform/ai-tools | Guides | /resources/guides | Internal | 200 ✅ | - |
-| /platform/ai-tools | Case Studies | /case-studies | Internal | 200 ✅ | - |
-| /platform/ai-tools | Whitepapers | /resources/whitepapers | Internal | 200 ✅ | - |
-| /platform/ai-tools | Open Source | /developers/open-source | Internal | 200 ✅ | - |
-| /platform/ai-tools | GitHub Repositories | https://github.com/kritvia | External | 200 ✅ | - |
-| /platform/ai-tools | SDK Downloads | /developers/sdk | Internal | 200 ✅ | - |
-| /platform/ai-tools | API Status | /status | Internal | 200 ✅ | - |
-| /platform/ai-tools | System Status | /status | Internal | 200 ✅ | - |
-| /platform/ai-tools | Changelog | /changelog | Internal | 200 ✅ | - |
-| /platform/ai-tools | Release Notes | /changelog | Internal | 200 ✅ | - |
-| /platform/ai-tools | Developer Community | /community | Internal | 200 ✅ | - |
-| /platform/ai-tools | Privacy Policy | /legal/privacy | Internal | 200 ✅ | - |
-| /platform/ai-tools | Terms of Service | /legal/terms | Internal | 200 ✅ | - |
-| /platform/ai-tools | Security | /security | Internal | 200 ✅ | - |
-| /platform/ai-tools | Compliance | /compliance | Internal | 200 ✅ | - |
-| /platform/dashboard | Kritvia | / | Internal | 200 ✅ | - |
-| /platform/dashboard | Products | /products | Internal | 200 ✅ | - |
-| /platform/dashboard | Solutions | /solutions | Internal | 200 ✅ | - |
-| /platform/dashboard | Industries | /industries | Internal | 200 ✅ | - |
-| /platform/dashboard | Developers | /platform/developers | Internal | 200 ✅ | - |
-| /platform/dashboard | Resources | /resources | Internal | 200 ✅ | - |
-| /platform/dashboard | Pricing | /pricing | Internal | 200 ✅ | - |
-| /platform/dashboard | Login | /platform/dashboard | Internal | 200 ✅ | - |
-| /platform/dashboard | Start Project | /contact | Internal | 200 ✅ | - |
-| /platform/dashboard | KritviaPlatform | /platform/dashboard | Internal | 200 ✅ | - |
-| /platform/dashboard | 📊Dashboard | /platform/dashboard | Internal | 200 ✅ | - |
-| /platform/dashboard | 🚀Projects | /platform/projects | Internal | 200 ✅ | - |
-| /platform/dashboard | 🤖AI Tools | /platform/ai-tools | Internal | 200 ✅ | - |
-| /platform/dashboard | 💳Invoices | /platform/invoices | Internal | 200 ✅ | - |
-| /platform/dashboard | 📁Files | /platform/files | Internal | 200 ✅ | - |
-| /platform/dashboard | 💬Messages3 | /platform/messages | Internal | 200 ✅ | - |
-| /platform/dashboard | 📦Deliverables | /platform/deliverables | Internal | 200 ✅ | - |
-| /platform/dashboard | ⚙️Settings | /platform/settings | Internal | 200 ✅ | - |
-| /platform/dashboard | ❓Help | /platform/help | Internal | 200 ✅ | - |
-| /platform/dashboard | View all → | /platform/projects | Internal | 200 ✅ | - |
-| /platform/dashboard | KKritvia | / | Internal | 200 ✅ | - |
-| /platform/dashboard |  | https://twitter.com/kritvia | External | 200 ✅ | - |
-| /platform/dashboard |  | https://linkedin.com/company/kritvia | External | 200 ✅ | - |
-| /platform/dashboard |  | https://github.com/kritvia | External | 200 ✅ | - |
-| /platform/dashboard | Trinity OS | /products/trinity-os | Internal | 200 ✅ | - |
-| /platform/dashboard | AI Cloud | /products/ai-cloud | Internal | 200 ✅ | - |
-| /platform/dashboard | Agents | /products/agents | Internal | 200 ✅ | - |
-| /platform/dashboard | Dev Platform | /products/dev-platform | Internal | 200 ✅ | - |
-| /platform/dashboard | SDK | /developers/sdk | Internal | 200 ✅ | - |
-| /platform/dashboard | CLI | /developers/cli | Internal | 200 ✅ | - |
-| /platform/dashboard | Architecture | /platform/architecture | Internal | 200 ✅ | - |
-| /platform/dashboard | Security | /platform/security | Internal | 200 ✅ | - |
-| /platform/dashboard | Infrastructure | /platform/infrastructure | Internal | 200 ✅ | - |
-| /platform/dashboard | AI Stack | /platform/ai-stack | Internal | 200 ✅ | - |
-| /platform/dashboard | AI Startups | /solutions/ai-startups | Internal | 200 ✅ | - |
-| /platform/dashboard | Enterprise | /solutions/enterprise | Internal | 200 ✅ | - |
-| /platform/dashboard | Developers | /solutions/developers | Internal | 200 ✅ | - |
-| /platform/dashboard | Research | /solutions/research | Internal | 200 ✅ | - |
-| /platform/dashboard | Documentation | /developers/docs | Internal | 200 ✅ | - |
-| /platform/dashboard | API Reference | /developers/api | Internal | 200 ✅ | - |
-| /platform/dashboard | Tutorials | /developers/tutorials | Internal | 200 ✅ | - |
-| /platform/dashboard | Quickstarts | /developers/quickstarts | Internal | 200 ✅ | - |
-| /platform/dashboard | About | /company/about | Internal | 200 ✅ | - |
-| /platform/dashboard | Founder | /founder | Internal | 200 ✅ | - |
-| /platform/dashboard | Team | /company/team | Internal | 200 ✅ | - |
-| /platform/dashboard | Careers | /company/careers | Internal | 200 ✅ | - |
-| /platform/dashboard | Contact | /contact | Internal | 200 ✅ | - |
-| /platform/dashboard | Blog | /resources/blog | Internal | 200 ✅ | - |
-| /platform/dashboard | Guides | /resources/guides | Internal | 200 ✅ | - |
-| /platform/dashboard | Case Studies | /case-studies | Internal | 200 ✅ | - |
-| /platform/dashboard | Whitepapers | /resources/whitepapers | Internal | 200 ✅ | - |
-| /platform/dashboard | Open Source | /developers/open-source | Internal | 200 ✅ | - |
-| /platform/dashboard | GitHub Repositories | https://github.com/kritvia | External | 200 ✅ | - |
-| /platform/dashboard | SDK Downloads | /developers/sdk | Internal | 200 ✅ | - |
-| /platform/dashboard | API Status | /status | Internal | 200 ✅ | - |
-| /platform/dashboard | System Status | /status | Internal | 200 ✅ | - |
-| /platform/dashboard | Changelog | /changelog | Internal | 200 ✅ | - |
-| /platform/dashboard | Release Notes | /changelog | Internal | 200 ✅ | - |
-| /platform/dashboard | Developer Community | /community | Internal | 200 ✅ | - |
-| /platform/dashboard | Privacy Policy | /legal/privacy | Internal | 200 ✅ | - |
-| /platform/dashboard | Terms of Service | /legal/terms | Internal | 200 ✅ | - |
-| /platform/dashboard | Security | /security | Internal | 200 ✅ | - |
-| /platform/dashboard | Compliance | /compliance | Internal | 200 ✅ | - |
-| /platform/developers | Kritvia | / | Internal | 200 ✅ | - |
-| /platform/developers | Products | /products | Internal | 200 ✅ | - |
-| /platform/developers | Solutions | /solutions | Internal | 200 ✅ | - |
-| /platform/developers | Industries | /industries | Internal | 200 ✅ | - |
-| /platform/developers | Developers | /platform/developers | Internal | 200 ✅ | - |
-| /platform/developers | Resources | /resources | Internal | 200 ✅ | - |
-| /platform/developers | Pricing | /pricing | Internal | 200 ✅ | - |
-| /platform/developers | Login | /platform/dashboard | Internal | 200 ✅ | - |
-| /platform/developers | Start Project | /contact | Internal | 200 ✅ | - |
-| /platform/developers | KritviaPlatform | /platform/dashboard | Internal | 200 ✅ | - |
-| /platform/developers | 📊Dashboard | /platform/dashboard | Internal | 200 ✅ | - |
-| /platform/developers | 🚀Projects | /platform/projects | Internal | 200 ✅ | - |
-| /platform/developers | 🤖AI Tools | /platform/ai-tools | Internal | 200 ✅ | - |
-| /platform/developers | 💳Invoices | /platform/invoices | Internal | 200 ✅ | - |
-| /platform/developers | 📁Files | /platform/files | Internal | 200 ✅ | - |
-| /platform/developers | 💬Messages3 | /platform/messages | Internal | 200 ✅ | - |
-| /platform/developers | 📦Deliverables | /platform/deliverables | Internal | 200 ✅ | - |
-| /platform/developers | ⚙️Settings | /platform/settings | Internal | 200 ✅ | - |
-| /platform/developers | ❓Help | /platform/help | Internal | 200 ✅ | - |
-| /platform/developers | KKritvia | / | Internal | 200 ✅ | - |
-| /platform/developers |  | https://twitter.com/kritvia | External | 200 ✅ | - |
-| /platform/developers |  | https://linkedin.com/company/kritvia | External | 200 ✅ | - |
-| /platform/developers |  | https://github.com/kritvia | External | 200 ✅ | - |
-| /platform/developers | Trinity OS | /products/trinity-os | Internal | 200 ✅ | - |
-| /platform/developers | AI Cloud | /products/ai-cloud | Internal | 200 ✅ | - |
-| /platform/developers | Agents | /products/agents | Internal | 200 ✅ | - |
-| /platform/developers | Dev Platform | /products/dev-platform | Internal | 200 ✅ | - |
-| /platform/developers | SDK | /developers/sdk | Internal | 200 ✅ | - |
-| /platform/developers | CLI | /developers/cli | Internal | 200 ✅ | - |
-| /platform/developers | Architecture | /platform/architecture | Internal | 200 ✅ | - |
-| /platform/developers | Security | /platform/security | Internal | 200 ✅ | - |
-| /platform/developers | Infrastructure | /platform/infrastructure | Internal | 200 ✅ | - |
-| /platform/developers | AI Stack | /platform/ai-stack | Internal | 200 ✅ | - |
-| /platform/developers | AI Startups | /solutions/ai-startups | Internal | 200 ✅ | - |
-| /platform/developers | Enterprise | /solutions/enterprise | Internal | 200 ✅ | - |
-| /platform/developers | Developers | /solutions/developers | Internal | 200 ✅ | - |
-| /platform/developers | Research | /solutions/research | Internal | 200 ✅ | - |
-| /platform/developers | Documentation | /developers/docs | Internal | 200 ✅ | - |
-| /platform/developers | API Reference | /developers/api | Internal | 200 ✅ | - |
-| /platform/developers | Tutorials | /developers/tutorials | Internal | 200 ✅ | - |
-| /platform/developers | Quickstarts | /developers/quickstarts | Internal | 200 ✅ | - |
-| /platform/developers | About | /company/about | Internal | 200 ✅ | - |
-| /platform/developers | Founder | /founder | Internal | 200 ✅ | - |
-| /platform/developers | Team | /company/team | Internal | 200 ✅ | - |
-| /platform/developers | Careers | /company/careers | Internal | 200 ✅ | - |
-| /platform/developers | Contact | /contact | Internal | 200 ✅ | - |
-| /platform/developers | Blog | /resources/blog | Internal | 200 ✅ | - |
-| /platform/developers | Guides | /resources/guides | Internal | 200 ✅ | - |
-| /platform/developers | Case Studies | /case-studies | Internal | 200 ✅ | - |
-| /platform/developers | Whitepapers | /resources/whitepapers | Internal | 200 ✅ | - |
-| /platform/developers | Open Source | /developers/open-source | Internal | 200 ✅ | - |
-| /platform/developers | GitHub Repositories | https://github.com/kritvia | External | 200 ✅ | - |
-| /platform/developers | SDK Downloads | /developers/sdk | Internal | 200 ✅ | - |
-| /platform/developers | API Status | /status | Internal | 200 ✅ | - |
-| /platform/developers | System Status | /status | Internal | 200 ✅ | - |
-| /platform/developers | Changelog | /changelog | Internal | 200 ✅ | - |
-| /platform/developers | Release Notes | /changelog | Internal | 200 ✅ | - |
-| /platform/developers | Developer Community | /community | Internal | 200 ✅ | - |
-| /platform/developers | Privacy Policy | /legal/privacy | Internal | 200 ✅ | - |
-| /platform/developers | Terms of Service | /legal/terms | Internal | 200 ✅ | - |
-| /platform/developers | Security | /security | Internal | 200 ✅ | - |
-| /platform/developers | Compliance | /compliance | Internal | 200 ✅ | - |
-| /platform/invoices | Kritvia | / | Internal | 200 ✅ | - |
-| /platform/invoices | Products | /products | Internal | 200 ✅ | - |
-| /platform/invoices | Solutions | /solutions | Internal | 200 ✅ | - |
-| /platform/invoices | Industries | /industries | Internal | 200 ✅ | - |
-| /platform/invoices | Developers | /platform/developers | Internal | 200 ✅ | - |
-| /platform/invoices | Resources | /resources | Internal | 200 ✅ | - |
-| /platform/invoices | Pricing | /pricing | Internal | 200 ✅ | - |
-| /platform/invoices | Login | /platform/dashboard | Internal | 200 ✅ | - |
-| /platform/invoices | Start Project | /contact | Internal | 200 ✅ | - |
-| /platform/invoices | KritviaPlatform | /platform/dashboard | Internal | 200 ✅ | - |
-| /platform/invoices | 📊Dashboard | /platform/dashboard | Internal | 200 ✅ | - |
-| /platform/invoices | 🚀Projects | /platform/projects | Internal | 200 ✅ | - |
-| /platform/invoices | 🤖AI Tools | /platform/ai-tools | Internal | 200 ✅ | - |
-| /platform/invoices | 💳Invoices | /platform/invoices | Internal | 200 ✅ | - |
-| /platform/invoices | 📁Files | /platform/files | Internal | 200 ✅ | - |
-| /platform/invoices | 💬Messages3 | /platform/messages | Internal | 200 ✅ | - |
-| /platform/invoices | 📦Deliverables | /platform/deliverables | Internal | 200 ✅ | - |
-| /platform/invoices | ⚙️Settings | /platform/settings | Internal | 200 ✅ | - |
-| /platform/invoices | ❓Help | /platform/help | Internal | 200 ✅ | - |
-| /platform/invoices | KKritvia | / | Internal | 200 ✅ | - |
-| /platform/invoices |  | https://twitter.com/kritvia | External | 200 ✅ | - |
-| /platform/invoices |  | https://linkedin.com/company/kritvia | External | 200 ✅ | - |
-| /platform/invoices |  | https://github.com/kritvia | External | 200 ✅ | - |
-| /platform/invoices | Trinity OS | /products/trinity-os | Internal | 200 ✅ | - |
-| /platform/invoices | AI Cloud | /products/ai-cloud | Internal | 200 ✅ | - |
-| /platform/invoices | Agents | /products/agents | Internal | 200 ✅ | - |
-| /platform/invoices | Dev Platform | /products/dev-platform | Internal | 200 ✅ | - |
-| /platform/invoices | SDK | /developers/sdk | Internal | 200 ✅ | - |
-| /platform/invoices | CLI | /developers/cli | Internal | 200 ✅ | - |
-| /platform/invoices | Architecture | /platform/architecture | Internal | 200 ✅ | - |
-| /platform/invoices | Security | /platform/security | Internal | 200 ✅ | - |
-| /platform/invoices | Infrastructure | /platform/infrastructure | Internal | 200 ✅ | - |
-| /platform/invoices | AI Stack | /platform/ai-stack | Internal | 200 ✅ | - |
-| /platform/invoices | AI Startups | /solutions/ai-startups | Internal | 200 ✅ | - |
-| /platform/invoices | Enterprise | /solutions/enterprise | Internal | 200 ✅ | - |
-| /platform/invoices | Developers | /solutions/developers | Internal | 200 ✅ | - |
-| /platform/invoices | Research | /solutions/research | Internal | 200 ✅ | - |
-| /platform/invoices | Documentation | /developers/docs | Internal | 200 ✅ | - |
-| /platform/invoices | API Reference | /developers/api | Internal | 200 ✅ | - |
-| /platform/invoices | Tutorials | /developers/tutorials | Internal | 200 ✅ | - |
-| /platform/invoices | Quickstarts | /developers/quickstarts | Internal | 200 ✅ | - |
-| /platform/invoices | About | /company/about | Internal | 200 ✅ | - |
-| /platform/invoices | Founder | /founder | Internal | 200 ✅ | - |
-| /platform/invoices | Team | /company/team | Internal | 200 ✅ | - |
-| /platform/invoices | Careers | /company/careers | Internal | 200 ✅ | - |
-| /platform/invoices | Contact | /contact | Internal | 200 ✅ | - |
-| /platform/invoices | Blog | /resources/blog | Internal | 200 ✅ | - |
-| /platform/invoices | Guides | /resources/guides | Internal | 200 ✅ | - |
-| /platform/invoices | Case Studies | /case-studies | Internal | 200 ✅ | - |
-| /platform/invoices | Whitepapers | /resources/whitepapers | Internal | 200 ✅ | - |
-| /platform/invoices | Open Source | /developers/open-source | Internal | 200 ✅ | - |
-| /platform/invoices | GitHub Repositories | https://github.com/kritvia | External | 200 ✅ | - |
-| /platform/invoices | SDK Downloads | /developers/sdk | Internal | 200 ✅ | - |
-| /platform/invoices | API Status | /status | Internal | 200 ✅ | - |
-| /platform/invoices | System Status | /status | Internal | 200 ✅ | - |
-| /platform/invoices | Changelog | /changelog | Internal | 200 ✅ | - |
-| /platform/invoices | Release Notes | /changelog | Internal | 200 ✅ | - |
-| /platform/invoices | Developer Community | /community | Internal | 200 ✅ | - |
-| /platform/invoices | Privacy Policy | /legal/privacy | Internal | 200 ✅ | - |
-| /platform/invoices | Terms of Service | /legal/terms | Internal | 200 ✅ | - |
-| /platform/invoices | Security | /security | Internal | 200 ✅ | - |
-| /platform/invoices | Compliance | /compliance | Internal | 200 ✅ | - |
-| /platform/projects | Kritvia | / | Internal | 200 ✅ | - |
-| /platform/projects | Products | /products | Internal | 200 ✅ | - |
-| /platform/projects | Solutions | /solutions | Internal | 200 ✅ | - |
-| /platform/projects | Industries | /industries | Internal | 200 ✅ | - |
-| /platform/projects | Developers | /platform/developers | Internal | 200 ✅ | - |
-| /platform/projects | Resources | /resources | Internal | 200 ✅ | - |
-| /platform/projects | Pricing | /pricing | Internal | 200 ✅ | - |
-| /platform/projects | Login | /platform/dashboard | Internal | 200 ✅ | - |
-| /platform/projects | Start Project | /contact | Internal | 200 ✅ | - |
-| /platform/projects | KritviaPlatform | /platform/dashboard | Internal | 200 ✅ | - |
-| /platform/projects | 📊Dashboard | /platform/dashboard | Internal | 200 ✅ | - |
-| /platform/projects | 🚀Projects | /platform/projects | Internal | 200 ✅ | - |
-| /platform/projects | 🤖AI Tools | /platform/ai-tools | Internal | 200 ✅ | - |
-| /platform/projects | 💳Invoices | /platform/invoices | Internal | 200 ✅ | - |
-| /platform/projects | 📁Files | /platform/files | Internal | 200 ✅ | - |
-| /platform/projects | 💬Messages3 | /platform/messages | Internal | 200 ✅ | - |
-| /platform/projects | 📦Deliverables | /platform/deliverables | Internal | 200 ✅ | - |
-| /platform/projects | ⚙️Settings | /platform/settings | Internal | 200 ✅ | - |
-| /platform/projects | ❓Help | /platform/help | Internal | 200 ✅ | - |
-| /platform/projects | KKritvia | / | Internal | 200 ✅ | - |
-| /platform/projects |  | https://twitter.com/kritvia | External | 200 ✅ | - |
-| /platform/projects |  | https://linkedin.com/company/kritvia | External | 200 ✅ | - |
-| /platform/projects |  | https://github.com/kritvia | External | 200 ✅ | - |
-| /platform/projects | Trinity OS | /products/trinity-os | Internal | 200 ✅ | - |
-| /platform/projects | AI Cloud | /products/ai-cloud | Internal | 200 ✅ | - |
-| /platform/projects | Agents | /products/agents | Internal | 200 ✅ | - |
-| /platform/projects | Dev Platform | /products/dev-platform | Internal | 200 ✅ | - |
-| /platform/projects | SDK | /developers/sdk | Internal | 200 ✅ | - |
-| /platform/projects | CLI | /developers/cli | Internal | 200 ✅ | - |
-| /platform/projects | Architecture | /platform/architecture | Internal | 200 ✅ | - |
-| /platform/projects | Security | /platform/security | Internal | 200 ✅ | - |
-| /platform/projects | Infrastructure | /platform/infrastructure | Internal | 200 ✅ | - |
-| /platform/projects | AI Stack | /platform/ai-stack | Internal | 200 ✅ | - |
-| /platform/projects | AI Startups | /solutions/ai-startups | Internal | 200 ✅ | - |
-| /platform/projects | Enterprise | /solutions/enterprise | Internal | 200 ✅ | - |
-| /platform/projects | Developers | /solutions/developers | Internal | 200 ✅ | - |
-| /platform/projects | Research | /solutions/research | Internal | 200 ✅ | - |
-| /platform/projects | Documentation | /developers/docs | Internal | 200 ✅ | - |
-| /platform/projects | API Reference | /developers/api | Internal | 200 ✅ | - |
-| /platform/projects | Tutorials | /developers/tutorials | Internal | 200 ✅ | - |
-| /platform/projects | Quickstarts | /developers/quickstarts | Internal | 200 ✅ | - |
-| /platform/projects | About | /company/about | Internal | 200 ✅ | - |
-| /platform/projects | Founder | /founder | Internal | 200 ✅ | - |
-| /platform/projects | Team | /company/team | Internal | 200 ✅ | - |
-| /platform/projects | Careers | /company/careers | Internal | 200 ✅ | - |
-| /platform/projects | Contact | /contact | Internal | 200 ✅ | - |
-| /platform/projects | Blog | /resources/blog | Internal | 200 ✅ | - |
-| /platform/projects | Guides | /resources/guides | Internal | 200 ✅ | - |
-| /platform/projects | Case Studies | /case-studies | Internal | 200 ✅ | - |
-| /platform/projects | Whitepapers | /resources/whitepapers | Internal | 200 ✅ | - |
-| /platform/projects | Open Source | /developers/open-source | Internal | 200 ✅ | - |
-| /platform/projects | GitHub Repositories | https://github.com/kritvia | External | 200 ✅ | - |
-| /platform/projects | SDK Downloads | /developers/sdk | Internal | 200 ✅ | - |
-| /platform/projects | API Status | /status | Internal | 200 ✅ | - |
-| /platform/projects | System Status | /status | Internal | 200 ✅ | - |
-| /platform/projects | Changelog | /changelog | Internal | 200 ✅ | - |
-| /platform/projects | Release Notes | /changelog | Internal | 200 ✅ | - |
-| /platform/projects | Developer Community | /community | Internal | 200 ✅ | - |
-| /platform/projects | Privacy Policy | /legal/privacy | Internal | 200 ✅ | - |
-| /platform/projects | Terms of Service | /legal/terms | Internal | 200 ✅ | - |
-| /platform/projects | Security | /security | Internal | 200 ✅ | - |
-| /platform/projects | Compliance | /compliance | Internal | 200 ✅ | - |
-| /platform/startup-builder | Kritvia | / | Internal | 200 ✅ | - |
-| /platform/startup-builder | Products | /products | Internal | 200 ✅ | - |
-| /platform/startup-builder | Solutions | /solutions | Internal | 200 ✅ | - |
-| /platform/startup-builder | Industries | /industries | Internal | 200 ✅ | - |
-| /platform/startup-builder | Developers | /platform/developers | Internal | 200 ✅ | - |
-| /platform/startup-builder | Resources | /resources | Internal | 200 ✅ | - |
-| /platform/startup-builder | Pricing | /pricing | Internal | 200 ✅ | - |
-| /platform/startup-builder | Login | /platform/dashboard | Internal | 200 ✅ | - |
-| /platform/startup-builder | Start Project | /contact | Internal | 200 ✅ | - |
-| /platform/startup-builder | KritviaPlatform | /platform/dashboard | Internal | 200 ✅ | - |
-| /platform/startup-builder | 📊Dashboard | /platform/dashboard | Internal | 200 ✅ | - |
-| /platform/startup-builder | 🚀Projects | /platform/projects | Internal | 200 ✅ | - |
-| /platform/startup-builder | 🤖AI Tools | /platform/ai-tools | Internal | 200 ✅ | - |
-| /platform/startup-builder | 💳Invoices | /platform/invoices | Internal | 200 ✅ | - |
-| /platform/startup-builder | 📁Files | /platform/files | Internal | 200 ✅ | - |
-| /platform/startup-builder | 💬Messages3 | /platform/messages | Internal | 200 ✅ | - |
-| /platform/startup-builder | 📦Deliverables | /platform/deliverables | Internal | 200 ✅ | - |
-| /platform/startup-builder | ⚙️Settings | /platform/settings | Internal | 200 ✅ | - |
-| /platform/startup-builder | ❓Help | /platform/help | Internal | 200 ✅ | - |
-| /platform/startup-builder | KKritvia | / | Internal | 200 ✅ | - |
-| /platform/startup-builder |  | https://twitter.com/kritvia | External | 200 ✅ | - |
-| /platform/startup-builder |  | https://linkedin.com/company/kritvia | External | 200 ✅ | - |
-| /platform/startup-builder |  | https://github.com/kritvia | External | 200 ✅ | - |
-| /platform/startup-builder | Trinity OS | /products/trinity-os | Internal | 200 ✅ | - |
-| /platform/startup-builder | AI Cloud | /products/ai-cloud | Internal | 200 ✅ | - |
-| /platform/startup-builder | Agents | /products/agents | Internal | 200 ✅ | - |
-| /platform/startup-builder | Dev Platform | /products/dev-platform | Internal | 200 ✅ | - |
-| /platform/startup-builder | SDK | /developers/sdk | Internal | 200 ✅ | - |
-| /platform/startup-builder | CLI | /developers/cli | Internal | 200 ✅ | - |
-| /platform/startup-builder | Architecture | /platform/architecture | Internal | 200 ✅ | - |
-| /platform/startup-builder | Security | /platform/security | Internal | 200 ✅ | - |
-| /platform/startup-builder | Infrastructure | /platform/infrastructure | Internal | 200 ✅ | - |
-| /platform/startup-builder | AI Stack | /platform/ai-stack | Internal | 200 ✅ | - |
-| /platform/startup-builder | AI Startups | /solutions/ai-startups | Internal | 200 ✅ | - |
-| /platform/startup-builder | Enterprise | /solutions/enterprise | Internal | 200 ✅ | - |
-| /platform/startup-builder | Developers | /solutions/developers | Internal | 200 ✅ | - |
-| /platform/startup-builder | Research | /solutions/research | Internal | 200 ✅ | - |
-| /platform/startup-builder | Documentation | /developers/docs | Internal | 200 ✅ | - |
-| /platform/startup-builder | API Reference | /developers/api | Internal | 200 ✅ | - |
-| /platform/startup-builder | Tutorials | /developers/tutorials | Internal | 200 ✅ | - |
-| /platform/startup-builder | Quickstarts | /developers/quickstarts | Internal | 200 ✅ | - |
-| /platform/startup-builder | About | /company/about | Internal | 200 ✅ | - |
-| /platform/startup-builder | Founder | /founder | Internal | 200 ✅ | - |
-| /platform/startup-builder | Team | /company/team | Internal | 200 ✅ | - |
-| /platform/startup-builder | Careers | /company/careers | Internal | 200 ✅ | - |
-| /platform/startup-builder | Contact | /contact | Internal | 200 ✅ | - |
-| /platform/startup-builder | Blog | /resources/blog | Internal | 200 ✅ | - |
-| /platform/startup-builder | Guides | /resources/guides | Internal | 200 ✅ | - |
-| /platform/startup-builder | Case Studies | /case-studies | Internal | 200 ✅ | - |
-| /platform/startup-builder | Whitepapers | /resources/whitepapers | Internal | 200 ✅ | - |
-| /platform/startup-builder | Open Source | /developers/open-source | Internal | 200 ✅ | - |
-| /platform/startup-builder | GitHub Repositories | https://github.com/kritvia | External | 200 ✅ | - |
-| /platform/startup-builder | SDK Downloads | /developers/sdk | Internal | 200 ✅ | - |
-| /platform/startup-builder | API Status | /status | Internal | 200 ✅ | - |
-| /platform/startup-builder | System Status | /status | Internal | 200 ✅ | - |
-| /platform/startup-builder | Changelog | /changelog | Internal | 200 ✅ | - |
-| /platform/startup-builder | Release Notes | /changelog | Internal | 200 ✅ | - |
-| /platform/startup-builder | Developer Community | /community | Internal | 200 ✅ | - |
-| /platform/startup-builder | Privacy Policy | /legal/privacy | Internal | 200 ✅ | - |
-| /platform/startup-builder | Terms of Service | /legal/terms | Internal | 200 ✅ | - |
-| /platform/startup-builder | Security | /security | Internal | 200 ✅ | - |
-| /platform/startup-builder | Compliance | /compliance | Internal | 200 ✅ | - |
-| /industries | Kritvia | / | Internal | 200 ✅ | - |
-| /industries | Products | /products | Internal | 200 ✅ | - |
-| /industries | Solutions | /solutions | Internal | 200 ✅ | - |
-| /industries | Industries | /industries | Internal | 200 ✅ | - |
-| /industries | Developers | /platform/developers | Internal | 200 ✅ | - |
-| /industries | Resources | /resources | Internal | 200 ✅ | - |
-| /industries | Pricing | /pricing | Internal | 200 ✅ | - |
-| /industries | Login | /platform/dashboard | Internal | 200 ✅ | - |
-| /industries | Start Project | /contact | Internal | 200 ✅ | - |
-| /industries | Startups | /industries/startups | Internal | 200 ✅ | - |
-| /industries | Fintech | /industries/fintech | Internal | 200 ✅ | - |
-| /industries | Healthcare | /industries/healthcare | Internal | 200 ✅ | - |
-| /industries | E-commerce | /industries/ecommerce | Internal | 200 ✅ | - |
-| /industries | Get in Touch | /contact | Internal | 200 ✅ | - |
-| /industries | KKritvia | / | Internal | 200 ✅ | - |
-| /industries |  | https://twitter.com/kritvia | External | 200 ✅ | - |
-| /industries |  | https://linkedin.com/company/kritvia | External | 200 ✅ | - |
-| /industries |  | https://github.com/kritvia | External | 200 ✅ | - |
-| /industries | Trinity OS | /products/trinity-os | Internal | 200 ✅ | - |
-| /industries | AI Cloud | /products/ai-cloud | Internal | 200 ✅ | - |
-| /industries | Agents | /products/agents | Internal | 200 ✅ | - |
-| /industries | Dev Platform | /products/dev-platform | Internal | 200 ✅ | - |
-| /industries | SDK | /developers/sdk | Internal | 200 ✅ | - |
-| /industries | CLI | /developers/cli | Internal | 200 ✅ | - |
-| /industries | Architecture | /platform/architecture | Internal | 200 ✅ | - |
-| /industries | Security | /platform/security | Internal | 200 ✅ | - |
-| /industries | Infrastructure | /platform/infrastructure | Internal | 200 ✅ | - |
-| /industries | AI Stack | /platform/ai-stack | Internal | 200 ✅ | - |
-| /industries | AI Startups | /solutions/ai-startups | Internal | 200 ✅ | - |
-| /industries | Enterprise | /solutions/enterprise | Internal | 200 ✅ | - |
-| /industries | Developers | /solutions/developers | Internal | 200 ✅ | - |
-| /industries | Research | /solutions/research | Internal | 200 ✅ | - |
-| /industries | Documentation | /developers/docs | Internal | 200 ✅ | - |
-| /industries | API Reference | /developers/api | Internal | 200 ✅ | - |
-| /industries | Tutorials | /developers/tutorials | Internal | 200 ✅ | - |
-| /industries | Quickstarts | /developers/quickstarts | Internal | 200 ✅ | - |
-| /industries | About | /company/about | Internal | 200 ✅ | - |
-| /industries | Founder | /founder | Internal | 200 ✅ | - |
-| /industries | Team | /company/team | Internal | 200 ✅ | - |
-| /industries | Careers | /company/careers | Internal | 200 ✅ | - |
-| /industries | Contact | /contact | Internal | 200 ✅ | - |
-| /industries | Blog | /resources/blog | Internal | 200 ✅ | - |
-| /industries | Guides | /resources/guides | Internal | 200 ✅ | - |
-| /industries | Case Studies | /case-studies | Internal | 200 ✅ | - |
-| /industries | Whitepapers | /resources/whitepapers | Internal | 200 ✅ | - |
-| /industries | Open Source | /developers/open-source | Internal | 200 ✅ | - |
-| /industries | GitHub Repositories | https://github.com/kritvia | External | 200 ✅ | - |
-| /industries | SDK Downloads | /developers/sdk | Internal | 200 ✅ | - |
-| /industries | API Status | /status | Internal | 200 ✅ | - |
-| /industries | System Status | /status | Internal | 200 ✅ | - |
-| /industries | Changelog | /changelog | Internal | 200 ✅ | - |
-| /industries | Release Notes | /changelog | Internal | 200 ✅ | - |
-| /industries | Developer Community | /community | Internal | 200 ✅ | - |
-| /industries | Privacy Policy | /legal/privacy | Internal | 200 ✅ | - |
-| /industries | Terms of Service | /legal/terms | Internal | 200 ✅ | - |
-| /industries | Security | /security | Internal | 200 ✅ | - |
-| /industries | Compliance | /compliance | Internal | 200 ✅ | - |
-| /resources | Kritvia | / | Internal | 200 ✅ | - |
-| /resources | Products | /products | Internal | 200 ✅ | - |
-| /resources | Solutions | /solutions | Internal | 200 ✅ | - |
-| /resources | Industries | /industries | Internal | 200 ✅ | - |
-| /resources | Developers | /platform/developers | Internal | 200 ✅ | - |
-| /resources | Resources | /resources | Internal | 200 ✅ | - |
-| /resources | Pricing | /pricing | Internal | 200 ✅ | - |
-| /resources | Login | /platform/dashboard | Internal | 200 ✅ | - |
-| /resources | Start Project | /contact | Internal | 200 ✅ | - |
-| /resources | View All | /resources/blog | Internal | 200 ✅ | - |
-| /resources | AI & Machine LearningThe Futur | /resources/blog | Internal | 200 ✅ | - |
-| /resources | Cloud ComputingBuilding Scalab | /resources/blog | Internal | 200 ✅ | - |
-| /resources | Web DevelopmentModern Web Deve | /resources/blog | Internal | 200 ✅ | - |
-| /resources | View All | /resources/guides | Internal | 200 ✅ | - |
-| /resources | Getting Started with Kritvia A | /resources/guides | Internal | 200 ✅ | - |
-| /resources | Cloud Migration ChecklistEvery | /resources/guides | Internal | 200 ✅ | - |
-| /resources | SaaS Security Best PracticesEs | /resources/guides | Internal | 200 ✅ | - |
-| /resources | View All | /resources/whitepapers | Internal | 200 ✅ | - |
-| /resources | Enterprise AI Implementation G | /resources/whitepapers | Internal | 200 ✅ | - |
-| /resources | Cloud Cost Optimization Report | /resources/whitepapers | Internal | 200 ✅ | - |
-| /resources | KKritvia | / | Internal | 200 ✅ | - |
-| /resources |  | https://twitter.com/kritvia | External | 200 ✅ | - |
-| /resources |  | https://linkedin.com/company/kritvia | External | 200 ✅ | - |
-| /resources |  | https://github.com/kritvia | External | 200 ✅ | - |
-| /resources | Trinity OS | /products/trinity-os | Internal | 200 ✅ | - |
-| /resources | AI Cloud | /products/ai-cloud | Internal | 200 ✅ | - |
-| /resources | Agents | /products/agents | Internal | 200 ✅ | - |
-| /resources | Dev Platform | /products/dev-platform | Internal | 200 ✅ | - |
-| /resources | SDK | /developers/sdk | Internal | 200 ✅ | - |
-| /resources | CLI | /developers/cli | Internal | 200 ✅ | - |
-| /resources | Architecture | /platform/architecture | Internal | 200 ✅ | - |
-| /resources | Security | /platform/security | Internal | 200 ✅ | - |
-| /resources | Infrastructure | /platform/infrastructure | Internal | 200 ✅ | - |
-| /resources | AI Stack | /platform/ai-stack | Internal | 200 ✅ | - |
-| /resources | AI Startups | /solutions/ai-startups | Internal | 200 ✅ | - |
-| /resources | Enterprise | /solutions/enterprise | Internal | 200 ✅ | - |
-| /resources | Developers | /solutions/developers | Internal | 200 ✅ | - |
-| /resources | Research | /solutions/research | Internal | 200 ✅ | - |
-| /resources | Documentation | /developers/docs | Internal | 200 ✅ | - |
-| /resources | API Reference | /developers/api | Internal | 200 ✅ | - |
-| /resources | Tutorials | /developers/tutorials | Internal | 200 ✅ | - |
-| /resources | Quickstarts | /developers/quickstarts | Internal | 200 ✅ | - |
-| /resources | About | /company/about | Internal | 200 ✅ | - |
-| /resources | Founder | /founder | Internal | 200 ✅ | - |
-| /resources | Team | /company/team | Internal | 200 ✅ | - |
-| /resources | Careers | /company/careers | Internal | 200 ✅ | - |
-| /resources | Contact | /contact | Internal | 200 ✅ | - |
-| /resources | Blog | /resources/blog | Internal | 200 ✅ | - |
-| /resources | Guides | /resources/guides | Internal | 200 ✅ | - |
-| /resources | Case Studies | /case-studies | Internal | 200 ✅ | - |
-| /resources | Whitepapers | /resources/whitepapers | Internal | 200 ✅ | - |
-| /resources | Open Source | /developers/open-source | Internal | 200 ✅ | - |
-| /resources | GitHub Repositories | https://github.com/kritvia | External | 200 ✅ | - |
-| /resources | SDK Downloads | /developers/sdk | Internal | 200 ✅ | - |
-| /resources | API Status | /status | Internal | 200 ✅ | - |
-| /resources | System Status | /status | Internal | 200 ✅ | - |
-| /resources | Changelog | /changelog | Internal | 200 ✅ | - |
-| /resources | Release Notes | /changelog | Internal | 200 ✅ | - |
-| /resources | Developer Community | /community | Internal | 200 ✅ | - |
-| /resources | Privacy Policy | /legal/privacy | Internal | 200 ✅ | - |
-| /resources | Terms of Service | /legal/terms | Internal | 200 ✅ | - |
-| /resources | Security | /security | Internal | 200 ✅ | - |
-| /resources | Compliance | /compliance | Internal | 200 ✅ | - |
-| /resources/blog | Kritvia | / | Internal | 200 ✅ | - |
-| /resources/blog | Products | /products | Internal | 200 ✅ | - |
-| /resources/blog | Solutions | /solutions | Internal | 200 ✅ | - |
-| /resources/blog | Industries | /industries | Internal | 200 ✅ | - |
-| /resources/blog | Developers | /platform/developers | Internal | 200 ✅ | - |
-| /resources/blog | Resources | /resources | Internal | 200 ✅ | - |
-| /resources/blog | Pricing | /pricing | Internal | 200 ✅ | - |
-| /resources/blog | Login | /platform/dashboard | Internal | 200 ✅ | - |
-| /resources/blog | Start Project | /contact | Internal | 200 ✅ | - |
-| /resources/blog | KKritvia | / | Internal | 200 ✅ | - |
-| /resources/blog |  | https://twitter.com/kritvia | External | 200 ✅ | - |
-| /resources/blog |  | https://linkedin.com/company/kritvia | External | 200 ✅ | - |
-| /resources/blog |  | https://github.com/kritvia | External | 200 ✅ | - |
-| /resources/blog | Trinity OS | /products/trinity-os | Internal | 200 ✅ | - |
-| /resources/blog | AI Cloud | /products/ai-cloud | Internal | 200 ✅ | - |
-| /resources/blog | Agents | /products/agents | Internal | 200 ✅ | - |
-| /resources/blog | Dev Platform | /products/dev-platform | Internal | 200 ✅ | - |
-| /resources/blog | SDK | /developers/sdk | Internal | 200 ✅ | - |
-| /resources/blog | CLI | /developers/cli | Internal | 200 ✅ | - |
-| /resources/blog | Architecture | /platform/architecture | Internal | 200 ✅ | - |
-| /resources/blog | Security | /platform/security | Internal | 200 ✅ | - |
-| /resources/blog | Infrastructure | /platform/infrastructure | Internal | 200 ✅ | - |
-| /resources/blog | AI Stack | /platform/ai-stack | Internal | 200 ✅ | - |
-| /resources/blog | AI Startups | /solutions/ai-startups | Internal | 200 ✅ | - |
-| /resources/blog | Enterprise | /solutions/enterprise | Internal | 200 ✅ | - |
-| /resources/blog | Developers | /solutions/developers | Internal | 200 ✅ | - |
-| /resources/blog | Research | /solutions/research | Internal | 200 ✅ | - |
-| /resources/blog | Documentation | /developers/docs | Internal | 200 ✅ | - |
-| /resources/blog | API Reference | /developers/api | Internal | 200 ✅ | - |
-| /resources/blog | Tutorials | /developers/tutorials | Internal | 200 ✅ | - |
-| /resources/blog | Quickstarts | /developers/quickstarts | Internal | 200 ✅ | - |
-| /resources/blog | About | /company/about | Internal | 200 ✅ | - |
-| /resources/blog | Founder | /founder | Internal | 200 ✅ | - |
-| /resources/blog | Team | /company/team | Internal | 200 ✅ | - |
-| /resources/blog | Careers | /company/careers | Internal | 200 ✅ | - |
-| /resources/blog | Contact | /contact | Internal | 200 ✅ | - |
-| /resources/blog | Blog | /resources/blog | Internal | 200 ✅ | - |
-| /resources/blog | Guides | /resources/guides | Internal | 200 ✅ | - |
-| /resources/blog | Case Studies | /case-studies | Internal | 200 ✅ | - |
-| /resources/blog | Whitepapers | /resources/whitepapers | Internal | 200 ✅ | - |
-| /resources/blog | Open Source | /developers/open-source | Internal | 200 ✅ | - |
-| /resources/blog | GitHub Repositories | https://github.com/kritvia | External | 200 ✅ | - |
-| /resources/blog | SDK Downloads | /developers/sdk | Internal | 200 ✅ | - |
-| /resources/blog | API Status | /status | Internal | 200 ✅ | - |
-| /resources/blog | System Status | /status | Internal | 200 ✅ | - |
-| /resources/blog | Changelog | /changelog | Internal | 200 ✅ | - |
-| /resources/blog | Release Notes | /changelog | Internal | 200 ✅ | - |
-| /resources/blog | Developer Community | /community | Internal | 200 ✅ | - |
-| /resources/blog | Privacy Policy | /legal/privacy | Internal | 200 ✅ | - |
-| /resources/blog | Terms of Service | /legal/terms | Internal | 200 ✅ | - |
-| /resources/blog | Security | /security | Internal | 200 ✅ | - |
-| /resources/blog | Compliance | /compliance | Internal | 200 ✅ | - |
-| /resources/guides | Kritvia | / | Internal | 200 ✅ | - |
-| /resources/guides | Products | /products | Internal | 200 ✅ | - |
-| /resources/guides | Solutions | /solutions | Internal | 200 ✅ | - |
-| /resources/guides | Industries | /industries | Internal | 200 ✅ | - |
-| /resources/guides | Developers | /platform/developers | Internal | 200 ✅ | - |
-| /resources/guides | Resources | /resources | Internal | 200 ✅ | - |
-| /resources/guides | Pricing | /pricing | Internal | 200 ✅ | - |
-| /resources/guides | Login | /platform/dashboard | Internal | 200 ✅ | - |
-| /resources/guides | Start Project | /contact | Internal | 200 ✅ | - |
-| /resources/guides | KKritvia | / | Internal | 200 ✅ | - |
-| /resources/guides |  | https://twitter.com/kritvia | External | 200 ✅ | - |
-| /resources/guides |  | https://linkedin.com/company/kritvia | External | 200 ✅ | - |
-| /resources/guides |  | https://github.com/kritvia | External | 200 ✅ | - |
-| /resources/guides | Trinity OS | /products/trinity-os | Internal | 200 ✅ | - |
-| /resources/guides | AI Cloud | /products/ai-cloud | Internal | 200 ✅ | - |
-| /resources/guides | Agents | /products/agents | Internal | 200 ✅ | - |
-| /resources/guides | Dev Platform | /products/dev-platform | Internal | 200 ✅ | - |
-| /resources/guides | SDK | /developers/sdk | Internal | 200 ✅ | - |
-| /resources/guides | CLI | /developers/cli | Internal | 200 ✅ | - |
-| /resources/guides | Architecture | /platform/architecture | Internal | 200 ✅ | - |
-| /resources/guides | Security | /platform/security | Internal | 200 ✅ | - |
-| /resources/guides | Infrastructure | /platform/infrastructure | Internal | 200 ✅ | - |
-| /resources/guides | AI Stack | /platform/ai-stack | Internal | 200 ✅ | - |
-| /resources/guides | AI Startups | /solutions/ai-startups | Internal | 200 ✅ | - |
-| /resources/guides | Enterprise | /solutions/enterprise | Internal | 200 ✅ | - |
-| /resources/guides | Developers | /solutions/developers | Internal | 200 ✅ | - |
-| /resources/guides | Research | /solutions/research | Internal | 200 ✅ | - |
-| /resources/guides | Documentation | /developers/docs | Internal | 200 ✅ | - |
-| /resources/guides | API Reference | /developers/api | Internal | 200 ✅ | - |
-| /resources/guides | Tutorials | /developers/tutorials | Internal | 200 ✅ | - |
-| /resources/guides | Quickstarts | /developers/quickstarts | Internal | 200 ✅ | - |
-| /resources/guides | About | /company/about | Internal | 200 ✅ | - |
-| /resources/guides | Founder | /founder | Internal | 200 ✅ | - |
-| /resources/guides | Team | /company/team | Internal | 200 ✅ | - |
-| /resources/guides | Careers | /company/careers | Internal | 200 ✅ | - |
-| /resources/guides | Contact | /contact | Internal | 200 ✅ | - |
-| /resources/guides | Blog | /resources/blog | Internal | 200 ✅ | - |
-| /resources/guides | Guides | /resources/guides | Internal | 200 ✅ | - |
-| /resources/guides | Case Studies | /case-studies | Internal | 200 ✅ | - |
-| /resources/guides | Whitepapers | /resources/whitepapers | Internal | 200 ✅ | - |
-| /resources/guides | Open Source | /developers/open-source | Internal | 200 ✅ | - |
-| /resources/guides | GitHub Repositories | https://github.com/kritvia | External | 200 ✅ | - |
-| /resources/guides | SDK Downloads | /developers/sdk | Internal | 200 ✅ | - |
-| /resources/guides | API Status | /status | Internal | 200 ✅ | - |
-| /resources/guides | System Status | /status | Internal | 200 ✅ | - |
-| /resources/guides | Changelog | /changelog | Internal | 200 ✅ | - |
-| /resources/guides | Release Notes | /changelog | Internal | 200 ✅ | - |
-| /resources/guides | Developer Community | /community | Internal | 200 ✅ | - |
-| /resources/guides | Privacy Policy | /legal/privacy | Internal | 200 ✅ | - |
-| /resources/guides | Terms of Service | /legal/terms | Internal | 200 ✅ | - |
-| /resources/guides | Security | /security | Internal | 200 ✅ | - |
-| /resources/guides | Compliance | /compliance | Internal | 200 ✅ | - |
-| /resources/whitepapers | Kritvia | / | Internal | 200 ✅ | - |
-| /resources/whitepapers | Products | /products | Internal | 200 ✅ | - |
-| /resources/whitepapers | Solutions | /solutions | Internal | 200 ✅ | - |
-| /resources/whitepapers | Industries | /industries | Internal | 200 ✅ | - |
-| /resources/whitepapers | Developers | /platform/developers | Internal | 200 ✅ | - |
-| /resources/whitepapers | Resources | /resources | Internal | 200 ✅ | - |
-| /resources/whitepapers | Pricing | /pricing | Internal | 200 ✅ | - |
-| /resources/whitepapers | Login | /platform/dashboard | Internal | 200 ✅ | - |
-| /resources/whitepapers | Start Project | /contact | Internal | 200 ✅ | - |
-| /resources/whitepapers | KKritvia | / | Internal | 200 ✅ | - |
-| /resources/whitepapers |  | https://twitter.com/kritvia | External | 200 ✅ | - |
-| /resources/whitepapers |  | https://linkedin.com/company/kritvia | External | 200 ✅ | - |
-| /resources/whitepapers |  | https://github.com/kritvia | External | 200 ✅ | - |
-| /resources/whitepapers | Trinity OS | /products/trinity-os | Internal | 200 ✅ | - |
-| /resources/whitepapers | AI Cloud | /products/ai-cloud | Internal | 200 ✅ | - |
-| /resources/whitepapers | Agents | /products/agents | Internal | 200 ✅ | - |
-| /resources/whitepapers | Dev Platform | /products/dev-platform | Internal | 200 ✅ | - |
-| /resources/whitepapers | SDK | /developers/sdk | Internal | 200 ✅ | - |
-| /resources/whitepapers | CLI | /developers/cli | Internal | 200 ✅ | - |
-| /resources/whitepapers | Architecture | /platform/architecture | Internal | 200 ✅ | - |
-| /resources/whitepapers | Security | /platform/security | Internal | 200 ✅ | - |
-| /resources/whitepapers | Infrastructure | /platform/infrastructure | Internal | 200 ✅ | - |
-| /resources/whitepapers | AI Stack | /platform/ai-stack | Internal | 200 ✅ | - |
-| /resources/whitepapers | AI Startups | /solutions/ai-startups | Internal | 200 ✅ | - |
-| /resources/whitepapers | Enterprise | /solutions/enterprise | Internal | 200 ✅ | - |
-| /resources/whitepapers | Developers | /solutions/developers | Internal | 200 ✅ | - |
-| /resources/whitepapers | Research | /solutions/research | Internal | 200 ✅ | - |
-| /resources/whitepapers | Documentation | /developers/docs | Internal | 200 ✅ | - |
-| /resources/whitepapers | API Reference | /developers/api | Internal | 200 ✅ | - |
-| /resources/whitepapers | Tutorials | /developers/tutorials | Internal | 200 ✅ | - |
-| /resources/whitepapers | Quickstarts | /developers/quickstarts | Internal | 200 ✅ | - |
-| /resources/whitepapers | About | /company/about | Internal | 200 ✅ | - |
-| /resources/whitepapers | Founder | /founder | Internal | 200 ✅ | - |
-| /resources/whitepapers | Team | /company/team | Internal | 200 ✅ | - |
-| /resources/whitepapers | Careers | /company/careers | Internal | 200 ✅ | - |
-| /resources/whitepapers | Contact | /contact | Internal | 200 ✅ | - |
-| /resources/whitepapers | Blog | /resources/blog | Internal | 200 ✅ | - |
-| /resources/whitepapers | Guides | /resources/guides | Internal | 200 ✅ | - |
-| /resources/whitepapers | Case Studies | /case-studies | Internal | 200 ✅ | - |
-| /resources/whitepapers | Whitepapers | /resources/whitepapers | Internal | 200 ✅ | - |
-| /resources/whitepapers | Open Source | /developers/open-source | Internal | 200 ✅ | - |
-| /resources/whitepapers | GitHub Repositories | https://github.com/kritvia | External | 200 ✅ | - |
-| /resources/whitepapers | SDK Downloads | /developers/sdk | Internal | 200 ✅ | - |
-| /resources/whitepapers | API Status | /status | Internal | 200 ✅ | - |
-| /resources/whitepapers | System Status | /status | Internal | 200 ✅ | - |
-| /resources/whitepapers | Changelog | /changelog | Internal | 200 ✅ | - |
-| /resources/whitepapers | Release Notes | /changelog | Internal | 200 ✅ | - |
-| /resources/whitepapers | Developer Community | /community | Internal | 200 ✅ | - |
-| /resources/whitepapers | Privacy Policy | /legal/privacy | Internal | 200 ✅ | - |
-| /resources/whitepapers | Terms of Service | /legal/terms | Internal | 200 ✅ | - |
-| /resources/whitepapers | Security | /security | Internal | 200 ✅ | - |
-| /resources/whitepapers | Compliance | /compliance | Internal | 200 ✅ | - |
-| /developers | Kritvia | / | Internal | 404 ❌ | - |
-| /developers | Products | /products | Internal | 404 ❌ | - |
-| /developers | Solutions | /solutions | Internal | 404 ❌ | - |
-| /developers | Industries | /industries | Internal | 404 ❌ | - |
-| /developers | Developers | /platform/developers | Internal | 404 ❌ | - |
-| /developers | Resources | /resources | Internal | 404 ❌ | - |
-| /developers | Pricing | /pricing | Internal | 404 ❌ | - |
-| /developers | Login | /platform/dashboard | Internal | 404 ❌ | - |
-| /developers | Start Project | /contact | Internal | 404 ❌ | - |
-| /developers | KKritvia | / | Internal | 404 ❌ | - |
-| /developers |  | https://twitter.com/kritvia | External | 404 ❌ | - |
-| /developers |  | https://linkedin.com/company/kritvia | External | 404 ❌ | - |
-| /developers |  | https://github.com/kritvia | External | 404 ❌ | - |
-| /developers | Trinity OS | /products/trinity-os | Internal | 404 ❌ | - |
-| /developers | AI Cloud | /products/ai-cloud | Internal | 404 ❌ | - |
-| /developers | Agents | /products/agents | Internal | 404 ❌ | - |
-| /developers | Dev Platform | /products/dev-platform | Internal | 404 ❌ | - |
-| /developers | SDK | /developers/sdk | Internal | 404 ❌ | - |
-| /developers | CLI | /developers/cli | Internal | 404 ❌ | - |
-| /developers | Architecture | /platform/architecture | Internal | 404 ❌ | - |
-| /developers | Security | /platform/security | Internal | 404 ❌ | - |
-| /developers | Infrastructure | /platform/infrastructure | Internal | 404 ❌ | - |
-| /developers | AI Stack | /platform/ai-stack | Internal | 404 ❌ | - |
-| /developers | AI Startups | /solutions/ai-startups | Internal | 404 ❌ | - |
-| /developers | Enterprise | /solutions/enterprise | Internal | 404 ❌ | - |
-| /developers | Developers | /solutions/developers | Internal | 404 ❌ | - |
-| /developers | Research | /solutions/research | Internal | 404 ❌ | - |
-| /developers | Documentation | /developers/docs | Internal | 404 ❌ | - |
-| /developers | API Reference | /developers/api | Internal | 404 ❌ | - |
-| /developers | Tutorials | /developers/tutorials | Internal | 404 ❌ | - |
-| /developers | Quickstarts | /developers/quickstarts | Internal | 404 ❌ | - |
-| /developers | About | /company/about | Internal | 404 ❌ | - |
-| /developers | Founder | /founder | Internal | 404 ❌ | - |
-| /developers | Team | /company/team | Internal | 404 ❌ | - |
-| /developers | Careers | /company/careers | Internal | 404 ❌ | - |
-| /developers | Contact | /contact | Internal | 404 ❌ | - |
-| /developers | Blog | /resources/blog | Internal | 404 ❌ | - |
-| /developers | Guides | /resources/guides | Internal | 404 ❌ | - |
-| /developers | Case Studies | /case-studies | Internal | 404 ❌ | - |
-| /developers | Whitepapers | /resources/whitepapers | Internal | 404 ❌ | - |
-| /developers | Open Source | /developers/open-source | Internal | 404 ❌ | - |
-| /developers | GitHub Repositories | https://github.com/kritvia | External | 404 ❌ | - |
-| /developers | SDK Downloads | /developers/sdk | Internal | 404 ❌ | - |
-| /developers | API Status | /status | Internal | 404 ❌ | - |
-| /developers | System Status | /status | Internal | 404 ❌ | - |
-| /developers | Changelog | /changelog | Internal | 404 ❌ | - |
-| /developers | Release Notes | /changelog | Internal | 404 ❌ | - |
-| /developers | Developer Community | /community | Internal | 404 ❌ | - |
-| /developers | Privacy Policy | /legal/privacy | Internal | 404 ❌ | - |
-| /developers | Terms of Service | /legal/terms | Internal | 404 ❌ | - |
-| /developers | Security | /security | Internal | 404 ❌ | - |
-| /developers | Compliance | /compliance | Internal | 404 ❌ | - |
-| /privacy | Kritvia | / | Internal | 200 ✅ | - |
-| /privacy | Products | /products | Internal | 200 ✅ | - |
-| /privacy | Solutions | /solutions | Internal | 200 ✅ | - |
-| /privacy | Industries | /industries | Internal | 200 ✅ | - |
-| /privacy | Developers | /platform/developers | Internal | 200 ✅ | - |
-| /privacy | Resources | /resources | Internal | 200 ✅ | - |
-| /privacy | Pricing | /pricing | Internal | 200 ✅ | - |
-| /privacy | Login | /platform/dashboard | Internal | 200 ✅ | - |
-| /privacy | Start Project | /contact | Internal | 200 ✅ | - |
-| /privacy | KKritvia | / | Internal | 200 ✅ | - |
-| /privacy |  | https://twitter.com/kritvia | External | 200 ✅ | - |
-| /privacy |  | https://linkedin.com/company/kritvia | External | 200 ✅ | - |
-| /privacy |  | https://github.com/kritvia | External | 200 ✅ | - |
-| /privacy | Trinity OS | /products/trinity-os | Internal | 200 ✅ | - |
-| /privacy | AI Cloud | /products/ai-cloud | Internal | 200 ✅ | - |
-| /privacy | Agents | /products/agents | Internal | 200 ✅ | - |
-| /privacy | Dev Platform | /products/dev-platform | Internal | 200 ✅ | - |
-| /privacy | SDK | /developers/sdk | Internal | 200 ✅ | - |
-| /privacy | CLI | /developers/cli | Internal | 200 ✅ | - |
-| /privacy | Architecture | /platform/architecture | Internal | 200 ✅ | - |
-| /privacy | Security | /platform/security | Internal | 200 ✅ | - |
-| /privacy | Infrastructure | /platform/infrastructure | Internal | 200 ✅ | - |
-| /privacy | AI Stack | /platform/ai-stack | Internal | 200 ✅ | - |
-| /privacy | AI Startups | /solutions/ai-startups | Internal | 200 ✅ | - |
-| /privacy | Enterprise | /solutions/enterprise | Internal | 200 ✅ | - |
-| /privacy | Developers | /solutions/developers | Internal | 200 ✅ | - |
-| /privacy | Research | /solutions/research | Internal | 200 ✅ | - |
-| /privacy | Documentation | /developers/docs | Internal | 200 ✅ | - |
-| /privacy | API Reference | /developers/api | Internal | 200 ✅ | - |
-| /privacy | Tutorials | /developers/tutorials | Internal | 200 ✅ | - |
-| /privacy | Quickstarts | /developers/quickstarts | Internal | 200 ✅ | - |
-| /privacy | About | /company/about | Internal | 200 ✅ | - |
-| /privacy | Founder | /founder | Internal | 200 ✅ | - |
-| /privacy | Team | /company/team | Internal | 200 ✅ | - |
-| /privacy | Careers | /company/careers | Internal | 200 ✅ | - |
-| /privacy | Contact | /contact | Internal | 200 ✅ | - |
-| /privacy | Blog | /resources/blog | Internal | 200 ✅ | - |
-| /privacy | Guides | /resources/guides | Internal | 200 ✅ | - |
-| /privacy | Case Studies | /case-studies | Internal | 200 ✅ | - |
-| /privacy | Whitepapers | /resources/whitepapers | Internal | 200 ✅ | - |
-| /privacy | Open Source | /developers/open-source | Internal | 200 ✅ | - |
-| /privacy | GitHub Repositories | https://github.com/kritvia | External | 200 ✅ | - |
-| /privacy | SDK Downloads | /developers/sdk | Internal | 200 ✅ | - |
-| /privacy | API Status | /status | Internal | 200 ✅ | - |
-| /privacy | System Status | /status | Internal | 200 ✅ | - |
-| /privacy | Changelog | /changelog | Internal | 200 ✅ | - |
-| /privacy | Release Notes | /changelog | Internal | 200 ✅ | - |
-| /privacy | Developer Community | /community | Internal | 200 ✅ | - |
-| /privacy | Privacy Policy | /legal/privacy | Internal | 200 ✅ | - |
-| /privacy | Terms of Service | /legal/terms | Internal | 200 ✅ | - |
-| /privacy | Security | /security | Internal | 200 ✅ | - |
-| /privacy | Compliance | /compliance | Internal | 200 ✅ | - |
-| /terms | Kritvia | / | Internal | 200 ✅ | - |
-| /terms | Products | /products | Internal | 200 ✅ | - |
-| /terms | Solutions | /solutions | Internal | 200 ✅ | - |
-| /terms | Industries | /industries | Internal | 200 ✅ | - |
-| /terms | Developers | /platform/developers | Internal | 200 ✅ | - |
-| /terms | Resources | /resources | Internal | 200 ✅ | - |
-| /terms | Pricing | /pricing | Internal | 200 ✅ | - |
-| /terms | Login | /platform/dashboard | Internal | 200 ✅ | - |
-| /terms | Start Project | /contact | Internal | 200 ✅ | - |
-| /terms | KKritvia | / | Internal | 200 ✅ | - |
-| /terms |  | https://twitter.com/kritvia | External | 200 ✅ | - |
-| /terms |  | https://linkedin.com/company/kritvia | External | 200 ✅ | - |
-| /terms |  | https://github.com/kritvia | External | 200 ✅ | - |
-| /terms | Trinity OS | /products/trinity-os | Internal | 200 ✅ | - |
-| /terms | AI Cloud | /products/ai-cloud | Internal | 200 ✅ | - |
-| /terms | Agents | /products/agents | Internal | 200 ✅ | - |
-| /terms | Dev Platform | /products/dev-platform | Internal | 200 ✅ | - |
-| /terms | SDK | /developers/sdk | Internal | 200 ✅ | - |
-| /terms | CLI | /developers/cli | Internal | 200 ✅ | - |
-| /terms | Architecture | /platform/architecture | Internal | 200 ✅ | - |
-| /terms | Security | /platform/security | Internal | 200 ✅ | - |
-| /terms | Infrastructure | /platform/infrastructure | Internal | 200 ✅ | - |
-| /terms | AI Stack | /platform/ai-stack | Internal | 200 ✅ | - |
-| /terms | AI Startups | /solutions/ai-startups | Internal | 200 ✅ | - |
-| /terms | Enterprise | /solutions/enterprise | Internal | 200 ✅ | - |
-| /terms | Developers | /solutions/developers | Internal | 200 ✅ | - |
-| /terms | Research | /solutions/research | Internal | 200 ✅ | - |
-| /terms | Documentation | /developers/docs | Internal | 200 ✅ | - |
-| /terms | API Reference | /developers/api | Internal | 200 ✅ | - |
-| /terms | Tutorials | /developers/tutorials | Internal | 200 ✅ | - |
-| /terms | Quickstarts | /developers/quickstarts | Internal | 200 ✅ | - |
-| /terms | About | /company/about | Internal | 200 ✅ | - |
-| /terms | Founder | /founder | Internal | 200 ✅ | - |
-| /terms | Team | /company/team | Internal | 200 ✅ | - |
-| /terms | Careers | /company/careers | Internal | 200 ✅ | - |
-| /terms | Contact | /contact | Internal | 200 ✅ | - |
-| /terms | Blog | /resources/blog | Internal | 200 ✅ | - |
-| /terms | Guides | /resources/guides | Internal | 200 ✅ | - |
-| /terms | Case Studies | /case-studies | Internal | 200 ✅ | - |
-| /terms | Whitepapers | /resources/whitepapers | Internal | 200 ✅ | - |
-| /terms | Open Source | /developers/open-source | Internal | 200 ✅ | - |
-| /terms | GitHub Repositories | https://github.com/kritvia | External | 200 ✅ | - |
-| /terms | SDK Downloads | /developers/sdk | Internal | 200 ✅ | - |
-| /terms | API Status | /status | Internal | 200 ✅ | - |
-| /terms | System Status | /status | Internal | 200 ✅ | - |
-| /terms | Changelog | /changelog | Internal | 200 ✅ | - |
-| /terms | Release Notes | /changelog | Internal | 200 ✅ | - |
-| /terms | Developer Community | /community | Internal | 200 ✅ | - |
-| /terms | Privacy Policy | /legal/privacy | Internal | 200 ✅ | - |
-| /terms | Terms of Service | /legal/terms | Internal | 200 ✅ | - |
-| /terms | Security | /security | Internal | 200 ✅ | - |
-| /terms | Compliance | /compliance | Internal | 200 ✅ | - |
+| # | Broken link | Link Text | Page where found | Server response |
+|---|-------------|-----------|------------------|-----------------|
+| 1 | / | - | / | 200 ✅ |
+| 2 | /products | - | / | 200 ✅ |
+| 3 | /solutions | - | / | 200 ✅ |
+| 4 | /industries | - | / | 200 ✅ |
+| 5 | /platform/developers | - | / | 200 ✅ |
+| 6 | /resources | - | / | 200 ✅ |
+| 7 | /pricing | - | / | 200 ✅ |
+| 8 | /platform/dashboard | - | / | 200 ✅ |
+| 9 | /contact | - | / | 200 ✅ |
+| 10 | /products/ai-cloud | - | / | 200 ✅ |
+| 11 | /platform | - | / | 200 ✅ |
+| 12 | /products/trinity-os | - | / | 200 ✅ |
+| 13 | /products/kritvia-ai cloud | - | / | 200 ✅ |
+| 14 | /products/kritvia-agents | - | / | 200 ✅ |
+| 15 | /products/dev-platform | - | / | 200 ✅ |
+| 16 | /developers | - | / | 404 ❌ |
+| 17 | /solutions/ai-startups | - | / | 200 ✅ |
+| 18 | /solutions/enterprise | - | / | 200 ✅ |
+| 19 | /solutions/developers | - | / | 200 ✅ |
+| 20 | /solutions/research | - | / | 200 ✅ |
+| 21 | /case-studies | - | / | 200 ✅ |
+| 22 | /marketplace | - | / | 404 ❌ |
+| 23 | /founder | - | / | 200 ✅ |
+| 24 | /developers/quickstarts | - | / | 404 ❌ |
+| 25 | /products/agents | - | / | 200 ✅ |
+| 26 | /developers/sdk | - | / | 404 ❌ |
+| 27 | /developers/cli | - | / | 404 ❌ |
+| 28 | /platform/architecture | - | / | 404 ❌ |
+| 29 | /platform/security | - | / | 404 ❌ |
+| 30 | /platform/infrastructure | - | / | 404 ❌ |
+| 31 | /platform/ai-stack | - | / | 404 ❌ |
+| 32 | /developers/docs | - | / | 404 ❌ |
+| 33 | /developers/api | - | / | 404 ❌ |
+| 34 | /developers/tutorials | - | / | 404 ❌ |
+| 35 | /company/about | - | / | 200 ✅ |
+| 36 | /company/team | - | / | 200 ✅ |
+| 37 | /company/careers | - | / | 200 ✅ |
+| 38 | /resources/blog | - | / | 200 ✅ |
+| 39 | /resources/guides | - | / | 200 ✅ |
+| 40 | /resources/whitepapers | - | / | 200 ✅ |
+| 41 | /developers/open-source | - | / | 404 ❌ |
+| 42 | /status | - | / | 404 ❌ |
+| 43 | /changelog | - | / | 404 ❌ |
+| 44 | /community | - | / | 404 ❌ |
+| 45 | /legal/privacy | - | / | 404 ❌ |
+| 46 | /legal/terms | - | / | 404 ❌ |
+| 47 | /security | - | / | 404 ❌ |
+| 48 | /compliance | - | / | 404 ❌ |
+| 49 | / | - | /about | 200 ✅ |
+| 50 | /products | - | /about | 200 ✅ |
+| 51 | /solutions | - | /about | 200 ✅ |
+| 52 | /industries | - | /about | 200 ✅ |
+| 53 | /platform/developers | - | /about | 200 ✅ |
+| 54 | /resources | - | /about | 200 ✅ |
+| 55 | /pricing | - | /about | 200 ✅ |
+| 56 | /platform/dashboard | - | /about | 200 ✅ |
+| 57 | /contact | - | /about | 200 ✅ |
+| 58 | /products/trinity-os | - | /about | 200 ✅ |
+| 59 | /products/ai-cloud | - | /about | 200 ✅ |
+| 60 | /products/agents | - | /about | 200 ✅ |
+| 61 | /products/dev-platform | - | /about | 200 ✅ |
+| 62 | /developers/sdk | - | /about | 404 ❌ |
+| 63 | /developers/cli | - | /about | 404 ❌ |
+| 64 | /platform/architecture | - | /about | 404 ❌ |
+| 65 | /platform/security | - | /about | 404 ❌ |
+| 66 | /platform/infrastructure | - | /about | 404 ❌ |
+| 67 | /platform/ai-stack | - | /about | 404 ❌ |
+| 68 | /solutions/ai-startups | - | /about | 200 ✅ |
+| 69 | /solutions/enterprise | - | /about | 200 ✅ |
+| 70 | /solutions/developers | - | /about | 200 ✅ |
+| 71 | /solutions/research | - | /about | 200 ✅ |
+| 72 | /developers/docs | - | /about | 404 ❌ |
+| 73 | /developers/api | - | /about | 404 ❌ |
+| 74 | /developers/tutorials | - | /about | 404 ❌ |
+| 75 | /developers/quickstarts | - | /about | 404 ❌ |
+| 76 | /company/about | - | /about | 200 ✅ |
+| 77 | /founder | - | /about | 200 ✅ |
+| 78 | /company/team | - | /about | 200 ✅ |
+| 79 | /company/careers | - | /about | 200 ✅ |
+| 80 | /resources/blog | - | /about | 200 ✅ |
+| 81 | /resources/guides | - | /about | 200 ✅ |
+| 82 | /case-studies | - | /about | 200 ✅ |
+| 83 | /resources/whitepapers | - | /about | 200 ✅ |
+| 84 | /developers/open-source | - | /about | 404 ❌ |
+| 85 | /status | - | /about | 404 ❌ |
+| 86 | /changelog | - | /about | 404 ❌ |
+| 87 | /community | - | /about | 404 ❌ |
+| 88 | /legal/privacy | - | /about | 404 ❌ |
+| 89 | /legal/terms | - | /about | 404 ❌ |
+| 90 | /security | - | /about | 404 ❌ |
+| 91 | /compliance | - | /about | 404 ❌ |
+| 92 | / | - | /services | 200 ✅ |
+| 93 | /products | - | /services | 200 ✅ |
+| 94 | /solutions | - | /services | 200 ✅ |
+| 95 | /industries | - | /services | 200 ✅ |
+| 96 | /platform/developers | - | /services | 200 ✅ |
+| 97 | /resources | - | /services | 200 ✅ |
+| 98 | /pricing | - | /services | 200 ✅ |
+| 99 | /platform/dashboard | - | /services | 200 ✅ |
+| 100 | /contact | - | /services | 200 ✅ |
+| 101 | /case-studies | - | /services | 200 ✅ |
+| 102 | /products/trinity-os | - | /services | 200 ✅ |
+| 103 | /products/ai-cloud | - | /services | 200 ✅ |
+| 104 | /products/agents | - | /services | 200 ✅ |
+| 105 | /products/dev-platform | - | /services | 200 ✅ |
+| 106 | /developers/sdk | - | /services | 404 ❌ |
+| 107 | /developers/cli | - | /services | 404 ❌ |
+| 108 | /platform/architecture | - | /services | 404 ❌ |
+| 109 | /platform/security | - | /services | 404 ❌ |
+| 110 | /platform/infrastructure | - | /services | 404 ❌ |
+| 111 | /platform/ai-stack | - | /services | 404 ❌ |
+| 112 | /solutions/ai-startups | - | /services | 200 ✅ |
+| 113 | /solutions/enterprise | - | /services | 200 ✅ |
+| 114 | /solutions/developers | - | /services | 200 ✅ |
+| 115 | /solutions/research | - | /services | 200 ✅ |
+| 116 | /developers/docs | - | /services | 404 ❌ |
+| 117 | /developers/api | - | /services | 404 ❌ |
+| 118 | /developers/tutorials | - | /services | 404 ❌ |
+| 119 | /developers/quickstarts | - | /services | 404 ❌ |
+| 120 | /company/about | - | /services | 200 ✅ |
+| 121 | /founder | - | /services | 200 ✅ |
+| 122 | /company/team | - | /services | 200 ✅ |
+| 123 | /company/careers | - | /services | 200 ✅ |
+| 124 | /resources/blog | - | /services | 200 ✅ |
+| 125 | /resources/guides | - | /services | 200 ✅ |
+| 126 | /resources/whitepapers | - | /services | 200 ✅ |
+| 127 | /developers/open-source | - | /services | 404 ❌ |
+| 128 | /status | - | /services | 404 ❌ |
+| 129 | /changelog | - | /services | 404 ❌ |
+| 130 | /community | - | /services | 404 ❌ |
+| 131 | /legal/privacy | - | /services | 404 ❌ |
+| 132 | /legal/terms | - | /services | 404 ❌ |
+| 133 | /security | - | /services | 404 ❌ |
+| 134 | /compliance | - | /services | 404 ❌ |
+| 135 | / | - | /solutions | 200 ✅ |
+| 136 | /products | - | /solutions | 200 ✅ |
+| 137 | /solutions | - | /solutions | 200 ✅ |
+| 138 | /industries | - | /solutions | 200 ✅ |
+| 139 | /platform/developers | - | /solutions | 200 ✅ |
+| 140 | /resources | - | /solutions | 200 ✅ |
+| 141 | /pricing | - | /solutions | 200 ✅ |
+| 142 | /platform/dashboard | - | /solutions | 200 ✅ |
+| 143 | /contact | - | /solutions | 200 ✅ |
+| 144 | /solutions/ai-development | - | /solutions | 200 ✅ |
+| 145 | /solutions/web-development | - | /solutions | 200 ✅ |
+| 146 | /solutions/saas-development | - | /solutions | 200 ✅ |
+| 147 | /solutions/cloud-architecture | - | /solutions | 200 ✅ |
+| 148 | /solutions/automation | - | /solutions | 200 ✅ |
+| 149 | /products/trinity-os | - | /solutions | 200 ✅ |
+| 150 | /products/ai-cloud | - | /solutions | 200 ✅ |
+| 151 | /products/agents | - | /solutions | 200 ✅ |
+| 152 | /products/dev-platform | - | /solutions | 200 ✅ |
+| 153 | /developers/sdk | - | /solutions | 404 ❌ |
+| 154 | /developers/cli | - | /solutions | 404 ❌ |
+| 155 | /platform/architecture | - | /solutions | 404 ❌ |
+| 156 | /platform/security | - | /solutions | 404 ❌ |
+| 157 | /platform/infrastructure | - | /solutions | 404 ❌ |
+| 158 | /platform/ai-stack | - | /solutions | 404 ❌ |
+| 159 | /solutions/ai-startups | - | /solutions | 200 ✅ |
+| 160 | /solutions/enterprise | - | /solutions | 200 ✅ |
+| 161 | /solutions/developers | - | /solutions | 200 ✅ |
+| 162 | /solutions/research | - | /solutions | 200 ✅ |
+| 163 | /developers/docs | - | /solutions | 404 ❌ |
+| 164 | /developers/api | - | /solutions | 404 ❌ |
+| 165 | /developers/tutorials | - | /solutions | 404 ❌ |
+| 166 | /developers/quickstarts | - | /solutions | 404 ❌ |
+| 167 | /company/about | - | /solutions | 200 ✅ |
+| 168 | /founder | - | /solutions | 200 ✅ |
+| 169 | /company/team | - | /solutions | 200 ✅ |
+| 170 | /company/careers | - | /solutions | 200 ✅ |
+| 171 | /resources/blog | - | /solutions | 200 ✅ |
+| 172 | /resources/guides | - | /solutions | 200 ✅ |
+| 173 | /case-studies | - | /solutions | 200 ✅ |
+| 174 | /resources/whitepapers | - | /solutions | 200 ✅ |
+| 175 | /developers/open-source | - | /solutions | 404 ❌ |
+| 176 | /status | - | /solutions | 404 ❌ |
+| 177 | /changelog | - | /solutions | 404 ❌ |
+| 178 | /community | - | /solutions | 404 ❌ |
+| 179 | /legal/privacy | - | /solutions | 404 ❌ |
+| 180 | /legal/terms | - | /solutions | 404 ❌ |
+| 181 | /security | - | /solutions | 404 ❌ |
+| 182 | /compliance | - | /solutions | 404 ❌ |
+| 183 | / | - | /products | 200 ✅ |
+| 184 | /products | - | /products | 200 ✅ |
+| 185 | /solutions | - | /products | 200 ✅ |
+| 186 | /industries | - | /products | 200 ✅ |
+| 187 | /platform/developers | - | /products | 200 ✅ |
+| 188 | /resources | - | /products | 200 ✅ |
+| 189 | /pricing | - | /products | 200 ✅ |
+| 190 | /platform/dashboard | - | /products | 200 ✅ |
+| 191 | /contact | - | /products | 200 ✅ |
+| 192 | /products/kritvia-ai | - | /products | 200 ✅ |
+| 193 | /products/kritvia-cloud | - | /products | 200 ✅ |
+| 194 | /products/kritvia-crm | - | /products | 200 ✅ |
+| 195 | /products/trinity-os | - | /products | 200 ✅ |
+| 196 | /products/ai-cloud | - | /products | 200 ✅ |
+| 197 | /products/agents | - | /products | 200 ✅ |
+| 198 | /products/dev-platform | - | /products | 200 ✅ |
+| 199 | /developers/sdk | - | /products | 404 ❌ |
+| 200 | /developers/cli | - | /products | 404 ❌ |
+| 201 | /platform/architecture | - | /products | 404 ❌ |
+| 202 | /platform/security | - | /products | 404 ❌ |
+| 203 | /platform/infrastructure | - | /products | 404 ❌ |
+| 204 | /platform/ai-stack | - | /products | 404 ❌ |
+| 205 | /solutions/ai-startups | - | /products | 200 ✅ |
+| 206 | /solutions/enterprise | - | /products | 200 ✅ |
+| 207 | /solutions/developers | - | /products | 200 ✅ |
+| 208 | /solutions/research | - | /products | 200 ✅ |
+| 209 | /developers/docs | - | /products | 404 ❌ |
+| 210 | /developers/api | - | /products | 404 ❌ |
+| 211 | /developers/tutorials | - | /products | 404 ❌ |
+| 212 | /developers/quickstarts | - | /products | 404 ❌ |
+| 213 | /company/about | - | /products | 200 ✅ |
+| 214 | /founder | - | /products | 200 ✅ |
+| 215 | /company/team | - | /products | 200 ✅ |
+| 216 | /company/careers | - | /products | 200 ✅ |
+| 217 | /resources/blog | - | /products | 200 ✅ |
+| 218 | /resources/guides | - | /products | 200 ✅ |
+| 219 | /case-studies | - | /products | 200 ✅ |
+| 220 | /resources/whitepapers | - | /products | 200 ✅ |
+| 221 | /developers/open-source | - | /products | 404 ❌ |
+| 222 | /status | - | /products | 404 ❌ |
+| 223 | /changelog | - | /products | 404 ❌ |
+| 224 | /community | - | /products | 404 ❌ |
+| 225 | /legal/privacy | - | /products | 404 ❌ |
+| 226 | /legal/terms | - | /products | 404 ❌ |
+| 227 | /security | - | /products | 404 ❌ |
+| 228 | /compliance | - | /products | 404 ❌ |
+| 229 | / | - | /case-studies | 200 ✅ |
+| 230 | /products | - | /case-studies | 200 ✅ |
+| 231 | /solutions | - | /case-studies | 200 ✅ |
+| 232 | /industries | - | /case-studies | 200 ✅ |
+| 233 | /platform/developers | - | /case-studies | 200 ✅ |
+| 234 | /resources | - | /case-studies | 200 ✅ |
+| 235 | /pricing | - | /case-studies | 200 ✅ |
+| 236 | /platform/dashboard | - | /case-studies | 200 ✅ |
+| 237 | /contact | - | /case-studies | 200 ✅ |
+| 238 | /case-studies/fintech-fraud-detection | - | /case-studies | 404 ❌ |
+| 239 | /case-studies/healthtech-clinical-ai | - | /case-studies | 404 ❌ |
+| 240 | /case-studies/retail-personalization | - | /case-studies | 404 ❌ |
+| 241 | /case-studies/cloudscale-migration | - | /case-studies | 404 ❌ |
+| 242 | /case-studies/legal-document-automation | - | /case-studies | 404 ❌ |
+| 243 | /case-studies/logistics-analytics | - | /case-studies | 404 ❌ |
+| 244 | /products/trinity-os | - | /case-studies | 200 ✅ |
+| 245 | /products/ai-cloud | - | /case-studies | 200 ✅ |
+| 246 | /products/agents | - | /case-studies | 200 ✅ |
+| 247 | /products/dev-platform | - | /case-studies | 200 ✅ |
+| 248 | /developers/sdk | - | /case-studies | 404 ❌ |
+| 249 | /developers/cli | - | /case-studies | 404 ❌ |
+| 250 | /platform/architecture | - | /case-studies | 404 ❌ |
+| 251 | /platform/security | - | /case-studies | 404 ❌ |
+| 252 | /platform/infrastructure | - | /case-studies | 404 ❌ |
+| 253 | /platform/ai-stack | - | /case-studies | 404 ❌ |
+| 254 | /solutions/ai-startups | - | /case-studies | 200 ✅ |
+| 255 | /solutions/enterprise | - | /case-studies | 200 ✅ |
+| 256 | /solutions/developers | - | /case-studies | 200 ✅ |
+| 257 | /solutions/research | - | /case-studies | 200 ✅ |
+| 258 | /developers/docs | - | /case-studies | 404 ❌ |
+| 259 | /developers/api | - | /case-studies | 404 ❌ |
+| 260 | /developers/tutorials | - | /case-studies | 404 ❌ |
+| 261 | /developers/quickstarts | - | /case-studies | 404 ❌ |
+| 262 | /company/about | - | /case-studies | 200 ✅ |
+| 263 | /founder | - | /case-studies | 200 ✅ |
+| 264 | /company/team | - | /case-studies | 200 ✅ |
+| 265 | /company/careers | - | /case-studies | 200 ✅ |
+| 266 | /resources/blog | - | /case-studies | 200 ✅ |
+| 267 | /resources/guides | - | /case-studies | 200 ✅ |
+| 268 | /case-studies | - | /case-studies | 200 ✅ |
+| 269 | /resources/whitepapers | - | /case-studies | 200 ✅ |
+| 270 | /developers/open-source | - | /case-studies | 404 ❌ |
+| 271 | /status | - | /case-studies | 404 ❌ |
+| 272 | /changelog | - | /case-studies | 404 ❌ |
+| 273 | /community | - | /case-studies | 404 ❌ |
+| 274 | /legal/privacy | - | /case-studies | 404 ❌ |
+| 275 | /legal/terms | - | /case-studies | 404 ❌ |
+| 276 | /security | - | /case-studies | 404 ❌ |
+| 277 | /compliance | - | /case-studies | 404 ❌ |
+| 278 | / | - | /blog | 200 ✅ |
+| 279 | /products | - | /blog | 200 ✅ |
+| 280 | /solutions | - | /blog | 200 ✅ |
+| 281 | /industries | - | /blog | 200 ✅ |
+| 282 | /platform/developers | - | /blog | 200 ✅ |
+| 283 | /resources | - | /blog | 200 ✅ |
+| 284 | /pricing | - | /blog | 200 ✅ |
+| 285 | /platform/dashboard | - | /blog | 200 ✅ |
+| 286 | /contact | - | /blog | 200 ✅ |
+| 287 | /blog/building-rag-systems | - | /blog | 404 ❌ |
+| 288 | /blog/saas-multi-tenancy | - | /blog | 404 ❌ |
+| 289 | /blog/enterprise-ai-2026 | - | /blog | 404 ❌ |
+| 290 | /blog/kubernetes-cost-optimization | - | /blog | 404 ❌ |
+| 291 | /blog/typescript-nextjs-patterns | - | /blog | 404 ❌ |
+| 292 | /blog/prompt-engineering-production | - | /blog | 404 ❌ |
+| 293 | /products/trinity-os | - | /blog | 200 ✅ |
+| 294 | /products/ai-cloud | - | /blog | 200 ✅ |
+| 295 | /products/agents | - | /blog | 200 ✅ |
+| 296 | /products/dev-platform | - | /blog | 200 ✅ |
+| 297 | /developers/sdk | - | /blog | 404 ❌ |
+| 298 | /developers/cli | - | /blog | 404 ❌ |
+| 299 | /platform/architecture | - | /blog | 404 ❌ |
+| 300 | /platform/security | - | /blog | 404 ❌ |
+| 301 | /platform/infrastructure | - | /blog | 404 ❌ |
+| 302 | /platform/ai-stack | - | /blog | 404 ❌ |
+| 303 | /solutions/ai-startups | - | /blog | 200 ✅ |
+| 304 | /solutions/enterprise | - | /blog | 200 ✅ |
+| 305 | /solutions/developers | - | /blog | 200 ✅ |
+| 306 | /solutions/research | - | /blog | 200 ✅ |
+| 307 | /developers/docs | - | /blog | 404 ❌ |
+| 308 | /developers/api | - | /blog | 404 ❌ |
+| 309 | /developers/tutorials | - | /blog | 404 ❌ |
+| 310 | /developers/quickstarts | - | /blog | 404 ❌ |
+| 311 | /company/about | - | /blog | 200 ✅ |
+| 312 | /founder | - | /blog | 200 ✅ |
+| 313 | /company/team | - | /blog | 200 ✅ |
+| 314 | /company/careers | - | /blog | 200 ✅ |
+| 315 | /resources/blog | - | /blog | 200 ✅ |
+| 316 | /resources/guides | - | /blog | 200 ✅ |
+| 317 | /case-studies | - | /blog | 200 ✅ |
+| 318 | /resources/whitepapers | - | /blog | 200 ✅ |
+| 319 | /developers/open-source | - | /blog | 404 ❌ |
+| 320 | /status | - | /blog | 404 ❌ |
+| 321 | /changelog | - | /blog | 404 ❌ |
+| 322 | /community | - | /blog | 404 ❌ |
+| 323 | /legal/privacy | - | /blog | 404 ❌ |
+| 324 | /legal/terms | - | /blog | 404 ❌ |
+| 325 | /security | - | /blog | 404 ❌ |
+| 326 | /compliance | - | /blog | 404 ❌ |
+| 327 | / | - | /research | 200 ✅ |
+| 328 | /products | - | /research | 200 ✅ |
+| 329 | /solutions | - | /research | 200 ✅ |
+| 330 | /industries | - | /research | 200 ✅ |
+| 331 | /platform/developers | - | /research | 200 ✅ |
+| 332 | /resources | - | /research | 200 ✅ |
+| 333 | /pricing | - | /research | 200 ✅ |
+| 334 | /platform/dashboard | - | /research | 200 ✅ |
+| 335 | /contact | - | /research | 200 ✅ |
+| 336 | /research/rag-architectures | - | /research | 404 ❌ |
+| 337 | /research/finops-framework | - | /research | 404 ❌ |
+| 338 | /research/multi-tenant-patterns | - | /research | 404 ❌ |
+| 339 | /research/llm-finetuning-vs-rag | - | /research | 404 ❌ |
+| 340 | /research/zero-trust-ai | - | /research | 404 ❌ |
+| 341 | /research/mlops-maturity-model | - | /research | 404 ❌ |
+| 342 | /products/trinity-os | - | /research | 200 ✅ |
+| 343 | /products/ai-cloud | - | /research | 200 ✅ |
+| 344 | /products/agents | - | /research | 200 ✅ |
+| 345 | /products/dev-platform | - | /research | 200 ✅ |
+| 346 | /developers/sdk | - | /research | 404 ❌ |
+| 347 | /developers/cli | - | /research | 404 ❌ |
+| 348 | /platform/architecture | - | /research | 404 ❌ |
+| 349 | /platform/security | - | /research | 404 ❌ |
+| 350 | /platform/infrastructure | - | /research | 404 ❌ |
+| 351 | /platform/ai-stack | - | /research | 404 ❌ |
+| 352 | /solutions/ai-startups | - | /research | 200 ✅ |
+| 353 | /solutions/enterprise | - | /research | 200 ✅ |
+| 354 | /solutions/developers | - | /research | 200 ✅ |
+| 355 | /solutions/research | - | /research | 200 ✅ |
+| 356 | /developers/docs | - | /research | 404 ❌ |
+| 357 | /developers/api | - | /research | 404 ❌ |
+| 358 | /developers/tutorials | - | /research | 404 ❌ |
+| 359 | /developers/quickstarts | - | /research | 404 ❌ |
+| 360 | /company/about | - | /research | 200 ✅ |
+| 361 | /founder | - | /research | 200 ✅ |
+| 362 | /company/team | - | /research | 200 ✅ |
+| 363 | /company/careers | - | /research | 200 ✅ |
+| 364 | /resources/blog | - | /research | 200 ✅ |
+| 365 | /resources/guides | - | /research | 200 ✅ |
+| 366 | /case-studies | - | /research | 200 ✅ |
+| 367 | /resources/whitepapers | - | /research | 200 ✅ |
+| 368 | /developers/open-source | - | /research | 404 ❌ |
+| 369 | /status | - | /research | 404 ❌ |
+| 370 | /changelog | - | /research | 404 ❌ |
+| 371 | /community | - | /research | 404 ❌ |
+| 372 | /legal/privacy | - | /research | 404 ❌ |
+| 373 | /legal/terms | - | /research | 404 ❌ |
+| 374 | /security | - | /research | 404 ❌ |
+| 375 | /compliance | - | /research | 404 ❌ |
+| 376 | / | - | /pricing | 200 ✅ |
+| 377 | /products | - | /pricing | 200 ✅ |
+| 378 | /solutions | - | /pricing | 200 ✅ |
+| 379 | /industries | - | /pricing | 200 ✅ |
+| 380 | /platform/developers | - | /pricing | 200 ✅ |
+| 381 | /resources | - | /pricing | 200 ✅ |
+| 382 | /pricing | - | /pricing | 200 ✅ |
+| 383 | /platform/dashboard | - | /pricing | 200 ✅ |
+| 384 | /contact | - | /pricing | 200 ✅ |
+| 385 | /contact?plan=starter | - | /pricing | 200 ✅ |
+| 386 | /contact?plan=growth | - | /pricing | 200 ✅ |
+| 387 | /contact?plan=enterprise | - | /pricing | 200 ✅ |
+| 388 | /products/trinity-os | - | /pricing | 200 ✅ |
+| 389 | /products/ai-cloud | - | /pricing | 200 ✅ |
+| 390 | /products/agents | - | /pricing | 200 ✅ |
+| 391 | /products/dev-platform | - | /pricing | 200 ✅ |
+| 392 | /developers/sdk | - | /pricing | 404 ❌ |
+| 393 | /developers/cli | - | /pricing | 404 ❌ |
+| 394 | /platform/architecture | - | /pricing | 404 ❌ |
+| 395 | /platform/security | - | /pricing | 404 ❌ |
+| 396 | /platform/infrastructure | - | /pricing | 404 ❌ |
+| 397 | /platform/ai-stack | - | /pricing | 404 ❌ |
+| 398 | /solutions/ai-startups | - | /pricing | 200 ✅ |
+| 399 | /solutions/enterprise | - | /pricing | 200 ✅ |
+| 400 | /solutions/developers | - | /pricing | 200 ✅ |
+| 401 | /solutions/research | - | /pricing | 200 ✅ |
+| 402 | /developers/docs | - | /pricing | 404 ❌ |
+| 403 | /developers/api | - | /pricing | 404 ❌ |
+| 404 | /developers/tutorials | - | /pricing | 404 ❌ |
+| 405 | /developers/quickstarts | - | /pricing | 404 ❌ |
+| 406 | /company/about | - | /pricing | 200 ✅ |
+| 407 | /founder | - | /pricing | 200 ✅ |
+| 408 | /company/team | - | /pricing | 200 ✅ |
+| 409 | /company/careers | - | /pricing | 200 ✅ |
+| 410 | /resources/blog | - | /pricing | 200 ✅ |
+| 411 | /resources/guides | - | /pricing | 200 ✅ |
+| 412 | /case-studies | - | /pricing | 200 ✅ |
+| 413 | /resources/whitepapers | - | /pricing | 200 ✅ |
+| 414 | /developers/open-source | - | /pricing | 404 ❌ |
+| 415 | /status | - | /pricing | 404 ❌ |
+| 416 | /changelog | - | /pricing | 404 ❌ |
+| 417 | /community | - | /pricing | 404 ❌ |
+| 418 | /legal/privacy | - | /pricing | 404 ❌ |
+| 419 | /legal/terms | - | /pricing | 404 ❌ |
+| 420 | /security | - | /pricing | 404 ❌ |
+| 421 | /compliance | - | /pricing | 404 ❌ |
+| 422 | / | - | /contact | 200 ✅ |
+| 423 | /products | - | /contact | 200 ✅ |
+| 424 | /solutions | - | /contact | 200 ✅ |
+| 425 | /industries | - | /contact | 200 ✅ |
+| 426 | /platform/developers | - | /contact | 200 ✅ |
+| 427 | /resources | - | /contact | 200 ✅ |
+| 428 | /pricing | - | /contact | 200 ✅ |
+| 429 | /platform/dashboard | - | /contact | 200 ✅ |
+| 430 | /contact | - | /contact | 200 ✅ |
+| 431 | /products/trinity-os | - | /contact | 200 ✅ |
+| 432 | /products/ai-cloud | - | /contact | 200 ✅ |
+| 433 | /products/agents | - | /contact | 200 ✅ |
+| 434 | /products/dev-platform | - | /contact | 200 ✅ |
+| 435 | /developers/sdk | - | /contact | 404 ❌ |
+| 436 | /developers/cli | - | /contact | 404 ❌ |
+| 437 | /platform/architecture | - | /contact | 404 ❌ |
+| 438 | /platform/security | - | /contact | 404 ❌ |
+| 439 | /platform/infrastructure | - | /contact | 404 ❌ |
+| 440 | /platform/ai-stack | - | /contact | 404 ❌ |
+| 441 | /solutions/ai-startups | - | /contact | 200 ✅ |
+| 442 | /solutions/enterprise | - | /contact | 200 ✅ |
+| 443 | /solutions/developers | - | /contact | 200 ✅ |
+| 444 | /solutions/research | - | /contact | 200 ✅ |
+| 445 | /developers/docs | - | /contact | 404 ❌ |
+| 446 | /developers/api | - | /contact | 404 ❌ |
+| 447 | /developers/tutorials | - | /contact | 404 ❌ |
+| 448 | /developers/quickstarts | - | /contact | 404 ❌ |
+| 449 | /company/about | - | /contact | 200 ✅ |
+| 450 | /founder | - | /contact | 200 ✅ |
+| 451 | /company/team | - | /contact | 200 ✅ |
+| 452 | /company/careers | - | /contact | 200 ✅ |
+| 453 | /resources/blog | - | /contact | 200 ✅ |
+| 454 | /resources/guides | - | /contact | 200 ✅ |
+| 455 | /case-studies | - | /contact | 200 ✅ |
+| 456 | /resources/whitepapers | - | /contact | 200 ✅ |
+| 457 | /developers/open-source | - | /contact | 404 ❌ |
+| 458 | /status | - | /contact | 404 ❌ |
+| 459 | /changelog | - | /contact | 404 ❌ |
+| 460 | /community | - | /contact | 404 ❌ |
+| 461 | /legal/privacy | - | /contact | 404 ❌ |
+| 462 | /legal/terms | - | /contact | 404 ❌ |
+| 463 | /security | - | /contact | 404 ❌ |
+| 464 | /compliance | - | /contact | 404 ❌ |
+| 465 | / | - | /founder | 200 ✅ |
+| 466 | /products | - | /founder | 200 ✅ |
+| 467 | /solutions | - | /founder | 200 ✅ |
+| 468 | /industries | - | /founder | 200 ✅ |
+| 469 | /platform/developers | - | /founder | 200 ✅ |
+| 470 | /resources | - | /founder | 200 ✅ |
+| 471 | /pricing | - | /founder | 200 ✅ |
+| 472 | /platform/dashboard | - | /founder | 200 ✅ |
+| 473 | /contact | - | /founder | 200 ✅ |
+| 474 | /about | - | /founder | 200 ✅ |
+| 475 | /products/trinity-os | - | /founder | 200 ✅ |
+| 476 | /products/ai-cloud | - | /founder | 200 ✅ |
+| 477 | /products/agents | - | /founder | 200 ✅ |
+| 478 | /products/dev-platform | - | /founder | 200 ✅ |
+| 479 | /developers/sdk | - | /founder | 404 ❌ |
+| 480 | /developers/cli | - | /founder | 404 ❌ |
+| 481 | /platform/architecture | - | /founder | 404 ❌ |
+| 482 | /platform/security | - | /founder | 404 ❌ |
+| 483 | /platform/infrastructure | - | /founder | 404 ❌ |
+| 484 | /platform/ai-stack | - | /founder | 404 ❌ |
+| 485 | /solutions/ai-startups | - | /founder | 200 ✅ |
+| 486 | /solutions/enterprise | - | /founder | 200 ✅ |
+| 487 | /solutions/developers | - | /founder | 200 ✅ |
+| 488 | /solutions/research | - | /founder | 200 ✅ |
+| 489 | /developers/docs | - | /founder | 404 ❌ |
+| 490 | /developers/api | - | /founder | 404 ❌ |
+| 491 | /developers/tutorials | - | /founder | 404 ❌ |
+| 492 | /developers/quickstarts | - | /founder | 404 ❌ |
+| 493 | /company/about | - | /founder | 200 ✅ |
+| 494 | /founder | - | /founder | 200 ✅ |
+| 495 | /company/team | - | /founder | 200 ✅ |
+| 496 | /company/careers | - | /founder | 200 ✅ |
+| 497 | /resources/blog | - | /founder | 200 ✅ |
+| 498 | /resources/guides | - | /founder | 200 ✅ |
+| 499 | /case-studies | - | /founder | 200 ✅ |
+| 500 | /resources/whitepapers | - | /founder | 200 ✅ |
+| 501 | /developers/open-source | - | /founder | 404 ❌ |
+| 502 | /status | - | /founder | 404 ❌ |
+| 503 | /changelog | - | /founder | 404 ❌ |
+| 504 | /community | - | /founder | 404 ❌ |
+| 505 | /legal/privacy | - | /founder | 404 ❌ |
+| 506 | /legal/terms | - | /founder | 404 ❌ |
+| 507 | /security | - | /founder | 404 ❌ |
+| 508 | /compliance | - | /founder | 404 ❌ |
+| 509 | / | - | /company/about | 200 ✅ |
+| 510 | /products | - | /company/about | 200 ✅ |
+| 511 | /solutions | - | /company/about | 200 ✅ |
+| 512 | /industries | - | /company/about | 200 ✅ |
+| 513 | /platform/developers | - | /company/about | 200 ✅ |
+| 514 | /resources | - | /company/about | 200 ✅ |
+| 515 | /pricing | - | /company/about | 200 ✅ |
+| 516 | /platform/dashboard | - | /company/about | 200 ✅ |
+| 517 | /contact | - | /company/about | 200 ✅ |
+| 518 | /products/trinity-os | - | /company/about | 200 ✅ |
+| 519 | /products/ai-cloud | - | /company/about | 200 ✅ |
+| 520 | /products/agents | - | /company/about | 200 ✅ |
+| 521 | /products/dev-platform | - | /company/about | 200 ✅ |
+| 522 | /developers/sdk | - | /company/about | 404 ❌ |
+| 523 | /developers/cli | - | /company/about | 404 ❌ |
+| 524 | /platform/architecture | - | /company/about | 404 ❌ |
+| 525 | /platform/security | - | /company/about | 404 ❌ |
+| 526 | /platform/infrastructure | - | /company/about | 404 ❌ |
+| 527 | /platform/ai-stack | - | /company/about | 404 ❌ |
+| 528 | /solutions/ai-startups | - | /company/about | 200 ✅ |
+| 529 | /solutions/enterprise | - | /company/about | 200 ✅ |
+| 530 | /solutions/developers | - | /company/about | 200 ✅ |
+| 531 | /solutions/research | - | /company/about | 200 ✅ |
+| 532 | /developers/docs | - | /company/about | 404 ❌ |
+| 533 | /developers/api | - | /company/about | 404 ❌ |
+| 534 | /developers/tutorials | - | /company/about | 404 ❌ |
+| 535 | /developers/quickstarts | - | /company/about | 404 ❌ |
+| 536 | /company/about | - | /company/about | 200 ✅ |
+| 537 | /founder | - | /company/about | 200 ✅ |
+| 538 | /company/team | - | /company/about | 200 ✅ |
+| 539 | /company/careers | - | /company/about | 200 ✅ |
+| 540 | /resources/blog | - | /company/about | 200 ✅ |
+| 541 | /resources/guides | - | /company/about | 200 ✅ |
+| 542 | /case-studies | - | /company/about | 200 ✅ |
+| 543 | /resources/whitepapers | - | /company/about | 200 ✅ |
+| 544 | /developers/open-source | - | /company/about | 404 ❌ |
+| 545 | /status | - | /company/about | 404 ❌ |
+| 546 | /changelog | - | /company/about | 404 ❌ |
+| 547 | /community | - | /company/about | 404 ❌ |
+| 548 | /legal/privacy | - | /company/about | 404 ❌ |
+| 549 | /legal/terms | - | /company/about | 404 ❌ |
+| 550 | /security | - | /company/about | 404 ❌ |
+| 551 | /compliance | - | /company/about | 404 ❌ |
+| 552 | / | - | /company/team | 200 ✅ |
+| 553 | /products | - | /company/team | 200 ✅ |
+| 554 | /solutions | - | /company/team | 200 ✅ |
+| 555 | /industries | - | /company/team | 200 ✅ |
+| 556 | /platform/developers | - | /company/team | 200 ✅ |
+| 557 | /resources | - | /company/team | 200 ✅ |
+| 558 | /pricing | - | /company/team | 200 ✅ |
+| 559 | /platform/dashboard | - | /company/team | 200 ✅ |
+| 560 | /contact | - | /company/team | 200 ✅ |
+| 561 | /products/trinity-os | - | /company/team | 200 ✅ |
+| 562 | /products/ai-cloud | - | /company/team | 200 ✅ |
+| 563 | /products/agents | - | /company/team | 200 ✅ |
+| 564 | /products/dev-platform | - | /company/team | 200 ✅ |
+| 565 | /developers/sdk | - | /company/team | 404 ❌ |
+| 566 | /developers/cli | - | /company/team | 404 ❌ |
+| 567 | /platform/architecture | - | /company/team | 404 ❌ |
+| 568 | /platform/security | - | /company/team | 404 ❌ |
+| 569 | /platform/infrastructure | - | /company/team | 404 ❌ |
+| 570 | /platform/ai-stack | - | /company/team | 404 ❌ |
+| 571 | /solutions/ai-startups | - | /company/team | 200 ✅ |
+| 572 | /solutions/enterprise | - | /company/team | 200 ✅ |
+| 573 | /solutions/developers | - | /company/team | 200 ✅ |
+| 574 | /solutions/research | - | /company/team | 200 ✅ |
+| 575 | /developers/docs | - | /company/team | 404 ❌ |
+| 576 | /developers/api | - | /company/team | 404 ❌ |
+| 577 | /developers/tutorials | - | /company/team | 404 ❌ |
+| 578 | /developers/quickstarts | - | /company/team | 404 ❌ |
+| 579 | /company/about | - | /company/team | 200 ✅ |
+| 580 | /founder | - | /company/team | 200 ✅ |
+| 581 | /company/team | - | /company/team | 200 ✅ |
+| 582 | /company/careers | - | /company/team | 200 ✅ |
+| 583 | /resources/blog | - | /company/team | 200 ✅ |
+| 584 | /resources/guides | - | /company/team | 200 ✅ |
+| 585 | /case-studies | - | /company/team | 200 ✅ |
+| 586 | /resources/whitepapers | - | /company/team | 200 ✅ |
+| 587 | /developers/open-source | - | /company/team | 404 ❌ |
+| 588 | /status | - | /company/team | 404 ❌ |
+| 589 | /changelog | - | /company/team | 404 ❌ |
+| 590 | /community | - | /company/team | 404 ❌ |
+| 591 | /legal/privacy | - | /company/team | 404 ❌ |
+| 592 | /legal/terms | - | /company/team | 404 ❌ |
+| 593 | /security | - | /company/team | 404 ❌ |
+| 594 | /compliance | - | /company/team | 404 ❌ |
+| 595 | / | - | /company/careers | 200 ✅ |
+| 596 | /products | - | /company/careers | 200 ✅ |
+| 597 | /solutions | - | /company/careers | 200 ✅ |
+| 598 | /industries | - | /company/careers | 200 ✅ |
+| 599 | /platform/developers | - | /company/careers | 200 ✅ |
+| 600 | /resources | - | /company/careers | 200 ✅ |
+| 601 | /pricing | - | /company/careers | 200 ✅ |
+| 602 | /platform/dashboard | - | /company/careers | 200 ✅ |
+| 603 | /contact | - | /company/careers | 200 ✅ |
+| 604 | /products/trinity-os | - | /company/careers | 200 ✅ |
+| 605 | /products/ai-cloud | - | /company/careers | 200 ✅ |
+| 606 | /products/agents | - | /company/careers | 200 ✅ |
+| 607 | /products/dev-platform | - | /company/careers | 200 ✅ |
+| 608 | /developers/sdk | - | /company/careers | 404 ❌ |
+| 609 | /developers/cli | - | /company/careers | 404 ❌ |
+| 610 | /platform/architecture | - | /company/careers | 404 ❌ |
+| 611 | /platform/security | - | /company/careers | 404 ❌ |
+| 612 | /platform/infrastructure | - | /company/careers | 404 ❌ |
+| 613 | /platform/ai-stack | - | /company/careers | 404 ❌ |
+| 614 | /solutions/ai-startups | - | /company/careers | 200 ✅ |
+| 615 | /solutions/enterprise | - | /company/careers | 200 ✅ |
+| 616 | /solutions/developers | - | /company/careers | 200 ✅ |
+| 617 | /solutions/research | - | /company/careers | 200 ✅ |
+| 618 | /developers/docs | - | /company/careers | 404 ❌ |
+| 619 | /developers/api | - | /company/careers | 404 ❌ |
+| 620 | /developers/tutorials | - | /company/careers | 404 ❌ |
+| 621 | /developers/quickstarts | - | /company/careers | 404 ❌ |
+| 622 | /company/about | - | /company/careers | 200 ✅ |
+| 623 | /founder | - | /company/careers | 200 ✅ |
+| 624 | /company/team | - | /company/careers | 200 ✅ |
+| 625 | /company/careers | - | /company/careers | 200 ✅ |
+| 626 | /resources/blog | - | /company/careers | 200 ✅ |
+| 627 | /resources/guides | - | /company/careers | 200 ✅ |
+| 628 | /case-studies | - | /company/careers | 200 ✅ |
+| 629 | /resources/whitepapers | - | /company/careers | 200 ✅ |
+| 630 | /developers/open-source | - | /company/careers | 404 ❌ |
+| 631 | /status | - | /company/careers | 404 ❌ |
+| 632 | /changelog | - | /company/careers | 404 ❌ |
+| 633 | /community | - | /company/careers | 404 ❌ |
+| 634 | /legal/privacy | - | /company/careers | 404 ❌ |
+| 635 | /legal/terms | - | /company/careers | 404 ❌ |
+| 636 | /security | - | /company/careers | 404 ❌ |
+| 637 | /compliance | - | /company/careers | 404 ❌ |
+| 638 | / | - | /platform | 200 ✅ |
+| 639 | /products | - | /platform | 200 ✅ |
+| 640 | /solutions | - | /platform | 200 ✅ |
+| 641 | /industries | - | /platform | 200 ✅ |
+| 642 | /platform/developers | - | /platform | 200 ✅ |
+| 643 | /resources | - | /platform | 200 ✅ |
+| 644 | /pricing | - | /platform | 200 ✅ |
+| 645 | /platform/dashboard | - | /platform | 200 ✅ |
+| 646 | /contact | - | /platform | 200 ✅ |
+| 647 | /platform/startup-builder | - | /platform | 200 ✅ |
+| 648 | /platform/ai-tools | - | /platform | 200 ✅ |
+| 649 | /products/trinity-os | - | /platform | 200 ✅ |
+| 650 | /products/ai-cloud | - | /platform | 200 ✅ |
+| 651 | /products/agents | - | /platform | 200 ✅ |
+| 652 | /products/dev-platform | - | /platform | 200 ✅ |
+| 653 | /developers/sdk | - | /platform | 404 ❌ |
+| 654 | /developers/cli | - | /platform | 404 ❌ |
+| 655 | /platform/architecture | - | /platform | 404 ❌ |
+| 656 | /platform/security | - | /platform | 404 ❌ |
+| 657 | /platform/infrastructure | - | /platform | 404 ❌ |
+| 658 | /platform/ai-stack | - | /platform | 404 ❌ |
+| 659 | /solutions/ai-startups | - | /platform | 200 ✅ |
+| 660 | /solutions/enterprise | - | /platform | 200 ✅ |
+| 661 | /solutions/developers | - | /platform | 200 ✅ |
+| 662 | /solutions/research | - | /platform | 200 ✅ |
+| 663 | /developers/docs | - | /platform | 404 ❌ |
+| 664 | /developers/api | - | /platform | 404 ❌ |
+| 665 | /developers/tutorials | - | /platform | 404 ❌ |
+| 666 | /developers/quickstarts | - | /platform | 404 ❌ |
+| 667 | /company/about | - | /platform | 200 ✅ |
+| 668 | /founder | - | /platform | 200 ✅ |
+| 669 | /company/team | - | /platform | 200 ✅ |
+| 670 | /company/careers | - | /platform | 200 ✅ |
+| 671 | /resources/blog | - | /platform | 200 ✅ |
+| 672 | /resources/guides | - | /platform | 200 ✅ |
+| 673 | /case-studies | - | /platform | 200 ✅ |
+| 674 | /resources/whitepapers | - | /platform | 200 ✅ |
+| 675 | /developers/open-source | - | /platform | 404 ❌ |
+| 676 | /status | - | /platform | 404 ❌ |
+| 677 | /changelog | - | /platform | 404 ❌ |
+| 678 | /community | - | /platform | 404 ❌ |
+| 679 | /legal/privacy | - | /platform | 404 ❌ |
+| 680 | /legal/terms | - | /platform | 404 ❌ |
+| 681 | /security | - | /platform | 404 ❌ |
+| 682 | /compliance | - | /platform | 404 ❌ |
+| 683 | / | - | /platform/ai-tools | 200 ✅ |
+| 684 | /products | - | /platform/ai-tools | 200 ✅ |
+| 685 | /solutions | - | /platform/ai-tools | 200 ✅ |
+| 686 | /industries | - | /platform/ai-tools | 200 ✅ |
+| 687 | /platform/developers | - | /platform/ai-tools | 200 ✅ |
+| 688 | /resources | - | /platform/ai-tools | 200 ✅ |
+| 689 | /pricing | - | /platform/ai-tools | 200 ✅ |
+| 690 | /platform/dashboard | - | /platform/ai-tools | 200 ✅ |
+| 691 | /contact | - | /platform/ai-tools | 200 ✅ |
+| 692 | /platform/projects | - | /platform/ai-tools | 200 ✅ |
+| 693 | /platform/ai-tools | - | /platform/ai-tools | 200 ✅ |
+| 694 | /platform/invoices | - | /platform/ai-tools | 200 ✅ |
+| 695 | /platform/files | - | /platform/ai-tools | 404 ❌ |
+| 696 | /platform/messages | - | /platform/ai-tools | 404 ❌ |
+| 697 | /platform/deliverables | - | /platform/ai-tools | 404 ❌ |
+| 698 | /platform/settings | - | /platform/ai-tools | 404 ❌ |
+| 699 | /platform/help | - | /platform/ai-tools | 404 ❌ |
+| 700 | /products/trinity-os | - | /platform/ai-tools | 200 ✅ |
+| 701 | /products/ai-cloud | - | /platform/ai-tools | 200 ✅ |
+| 702 | /products/agents | - | /platform/ai-tools | 200 ✅ |
+| 703 | /products/dev-platform | - | /platform/ai-tools | 200 ✅ |
+| 704 | /developers/sdk | - | /platform/ai-tools | 404 ❌ |
+| 705 | /developers/cli | - | /platform/ai-tools | 404 ❌ |
+| 706 | /platform/architecture | - | /platform/ai-tools | 404 ❌ |
+| 707 | /platform/security | - | /platform/ai-tools | 404 ❌ |
+| 708 | /platform/infrastructure | - | /platform/ai-tools | 404 ❌ |
+| 709 | /platform/ai-stack | - | /platform/ai-tools | 404 ❌ |
+| 710 | /solutions/ai-startups | - | /platform/ai-tools | 200 ✅ |
+| 711 | /solutions/enterprise | - | /platform/ai-tools | 200 ✅ |
+| 712 | /solutions/developers | - | /platform/ai-tools | 200 ✅ |
+| 713 | /solutions/research | - | /platform/ai-tools | 200 ✅ |
+| 714 | /developers/docs | - | /platform/ai-tools | 404 ❌ |
+| 715 | /developers/api | - | /platform/ai-tools | 404 ❌ |
+| 716 | /developers/tutorials | - | /platform/ai-tools | 404 ❌ |
+| 717 | /developers/quickstarts | - | /platform/ai-tools | 404 ❌ |
+| 718 | /company/about | - | /platform/ai-tools | 200 ✅ |
+| 719 | /founder | - | /platform/ai-tools | 200 ✅ |
+| 720 | /company/team | - | /platform/ai-tools | 200 ✅ |
+| 721 | /company/careers | - | /platform/ai-tools | 200 ✅ |
+| 722 | /resources/blog | - | /platform/ai-tools | 200 ✅ |
+| 723 | /resources/guides | - | /platform/ai-tools | 200 ✅ |
+| 724 | /case-studies | - | /platform/ai-tools | 200 ✅ |
+| 725 | /resources/whitepapers | - | /platform/ai-tools | 200 ✅ |
+| 726 | /developers/open-source | - | /platform/ai-tools | 404 ❌ |
+| 727 | /status | - | /platform/ai-tools | 404 ❌ |
+| 728 | /changelog | - | /platform/ai-tools | 404 ❌ |
+| 729 | /community | - | /platform/ai-tools | 404 ❌ |
+| 730 | /legal/privacy | - | /platform/ai-tools | 404 ❌ |
+| 731 | /legal/terms | - | /platform/ai-tools | 404 ❌ |
+| 732 | /security | - | /platform/ai-tools | 404 ❌ |
+| 733 | /compliance | - | /platform/ai-tools | 404 ❌ |
+| 734 | / | - | /platform/dashboard | 200 ✅ |
+| 735 | /products | - | /platform/dashboard | 200 ✅ |
+| 736 | /solutions | - | /platform/dashboard | 200 ✅ |
+| 737 | /industries | - | /platform/dashboard | 200 ✅ |
+| 738 | /platform/developers | - | /platform/dashboard | 200 ✅ |
+| 739 | /resources | - | /platform/dashboard | 200 ✅ |
+| 740 | /pricing | - | /platform/dashboard | 200 ✅ |
+| 741 | /platform/dashboard | - | /platform/dashboard | 200 ✅ |
+| 742 | /contact | - | /platform/dashboard | 200 ✅ |
+| 743 | /platform/projects | - | /platform/dashboard | 200 ✅ |
+| 744 | /platform/ai-tools | - | /platform/dashboard | 200 ✅ |
+| 745 | /platform/invoices | - | /platform/dashboard | 200 ✅ |
+| 746 | /platform/files | - | /platform/dashboard | 404 ❌ |
+| 747 | /platform/messages | - | /platform/dashboard | 404 ❌ |
+| 748 | /platform/deliverables | - | /platform/dashboard | 404 ❌ |
+| 749 | /platform/settings | - | /platform/dashboard | 404 ❌ |
+| 750 | /platform/help | - | /platform/dashboard | 404 ❌ |
+| 751 | /products/trinity-os | - | /platform/dashboard | 200 ✅ |
+| 752 | /products/ai-cloud | - | /platform/dashboard | 200 ✅ |
+| 753 | /products/agents | - | /platform/dashboard | 200 ✅ |
+| 754 | /products/dev-platform | - | /platform/dashboard | 200 ✅ |
+| 755 | /developers/sdk | - | /platform/dashboard | 404 ❌ |
+| 756 | /developers/cli | - | /platform/dashboard | 404 ❌ |
+| 757 | /platform/architecture | - | /platform/dashboard | 404 ❌ |
+| 758 | /platform/security | - | /platform/dashboard | 404 ❌ |
+| 759 | /platform/infrastructure | - | /platform/dashboard | 404 ❌ |
+| 760 | /platform/ai-stack | - | /platform/dashboard | 404 ❌ |
+| 761 | /solutions/ai-startups | - | /platform/dashboard | 200 ✅ |
+| 762 | /solutions/enterprise | - | /platform/dashboard | 200 ✅ |
+| 763 | /solutions/developers | - | /platform/dashboard | 200 ✅ |
+| 764 | /solutions/research | - | /platform/dashboard | 200 ✅ |
+| 765 | /developers/docs | - | /platform/dashboard | 404 ❌ |
+| 766 | /developers/api | - | /platform/dashboard | 404 ❌ |
+| 767 | /developers/tutorials | - | /platform/dashboard | 404 ❌ |
+| 768 | /developers/quickstarts | - | /platform/dashboard | 404 ❌ |
+| 769 | /company/about | - | /platform/dashboard | 200 ✅ |
+| 770 | /founder | - | /platform/dashboard | 200 ✅ |
+| 771 | /company/team | - | /platform/dashboard | 200 ✅ |
+| 772 | /company/careers | - | /platform/dashboard | 200 ✅ |
+| 773 | /resources/blog | - | /platform/dashboard | 200 ✅ |
+| 774 | /resources/guides | - | /platform/dashboard | 200 ✅ |
+| 775 | /case-studies | - | /platform/dashboard | 200 ✅ |
+| 776 | /resources/whitepapers | - | /platform/dashboard | 200 ✅ |
+| 777 | /developers/open-source | - | /platform/dashboard | 404 ❌ |
+| 778 | /status | - | /platform/dashboard | 404 ❌ |
+| 779 | /changelog | - | /platform/dashboard | 404 ❌ |
+| 780 | /community | - | /platform/dashboard | 404 ❌ |
+| 781 | /legal/privacy | - | /platform/dashboard | 404 ❌ |
+| 782 | /legal/terms | - | /platform/dashboard | 404 ❌ |
+| 783 | /security | - | /platform/dashboard | 404 ❌ |
+| 784 | /compliance | - | /platform/dashboard | 404 ❌ |
+| 785 | / | - | /platform/developers | 200 ✅ |
+| 786 | /products | - | /platform/developers | 200 ✅ |
+| 787 | /solutions | - | /platform/developers | 200 ✅ |
+| 788 | /industries | - | /platform/developers | 200 ✅ |
+| 789 | /platform/developers | - | /platform/developers | 200 ✅ |
+| 790 | /resources | - | /platform/developers | 200 ✅ |
+| 791 | /pricing | - | /platform/developers | 200 ✅ |
+| 792 | /platform/dashboard | - | /platform/developers | 200 ✅ |
+| 793 | /contact | - | /platform/developers | 200 ✅ |
+| 794 | /platform/projects | - | /platform/developers | 200 ✅ |
+| 795 | /platform/ai-tools | - | /platform/developers | 200 ✅ |
+| 796 | /platform/invoices | - | /platform/developers | 200 ✅ |
+| 797 | /platform/files | - | /platform/developers | 404 ❌ |
+| 798 | /platform/messages | - | /platform/developers | 404 ❌ |
+| 799 | /platform/deliverables | - | /platform/developers | 404 ❌ |
+| 800 | /platform/settings | - | /platform/developers | 404 ❌ |
+| 801 | /platform/help | - | /platform/developers | 404 ❌ |
+| 802 | /products/trinity-os | - | /platform/developers | 200 ✅ |
+| 803 | /products/ai-cloud | - | /platform/developers | 200 ✅ |
+| 804 | /products/agents | - | /platform/developers | 200 ✅ |
+| 805 | /products/dev-platform | - | /platform/developers | 200 ✅ |
+| 806 | /developers/sdk | - | /platform/developers | 404 ❌ |
+| 807 | /developers/cli | - | /platform/developers | 404 ❌ |
+| 808 | /platform/architecture | - | /platform/developers | 404 ❌ |
+| 809 | /platform/security | - | /platform/developers | 404 ❌ |
+| 810 | /platform/infrastructure | - | /platform/developers | 404 ❌ |
+| 811 | /platform/ai-stack | - | /platform/developers | 404 ❌ |
+| 812 | /solutions/ai-startups | - | /platform/developers | 200 ✅ |
+| 813 | /solutions/enterprise | - | /platform/developers | 200 ✅ |
+| 814 | /solutions/developers | - | /platform/developers | 200 ✅ |
+| 815 | /solutions/research | - | /platform/developers | 200 ✅ |
+| 816 | /developers/docs | - | /platform/developers | 404 ❌ |
+| 817 | /developers/api | - | /platform/developers | 404 ❌ |
+| 818 | /developers/tutorials | - | /platform/developers | 404 ❌ |
+| 819 | /developers/quickstarts | - | /platform/developers | 404 ❌ |
+| 820 | /company/about | - | /platform/developers | 200 ✅ |
+| 821 | /founder | - | /platform/developers | 200 ✅ |
+| 822 | /company/team | - | /platform/developers | 200 ✅ |
+| 823 | /company/careers | - | /platform/developers | 200 ✅ |
+| 824 | /resources/blog | - | /platform/developers | 200 ✅ |
+| 825 | /resources/guides | - | /platform/developers | 200 ✅ |
+| 826 | /case-studies | - | /platform/developers | 200 ✅ |
+| 827 | /resources/whitepapers | - | /platform/developers | 200 ✅ |
+| 828 | /developers/open-source | - | /platform/developers | 404 ❌ |
+| 829 | /status | - | /platform/developers | 404 ❌ |
+| 830 | /changelog | - | /platform/developers | 404 ❌ |
+| 831 | /community | - | /platform/developers | 404 ❌ |
+| 832 | /legal/privacy | - | /platform/developers | 404 ❌ |
+| 833 | /legal/terms | - | /platform/developers | 404 ❌ |
+| 834 | /security | - | /platform/developers | 404 ❌ |
+| 835 | /compliance | - | /platform/developers | 404 ❌ |
+| 836 | / | - | /platform/invoices | 200 ✅ |
+| 837 | /products | - | /platform/invoices | 200 ✅ |
+| 838 | /solutions | - | /platform/invoices | 200 ✅ |
+| 839 | /industries | - | /platform/invoices | 200 ✅ |
+| 840 | /platform/developers | - | /platform/invoices | 200 ✅ |
+| 841 | /resources | - | /platform/invoices | 200 ✅ |
+| 842 | /pricing | - | /platform/invoices | 200 ✅ |
+| 843 | /platform/dashboard | - | /platform/invoices | 200 ✅ |
+| 844 | /contact | - | /platform/invoices | 200 ✅ |
+| 845 | /platform/projects | - | /platform/invoices | 200 ✅ |
+| 846 | /platform/ai-tools | - | /platform/invoices | 200 ✅ |
+| 847 | /platform/invoices | - | /platform/invoices | 200 ✅ |
+| 848 | /platform/files | - | /platform/invoices | 404 ❌ |
+| 849 | /platform/messages | - | /platform/invoices | 404 ❌ |
+| 850 | /platform/deliverables | - | /platform/invoices | 404 ❌ |
+| 851 | /platform/settings | - | /platform/invoices | 404 ❌ |
+| 852 | /platform/help | - | /platform/invoices | 404 ❌ |
+| 853 | /products/trinity-os | - | /platform/invoices | 200 ✅ |
+| 854 | /products/ai-cloud | - | /platform/invoices | 200 ✅ |
+| 855 | /products/agents | - | /platform/invoices | 200 ✅ |
+| 856 | /products/dev-platform | - | /platform/invoices | 200 ✅ |
+| 857 | /developers/sdk | - | /platform/invoices | 404 ❌ |
+| 858 | /developers/cli | - | /platform/invoices | 404 ❌ |
+| 859 | /platform/architecture | - | /platform/invoices | 404 ❌ |
+| 860 | /platform/security | - | /platform/invoices | 404 ❌ |
+| 861 | /platform/infrastructure | - | /platform/invoices | 404 ❌ |
+| 862 | /platform/ai-stack | - | /platform/invoices | 404 ❌ |
+| 863 | /solutions/ai-startups | - | /platform/invoices | 200 ✅ |
+| 864 | /solutions/enterprise | - | /platform/invoices | 200 ✅ |
+| 865 | /solutions/developers | - | /platform/invoices | 200 ✅ |
+| 866 | /solutions/research | - | /platform/invoices | 200 ✅ |
+| 867 | /developers/docs | - | /platform/invoices | 404 ❌ |
+| 868 | /developers/api | - | /platform/invoices | 404 ❌ |
+| 869 | /developers/tutorials | - | /platform/invoices | 404 ❌ |
+| 870 | /developers/quickstarts | - | /platform/invoices | 404 ❌ |
+| 871 | /company/about | - | /platform/invoices | 200 ✅ |
+| 872 | /founder | - | /platform/invoices | 200 ✅ |
+| 873 | /company/team | - | /platform/invoices | 200 ✅ |
+| 874 | /company/careers | - | /platform/invoices | 200 ✅ |
+| 875 | /resources/blog | - | /platform/invoices | 200 ✅ |
+| 876 | /resources/guides | - | /platform/invoices | 200 ✅ |
+| 877 | /case-studies | - | /platform/invoices | 200 ✅ |
+| 878 | /resources/whitepapers | - | /platform/invoices | 200 ✅ |
+| 879 | /developers/open-source | - | /platform/invoices | 404 ❌ |
+| 880 | /status | - | /platform/invoices | 404 ❌ |
+| 881 | /changelog | - | /platform/invoices | 404 ❌ |
+| 882 | /community | - | /platform/invoices | 404 ❌ |
+| 883 | /legal/privacy | - | /platform/invoices | 404 ❌ |
+| 884 | /legal/terms | - | /platform/invoices | 404 ❌ |
+| 885 | /security | - | /platform/invoices | 404 ❌ |
+| 886 | /compliance | - | /platform/invoices | 404 ❌ |
+| 887 | / | - | /platform/projects | 200 ✅ |
+| 888 | /products | - | /platform/projects | 200 ✅ |
+| 889 | /solutions | - | /platform/projects | 200 ✅ |
+| 890 | /industries | - | /platform/projects | 200 ✅ |
+| 891 | /platform/developers | - | /platform/projects | 200 ✅ |
+| 892 | /resources | - | /platform/projects | 200 ✅ |
+| 893 | /pricing | - | /platform/projects | 200 ✅ |
+| 894 | /platform/dashboard | - | /platform/projects | 200 ✅ |
+| 895 | /contact | - | /platform/projects | 200 ✅ |
+| 896 | /platform/projects | - | /platform/projects | 200 ✅ |
+| 897 | /platform/ai-tools | - | /platform/projects | 200 ✅ |
+| 898 | /platform/invoices | - | /platform/projects | 200 ✅ |
+| 899 | /platform/files | - | /platform/projects | 404 ❌ |
+| 900 | /platform/messages | - | /platform/projects | 404 ❌ |
+| 901 | /platform/deliverables | - | /platform/projects | 404 ❌ |
+| 902 | /platform/settings | - | /platform/projects | 404 ❌ |
+| 903 | /platform/help | - | /platform/projects | 404 ❌ |
+| 904 | /products/trinity-os | - | /platform/projects | 200 ✅ |
+| 905 | /products/ai-cloud | - | /platform/projects | 200 ✅ |
+| 906 | /products/agents | - | /platform/projects | 200 ✅ |
+| 907 | /products/dev-platform | - | /platform/projects | 200 ✅ |
+| 908 | /developers/sdk | - | /platform/projects | 404 ❌ |
+| 909 | /developers/cli | - | /platform/projects | 404 ❌ |
+| 910 | /platform/architecture | - | /platform/projects | 404 ❌ |
+| 911 | /platform/security | - | /platform/projects | 404 ❌ |
+| 912 | /platform/infrastructure | - | /platform/projects | 404 ❌ |
+| 913 | /platform/ai-stack | - | /platform/projects | 404 ❌ |
+| 914 | /solutions/ai-startups | - | /platform/projects | 200 ✅ |
+| 915 | /solutions/enterprise | - | /platform/projects | 200 ✅ |
+| 916 | /solutions/developers | - | /platform/projects | 200 ✅ |
+| 917 | /solutions/research | - | /platform/projects | 200 ✅ |
+| 918 | /developers/docs | - | /platform/projects | 404 ❌ |
+| 919 | /developers/api | - | /platform/projects | 404 ❌ |
+| 920 | /developers/tutorials | - | /platform/projects | 404 ❌ |
+| 921 | /developers/quickstarts | - | /platform/projects | 404 ❌ |
+| 922 | /company/about | - | /platform/projects | 200 ✅ |
+| 923 | /founder | - | /platform/projects | 200 ✅ |
+| 924 | /company/team | - | /platform/projects | 200 ✅ |
+| 925 | /company/careers | - | /platform/projects | 200 ✅ |
+| 926 | /resources/blog | - | /platform/projects | 200 ✅ |
+| 927 | /resources/guides | - | /platform/projects | 200 ✅ |
+| 928 | /case-studies | - | /platform/projects | 200 ✅ |
+| 929 | /resources/whitepapers | - | /platform/projects | 200 ✅ |
+| 930 | /developers/open-source | - | /platform/projects | 404 ❌ |
+| 931 | /status | - | /platform/projects | 404 ❌ |
+| 932 | /changelog | - | /platform/projects | 404 ❌ |
+| 933 | /community | - | /platform/projects | 404 ❌ |
+| 934 | /legal/privacy | - | /platform/projects | 404 ❌ |
+| 935 | /legal/terms | - | /platform/projects | 404 ❌ |
+| 936 | /security | - | /platform/projects | 404 ❌ |
+| 937 | /compliance | - | /platform/projects | 404 ❌ |
+| 938 | / | - | /platform/startup-builder | 200 ✅ |
+| 939 | /products | - | /platform/startup-builder | 200 ✅ |
+| 940 | /solutions | - | /platform/startup-builder | 200 ✅ |
+| 941 | /industries | - | /platform/startup-builder | 200 ✅ |
+| 942 | /platform/developers | - | /platform/startup-builder | 200 ✅ |
+| 943 | /resources | - | /platform/startup-builder | 200 ✅ |
+| 944 | /pricing | - | /platform/startup-builder | 200 ✅ |
+| 945 | /platform/dashboard | - | /platform/startup-builder | 200 ✅ |
+| 946 | /contact | - | /platform/startup-builder | 200 ✅ |
+| 947 | /platform/projects | - | /platform/startup-builder | 200 ✅ |
+| 948 | /platform/ai-tools | - | /platform/startup-builder | 200 ✅ |
+| 949 | /platform/invoices | - | /platform/startup-builder | 200 ✅ |
+| 950 | /platform/files | - | /platform/startup-builder | 404 ❌ |
+| 951 | /platform/messages | - | /platform/startup-builder | 404 ❌ |
+| 952 | /platform/deliverables | - | /platform/startup-builder | 404 ❌ |
+| 953 | /platform/settings | - | /platform/startup-builder | 404 ❌ |
+| 954 | /platform/help | - | /platform/startup-builder | 404 ❌ |
+| 955 | /products/trinity-os | - | /platform/startup-builder | 200 ✅ |
+| 956 | /products/ai-cloud | - | /platform/startup-builder | 200 ✅ |
+| 957 | /products/agents | - | /platform/startup-builder | 200 ✅ |
+| 958 | /products/dev-platform | - | /platform/startup-builder | 200 ✅ |
+| 959 | /developers/sdk | - | /platform/startup-builder | 404 ❌ |
+| 960 | /developers/cli | - | /platform/startup-builder | 404 ❌ |
+| 961 | /platform/architecture | - | /platform/startup-builder | 404 ❌ |
+| 962 | /platform/security | - | /platform/startup-builder | 404 ❌ |
+| 963 | /platform/infrastructure | - | /platform/startup-builder | 404 ❌ |
+| 964 | /platform/ai-stack | - | /platform/startup-builder | 404 ❌ |
+| 965 | /solutions/ai-startups | - | /platform/startup-builder | 200 ✅ |
+| 966 | /solutions/enterprise | - | /platform/startup-builder | 200 ✅ |
+| 967 | /solutions/developers | - | /platform/startup-builder | 200 ✅ |
+| 968 | /solutions/research | - | /platform/startup-builder | 200 ✅ |
+| 969 | /developers/docs | - | /platform/startup-builder | 404 ❌ |
+| 970 | /developers/api | - | /platform/startup-builder | 404 ❌ |
+| 971 | /developers/tutorials | - | /platform/startup-builder | 404 ❌ |
+| 972 | /developers/quickstarts | - | /platform/startup-builder | 404 ❌ |
+| 973 | /company/about | - | /platform/startup-builder | 200 ✅ |
+| 974 | /founder | - | /platform/startup-builder | 200 ✅ |
+| 975 | /company/team | - | /platform/startup-builder | 200 ✅ |
+| 976 | /company/careers | - | /platform/startup-builder | 200 ✅ |
+| 977 | /resources/blog | - | /platform/startup-builder | 200 ✅ |
+| 978 | /resources/guides | - | /platform/startup-builder | 200 ✅ |
+| 979 | /case-studies | - | /platform/startup-builder | 200 ✅ |
+| 980 | /resources/whitepapers | - | /platform/startup-builder | 200 ✅ |
+| 981 | /developers/open-source | - | /platform/startup-builder | 404 ❌ |
+| 982 | /status | - | /platform/startup-builder | 404 ❌ |
+| 983 | /changelog | - | /platform/startup-builder | 404 ❌ |
+| 984 | /community | - | /platform/startup-builder | 404 ❌ |
+| 985 | /legal/privacy | - | /platform/startup-builder | 404 ❌ |
+| 986 | /legal/terms | - | /platform/startup-builder | 404 ❌ |
+| 987 | /security | - | /platform/startup-builder | 404 ❌ |
+| 988 | /compliance | - | /platform/startup-builder | 404 ❌ |
+| 989 | / | - | /industries | 200 ✅ |
+| 990 | /products | - | /industries | 200 ✅ |
+| 991 | /solutions | - | /industries | 200 ✅ |
+| 992 | /industries | - | /industries | 200 ✅ |
+| 993 | /platform/developers | - | /industries | 200 ✅ |
+| 994 | /resources | - | /industries | 200 ✅ |
+| 995 | /pricing | - | /industries | 200 ✅ |
+| 996 | /platform/dashboard | - | /industries | 200 ✅ |
+| 997 | /contact | - | /industries | 200 ✅ |
+| 998 | /industries/startups | - | /industries | 200 ✅ |
+| 999 | /industries/fintech | - | /industries | 200 ✅ |
+| 1000 | /industries/healthcare | - | /industries | 200 ✅ |
+| 1001 | /industries/ecommerce | - | /industries | 200 ✅ |
+| 1002 | /products/trinity-os | - | /industries | 200 ✅ |
+| 1003 | /products/ai-cloud | - | /industries | 200 ✅ |
+| 1004 | /products/agents | - | /industries | 200 ✅ |
+| 1005 | /products/dev-platform | - | /industries | 200 ✅ |
+| 1006 | /developers/sdk | - | /industries | 404 ❌ |
+| 1007 | /developers/cli | - | /industries | 404 ❌ |
+| 1008 | /platform/architecture | - | /industries | 404 ❌ |
+| 1009 | /platform/security | - | /industries | 404 ❌ |
+| 1010 | /platform/infrastructure | - | /industries | 404 ❌ |
+| 1011 | /platform/ai-stack | - | /industries | 404 ❌ |
+| 1012 | /solutions/ai-startups | - | /industries | 200 ✅ |
+| 1013 | /solutions/enterprise | - | /industries | 200 ✅ |
+| 1014 | /solutions/developers | - | /industries | 200 ✅ |
+| 1015 | /solutions/research | - | /industries | 200 ✅ |
+| 1016 | /developers/docs | - | /industries | 404 ❌ |
+| 1017 | /developers/api | - | /industries | 404 ❌ |
+| 1018 | /developers/tutorials | - | /industries | 404 ❌ |
+| 1019 | /developers/quickstarts | - | /industries | 404 ❌ |
+| 1020 | /company/about | - | /industries | 200 ✅ |
+| 1021 | /founder | - | /industries | 200 ✅ |
+| 1022 | /company/team | - | /industries | 200 ✅ |
+| 1023 | /company/careers | - | /industries | 200 ✅ |
+| 1024 | /resources/blog | - | /industries | 200 ✅ |
+| 1025 | /resources/guides | - | /industries | 200 ✅ |
+| 1026 | /case-studies | - | /industries | 200 ✅ |
+| 1027 | /resources/whitepapers | - | /industries | 200 ✅ |
+| 1028 | /developers/open-source | - | /industries | 404 ❌ |
+| 1029 | /status | - | /industries | 404 ❌ |
+| 1030 | /changelog | - | /industries | 404 ❌ |
+| 1031 | /community | - | /industries | 404 ❌ |
+| 1032 | /legal/privacy | - | /industries | 404 ❌ |
+| 1033 | /legal/terms | - | /industries | 404 ❌ |
+| 1034 | /security | - | /industries | 404 ❌ |
+| 1035 | /compliance | - | /industries | 404 ❌ |
+| 1036 | / | - | /resources | 200 ✅ |
+| 1037 | /products | - | /resources | 200 ✅ |
+| 1038 | /solutions | - | /resources | 200 ✅ |
+| 1039 | /industries | - | /resources | 200 ✅ |
+| 1040 | /platform/developers | - | /resources | 200 ✅ |
+| 1041 | /resources | - | /resources | 200 ✅ |
+| 1042 | /pricing | - | /resources | 200 ✅ |
+| 1043 | /platform/dashboard | - | /resources | 200 ✅ |
+| 1044 | /contact | - | /resources | 200 ✅ |
+| 1045 | /resources/blog | - | /resources | 200 ✅ |
+| 1046 | /resources/guides | - | /resources | 200 ✅ |
+| 1047 | /resources/whitepapers | - | /resources | 200 ✅ |
+| 1048 | /products/trinity-os | - | /resources | 200 ✅ |
+| 1049 | /products/ai-cloud | - | /resources | 200 ✅ |
+| 1050 | /products/agents | - | /resources | 200 ✅ |
+| 1051 | /products/dev-platform | - | /resources | 200 ✅ |
+| 1052 | /developers/sdk | - | /resources | 404 ❌ |
+| 1053 | /developers/cli | - | /resources | 404 ❌ |
+| 1054 | /platform/architecture | - | /resources | 404 ❌ |
+| 1055 | /platform/security | - | /resources | 404 ❌ |
+| 1056 | /platform/infrastructure | - | /resources | 404 ❌ |
+| 1057 | /platform/ai-stack | - | /resources | 404 ❌ |
+| 1058 | /solutions/ai-startups | - | /resources | 200 ✅ |
+| 1059 | /solutions/enterprise | - | /resources | 200 ✅ |
+| 1060 | /solutions/developers | - | /resources | 200 ✅ |
+| 1061 | /solutions/research | - | /resources | 200 ✅ |
+| 1062 | /developers/docs | - | /resources | 404 ❌ |
+| 1063 | /developers/api | - | /resources | 404 ❌ |
+| 1064 | /developers/tutorials | - | /resources | 404 ❌ |
+| 1065 | /developers/quickstarts | - | /resources | 404 ❌ |
+| 1066 | /company/about | - | /resources | 200 ✅ |
+| 1067 | /founder | - | /resources | 200 ✅ |
+| 1068 | /company/team | - | /resources | 200 ✅ |
+| 1069 | /company/careers | - | /resources | 200 ✅ |
+| 1070 | /case-studies | - | /resources | 200 ✅ |
+| 1071 | /developers/open-source | - | /resources | 404 ❌ |
+| 1072 | /status | - | /resources | 404 ❌ |
+| 1073 | /changelog | - | /resources | 404 ❌ |
+| 1074 | /community | - | /resources | 404 ❌ |
+| 1075 | /legal/privacy | - | /resources | 404 ❌ |
+| 1076 | /legal/terms | - | /resources | 404 ❌ |
+| 1077 | /security | - | /resources | 404 ❌ |
+| 1078 | /compliance | - | /resources | 404 ❌ |
+| 1079 | / | - | /resources/blog | 200 ✅ |
+| 1080 | /products | - | /resources/blog | 200 ✅ |
+| 1081 | /solutions | - | /resources/blog | 200 ✅ |
+| 1082 | /industries | - | /resources/blog | 200 ✅ |
+| 1083 | /platform/developers | - | /resources/blog | 200 ✅ |
+| 1084 | /resources | - | /resources/blog | 200 ✅ |
+| 1085 | /pricing | - | /resources/blog | 200 ✅ |
+| 1086 | /platform/dashboard | - | /resources/blog | 200 ✅ |
+| 1087 | /contact | - | /resources/blog | 200 ✅ |
+| 1088 | /products/trinity-os | - | /resources/blog | 200 ✅ |
+| 1089 | /products/ai-cloud | - | /resources/blog | 200 ✅ |
+| 1090 | /products/agents | - | /resources/blog | 200 ✅ |
+| 1091 | /products/dev-platform | - | /resources/blog | 200 ✅ |
+| 1092 | /developers/sdk | - | /resources/blog | 404 ❌ |
+| 1093 | /developers/cli | - | /resources/blog | 404 ❌ |
+| 1094 | /platform/architecture | - | /resources/blog | 404 ❌ |
+| 1095 | /platform/security | - | /resources/blog | 404 ❌ |
+| 1096 | /platform/infrastructure | - | /resources/blog | 404 ❌ |
+| 1097 | /platform/ai-stack | - | /resources/blog | 404 ❌ |
+| 1098 | /solutions/ai-startups | - | /resources/blog | 200 ✅ |
+| 1099 | /solutions/enterprise | - | /resources/blog | 200 ✅ |
+| 1100 | /solutions/developers | - | /resources/blog | 200 ✅ |
+| 1101 | /solutions/research | - | /resources/blog | 200 ✅ |
+| 1102 | /developers/docs | - | /resources/blog | 404 ❌ |
+| 1103 | /developers/api | - | /resources/blog | 404 ❌ |
+| 1104 | /developers/tutorials | - | /resources/blog | 404 ❌ |
+| 1105 | /developers/quickstarts | - | /resources/blog | 404 ❌ |
+| 1106 | /company/about | - | /resources/blog | 200 ✅ |
+| 1107 | /founder | - | /resources/blog | 200 ✅ |
+| 1108 | /company/team | - | /resources/blog | 200 ✅ |
+| 1109 | /company/careers | - | /resources/blog | 200 ✅ |
+| 1110 | /resources/blog | - | /resources/blog | 200 ✅ |
+| 1111 | /resources/guides | - | /resources/blog | 200 ✅ |
+| 1112 | /case-studies | - | /resources/blog | 200 ✅ |
+| 1113 | /resources/whitepapers | - | /resources/blog | 200 ✅ |
+| 1114 | /developers/open-source | - | /resources/blog | 404 ❌ |
+| 1115 | /status | - | /resources/blog | 404 ❌ |
+| 1116 | /changelog | - | /resources/blog | 404 ❌ |
+| 1117 | /community | - | /resources/blog | 404 ❌ |
+| 1118 | /legal/privacy | - | /resources/blog | 404 ❌ |
+| 1119 | /legal/terms | - | /resources/blog | 404 ❌ |
+| 1120 | /security | - | /resources/blog | 404 ❌ |
+| 1121 | /compliance | - | /resources/blog | 404 ❌ |
+| 1122 | / | - | /resources/guides | 200 ✅ |
+| 1123 | /products | - | /resources/guides | 200 ✅ |
+| 1124 | /solutions | - | /resources/guides | 200 ✅ |
+| 1125 | /industries | - | /resources/guides | 200 ✅ |
+| 1126 | /platform/developers | - | /resources/guides | 200 ✅ |
+| 1127 | /resources | - | /resources/guides | 200 ✅ |
+| 1128 | /pricing | - | /resources/guides | 200 ✅ |
+| 1129 | /platform/dashboard | - | /resources/guides | 200 ✅ |
+| 1130 | /contact | - | /resources/guides | 200 ✅ |
+| 1131 | /products/trinity-os | - | /resources/guides | 200 ✅ |
+| 1132 | /products/ai-cloud | - | /resources/guides | 200 ✅ |
+| 1133 | /products/agents | - | /resources/guides | 200 ✅ |
+| 1134 | /products/dev-platform | - | /resources/guides | 200 ✅ |
+| 1135 | /developers/sdk | - | /resources/guides | 404 ❌ |
+| 1136 | /developers/cli | - | /resources/guides | 404 ❌ |
+| 1137 | /platform/architecture | - | /resources/guides | 404 ❌ |
+| 1138 | /platform/security | - | /resources/guides | 404 ❌ |
+| 1139 | /platform/infrastructure | - | /resources/guides | 404 ❌ |
+| 1140 | /platform/ai-stack | - | /resources/guides | 404 ❌ |
+| 1141 | /solutions/ai-startups | - | /resources/guides | 200 ✅ |
+| 1142 | /solutions/enterprise | - | /resources/guides | 200 ✅ |
+| 1143 | /solutions/developers | - | /resources/guides | 200 ✅ |
+| 1144 | /solutions/research | - | /resources/guides | 200 ✅ |
+| 1145 | /developers/docs | - | /resources/guides | 404 ❌ |
+| 1146 | /developers/api | - | /resources/guides | 404 ❌ |
+| 1147 | /developers/tutorials | - | /resources/guides | 404 ❌ |
+| 1148 | /developers/quickstarts | - | /resources/guides | 404 ❌ |
+| 1149 | /company/about | - | /resources/guides | 200 ✅ |
+| 1150 | /founder | - | /resources/guides | 200 ✅ |
+| 1151 | /company/team | - | /resources/guides | 200 ✅ |
+| 1152 | /company/careers | - | /resources/guides | 200 ✅ |
+| 1153 | /resources/blog | - | /resources/guides | 200 ✅ |
+| 1154 | /resources/guides | - | /resources/guides | 200 ✅ |
+| 1155 | /case-studies | - | /resources/guides | 200 ✅ |
+| 1156 | /resources/whitepapers | - | /resources/guides | 200 ✅ |
+| 1157 | /developers/open-source | - | /resources/guides | 404 ❌ |
+| 1158 | /status | - | /resources/guides | 404 ❌ |
+| 1159 | /changelog | - | /resources/guides | 404 ❌ |
+| 1160 | /community | - | /resources/guides | 404 ❌ |
+| 1161 | /legal/privacy | - | /resources/guides | 404 ❌ |
+| 1162 | /legal/terms | - | /resources/guides | 404 ❌ |
+| 1163 | /security | - | /resources/guides | 404 ❌ |
+| 1164 | /compliance | - | /resources/guides | 404 ❌ |
+| 1165 | / | - | /resources/whitepapers | 200 ✅ |
+| 1166 | /products | - | /resources/whitepapers | 200 ✅ |
+| 1167 | /solutions | - | /resources/whitepapers | 200 ✅ |
+| 1168 | /industries | - | /resources/whitepapers | 200 ✅ |
+| 1169 | /platform/developers | - | /resources/whitepapers | 200 ✅ |
+| 1170 | /resources | - | /resources/whitepapers | 200 ✅ |
+| 1171 | /pricing | - | /resources/whitepapers | 200 ✅ |
+| 1172 | /platform/dashboard | - | /resources/whitepapers | 200 ✅ |
+| 1173 | /contact | - | /resources/whitepapers | 200 ✅ |
+| 1174 | /products/trinity-os | - | /resources/whitepapers | 200 ✅ |
+| 1175 | /products/ai-cloud | - | /resources/whitepapers | 200 ✅ |
+| 1176 | /products/agents | - | /resources/whitepapers | 200 ✅ |
+| 1177 | /products/dev-platform | - | /resources/whitepapers | 200 ✅ |
+| 1178 | /developers/sdk | - | /resources/whitepapers | 404 ❌ |
+| 1179 | /developers/cli | - | /resources/whitepapers | 404 ❌ |
+| 1180 | /platform/architecture | - | /resources/whitepapers | 404 ❌ |
+| 1181 | /platform/security | - | /resources/whitepapers | 404 ❌ |
+| 1182 | /platform/infrastructure | - | /resources/whitepapers | 404 ❌ |
+| 1183 | /platform/ai-stack | - | /resources/whitepapers | 404 ❌ |
+| 1184 | /solutions/ai-startups | - | /resources/whitepapers | 200 ✅ |
+| 1185 | /solutions/enterprise | - | /resources/whitepapers | 200 ✅ |
+| 1186 | /solutions/developers | - | /resources/whitepapers | 200 ✅ |
+| 1187 | /solutions/research | - | /resources/whitepapers | 200 ✅ |
+| 1188 | /developers/docs | - | /resources/whitepapers | 404 ❌ |
+| 1189 | /developers/api | - | /resources/whitepapers | 404 ❌ |
+| 1190 | /developers/tutorials | - | /resources/whitepapers | 404 ❌ |
+| 1191 | /developers/quickstarts | - | /resources/whitepapers | 404 ❌ |
+| 1192 | /company/about | - | /resources/whitepapers | 200 ✅ |
+| 1193 | /founder | - | /resources/whitepapers | 200 ✅ |
+| 1194 | /company/team | - | /resources/whitepapers | 200 ✅ |
+| 1195 | /company/careers | - | /resources/whitepapers | 200 ✅ |
+| 1196 | /resources/blog | - | /resources/whitepapers | 200 ✅ |
+| 1197 | /resources/guides | - | /resources/whitepapers | 200 ✅ |
+| 1198 | /case-studies | - | /resources/whitepapers | 200 ✅ |
+| 1199 | /resources/whitepapers | - | /resources/whitepapers | 200 ✅ |
+| 1200 | /developers/open-source | - | /resources/whitepapers | 404 ❌ |
+| 1201 | /status | - | /resources/whitepapers | 404 ❌ |
+| 1202 | /changelog | - | /resources/whitepapers | 404 ❌ |
+| 1203 | /community | - | /resources/whitepapers | 404 ❌ |
+| 1204 | /legal/privacy | - | /resources/whitepapers | 404 ❌ |
+| 1205 | /legal/terms | - | /resources/whitepapers | 404 ❌ |
+| 1206 | /security | - | /resources/whitepapers | 404 ❌ |
+| 1207 | /compliance | - | /resources/whitepapers | 404 ❌ |
+| 1208 | / | - | /privacy | 200 ✅ |
+| 1209 | /products | - | /privacy | 200 ✅ |
+| 1210 | /solutions | - | /privacy | 200 ✅ |
+| 1211 | /industries | - | /privacy | 200 ✅ |
+| 1212 | /platform/developers | - | /privacy | 200 ✅ |
+| 1213 | /resources | - | /privacy | 200 ✅ |
+| 1214 | /pricing | - | /privacy | 200 ✅ |
+| 1215 | /platform/dashboard | - | /privacy | 200 ✅ |
+| 1216 | /contact | - | /privacy | 200 ✅ |
+| 1217 | /products/trinity-os | - | /privacy | 200 ✅ |
+| 1218 | /products/ai-cloud | - | /privacy | 200 ✅ |
+| 1219 | /products/agents | - | /privacy | 200 ✅ |
+| 1220 | /products/dev-platform | - | /privacy | 200 ✅ |
+| 1221 | /developers/sdk | - | /privacy | 404 ❌ |
+| 1222 | /developers/cli | - | /privacy | 404 ❌ |
+| 1223 | /platform/architecture | - | /privacy | 404 ❌ |
+| 1224 | /platform/security | - | /privacy | 404 ❌ |
+| 1225 | /platform/infrastructure | - | /privacy | 404 ❌ |
+| 1226 | /platform/ai-stack | - | /privacy | 404 ❌ |
+| 1227 | /solutions/ai-startups | - | /privacy | 200 ✅ |
+| 1228 | /solutions/enterprise | - | /privacy | 200 ✅ |
+| 1229 | /solutions/developers | - | /privacy | 200 ✅ |
+| 1230 | /solutions/research | - | /privacy | 200 ✅ |
+| 1231 | /developers/docs | - | /privacy | 404 ❌ |
+| 1232 | /developers/api | - | /privacy | 404 ❌ |
+| 1233 | /developers/tutorials | - | /privacy | 404 ❌ |
+| 1234 | /developers/quickstarts | - | /privacy | 404 ❌ |
+| 1235 | /company/about | - | /privacy | 200 ✅ |
+| 1236 | /founder | - | /privacy | 200 ✅ |
+| 1237 | /company/team | - | /privacy | 200 ✅ |
+| 1238 | /company/careers | - | /privacy | 200 ✅ |
+| 1239 | /resources/blog | - | /privacy | 200 ✅ |
+| 1240 | /resources/guides | - | /privacy | 200 ✅ |
+| 1241 | /case-studies | - | /privacy | 200 ✅ |
+| 1242 | /resources/whitepapers | - | /privacy | 200 ✅ |
+| 1243 | /developers/open-source | - | /privacy | 404 ❌ |
+| 1244 | /status | - | /privacy | 404 ❌ |
+| 1245 | /changelog | - | /privacy | 404 ❌ |
+| 1246 | /community | - | /privacy | 404 ❌ |
+| 1247 | /legal/privacy | - | /privacy | 404 ❌ |
+| 1248 | /legal/terms | - | /privacy | 404 ❌ |
+| 1249 | /security | - | /privacy | 404 ❌ |
+| 1250 | /compliance | - | /privacy | 404 ❌ |
+| 1251 | / | - | /terms | 200 ✅ |
+| 1252 | /products | - | /terms | 200 ✅ |
+| 1253 | /solutions | - | /terms | 200 ✅ |
+| 1254 | /industries | - | /terms | 200 ✅ |
+| 1255 | /platform/developers | - | /terms | 200 ✅ |
+| 1256 | /resources | - | /terms | 200 ✅ |
+| 1257 | /pricing | - | /terms | 200 ✅ |
+| 1258 | /platform/dashboard | - | /terms | 200 ✅ |
+| 1259 | /contact | - | /terms | 200 ✅ |
+| 1260 | /products/trinity-os | - | /terms | 200 ✅ |
+| 1261 | /products/ai-cloud | - | /terms | 200 ✅ |
+| 1262 | /products/agents | - | /terms | 200 ✅ |
+| 1263 | /products/dev-platform | - | /terms | 200 ✅ |
+| 1264 | /developers/sdk | - | /terms | 404 ❌ |
+| 1265 | /developers/cli | - | /terms | 404 ❌ |
+| 1266 | /platform/architecture | - | /terms | 404 ❌ |
+| 1267 | /platform/security | - | /terms | 404 ❌ |
+| 1268 | /platform/infrastructure | - | /terms | 404 ❌ |
+| 1269 | /platform/ai-stack | - | /terms | 404 ❌ |
+| 1270 | /solutions/ai-startups | - | /terms | 200 ✅ |
+| 1271 | /solutions/enterprise | - | /terms | 200 ✅ |
+| 1272 | /solutions/developers | - | /terms | 200 ✅ |
+| 1273 | /solutions/research | - | /terms | 200 ✅ |
+| 1274 | /developers/docs | - | /terms | 404 ❌ |
+| 1275 | /developers/api | - | /terms | 404 ❌ |
+| 1276 | /developers/tutorials | - | /terms | 404 ❌ |
+| 1277 | /developers/quickstarts | - | /terms | 404 ❌ |
+| 1278 | /company/about | - | /terms | 200 ✅ |
+| 1279 | /founder | - | /terms | 200 ✅ |
+| 1280 | /company/team | - | /terms | 200 ✅ |
+| 1281 | /company/careers | - | /terms | 200 ✅ |
+| 1282 | /resources/blog | - | /terms | 200 ✅ |
+| 1283 | /resources/guides | - | /terms | 200 ✅ |
+| 1284 | /case-studies | - | /terms | 200 ✅ |
+| 1285 | /resources/whitepapers | - | /terms | 200 ✅ |
+| 1286 | /developers/open-source | - | /terms | 404 ❌ |
+| 1287 | /status | - | /terms | 404 ❌ |
+| 1288 | /changelog | - | /terms | 404 ❌ |
+| 1289 | /community | - | /terms | 404 ❌ |
+| 1290 | /legal/privacy | - | /terms | 404 ❌ |
+| 1291 | /legal/terms | - | /terms | 404 ❌ |
+| 1292 | /security | - | /terms | 404 ❌ |
+| 1293 | /compliance | - | /terms | 404 ❌ |
 
 ## Summary
 
-- Total Links: 1672
-- Internal Links: 1552
-- External Links: 120
-- Broken Links (4xx/5xx): 52
+- Total Links: 1293
+- Internal Links: 1293
+- External Links: 0
+- Broken Links (4xx/5xx): 554
 - Redirects (3xx): 0
