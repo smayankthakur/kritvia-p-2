@@ -10,8 +10,8 @@ export function FooterBrand() {
         Engineering Intelligence Into Digital Infrastructure
       </p>
       <p className="text-sm text-neutral-400 leading-relaxed max-w-xs">
-        Kritvia builds AI-powered digital platforms, automation systems, 
-        and enterprise infrastructure for global companies.
+        Kritvia builds next-generation AI infrastructure and developer platforms for startups, enterprises, and research teams.Kritvia builds AI-powered digital platforms, automation systems,
+        and enterprise infrastructure for global companies.Kritvia builds next-generation AI infrastructure and developer platforms for startups, enterprises, and research teams.
       </p>
     </div>
   );
