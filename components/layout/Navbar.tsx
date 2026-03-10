@@ -76,7 +76,7 @@ function NavLink({ href, children, isActive, hasDropdown }: { href: string; chil
         'text-sm font-medium transition-colors relative py-2 flex items-center gap-1',
         isActive
           ? 'text-white'
-          : 'text-gray-400 hover:text-white'
+          : 'text-slate-400 hover:text-white'
       )}
     >
       {children}
@@ -114,7 +114,7 @@ function Dropdown({ item }: { item: NavItem }) {
         onClick={() => setIsOpen(!isOpen)}
         className={cn(
           'text-sm font-medium transition-colors relative py-2 flex items-center gap-1',
-          'text-gray-400 hover:text-white'
+          'text-slate-400 hover:text-white'
         )}
       >
         {item.name}
@@ -124,17 +124,17 @@ function Dropdown({ item }: { item: NavItem }) {
       </button>
 
       {isOpen && (
-        <div className="absolute top-full left-0 mt-2 w-56 py-2 bg-neutral-900 border border-neutral-800 rounded-xl shadow-xl animate-fade-in">
+        <div className="absolute top-full left-0 mt-2 w-56 py-2 bg-slate-900 border border-slate-800 rounded-xl shadow-xl animate-fade-in">
           {item.children?.map((child) => (
             <Link
               key={child.name}
               href={child.href}
               onClick={() => setIsOpen(false)}
-              className="block px-4 py-2 text-sm text-gray-400 hover:text-white hover:bg-neutral-800 transition-colors"
+              className="block px-4 py-2 text-sm text-slate-400 hover:text-white hover:bg-slate-800 transition-colors"
             >
               <div className="font-medium">{child.name}</div>
               {child.description && (
-                <div className="text-xs text-neutral-500 mt-0.5">{child.description}</div>
+                <div className="text-xs text-slate-500 mt-0.5">{child.description}</div>
               )}
             </Link>
           ))}
@@ -167,7 +167,7 @@ export function Navbar() {
       className={cn(
         'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
         isScrolled
-          ? 'bg-[rgb(var(--background-primary))]/95 backdrop-blur-xl shadow-lg shadow-black/10'
+          ? 'bg-slate-950/95 backdrop-blur-xl shadow-lg shadow-black/10 border-b border-slate-800'
           : 'bg-transparent'
       )}
     >
@@ -233,20 +233,20 @@ export function Navbar() {
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="lg:hidden py-4 border-t border-[rgb(var(--border-primary))]">
-            <div className="flex flex-col space-y-2">
+          <div className="lg:hidden fixed inset-0 top-18 z-40 bg-slate-950/98 backdrop-blur-xl animate-fade-in">
+            <div className="flex flex-col px-6 py-8">
               {navigation.map((item) => (
                 item.children ? (
-                  <div key={item.name}>
-                    <div className="px-2 py-2 text-base font-medium text-neutral-400">
+                  <div key={item.name} className="border-b border-slate-800">
+                    <div className="px-2 py-4 text-lg font-semibold text-slate-100">
                       {item.name}
                     </div>
-                    <div className="ml-4 space-y-1 border-l border-neutral-800 pl-4">
+                    <div className="ml-4 space-y-1 pb-4">
                       {item.children.map((child) => (
                         <Link
                           key={child.name}
                           href={child.href}
-                          className="block px-2 py-2 text-sm text-neutral-500 hover:text-white transition-colors"
+                          className="block px-2 py-3 text-base text-slate-400 hover:text-white transition-colors"
                         >
                           {child.name}
                         </Link>
@@ -258,19 +258,19 @@ export function Navbar() {
                     key={item.name}
                     href={item.href}
                     className={cn(
-                      'px-2 py-2 text-base font-medium transition-colors',
+                      'px-2 py-4 text-lg font-medium transition-colors border-b border-slate-800',
                       pathname === item.href || pathname.startsWith(item.href + '/')
                         ? 'text-white'
-                        : 'text-gray-400 hover:text-white'
+                        : 'text-slate-400 hover:text-white'
                     )}
                   >
                     {item.name}
                   </Link>
                 )
               ))}
-              <div className="pt-4">
+              <div className="pt-6">
                 <Link href="/contact" className="block">
-                  <Button variant="primary" className="w-full justify-center">
+                  <Button variant="primary" size="lg" className="w-full justify-center text-base">
                     Get Started
                   </Button>
                 </Link>
