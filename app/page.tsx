@@ -4,6 +4,9 @@ import { useState, useEffect, useRef } from 'react'
 import Link from 'next/link'
 import { motion, useInView } from 'framer-motion'
 import { FounderAuthority } from '@/components/home/FounderAuthority'
+import { PressSection } from '@/components/trust/PressSection'
+import { InvestorSection } from '@/components/trust/InvestorSection'
+import { SocialProofSection } from '@/components/trust/SocialProofSection'
 
 // Animated counter hook
 function useCountUp(end: number, duration: number = 2000, start: number = 0) {
@@ -919,6 +922,9 @@ export default function HomePage() {
       <ProductEcosystem />
       <PlatformOverview />
       <FounderAuthority />
+      <PressSection />
+      <InvestorSection />
+      <SocialProofSection />
       <SolutionsGrid />
       <IndustriesSection />
       <CaseStudies />
