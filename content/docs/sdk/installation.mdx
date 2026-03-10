@@ -1,0 +1,183 @@
+---
+title: Installation
+description: Install and configure the Kritvia SDK
+order: 2
+category: SDK
+---
+
+# SDK Installation
+
+This guide covers how to install and configure the Kritvia SDK in your project.
+
+## Requirements
+
+- Node.js 18.0 or later
+- TypeScript 5.0+ (for TypeScript projects)
+
+## Installation
+
+### npm
+
+```bash
+npm install @kritvia/sdk
+```
+
+### yarn
+
+```bash
+yarn add @kritvia/sdk
+```
+
+### pnpm
+
+```bash
+pnpm add @kritvia/sdk
+```
+
+## TypeScript Configuration
+
+If you're using TypeScript, add the following to your `tsconfig.json`:
+
+```json
+{
+  "compilerOptions": {
+    "esModuleInterop": true,
+    "moduleResolution": "node"
+  }
+}
+```
+
+## Basic Setup
+
+```javascript
+import { Kritvia } from "@kritvia/sdk"
+
+// Initialize with your API key
+const kritvia = new Kritvia({
+  apiKey: process.env.KRITVIA_API_KEY
+})
+```
+
+## Configuration Options
+
+The SDK accepts the following configuration options:
+
+| Option | Type | Default | Description |
+|--------|------|---------|-------------|
+| `apiKey` | string | required | Your Kritvia API key |
+| `baseUrl` | string | https://api.kritvia.ai | API base URL |
+| `timeout` | number | 30000 | Request timeout in ms |
+| `maxRetries` | number | 3 | Maximum retry attempts |
+| `defaults` | object | {} | Default options for requests |
+
+## Environment Variables
+
+We recommend storing your API key in environment variables:
+
+```bash
+# .env
+KRITVIA_API_KEY=your_api_key_here
+```
+
+Then in your code:
+
+```javascript
+const kritvia = new Kritvia({
+  apiKey: process.env.KRITVIA_API_KEY
+})
+```
+
+## Framework Integration
+
+### Next.js
+
+```javascript
+// lib/kritvia.ts
+import { Kritvia } from "@kritvia/sdk"
+
+export const kritvia = new Kritvia({
+  apiKey: process.env.KRITVIA_API_KEY!
+})
+```
+
+### Express
+
+```javascript
+import express from "express"
+import { Kritvia } from "@kritvia/sdk"
+
+const app = express()
+const kritvia = new Kritvia({
+  apiKey: process.env.KRITVIA_API_KEY
+})
+
+app.post("/ai/generate", async (req, res) => {
+  const result = await kritvia.ai.generate(req.body)
+  res.json(result)
+})
+```
+
+### Serverless Functions
+
+```javascript
+import { Kritvia } from "@kritvia/sdk"
+
+const kritvia = new Kritvia({
+  apiKey: process.env.KRITVIA_API_KEY
+})
+
+export default async function handler(req, res) {
+  const result = await kritvia.ai.generate({
+    prompt: req.body.prompt
+  })
+  res.json(result)
+}
+```
+
+## Error Handling
+
+```javascript
+import { Kritvia, KritviaError } from "@kritvia/sdk"
+
+try {
+  const result = await kritvia.ai.generate({
+    prompt: "Hello"
+  })
+} catch (error) {
+  if (error instanceof KritviaError) {
+    console.error(error.code)    // Error code
+    console.error(error.message) // Error message
+    console.error(error.status)  // HTTP status code
+  }
+}
+```
+
+## Verifying Installation
+
+Test that your SDK is properly configured:
+
+```javascript
+import { Kritvia } from "@kritvia/sdk"
+
+const kritvia = new Kritvia({
+  apiKey: process.env.KRITVIA_API_KEY
+})
+
+// Test the connection
+const models = await kritvia.models.list()
+console.log("Available models:", models)
+```
+
+## Troubleshooting
+
+### ENOENT: No such file or directory
+
+Make sure you've run `npm install` after adding the package.
+
+### Authentication errors
+
+Verify your API key is correct and has the right permissions.
+
+### Timeout errors
+
+Increase the timeout option or check your network connection.

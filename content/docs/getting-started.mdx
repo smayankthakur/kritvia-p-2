@@ -1,0 +1,112 @@
+---
+title: Getting Started
+description: Learn how to set up Kritvia and create your first project
+order: 2
+category: Getting Started
+---
+
+# Getting Started
+
+This guide will help you set up Kritvia and create your first AI-powered application.
+
+## Prerequisites
+
+Before you begin, make sure you have:
+
+- Node.js 18 or later installed
+- An npm or yarn package manager
+- A Kritvia account (sign up at [kritvia.ai](https://kritvia.ai))
+
+## Step 1: Install the CLI
+
+Install the Kritvia CLI globally using npm:
+
+```bash
+npm install -g @kritvia/cli
+```
+
+Or using yarn:
+
+```bash
+yarn global add @kritvia/cli
+```
+
+## Step 2: Authenticate
+
+Log in to your Kritvia account:
+
+```bash
+kritvia login
+```
+
+This will open a browser window where you can authenticate with your account.
+
+## Step 3: Create a Project
+
+Create a new Kritvia project:
+
+```bash
+kritvia init my-project
+cd my-project
+```
+
+This creates a new directory with the following structure:
+
+```
+my-project/
+├── src/
+│   ├── index.ts      # Your main application code
+│   └── config.ts     # Kritvia configuration
+├── package.json
+└── kritvia.config.js # Project settings
+```
+
+## Step 4: Configure Your Project
+
+Edit `kritvia.config.js` to configure your project:
+
+```javascript
+module.exports = {
+  name: "my-project",
+  version: "1.0.0",
+  
+  // AI configuration
+  ai: {
+    model: "gpt-4",
+    temperature: 0.7,
+    maxTokens: 2000
+  },
+  
+  // Deployment settings
+  deployment: {
+    region: "us-east-1",
+    edge: true
+  }
+}
+```
+
+## Step 5: Run Locally
+
+Start the development server:
+
+```bash
+kritvia dev
+```
+
+Your application is now running at `http://localhost:3000`.
+
+## Step 6: Deploy
+
+Deploy your application to the Kritvia edge network:
+
+```bash
+kritvia deploy
+```
+
+## Next Steps
+
+Now that you have Kritvia set up, explore these resources:
+
+- [Architecture Overview](/docs/architecture) - Learn about the Kritvia architecture
+- [SDK Documentation](/docs/sdk/overview) - Deep dive into the SDK
+- [API Reference](/docs/api/overview) - Complete API reference

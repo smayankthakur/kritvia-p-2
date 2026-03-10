@@ -1,0 +1,176 @@
+---
+title: SDK Overview
+description: Overview of the Kritvia SDK and available features
+order: 1
+category: SDK
+---
+
+# SDK Overview
+
+The Kritvia SDK provides a simple and powerful way to integrate AI capabilities into your applications.
+
+## Installation
+
+Install the SDK using npm:
+
+```bash
+npm install @kritvia/sdk
+```
+
+Or using yarn:
+
+```bash
+yarn add @kritvia/sdk
+```
+
+## Quick Start
+
+```javascript
+import { Kritvia } from "@kritvia/sdk"
+
+// Initialize the client
+const kritvia = new Kritvia({
+  apiKey: process.env.KRITVIA_API_KEY
+})
+
+// Use AI features
+const response = await kritvia.ai.generate({
+  prompt: "Hello, world!",
+  model: "gpt-4"
+})
+
+console.log(response.text)
+```
+
+## Configuration
+
+The SDK can be configured with various options:
+
+```javascript
+const kritvia = new Kritvia({
+  apiKey: process.env.KRITVIA_API_KEY,
+  
+  // Optional configuration
+  baseUrl: "https://api.kritvia.ai",
+  timeout: 30000,
+  maxRetries: 3,
+  
+  // AI-specific settings
+  defaults: {
+    model: "gpt-4",
+    temperature: 0.7,
+    maxTokens: 2000
+  }
+})
+```
+
+## Available Modules
+
+### AI Module
+
+The AI module provides access to generative AI capabilities:
+
+```javascript
+// Text generation
+const text = await kritvia.ai.generate({
+  prompt: "Write a story about a robot",
+  model: "gpt-4",
+  temperature: 0.8
+})
+
+// Chat completion
+const chat = await kritvia.ai.chat({
+  messages: [
+    { role: "system", content: "You are a helpful assistant" },
+    { role: "user", content: "What is Kritvia?" }
+  ]
+})
+
+// Embeddings
+const embeddings = await kritvia.ai.embed({
+  input: "Hello world",
+  model: "text-embedding-ada-002"
+})
+```
+
+### Analytics Module
+
+Track and analyze your AI usage:
+
+```javascript
+// Get usage statistics
+const usage = await kritvia.analytics.getUsage({
+  timeframe: "30d"
+})
+
+// Track custom events
+await kritvia.analytics.track({
+  event: "button_click",
+  properties: {
+    button_id: "submit"
+  }
+})
+```
+
+### Projects Module
+
+Manage your Kritvia projects:
+
+```javascript
+// List projects
+const projects = await kritvia.projects.list()
+
+// Get project details
+const project = await kritvia.projects.get("project-id")
+
+// Update project
+await kritvia.projects.update("project-id", {
+  name: "New Name",
+  settings: {
+    defaultModel: "gpt-4"
+  }
+})
+```
+
+## TypeScript Support
+
+The SDK is written in TypeScript and provides full type definitions:
+
+```typescript
+import { Kritvia, GenerateOptions, GenerateResponse } from "@kritvia/sdk"
+
+const options: GenerateOptions = {
+  prompt: "Hello",
+  model: "gpt-4"
+}
+
+const response: GenerateResponse = await kritvia.ai.generate(options)
+```
+
+## Error Handling
+
+The SDK provides detailed error information:
+
+```javascript
+try {
+  await kritvia.ai.generate({
+    prompt: "test"
+  })
+} catch (error) {
+  if (error.code === "RATE_LIMITED") {
+    // Handle rate limiting
+    console.log("Too many requests, retry after:", error.retryAfter)
+  } else if (error.code === "INVALID_API_KEY") {
+    // Handle authentication error
+    console.log("Please check your API key")
+  } else {
+    // Handle other errors
+    console.error(error.message)
+  }
+}
+```
+
+## Next Steps
+
+- [SDK Installation](/docs/sdk/installation) - Detailed installation guide
+- [API Reference](/docs/api/overview) - Complete API documentation

@@ -1,0 +1,272 @@
+---
+title: Endpoints
+description: Complete reference for all Kritvia API endpoints
+order: 2
+category: API
+---
+
+# API Endpoints
+
+This reference documents all available endpoints in the Kritvia API.
+
+## Base URL
+
+All API requests should be made to:
+
+```
+https://api.kritvia.ai/v1
+```
+
+## Endpoints Overview
+
+| Endpoint | Method | Description |
+|----------|--------|-------------|
+| `/generate` | POST | Generate text from a prompt |
+| `/chat` | POST | Chat completion |
+| `/embed` | POST | Get text embeddings |
+| `/models` | GET | List available models |
+| `/projects` | GET | List projects |
+| `/projects/:id` | GET | Get project details |
+| `/analytics` | GET | Get usage analytics |
+
+## Generate
+
+Generate text from a prompt.
+
+### Endpoint
+
+```
+POST /generate
+```
+
+### Request Body
+
+```json
+{
+  "prompt": "Write a haiku about coding",
+  "model": "gpt-4",
+  "temperature": 0.7,
+  "max_tokens": 500,
+  "top_p": 1.0,
+  "frequency_penalty": 0.0,
+  "presence_penalty": 0.0
+}
+```
+
+### Parameters
+
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| `prompt` | string | Yes | The input prompt |
+| `model` | string | No | Model to use (default: gpt-4) |
+| `temperature` | float | No | Sampling temperature (0-2) |
+| `max_tokens` | int | No | Maximum tokens to generate |
+| `top_p` | float | No | Nucleus sampling parameter |
+| `frequency_penalty` | float | No | Frequency penalty (-2 to 2) |
+| `presence_penalty` | float | No | Presence penalty (-2 to 2) |
+
+### Response
+
+```json
+{
+  "id": "gen_abc123",
+  "object": "text_completion",
+  "created": 1699000000,
+  "model": "gpt-4",
+  "choices": [
+    {
+      "text": "Code flows like rivers\nIn digital streams we swim\nBugs teach us wisdom",
+      "index": 0,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 10,
+    "completion_tokens": 25,
+    "total_tokens": 35
+  }
+}
+```
+
+### Example Request
+
+```bash
+curl -X POST https://api.kritvia.ai/v1/generate \
+  -H "Authorization: Bearer YOUR_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "prompt": "Write a haiku about coding",
+    "model": "gpt-4",
+    "temperature": 0.7
+  }'
+```
+
+## Chat
+
+Chat completion endpoint for conversational interactions.
+
+### Endpoint
+
+```
+POST /chat
+```
+
+### Request Body
+
+```json
+{
+  "messages": [
+    {"role": "system", "content": "You are a helpful assistant."},
+    {"role": "user", "content": "What is Kritvia?"}
+  ],
+  "model": "gpt-4",
+  "temperature": 0.7,
+  "max_tokens": 1000
+}
+```
+
+### Response
+
+```json
+{
+  "id": "chatcmpl_abc123",
+  "object": "chat.completion",
+  "created": 1699000000,
+  "model": "gpt-4",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "Kritvia is an AI-powered development platform..."
+      },
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 20,
+    "completion_tokens": 50,
+    "total_tokens": 70
+  }
+}
+```
+
+## Embed
+
+Get embeddings for text input.
+
+### Endpoint
+
+```
+POST /embed
+```
+
+### Request Body
+
+```json
+{
+  "input": "The quick brown fox jumps over the lazy dog",
+  "model": "text-embedding-ada-002"
+}
+```
+
+### Response
+
+```json
+{
+  "object": "list",
+  "data": [
+    {
+      "object": "embedding",
+      "embedding": [0.002, -0.012, 0.007, ...],
+      "index": 0
+    }
+  ],
+  "model": "text-embedding-ada-002",
+  "usage": {
+    "prompt_tokens": 10,
+    "total_tokens": 10
+  }
+}
+```
+
+## List Models
+
+Get a list of available models.
+
+### Endpoint
+
+```
+GET /models
+```
+
+### Response
+
+```json
+{
+  "object": "list",
+  "data": [
+    {
+      "id": "gpt-4",
+      "object": "model",
+      "created": 1687888000,
+      "owned_by": "openai"
+    },
+    {
+      "id": "gpt-3.5-turbo",
+      "object": "model",
+      "created": 1677649963,
+      "owned_by": "openai"
+    }
+  ]
+}
+```
+
+## Error Responses
+
+All endpoints may return the following error responses:
+
+### 400 Bad Request
+
+```json
+{
+  "error": {
+    "code": "INVALID_REQUEST",
+    "message": "The request body is invalid"
+  }
+}
+```
+
+### 401 Unauthorized
+
+```json
+{
+  "error": {
+    "code": "INVALID_API_KEY",
+    "message": "The provided API key is invalid"
+  }
+}
+```
+
+### 429 Too Many Requests
+
+```json
+{
+  "error": {
+    "code": "RATE_LIMITED",
+    "message": "Rate limit exceeded",
+    "retry_after": 60
+  }
+}
+```
+
+### 500 Server Error
+
+```json
+{
+  "error": {
+    "code": "SERVER_ERROR",
+    "message": "An internal server error occurred"
+  }
+}
+```

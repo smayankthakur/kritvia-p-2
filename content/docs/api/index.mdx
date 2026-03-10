@@ -1,0 +1,96 @@
+---
+title: API Overview
+description: Introduction to the Kritvia API
+order: 1
+category: API
+---
+
+# API Overview
+
+The Kritvia API provides programmatic access to all platform features, allowing you to integrate AI capabilities into your applications.
+
+## Base URL
+
+All API requests should be made to:
+
+```
+https://api.kritvia.ai/v1
+```
+
+## Quick Start
+
+```javascript
+import { Kritvia } from "@kritvia/sdk"
+
+const kritvia = new Kritvia({
+  apiKey: process.env.KRITVIA_API_KEY
+})
+
+const result = await kritvia.ai.generate({
+  prompt: "Hello, Kritvia!",
+  model: "gpt-4"
+})
+```
+
+## Authentication
+
+All API requests require authentication using an API key. See the [Authentication Guide](/docs/api/authentication) for details.
+
+## Available Endpoints
+
+### AI Endpoints
+
+| Endpoint | Description |
+|----------|-------------|
+| `POST /generate` | Generate text from a prompt |
+| `POST /chat` | Chat completion |
+| `POST /embed` | Get text embeddings |
+
+### Management Endpoints
+
+| Endpoint | Description |
+|----------|-------------|
+| `GET /models` | List available models |
+| `GET /projects` | List your projects |
+| `GET /analytics` | Get usage analytics |
+
+## Response Format
+
+All responses follow a consistent format:
+
+```json
+{
+  "id": "unique_request_id",
+  "object": "response_type",
+  "created": 1699000000,
+  "model": "gpt-4",
+  "choices": [...],
+  "usage": {
+    "prompt_tokens": 10,
+    "completion_tokens": 20,
+    "total_tokens": 30
+  }
+}
+```
+
+## Rate Limits
+
+| Plan | Requests/minute |
+|------|-----------------|
+| Free | 60 |
+| Pro | 600 |
+| Enterprise | Custom |
+
+## SDK Support
+
+We provide official SDKs for:
+
+- **JavaScript/TypeScript** - `npm install @kritvia/sdk`
+- **Python** - `pip install kritvia`
+- **Go** - `go get github.com/kritvia/sdk-go`
+
+## Next Steps
+
+- [Authentication](/docs/api/authentication) - Learn about API keys
+- [Endpoints](/docs/api/endpoints) - Detailed endpoint reference
+- [SDK Overview](/docs/sdk/overview) - Using the SDK
