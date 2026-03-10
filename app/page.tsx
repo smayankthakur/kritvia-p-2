@@ -691,9 +691,9 @@ function DeveloperPlatform() {
 // ==================== METRICS SECTION ====================
 function MetricsSection() {
   const metrics = [
-    { value: 150, suffix: '+', label: 'Projects Delivered' },
-    { value: 50, suffix: '+', label: 'Enterprise Clients' },
-    { value: 20, suffix: '+', label: 'Industries Served' },
+    { value: 128, suffix: '+', label: 'Projects Delivered' },
+    { value: 34, suffix: '+', label: 'Enterprise Clients' },
+    { value: 9, suffix: '+', label: 'Industries Served' },
     { value: 98, suffix: '%', label: 'Client Retention' }
   ]
 
@@ -924,7 +924,6 @@ export default function HomePage() {
       <MetricsSection />
       <ResourcesSection />
       <CTASection />
-      <Footer />
     </main>
   )
 }
