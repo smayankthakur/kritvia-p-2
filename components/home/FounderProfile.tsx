@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 interface Founder {
   name: string;
@@ -19,7 +20,7 @@ const mockFounderData: Founder = {
   name: 'Mayank Thakur',
   title: 'Founder & CEO',
   bio: 'Visionary leader with 10+ years of experience in AI and enterprise software. Previously led engineering teams at top tech companies. Passionate about helping businesses transform through technology.',
-  image: '/founders/mayank.jpg',
+  image: '/founder.webp',
   linkedin: 'https://linkedin.com/in/mayankthakur',
   twitter: 'https://twitter.com/mayankthakur',
   website: 'https://mayank.sitelytc.com',
@@ -70,13 +71,15 @@ export function FounderProfile() {
               <div className="absolute inset-0 bg-[#1A1A1A] animate-pulse" />
             ) : (
               <>
-                {/* Placeholder for actual image */}
-                <div className="absolute inset-0 flex items-center justify-center bg-[#0D0D0D]">
-                  <div className="w-32 h-32 rounded-full bg-gradient-to-br from-[#6366F1] to-[#22D3EE] flex items-center justify-center">
-                    <span className="text-4xl font-bold text-white">
-                      {founder?.name.split(' ').map(n => n[0]).join('')}
-                    </span>
-                  </div>
+                {/* Founder Image */}
+                <div className="absolute inset-0">
+                  <Image
+                    src="/founder.webp"
+                    alt={founder?.name || 'Founder'}
+                    fill
+                    className="object-cover"
+                    priority
+                  />
                 </div>
                 
                 {/* Gradient Overlay */}
