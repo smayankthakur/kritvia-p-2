@@ -79,6 +79,7 @@ export const navigation: Record<string, NavigationSection> = {
     title: 'Company',
     items: [
       { name: 'About', href: '/company/about', description: 'Learn about us' },
+      { name: 'Founder', href: '/founder', description: 'Meet our founder' },
       { name: 'Team', href: '/company/team', description: 'Meet our team' },
       { name: 'Careers', href: '/company/careers', description: 'Join our team' },
       { name: 'Contact', href: '/contact', description: 'Get in touch' },
