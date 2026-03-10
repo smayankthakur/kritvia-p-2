@@ -937,38 +937,7 @@ function CaseStudiesPreview() {
 
 // ==================== 23. DOCS CTA ====================
 function DocsCTA() {
-  return (
-    <section className="py-24 bg-gradient-to-b from-[#0A0A0A] to-[#050505]">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-        >
-          <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
-            Start Building Today
-          </h2>
-          <p className="text-xl text-slate-400 mb-10">
-            Everything you need to build AI applications. Free to start, scale as you grow.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              href="/developers"
-              className="inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-white bg-purple-600 hover:bg-purple-500 rounded-xl transition-all hover:scale-105"
-            >
-              Read Documentation
-            </Link>
-            <Link
-              href="/developers/quickstarts"
-              className="inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-white bg-white/5 hover:bg-white/10 border border-white/10 rounded-xl transition-all"
-            >
-              Try Quickstarts
-            </Link>
-          </div>
-        </motion.div>
-      </div>
-    </section>
-  )
+  return null
 }
 
 // ==================== 24. GLOBAL CTA ====================
