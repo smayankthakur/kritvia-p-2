@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { Container, Section, Button } from '@/components/ui';
 import { TestimonialCarousel, TechStack } from '@/components/features';
 import { LogoCloud } from '@/components/home/LogoCloud';
+import { WebGLHero, AIPlayground, APIDemo, ArchitectureDiagram, ClientPortfolio, FounderProfile } from '@/components/home';
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 
@@ -519,6 +520,9 @@ export default function HomePage() {
           HERO SECTION - Premium SaaS Aesthetic (Stripe/Vercel style)
       ═══════════════════════════════════════════════════════════ */}
       <section className="relative min-h-[95vh] flex items-center justify-center overflow-hidden bg-neutral-950">
+        {/* ===== WEBGL HERO BACKGROUND ===== */}
+        <WebGLHero />
+
         {/* ===== RADIAL LIGHTING BACKGROUND ===== */}
         <div className="absolute inset-0 radial-glow" />
         <div className="absolute inset-0 radial-glow-bottom" />
@@ -925,6 +929,89 @@ export default function HomePage() {
           LOGO CLOUD SECTION - Real company logos with grayscale to color on hover
       ═══════════════════════════════════════════════════════════ */}
       <LogoCloud />
+
+      {/* ═══════════════════════════════════════════════════════════
+          AI PLAYGROUND SECTION - Interactive AI Demo
+      ═══════════════════════════════════════════════════════════ */}
+      <Section className="bg-neutral-950 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-blue-950/20 via-transparent to-purple-950/20 pointer-events-none" />
+        <Container className="relative z-10">
+          <div className="text-center mb-12">
+            <div className="inline-block px-4 py-1.5 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-400 text-xs font-semibold uppercase tracking-wider mb-4">
+              Interactive Demo
+            </div>
+            <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6 tracking-tight">
+              Try Kritvia AI
+            </h2>
+            <p className="text-xl text-neutral-400 max-w-2xl mx-auto">
+              Experience the power of AI firsthand. Ask questions and get intelligent responses.
+            </p>
+          </div>
+          <AIPlayground />
+        </Container>
+      </Section>
+
+      {/* ═══════════════════════════════════════════════════════════
+          API DEMO SECTION - Live API Console
+      ═══════════════════════════════════════════════════════════ */}
+      <Section className="bg-neutral-950 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-cyan-950/20 via-transparent to-blue-950/20 pointer-events-none" />
+        <Container className="relative z-10">
+          <div className="text-center mb-12">
+            <div className="inline-block px-4 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-xs font-semibold uppercase tracking-wider mb-4">
+              Developer Experience
+            </div>
+            <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6 tracking-tight">
+              Powerful APIs
+            </h2>
+            <p className="text-xl text-neutral-400 max-w-2xl mx-auto">
+              Build with our simple yet powerful APIs. Copy, run, and integrate in minutes.
+            </p>
+          </div>
+          <APIDemo />
+        </Container>
+      </Section>
+
+      {/* ═══════════════════════════════════════════════════════════
+          ARCHITECTURE DIAGRAM SECTION - Interactive System Diagram
+      ═══════════════════════════════════════════════════════════ */}
+      <Section className="bg-neutral-950 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-indigo-950/20 via-transparent to-purple-950/20 pointer-events-none" />
+        <Container className="relative z-10">
+          <div className="text-center mb-12">
+            <div className="inline-block px-4 py-1.5 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 text-xs font-semibold uppercase tracking-wider mb-4">
+              Platform Architecture
+            </div>
+            <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6 tracking-tight">
+              Built for Scale
+            </h2>
+            <p className="text-xl text-neutral-400 max-w-2xl mx-auto">
+              Enterprise-grade architecture designed for reliability, security, and performance.
+            </p>
+          </div>
+          <ArchitectureDiagram />
+        </Container>
+      </Section>
+
+      {/* ═══════════════════════════════════════════════════════════
+          CLIENT PORTFOLIO SECTION - Work from sitelytc.com
+      ═══════════════════════════════════════════════════════════ */}
+      <Section className="bg-neutral-950 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-blue-950/10 via-transparent to-purple-950/10 pointer-events-none" />
+        <Container className="relative z-10">
+          <ClientPortfolio />
+        </Container>
+      </Section>
+
+      {/* ═══════════════════════════════════════════════════════════
+          FOUNDER PROFILE SECTION - From mayank.sitelytc.com
+      ═══════════════════════════════════════════════════════════ */}
+      <Section className="bg-neutral-950 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-purple-950/10 via-transparent to-indigo-950/10 pointer-events-none" />
+        <Container className="relative z-10">
+          <FounderProfile />
+        </Container>
+      </Section>
 
       {/* ═══════════════════════════════════════════════════════════
           SERVICES SECTION - 6 service cards with premium design
