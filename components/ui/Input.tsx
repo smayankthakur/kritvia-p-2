@@ -5,10 +5,12 @@ export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   label?: string;
   error?: string;
   helperText?: string;
+  leftElement?: React.ReactNode;
+  rightElement?: React.ReactNode;
 }
 
 const Input = forwardRef<HTMLInputElement, InputProps>(
-  ({ className, label, error, helperText, id, ...props }, ref) => {
+  ({ className, label, error, helperText, leftElement, rightElement, id, ...props }, ref) => {
     const inputId = id || label?.toLowerCase().replace(/\s+/g, '-');
 
     return (
@@ -18,24 +20,38 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
             {label}
           </label>
         )}
-        <input
-          ref={ref}
-          id={inputId}
-          className={cn(
-            'w-full px-4 py-3 rounded-xl border transition-colors duration-200',
-            'focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent',
-            'bg-[rgb(var(--surface-2))] border-[rgb(var(--border-primary))]',
-            'text-gray-100',
-            'placeholder:text-gray-500',
-            error
-              ? 'border-red-500 focus:ring-red-500'
-              : 'border-[rgb(var(--border-primary))] hover:border-[rgb(var(--border-secondary))]',
-            className
+        <div className="relative">
+          {leftElement && (
+            <div className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400">
+              {leftElement}
+            </div>
           )}
-          {...props}
-        />
-        {error && <p className="mt-2 text-sm text-red-500">{error}</p>}
-        {helperText && !error && <p className="mt-2 text-sm text-gray-400">{helperText}</p>}
+          <input
+            ref={ref}
+            id={inputId}
+            className={cn(
+              'w-full px-4 py-3 rounded-xl border transition-all duration-200',
+              'focus:outline-none focus:ring-2 focus:ring-primary-500/50 focus:border-primary-500',
+              'bg-[rgb(var(--surface-2))] border-[rgb(var(--border-primary))]',
+              'text-white',
+              'placeholder:text-gray-500',
+              leftElement && 'pl-11',
+              rightElement && 'pr-11',
+              error
+                ? 'border-red-500 focus:ring-red-500/50'
+                : 'hover:border-[rgb(var(--border-secondary))]',
+              className
+            )}
+            {...props}
+          />
+          {rightElement && (
+            <div className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400">
+              {rightElement}
+            </div>
+          )}
+        </div>
+        {error && <p className="mt-2 text-sm text-red-400">{error}</p>}
+        {helperText && !error && <p className="mt-2 text-sm text-gray-500">{helperText}</p>}
       </div>
     );
   }
@@ -64,20 +80,20 @@ const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
           ref={ref}
           id={textareaId}
           className={cn(
-            'w-full px-4 py-3 rounded-xl border transition-colors duration-200 resize-none',
-            'focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent',
+            'w-full px-4 py-3 rounded-xl border transition-all duration-200 resize-none',
+            'focus:outline-none focus:ring-2 focus:ring-primary-500/50 focus:border-primary-500',
             'bg-[rgb(var(--surface-2))] border-[rgb(var(--border-primary))]',
-            'text-gray-100',
+            'text-white',
             'placeholder:text-gray-500',
             error
-              ? 'border-red-500 focus:ring-red-500'
-              : 'border-[rgb(var(--border-primary))] hover:border-[rgb(var(--border-secondary))]',
+              ? 'border-red-500 focus:ring-red-500/50'
+              : 'hover:border-[rgb(var(--border-secondary))]',
             className
           )}
           {...props}
         />
-        {error && <p className="mt-2 text-sm text-red-500">{error}</p>}
-        {helperText && !error && <p className="mt-2 text-sm text-gray-400">{helperText}</p>}
+        {error && <p className="mt-2 text-sm text-red-400">{error}</p>}
+        {helperText && !error && <p className="mt-2 text-sm text-gray-500">{helperText}</p>}
       </div>
     );
   }

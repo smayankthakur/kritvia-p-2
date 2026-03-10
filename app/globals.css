@@ -2,52 +2,73 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Dark Mode Only - Premium Theme */
+/* ============================================
+   KRITVIA DESIGN SYSTEM TOKENS
+   Premium SaaS-style dark theme
+   ============================================ */
+
 :root {
-  /* Base dark theme as default */
-  --background-primary: 10 10 11;
-  --background-secondary: 15 15 20;
-  --background-tertiary: 20 20 28;
+  /* ============================================
+     BACKGROUND COLORS
+     ============================================ */
+  --background-primary: 10 10 10;      /* #0A0A0A - Deepest black */
+  --background-secondary: 17 17 17;    /* #111111 - Card/surface */
+  --background-tertiary: 26 26 26;    /* #1A1A1A - Elevated surfaces */
   
-  /* Surface elevation layers */
-  --surface-1: 15 15 20;
-  --surface-2: 20 20 28;
-  --surface-3: 28 28 38;
-  --surface-4: 35 35 48;
+  /* Surface layers for elevation */
+  --surface-1: 17 17 17;              /* #111111 */
+  --surface-2: 26 26 26;              /* #1A1A1A */
+  --surface-3: 35 35 35;              /* #232323 */
+  --surface-4: 45 45 45;              /* #2D2D2D */
   
   /* Card colors */
-  --card-background: 20 20 28;
-  --card-border: 40 40 55;
-  --card-border-hover: 60 60 90;
+  --card-background: 17 17 17;        /* #111111 */
+  --card-border: 40 40 40;             /* #282828 */
+  --card-border-hover: 60 60 60;       /* #3C3C3C */
   
-  /* Text colors */
-  --text-primary: 229 231 235;
-  --text-secondary: 156 163 175;
-  --text-muted: 107 114 128;
-  --text-inverse: 10 10 11;
+  /* ============================================
+     TEXT COLORS
+     ============================================ */
+  --text-primary: 248 250 252;       /* #F8FAFC - White */
+  --text-secondary: 156 163 175;      /* #9CA3AF - Gray */
+  --text-muted: 107 114 128;          /* #6B7280 - Darker gray */
+  --text-inverse: 10 10 10;            /* #0A0A0A */
   
-  /* Border colors */
-  --border-primary: 40 40 55;
-  --border-secondary: 55 55 75;
+  /* ============================================
+     BORDER COLORS
+     ============================================ */
+  --border-primary: 35 35 35;          /* #232323 */
+  --border-secondary: 50 50 50;        /* #323232 */
   
-  /* Accent colors - Electric Blue, Indigo, Violet, Cyan */
-  --accent-primary: 59 130 246;
-  --accent-secondary: 139 92 246;
-  --accent-tertiary: 6 182 212;
-  --accent-violet: 168 85 247;
-  --accent-indigo: 99 102 241;
+  /* ============================================
+     ACCENT COLORS
+     ============================================ */
+  --accent-primary: 99 102 241;        /* #6366F1 - Indigo (Primary) */
+  --accent-secondary: 34 211 238;     /* #22D3EE - Cyan (Secondary) */
+  --accent-tertiary: 139 92 246;      /* #8B5CF6 - Violet */
   
   /* Glow effects */
-  --glow-blue: rgba(59, 130, 246, 0.4);
-  --glow-purple: rgba(139, 92, 246, 0.4);
-  --glow-cyan: rgba(6, 182, 212, 0.4);
-  --glow-violet: rgba(168, 85, 247, 0.4);
-  --glow-indigo: rgba(99, 102, 241, 0.4);
+  --glow-primary: rgba(99, 102, 241, 0.4);
+  --glow-secondary: rgba(34, 211, 238, 0.4);
+  --glow-violet: rgba(139, 92, 246, 0.4);
   
   /* Glass effects */
-  --glass-background: rgba(20, 20, 28, 0.7);
-  --glass-border: rgba(99, 102, 241, 0.15);
-  --glass-highlight: rgba(255, 255, 255, 0.05);
+  --glass-background: rgba(17, 17, 17, 0.8);
+  --glass-border: rgba(99, 102, 241, 0.12);
+  --glass-highlight: rgba(255, 255, 255, 0.04);
+  
+  /* ============================================
+     SPACING TOKENS (8px base)
+     ============================================ */
+  --space-1: 8px;      /* 0.5rem */
+  --space-2: 16px;     /* 1rem */
+  --space-3: 24px;     /* 1.5rem */
+  --space-4: 32px;     /* 2rem */
+  --space-5: 40px;    /* 2.5rem */
+  --space-6: 48px;    /* 3rem */
+  --space-8: 64px;    /* 4rem */
+  --space-10: 80px;   /* 5rem */
+  --space-12: 96px;   /* 6rem */
 }
 
 /* Ensure dark class is always applied */
@@ -59,6 +80,7 @@ body {
   background: rgb(var(--background-primary));
   color: rgb(var(--text-primary));
   min-height: 100vh;
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
 }
 
 /* Subtle grid background pattern */
@@ -72,68 +94,66 @@ body::before {
   pointer-events: none;
   z-index: -1;
   background-image: 
-    linear-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
-  background-size: 64px 64px;
+    linear-gradient(rgba(255, 255, 255, 0.012) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.012) 1px, transparent 1px);
+  background-size: 56px 56px;
   mask-image: radial-gradient(ellipse 90% 90% at 50% 50%, black 30%, transparent 100%);
   -webkit-mask-image: radial-gradient(ellipse 90% 90% at 50% 50%, black 30%, transparent 100%);
 }
 
+/* Smooth transitions */
 * {
-  transition-property: background-color, border-color, color, opacity, box-shadow;
-  transition-duration: 350ms;
+  transition-property: background-color, border-color, color, opacity, box-shadow, transform;
+  transition-duration: 200ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Premium gradient text animation */
+/* ============================================
+   GRADIENT TEXT STYLES
+   ============================================ */
+
 .gradient-text {
   background: linear-gradient(
     135deg,
-    #3b82f6 0%,
-    #8b5cf6 25%,
-    #06b6d4 50%,
-    #8b5cf6 75%,
-    #3b82f6 100%
+    #6366F1 0%,
+    #22D3EE 50%,
+    #6366F1 100%
   );
-  background-size: 300% 300%;
+  background-size: 200% 200%;
+  animation: gradientShift 6s ease infinite;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-text-subtle {
+  background: linear-gradient(
+    135deg,
+    #F8FAFC 0%,
+    #9CA3AF 50%,
+    #F8FAFC 100%
+  );
+  background-size: 200% 200%;
   animation: gradientShift 8s ease infinite;
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-.gradient-text-slow {
-  background: linear-gradient(
-    135deg,
-    #60a5fa 0%,
-    #a78bfa 25%,
-    #22d3ee 50%,
-    #a78bfa 75%,
-    #60a5fa 100%
-  );
-  background-size: 300% 300%;
-  animation: gradientShift 12s ease infinite;
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
 @keyframes gradientShift {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
-/* Scroll-triggered fade in animation */
+/* ============================================
+   ANIMATION UTILITIES
+   ============================================ */
+
 @keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(20px);
   }
   to {
     opacity: 1;
@@ -141,32 +161,15 @@ body::before {
   }
 }
 
-@keyframes fadeInLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-40px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes fadeInRight {
-  from {
-    opacity: 0;
-    transform: translateX(40px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 @keyframes scaleIn {
   from {
     opacity: 0;
-    transform: scale(0.9);
+    transform: scale(0.95);
   }
   to {
     opacity: 1;
@@ -174,24 +177,18 @@ body::before {
   }
 }
 
-/* Animation classes */
 .animate-fade-in-up {
-  animation: fadeInUp 0.8s ease-out forwards;
+  animation: fadeInUp 0.6s ease-out forwards;
   opacity: 0;
 }
 
-.animate-fade-in-left {
-  animation: fadeInLeft 0.8s ease-out forwards;
-  opacity: 0;
-}
-
-.animate-fade-in-right {
-  animation: fadeInRight 0.8s ease-out forwards;
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-out forwards;
   opacity: 0;
 }
 
 .animate-scale-in {
-  animation: scaleIn 0.6s ease-out forwards;
+  animation: scaleIn 0.5s ease-out forwards;
   opacity: 0;
 }
 
@@ -201,122 +198,56 @@ body::before {
 .delay-300 { animation-delay: 0.3s; }
 .delay-400 { animation-delay: 0.4s; }
 .delay-500 { animation-delay: 0.5s; }
-.delay-600 { animation-delay: 0.6s; }
 
 /* ============================================
-   ATMOSPHERIC BACKGROUND EFFECTS
+   BACKGROUND EFFECTS
    ============================================ */
 
-/* Premium grid overlay with perspective */
-.grid-overlay-premium {
+/* Grid overlay */
+.grid-overlay {
   background-image: 
     linear-gradient(rgba(99, 102, 241, 0.03) 1px, transparent 1px),
     linear-gradient(90deg, rgba(99, 102, 241, 0.03) 1px, transparent 1px);
+  background-size: 56px 56px;
+}
+
+/* Premium grid */
+.grid-overlay-premium {
+  background-image: 
+    linear-gradient(rgba(99, 102, 241, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(99, 102, 241, 0.025) 1px, transparent 1px);
   background-size: 48px 48px;
   mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 20%, transparent 100%);
   -webkit-mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 20%, transparent 100%);
 }
 
-/* Noise texture - very subtle */
-.noise-texture {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: 9998;
-  opacity: 0.025;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
-}
-
-/* ============================================
-   AMBIENT GLOW ORBS
-   ============================================ */
-
-@keyframes orbFloat {
-  0%, 100% {
-    transform: translate(0, 0) scale(1);
-  }
-  33% {
-    transform: translate(30px, -30px) scale(1.1);
-  }
-  66% {
-    transform: translate(-20px, 20px) scale(0.9);
-  }
-}
-
-@keyframes orbPulse {
-  0%, 100% {
-    opacity: 0.3;
-    transform: scale(1);
-  }
-  50% {
-    opacity: 0.5;
-    transform: scale(1.1);
-  }
-}
-
-.orb {
-  animation: orbFloat 20s ease-in-out infinite;
-}
-
-.orb-delayed {
-  animation: orbFloat 25s ease-in-out infinite;
-  animation-delay: -5s;
-}
-
-.orb-slow {
-  animation: orbFloat 30s ease-in-out infinite;
-  animation-delay: -10s;
-}
-
-.orb-pulse {
-  animation: orbPulse 8s ease-in-out infinite;
+/* Dot grid */
+.dot-grid {
+  background-image: radial-gradient(rgba(99, 102, 241, 0.12) 1px, transparent 1px);
+  background-size: 20px 20px;
 }
 
 /* ============================================
    RADIAL GLOW EFFECTS
    ============================================ */
 
-/* Top-center glow - electric blue */
 .radial-glow {
   background: radial-gradient(
-    ellipse 80% 80% at 50% -20%,
-    rgba(59, 130, 246, 0.15) 0%,
-    transparent 60%
+    ellipse 80% 60% at 50% -10%,
+    rgba(99, 102, 241, 0.12) 0%,
+    transparent 50%
   );
 }
 
-/* Bottom-center glow - purple */
 .radial-glow-bottom {
   background: radial-gradient(
-    ellipse 60% 50% at 50% 100%,
-    rgba(139, 92, 246, 0.15) 0%,
+    ellipse 60% 50% at 50% 110%,
+    rgba(34, 211, 238, 0.08) 0%,
     transparent 50%
   );
 }
 
-/* Cyan accent glow */
-.radial-glow-cyan {
-  background: radial-gradient(
-    ellipse 60% 60% at 80% 20%,
-    rgba(6, 182, 212, 0.12) 0%,
-    transparent 50%
-  );
-}
-
-/* Violet accent glow */
-.radial-glow-violet {
-  background: radial-gradient(
-    ellipse 50% 50% at 20% 80%,
-    rgba(168, 85, 247, 0.12) 0%,
-    transparent 50%
-  );
-}
-
-/* Indigo accent glow */
-.radial-glow-indigo {
+.radial-glow-primary {
   background: radial-gradient(
     ellipse 70% 70% at 30% 30%,
     rgba(99, 102, 241, 0.1) 0%,
@@ -324,29 +255,47 @@ body::before {
   );
 }
 
-/* Multi-color atmospheric glow */
+.radial-glow-secondary {
+  background: radial-gradient(
+    ellipse 60% 60% at 80% 20%,
+    rgba(34, 211, 238, 0.08) 0%,
+    transparent 50%
+  );
+}
+
+/* Atmospheric glow */
 .atmospheric-glow {
   background: 
-    radial-gradient(ellipse 60% 60% at 20% 20%, rgba(59, 130, 246, 0.08) 0%, transparent 50%),
-    radial-gradient(ellipse 50% 50% at 80% 80%, rgba(139, 92, 246, 0.08) 0%, transparent 50%),
-    radial-gradient(ellipse 40% 40% at 50% 50%, rgba(6, 182, 212, 0.05) 0%, transparent 50%);
+    radial-gradient(ellipse 50% 50% at 20% 20%, rgba(99, 102, 241, 0.06) 0%, transparent 50%),
+    radial-gradient(ellipse 40% 40% at 80% 80%, rgba(34, 211, 238, 0.06) 0%, transparent 50%);
 }
 
 /* ============================================
-   GRID PATTERN OVERLAYS
+   GLASS MORPHISM
    ============================================ */
 
-.grid-overlay {
-  background-image: 
-    linear-gradient(rgba(99, 102, 241, 0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(99, 102, 241, 0.04) 1px, transparent 1px);
-  background-size: 64px 64px;
+.glass {
+  background: rgba(17, 17, 17, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(99, 102, 241, 0.1);
 }
 
-/* Subtle dot grid */
-.dot-grid {
-  background-image: radial-gradient(rgba(99, 102, 241, 0.15) 1px, transparent 1px);
-  background-size: 24px 24px;
+.glass-light {
+  background: rgba(255, 255, 255, 0.025);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.glass-hover {
+  transition: all 0.25s ease;
+}
+
+.glass-hover:hover {
+  background: rgba(26, 26, 26, 0.8);
+  border-color: rgba(99, 102, 241, 0.2);
+  box-shadow: 0 0 40px rgba(99, 102, 241, 0.1);
 }
 
 /* ============================================
@@ -365,106 +314,15 @@ body::before {
   background: linear-gradient(
     90deg,
     transparent,
-    rgba(255, 255, 255, 0.2),
+    rgba(255, 255, 255, 0.15),
     transparent
   );
   transform: translateX(-100%);
-  transition: transform 0.6s ease;
+  transition: transform 0.5s ease;
 }
 
 .btn-glow:hover::before {
   transform: translateX(100%);
-}
-
-/* ============================================
-   GLASS MORPHISM
-   ============================================ */
-
-.glass {
-  background: rgba(20, 20, 28, 0.6);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(99, 102, 241, 0.15);
-}
-
-.glass-light {
-  background: rgba(255, 255, 255, 0.03);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.glass-hover {
-  transition: all 0.3s ease;
-}
-
-.glass-hover:hover {
-  background: rgba(30, 30, 42, 0.7);
-  border-color: rgba(99, 102, 241, 0.25);
-  box-shadow: 0 0 30px rgba(59, 130, 246, 0.15);
-}
-
-/* ============================================
-   SHIMMER EFFECT
-   ============================================ */
-
-.shimmer {
-  background: linear-gradient(
-    90deg,
-    rgba(255, 255, 255, 0) 0%,
-    rgba(255, 255, 255, 0.08) 50%,
-    rgba(255, 255, 255, 0) 100%
-  );
-  background-size: 200% 100%;
-  animation: shimmer 2s linear infinite;
-}
-
-@keyframes shimmer {
-  0% {
-    background-position: -200% 0;
-  }
-  100% {
-    background-position: 200% 0;
-  }
-}
-
-/* ============================================
-   NOISE OVERLAY
-   ============================================ */
-
-.noise-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: 9999;
-  opacity: 0.025;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
-}
-
-/* ============================================
-   BORDER GLOW EFFECTS
-   ============================================ */
-
-.border-glow {
-  position: relative;
-}
-
-.border-glow::before {
-  content: '';
-  position: absolute;
-  inset: -1px;
-  background: linear-gradient(135deg, rgba(59, 130, 246, 0.5), rgba(139, 92, 246, 0.5), rgba(6, 182, 212, 0.5));
-  border-radius: inherit;
-  z-index: -1;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.border-glow:hover::before {
-  opacity: 1;
 }
 
 /* ============================================
@@ -490,57 +348,98 @@ body::before {
    HOVER GLOW EFFECTS
    ============================================ */
 
-.hover-glow-blue:hover {
-  box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+.hover-glow-primary:hover {
+  box-shadow: 0 0 24px rgba(99, 102, 241, 0.25);
 }
 
-.hover-glow-purple:hover {
-  box-shadow: 0 0 20px rgba(139, 92, 246, 0.3);
+.hover-glow-secondary:hover {
+  box-shadow: 0 0 24px rgba(34, 211, 238, 0.25);
 }
 
-.hover-glow-cyan:hover {
-  box-shadow: 0 0 20px rgba(6, 182, 212, 0.3);
+.hover-lift {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-.hover-glow-violet:hover {
-  box-shadow: 0 0 20px rgba(168, 85, 247, 0.3);
-}
-
-/* ============================================
-   TEXT GRADIENTS
-   ============================================ */
-
-.text-gradient-blue {
-  background: linear-gradient(135deg, #3b82f6, #06b6d4);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.text-gradient-purple {
-  background: linear-gradient(135deg, #8b5cf6, #d946ef);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.text-gradient-indigo {
-  background: linear-gradient(135deg, #6366f1, #8b5cf6);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+.hover-lift:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
 }
 
 /* ============================================
-   BACKGROUND GRADIENTS
+   BORDER GLOW EFFECTS
    ============================================ */
 
-.bg-gradient-premium {
-  background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(139, 92, 246, 0.1), rgba(6, 182, 212, 0.1));
+.border-glow {
+  position: relative;
 }
 
-.bg-gradient-surface {
-  background: linear-gradient(180deg, rgb(var(--background-primary)) 0%, rgb(var(--background-secondary)) 100%);
+.border-glow::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  background: linear-gradient(135deg, #6366F1, #22D3EE);
+  border-radius: inherit;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.border-glow:hover::before {
+  opacity: 1;
+}
+
+/* ============================================
+   SHIMMER EFFECT
+   ============================================ */
+
+.shimmer {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.06) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 2.5s linear infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+/* ============================================
+   NOISE TEXTURE (Subtle)
+   ============================================ */
+
+.noise-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.02;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+}
+
+/* ============================================
+   FOCUS RINGS (Accessibility)
+   ============================================ */
+
+:focus-visible {
+  outline: 2px solid #6366F1;
+  outline-offset: 2px;
+}
+
+/* ============================================
+   SELECTION COLOR
+   ============================================ */
+
+::selection {
+  background: rgba(99, 102, 241, 0.3);
+  color: #F8FAFC;
 }
 
 /* ============================================
@@ -553,23 +452,14 @@ body::before {
 }
 
 ::-webkit-scrollbar-track {
-  background: rgb(var(--background-primary));
+  background: rgb(var(--background-secondary));
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgb(var(--border-primary));
+  background: rgb(var(--border-secondary));
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgb(var(--border-secondary));
-}
-
-/* ============================================
-   SELECTION STYLING
-   ============================================ */
-
-::selection {
-  background: rgba(59, 130, 246, 0.3);
-  color: rgb(var(--text-primary));
+  background: rgb(var(--card-border-hover));
 }
