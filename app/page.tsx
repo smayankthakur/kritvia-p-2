@@ -1111,7 +1111,6 @@ export default function HomePage() {
       <SocialProofSection />
       <DocsCTA />
       <GlobalCTA />
-      <PremiumFooter />
     </main>
   )
 }
