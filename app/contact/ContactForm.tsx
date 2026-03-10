@@ -96,6 +96,8 @@ export function ContactForm() {
     <form onSubmit={handleSubmit} className="space-y-4">
       <Input
         label="Name *"
+        id="name"
+        name="name"
         placeholder="John Doe"
         value={formData.name}
         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
@@ -104,6 +106,8 @@ export function ContactForm() {
       
       <Input
         label="Email *"
+        id="email"
+        name="email"
         type="email"
         placeholder="john@example.com"
         value={formData.email}
@@ -113,6 +117,8 @@ export function ContactForm() {
       
       <Input
         label="Subject"
+        id="subject"
+        name="subject"
         placeholder="Project Inquiry"
         value={formData.subject}
         onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
@@ -120,6 +126,8 @@ export function ContactForm() {
       
       <Textarea
         label="Message *"
+        id="message"
+        name="message"
         placeholder="Tell us about your project..."
         rows={5}
         value={formData.message}
