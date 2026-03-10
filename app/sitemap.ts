@@ -1,53 +1,82 @@
-import { MetadataRoute } from 'next';
+import { MetadataRoute } from 'next'
+import { staticRoutes, dynamicRoutes } from '@/lib/routes'
 
-const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://kritvia.com';
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://kritvia.com'
+
+// Priority mapping based on route importance
+const priorityMap: Record<string, number> = {
+  '/': 1,
+  '/services': 0.9,
+  '/solutions': 0.9,
+  '/products': 0.8,
+  '/platform': 0.8,
+  '/case-studies': 0.9,
+  '/blog': 0.8,
+  '/research': 0.8,
+  '/pricing': 0.8,
+  '/contact': 0.9,
+  '/company/about': 0.7,
+  '/company/team': 0.6,
+  '/company/careers': 0.7,
+  '/platform/dashboard': 0.7,
+  '/platform/ai-tools': 0.8,
+  '/platform/developers': 0.8,
+  '/platform/projects': 0.7,
+  '/platform/invoices': 0.7,
+  '/platform/startup-builder': 0.8,
+  '/industries': 0.7,
+  '/resources': 0.7,
+  '/resources/blog': 0.7,
+  '/resources/guides': 0.6,
+  '/resources/whitepapers': 0.6,
+  '/privacy': 0.3,
+  '/terms': 0.3,
+}
+
+// Change frequency mapping
+const changeFrequencyMap: Record<string, MetadataRoute.Sitemap[number]['changeFrequency']> = {
+  '/': 'weekly',
+  '/blog': 'daily',
+  '/research': 'weekly',
+  '/resources/blog': 'daily',
+  '/company/careers': 'weekly',
+  '/resources': 'weekly',
+  '/resources/guides': 'weekly',
+}
+
+function getPriority(route: string): number {
+  return priorityMap[route] ?? 0.7
+}
+
+function getChangeFrequency(route: string): MetadataRoute.Sitemap[number]['changeFrequency'] {
+  return changeFrequencyMap[route] ?? 'monthly'
+}
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const staticRoutes: MetadataRoute.Sitemap = [
-    // Main pages
-    { url: BASE_URL, lastModified: new Date(), changeFrequency: 'weekly', priority: 1 },
-    { url: `${BASE_URL}/services`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.9 },
-    { url: `${BASE_URL}/solutions`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.9 },
-    { url: `${BASE_URL}/products`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${BASE_URL}/case-studies`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.9 },
-    { url: `${BASE_URL}/blog`, lastModified: new Date(), changeFrequency: 'daily', priority: 0.8 },
-    { url: `${BASE_URL}/research`, lastModified: new Date(), changeFrequency: 'weekly', priority: 0.8 },
-    { url: `${BASE_URL}/pricing`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${BASE_URL}/contact`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.9 },
+  const routes: MetadataRoute.Sitemap = []
 
-    // Company
-    { url: `${BASE_URL}/company/about`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.7 },
-    { url: `${BASE_URL}/company/team`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.6 },
-    { url: `${BASE_URL}/company/careers`, lastModified: new Date(), changeFrequency: 'weekly', priority: 0.7 },
+  // Add static routes
+  staticRoutes.forEach(route => {
+    routes.push({
+      url: BASE_URL + route,
+      lastModified: new Date(),
+      changeFrequency: getChangeFrequency(route),
+      priority: getPriority(route),
+    })
+  })
 
-    // Industries
-    { url: `${BASE_URL}/industries`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.7 },
-    { url: `${BASE_URL}/industries/fintech`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.6 },
-    { url: `${BASE_URL}/industries/healthcare`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.6 },
-    { url: `${BASE_URL}/industries/ecommerce`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.6 },
-    { url: `${BASE_URL}/industries/saas`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.6 },
+  // Add dynamic routes
+  dynamicRoutes.forEach(dynamic => {
+    const generatedRoutes = dynamic.generator()
+    generatedRoutes.forEach(route => {
+      routes.push({
+        url: BASE_URL + route,
+        lastModified: new Date(),
+        changeFrequency: 'monthly',
+        priority: 0.7,
+      })
+    })
+  })
 
-    // Solutions
-    { url: `${BASE_URL}/solutions/ai-development`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${BASE_URL}/solutions/web-development`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${BASE_URL}/solutions/saas-development`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${BASE_URL}/solutions/cloud-architecture`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
-
-    // Products
-    { url: `${BASE_URL}/products/kritvia-ai`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.7 },
-    { url: `${BASE_URL}/products/kritvia-cloud`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.7 },
-    { url: `${BASE_URL}/products/kritvia-crm`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.7 },
-
-    // Resources
-    { url: `${BASE_URL}/resources`, lastModified: new Date(), changeFrequency: 'weekly', priority: 0.7 },
-    { url: `${BASE_URL}/resources/blog`, lastModified: new Date(), changeFrequency: 'daily', priority: 0.7 },
-    { url: `${BASE_URL}/resources/guides`, lastModified: new Date(), changeFrequency: 'weekly', priority: 0.6 },
-    { url: `${BASE_URL}/resources/whitepapers`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.6 },
-
-    // Legal
-    { url: `${BASE_URL}/privacy`, lastModified: new Date(), changeFrequency: 'yearly', priority: 0.3 },
-    { url: `${BASE_URL}/terms`, lastModified: new Date(), changeFrequency: 'yearly', priority: 0.3 },
-  ];
-
-  return staticRoutes;
+  return routes
 }
