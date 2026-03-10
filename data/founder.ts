@@ -1,10 +1,12 @@
 export const founder = {
   name: "Mayank Thakur",
-  title: "Founder & Architect of KRITVIA",
+  title: "Founder of KRITVIA",
+  tagline: "Building the future of scalable technology platforms.",
   image: "/founder.webp",
-  bio: "Visionary technologist building the future of digital infrastructure. With extensive experience in AI, cloud architecture, and enterprise software development, Mayank leads KRITVIA's mission to transform how businesses build and scale their digital products.",
+  bio: "Mayank Thakur is the founder of KRITVIA, a technology platform designed to power the next generation of SaaS infrastructure. His work focuses on building scalable digital systems, modern software platforms, and future-ready technology ecosystems.",
+  shortBio: "Mayank Thakur is the founder of KRITVIA, a technology platform designed to power the next generation of SaaS infrastructure.",
   mission: "To democratize advanced technology and empower businesses of all sizes to build intelligent, scalable, and future-ready digital platforms.",
-  vision: "KRITVIA aims to become the global standard for AI-powered digital transformation, enabling companies to build better products faster with cutting-edge technology.",
+  vision: "KRITVIA aims to become a foundational technology platform enabling startups, enterprises, and developers to build powerful digital products faster.",
   website: "https://mayank.sitelytc.com",
   socials: {
     website: "https://mayank.sitelytc.com",
@@ -29,7 +31,13 @@ export const founder = {
     "Developed innovative cloud solutions used globally",
     "Pioneered intelligent development platforms"
   ],
-  quote: "The future belongs to those who build it. We're not just creating software—we're architecting the digital future."
+  authorityBadges: [
+    "Founder of KRITVIA",
+    "Next-Generation SaaS Platform",
+    "Platform Architecture Builder",
+    "Technology Systems Architect"
+  ],
+  quote: "Our goal with KRITVIA is to build a platform that empowers the next generation of builders, startups, and global technology companies."
 }
 
 export type Founder = typeof founder
