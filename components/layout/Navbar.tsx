@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { cn } from '@/lib/utils/cn'
 import { mainNavigation, type NavItem } from '@/lib/navigation'
@@ -66,10 +67,17 @@ export function Navbar() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16 lg:h-18">
             <Link href="/" className="flex items-center gap-2 group">
-              <div className="w-9 h-9 bg-gradient-to-br from-purple-500 to-blue-500 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-sm">K</span>
+              <div className="relative w-9 h-9">
+                <Image
+                  src="/logo.png"
+                  alt="Kritvia"
+                  width={36}
+                  height={36}
+                  className="object-contain"
+                  priority
+                />
               </div>
-              <span className="text-lg font-bold text-white">Kritvia</span>
+              <span className="text-lg font-bold text-white hidden sm:block">Kritvia</span>
             </Link>
 
             <nav className="hidden lg:flex items-center gap-1" role="navigation">
