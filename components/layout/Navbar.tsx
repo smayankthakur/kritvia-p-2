@@ -15,6 +15,7 @@ interface NavItem {
 }
 
 const navigation: NavItem[] = [
+  { name: 'Home', href: '/' },
   {
     name: 'Products',
     href: '/products',
@@ -194,9 +195,9 @@ export function Navbar() {
               item.children ? (
                 <Dropdown key={item.name} item={item} />
               ) : (
-                <NavLink 
-                  key={item.name} 
-                  href={item.href} 
+                <NavLink
+                  key={item.name}
+                  href={item.href}
                   isActive={pathname === item.href || pathname.startsWith(item.href + '/')}
                 >
                   {item.name}
