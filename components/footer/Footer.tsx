@@ -100,7 +100,7 @@ export function Footer() {
                 <span className="text-xl font-bold text-white">Kritvia</span>
               </Link>
               <p className="text-slate-400 text-sm leading-relaxed mb-6 max-w-xs">
-                Kritvia delivers secure, scalable AI infrastructure designed for organizations building the future of intelligent technology. Our platform supports startups, enterprises, and research institutions with powerful tools for developing, deploying, and managing AI systems at scale. With advanced AI cloud infrastructure, autonomous agent platforms, and enterprise-grade developer tools, Kritvia enables teams to build reliable AI applications while maintaining security, performance, and operational efficiency. Our mission is to provide the foundational infrastructure that powers modern AI innovation, helping organizations confidently develop intelligent systems that can scale globally and operate reliably in real-world environments.
+                Kritvia is building the foundational infrastructure for the intelligent internet. By combining AI cloud platforms, developer ecosystems, and scalable compute systems, Kritvia empowers innovators to design, deploy, and operate advanced AI applications across industries and global platforms.
               </p>
 
               {/* Newsletter Signup */}
