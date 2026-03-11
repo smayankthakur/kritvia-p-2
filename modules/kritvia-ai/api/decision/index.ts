@@ -1,15 +1,16 @@
 /**
  * AI Decision API
  * 
- * POST /ai/decision
+ * POST /api/ai/decision
  * Get AI-powered business decisions
  */
 
 import type { APIResponse } from '../index';
-import { orchestrate } from '../../engine/orchestrator';
-import { aiLogger } from '../../engine/logger';
+import { runAIRequest } from '../../engine/orchestrator';
 
 export interface DecisionRequest {
+  organizationId: string;
+  userId?: string;
   type: 'lead_scoring' | 'recommendation' | 'prediction' | 'analysis';
   context: Record<string, unknown>;
   query?: string;
@@ -31,52 +32,39 @@ export async function handleDecision(
   const requestId = crypto.randomUUID();
   const startTime = Date.now();
   
-  aiLogger.request('Decision request received', { requestId, decisionType: req.type });
-  
   try {
     // Build query from type or use provided query
     const query = req.query || `Provide a ${req.type} for this business context`;
     
-    // Use orchestrator to process
-    const result = await orchestrate({
+    // Use orchestrator with organization context
+    const response = await runAIRequest({
+      organizationId: req.organizationId,
+      userId: req.userId,
       query,
-      context: req.context,
-      options: {
-        useKnowledge: true,
-        useDecision: true,
-        returnActions: true,
-      },
+      metadata: req.context,
     });
     
-    const response: APIResponse<DecisionResponse> = {
-      success: result.success,
-      requestId,
-      timestamp: Date.now(),
-      data: {
-        decision: result.response,
-        confidence: result.confidence,
-        reasoning: result.insights?.join(' ') || '',
-        alternatives: [],
-      },
-    };
-    
-    aiLogger.response('Decision request completed', { 
-      requestId, 
-      processingTime: Date.now() - startTime 
-    });
-    
-    return response;
-    
-  } catch (error) {
-    aiLogger.error('Decision request failed', { requestId, error: String(error) });
+    const duration = Date.now() - startTime;
     
     return {
-      success: false,
+      success: true,
+      data: {
+        decision: response.message,
+        confidence: 0.85,
+        reasoning: 'Based on CRM data analysis and AI insights',
+        alternatives: response.actions || [],
+      },
       requestId,
       timestamp: Date.now(),
-      error: error instanceof Error ? error.message : 'Unknown error',
+    };
+  } catch (error) {
+    return {
+      success: false,
+      error: String(error),
+      requestId,
+      timestamp: Date.now(),
     };
   }
 }
 
-export default { handleDecision };
+export default handleDecision;

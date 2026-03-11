@@ -1,16 +1,15 @@
 /**
  * AI Insights API
  * 
- * GET /ai/insights
- * Retrieve AI-generated insights
+ * GET /api/ai/insights
+ * Retrieve AI-generated insights for organization
  */
 
 import type { APIResponse } from '../index';
-import { orchestrate } from '../../engine/orchestrator';
-import { aiLogger } from '../../engine/logger';
-import { getRecentLogs } from '../../engine/logger';
+import { getAIInsights, storeAIInsight } from '../../engine/orchestrator';
 
 export interface InsightsRequest {
+  organizationId: string;
   type?: 'all' | 'sales' | 'marketing' | 'operations' | 'strategy';
   limit?: number;
 }
@@ -24,9 +23,6 @@ export interface Insight {
   createdAt: string;
 }
 
-// In-memory insights store
-const insightsStore: Insight[] = [];
-
 /**
  * Handle insights request
  */
@@ -35,77 +31,35 @@ export async function handleInsights(
 ): Promise<APIResponse<Insight[]>> {
   const requestId = crypto.randomUUID();
   
-  aiLogger.request('Insights request received', { requestId, insightType: req.type });
-  
   try {
-    // If requesting specific type, use AI to generate insights
-    if (req.type && req.type !== 'all') {
-      const query = `Generate ${req.type} insights for the business`;
-      
-      const result = await orchestrate({
-        query,
-        context: { insightType: req.type },
-        options: {
-          useKnowledge: true,
-          useDecision: true,
-          returnActions: false,
-        },
-      });
-      
-      // Create insight from result
-      if (result.success && result.insights) {
-        const newInsight: Insight = {
-          id: crypto.randomUUID(),
-          type: req.type,
-          title: `${req.type} Insight`,
-          description: result.response,
-          priority: result.confidence > 0.7 ? 'high' : result.confidence > 0.4 ? 'medium' : 'low',
-          createdAt: new Date().toISOString(),
-        };
-        
-        insightsStore.unshift(newInsight);
-      }
-    }
-    
     const limit = req.limit || 10;
-    const insights = insightsStore.slice(0, limit);
+    
+    // Get insights from database for organization
+    const insights = await getAIInsights(req.organizationId, limit);
     
     const response: APIResponse<Insight[]> = {
       success: true,
       requestId,
       timestamp: Date.now(),
-      data: insights,
+      data: insights.map(i => ({
+        id: i.id,
+        type: i.type,
+        title: i.title,
+        description: i.description,
+        priority: i.confidence > 0.7 ? 'high' : i.confidence > 0.4 ? 'medium' : 'low',
+        createdAt: i.created_at,
+      })),
     };
     
-    aiLogger.response('Insights request completed', { requestId, count: insights.length });
-    
     return response;
-    
   } catch (error) {
-    aiLogger.error('Insights request failed', { requestId, error: String(error) });
-    
     return {
       success: false,
+      error: String(error),
       requestId,
       timestamp: Date.now(),
-      error: error instanceof Error ? error.message : 'Unknown error',
     };
   }
 }
 
-/**
- * Add insight manually
- */
-export function addInsight(insight: Omit<Insight, 'id' | 'createdAt'>): Insight {
-  const newInsight: Insight = {
-    ...insight,
-    id: crypto.randomUUID(),
-    createdAt: new Date().toISOString(),
-  };
-  
-  insightsStore.unshift(newInsight);
-  
-  return newInsight;
-}
-
-export default { handleInsights, addInsight };
+export default handleInsights;

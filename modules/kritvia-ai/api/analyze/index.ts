@@ -1,24 +1,27 @@
 /**
  * AI Analyze API
  * 
- * POST /ai/analyze
+ * POST /api/ai/analyze
  * Analyze business data and provide insights
  */
 
 import type { APIResponse } from '../index';
-import { orchestrate } from '../../engine/orchestrator';
-import { aiLogger } from '../../engine/logger';
+import { runAIRequest } from '../../engine/orchestrator';
 
 export interface AnalyzeRequest {
+  organizationId: string;
+  userId?: string;
   data: Record<string, unknown>;
   analysisType: 'general' | 'financial' | 'marketing' | 'sales' | 'operations';
   query?: string;
 }
 
 export interface AnalyzeResponse {
-  insights: string[];
-  summary: string;
-  recommendations: string[];
+  success: boolean;
+  message: string;
+  insights?: string[];
+  actions?: string[];
+  data?: Record<string, unknown>;
 }
 
 /**
@@ -27,57 +30,28 @@ export interface AnalyzeResponse {
 export async function handleAnalyze(
   req: AnalyzeRequest
 ): Promise<APIResponse<AnalyzeResponse>> {
-  const requestId = crypto.randomUUID();
-  const startTime = Date.now();
-  
-  aiLogger.request('Analyze request received', { requestId, analysisType: req.analysisType });
-  
   try {
-    // Build query from data or use provided query
-    const query = req.query || `Analyze ${req.analysisType} data and provide insights`;
-    
-    // Use orchestrator to process
-    const result = await orchestrate({
-      query,
-      context: {
-        ...req.data,
-        analysisType: req.analysisType,
-      },
-      options: {
-        useKnowledge: true,
-        useDecision: true,
-        returnActions: true,
-      },
+    // Use organization context
+    const response = await runAIRequest({
+      organizationId: req.organizationId,
+      userId: req.userId,
+      query: req.query || `Analyze my ${req.analysisType} data`,
     });
-    
-    const response: APIResponse<AnalyzeResponse> = {
-      success: result.success,
-      requestId,
-      timestamp: Date.now(),
-      data: {
-        insights: result.insights || [],
-        summary: result.response,
-        recommendations: result.recommendedActions || [],
-      },
-    };
-    
-    aiLogger.response('Analyze request completed', { 
-      requestId, 
-      processingTime: Date.now() - startTime 
-    });
-    
-    return response;
-    
-  } catch (error) {
-    aiLogger.error('Analyze request failed', { requestId, error: String(error) });
     
     return {
-      success: false,
-      requestId,
+      success: true,
+      data: response,
+      requestId: crypto.randomUUID(),
       timestamp: Date.now(),
-      error: error instanceof Error ? error.message : 'Unknown error',
+    };
+  } catch (error) {
+    return {
+      success: false,
+      error: String(error),
+      requestId: crypto.randomUUID(),
+      timestamp: Date.now(),
     };
   }
 }
 
-export default { handleAnalyze };
+export default handleAnalyze;

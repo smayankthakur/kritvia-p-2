@@ -1,9 +1,14 @@
 /**
  * CRM Integration Layer
  * 
- * Interfaces for CRM connection.
- * Uses mock data if real CRM is not ready.
+ * Multi-tenant CRM interfaces using database layer.
  */
+
+import {
+  leadOperations,
+  dealOperations,
+  taskOperations,
+} from '../../../core/database';
 
 export interface Lead {
   id: string;
@@ -14,6 +19,7 @@ export interface Lead {
   score: number;
   stage: string;
   assignedTo?: string;
+  value?: number;
   createdAt: string;
   updatedAt: string;
 }
@@ -44,6 +50,7 @@ export interface Task {
   title: string;
   description?: string;
   status: 'pending' | 'in_progress' | 'completed';
+  priority?: string;
   assignee?: string;
   dueDate?: string;
   relatedTo?: {
@@ -52,226 +59,291 @@ export interface Task {
   };
 }
 
-// Mock data store
-const mockLeads: Lead[] = [
-  {
-    id: '1',
-    name: 'John Doe',
-    email: 'john@example.com',
-    company: 'Acme Corp',
-    phone: '+1 555-0101',
-    score: 85,
-    stage: 'qualified',
-    assignedTo: 'sales-1',
-    createdAt: '2024-01-15T10:00:00Z',
-    updatedAt: '2024-01-20T15:30:00Z',
-  },
-  {
-    id: '2',
-    name: 'Jane Smith',
-    email: 'jane@techstart.io',
-    company: 'TechStart',
-    phone: '+1 555-0102',
-    score: 72,
-    stage: 'meeting',
-    assignedTo: 'sales-2',
-    createdAt: '2024-01-18T09:00:00Z',
-    updatedAt: '2024-01-22T11:00:00Z',
-  },
-  {
-    id: '3',
-    name: 'Bob Johnson',
-    email: 'bob@enterprise.com',
-    company: 'Enterprise Inc',
-    score: 45,
-    stage: 'new',
-    createdAt: '2024-01-20T14:00:00Z',
-    updatedAt: '2024-01-20T14:00:00Z',
-  },
-];
+// Convert database lead to CRM lead format
+function toLead(dbLead: {
+  id: string;
+  name: string;
+  email?: string;
+  company?: string;
+  phone?: string;
+  status: string;
+  value?: number;
+  assigned_to?: string;
+  created_at: string;
+  updated_at: string;
+}): Lead {
+  return {
+    id: dbLead.id,
+    name: dbLead.name,
+    email: dbLead.email || '',
+    company: dbLead.company || '',
+    phone: dbLead.phone,
+    score: dbLead.status === 'qualified' ? 80 : dbLead.status === 'new' ? 30 : 50,
+    stage: dbLead.status,
+    assignedTo: dbLead.assigned_to,
+    createdAt: dbLead.created_at,
+    updatedAt: dbLead.updated_at,
+  };
+}
 
-const mockDeals: Deal[] = [
-  {
-    id: '1',
-    name: 'Acme Corp Enterprise License',
-    value: 50000,
-    stage: 'proposal',
-    probability: 60,
-    leadId: '1',
-    assignedTo: 'sales-1',
-    expectedCloseDate: '2024-02-15',
-    createdAt: '2024-01-10T10:00:00Z',
-  },
-  {
-    id: '2',
-    name: 'TechStart MVP Development',
-    value: 25000,
-    stage: 'negotiation',
-    probability: 80,
-    leadId: '2',
-    assignedTo: 'sales-2',
-    expectedCloseDate: '2024-02-01',
-    createdAt: '2024-01-05T10:00:00Z',
-  },
-  {
-    id: '3',
-    name: 'Enterprise Security Audit',
-    value: 75000,
-    stage: 'discovery',
-    probability: 30,
-    createdAt: '2024-01-18T10:00:00Z',
-  },
-];
+// Convert database deal to CRM deal format
+function toDeal(dbDeal: {
+  id: string;
+  name: string;
+  value?: number;
+  stage: string;
+  probability?: number;
+  lead_id?: string;
+  assigned_to?: string;
+  created_at: string;
+  updated_at: string;
+}): Deal {
+  return {
+    id: dbDeal.id,
+    name: dbDeal.name,
+    value: dbDeal.value || 0,
+    stage: dbDeal.stage,
+    probability: dbDeal.probability || 0,
+    leadId: dbDeal.lead_id,
+    assignedTo: dbDeal.assigned_to,
+    createdAt: dbDeal.created_at,
+  };
+}
 
-const mockTasks: Task[] = [
-  {
-    id: '1',
-    title: 'Follow up with John Doe',
-    description: 'Discuss enterprise license terms',
-    status: 'pending',
-    assignee: 'sales-1',
-    dueDate: '2024-01-25',
-    relatedTo: { type: 'lead', id: '1' },
-  },
-  {
-    id: '2',
-    title: 'Prepare proposal for TechStart',
-    description: 'MVP scope and timeline',
-    status: 'in_progress',
-    assignee: 'sales-2',
-    dueDate: '2024-01-28',
-    relatedTo: { type: 'deal', id: '2' },
-  },
-];
+// Convert database task to CRM task format
+function toTask(dbTask: {
+  id: string;
+  title: string;
+  description?: string;
+  status: string;
+  priority: string;
+  assigned_to?: string;
+  due_date?: string;
+  created_at: string;
+  updated_at: string;
+}): Task {
+  return {
+    id: dbTask.id,
+    title: dbTask.title,
+    description: dbTask.description,
+    status: dbTask.status === 'completed' ? 'completed' : dbTask.status === 'in_progress' ? 'in_progress' : 'pending',
+    assignee: dbTask.assigned_to,
+    dueDate: dbTask.due_date,
+  };
+}
 
 /**
- * Get all leads
+ * Get all leads for an organization
  */
-export async function getLeads(): Promise<Lead[]> {
-  // Simulate API delay
-  await new Promise(resolve => setTimeout(resolve, 100));
-  return [...mockLeads];
+export async function getLeads(organizationId: string): Promise<Lead[]> {
+  const dbLeads = await leadOperations.getByOrganization(organizationId);
+  return dbLeads.map(toLead);
 }
 
 /**
  * Get lead by ID
  */
-export async function getLead(id: string): Promise<Lead | null> {
-  await new Promise(resolve => setTimeout(resolve, 50));
-  return mockLeads.find(l => l.id === id) || null;
+export async function getLead(id: string, organizationId: string): Promise<Lead | null> {
+  const dbLead = await leadOperations.getById(id);
+  if (!dbLead || dbLead.organization_id !== organizationId) return null;
+  return toLead(dbLead);
 }
 
 /**
- * Get all deals
+ * Create a new lead
  */
-export async function getDeals(): Promise<Deal[]> {
-  await new Promise(resolve => setTimeout(resolve, 100));
-  return [...mockDeals];
+export async function createLead(
+  organizationId: string,
+  data: {
+    name: string;
+    email?: string;
+    phone?: string;
+    company?: string;
+    source?: string;
+    value?: number;
+  }
+): Promise<Lead> {
+  const dbLead = await leadOperations.create(organizationId, {
+    name: data.name,
+    email: data.email,
+    phone: data.phone,
+    company: data.company,
+    source: data.source,
+    value: data.value,
+    status: 'new',
+  });
+  return toLead(dbLead);
+}
+
+/**
+ * Update a lead
+ */
+export async function updateLead(
+  id: string,
+  organizationId: string,
+  data: Partial<Lead>
+): Promise<Lead | null> {
+  const dbLead = await leadOperations.update(id, {
+    name: data.name,
+    email: data.email,
+    phone: data.phone,
+    company: data.company,
+    status: data.stage,
+    value: data.value,
+    assigned_to: data.assignedTo,
+  });
+  if (!dbLead || dbLead.organization_id !== organizationId) return null;
+  return toLead(dbLead);
+}
+
+/**
+ * Get all deals for an organization
+ */
+export async function getDeals(organizationId: string): Promise<Deal[]> {
+  const dbDeals = await dealOperations.getByOrganization(organizationId);
+  return dbDeals.map(toDeal);
 }
 
 /**
  * Get deal by ID
  */
-export async function getDeal(id: string): Promise<Deal | null> {
-  await new Promise(resolve => setTimeout(resolve, 50));
-  return mockDeals.find(d => d.id === id) || null;
+export async function getDeal(id: string, organizationId: string): Promise<Deal | null> {
+  const dbDeal = await dealOperations.getById(id);
+  if (!dbDeal || dbDeal.organization_id !== organizationId) return null;
+  return toDeal(dbDeal);
 }
 
 /**
- * Update lead
+ * Create a new deal
  */
-export async function updateLead(
-  id: string,
-  data: Partial<Lead>
-): Promise<Lead | null> {
-  await new Promise(resolve => setTimeout(resolve, 100));
-  const index = mockLeads.findIndex(l => l.id === id);
-  if (index === -1) return null;
-  
-  mockLeads[index] = { ...mockLeads[index], ...data, updatedAt: new Date().toISOString() };
-  return mockLeads[index];
+export async function createDeal(
+  organizationId: string,
+  data: {
+    name: string;
+    value?: number;
+    stage?: string;
+    probability?: number;
+    leadId?: string;
+  }
+): Promise<Deal> {
+  const dbDeal = await dealOperations.create(organizationId, {
+    name: data.name,
+    value: data.value,
+    stage: data.stage || 'lead',
+    probability: data.probability,
+    lead_id: data.leadId,
+  });
+  return toDeal(dbDeal);
 }
 
 /**
- * Create task
- */
-export async function createTask(task: Omit<Task, 'id'>): Promise<Task> {
-  await new Promise(resolve => setTimeout(resolve, 100));
-  const newTask: Task = {
-    ...task,
-    id: String(mockTasks.length + 1),
-  };
-  mockTasks.push(newTask);
-  return newTask;
-}
-
-/**
- * Assign deal to sales rep
- */
-export async function assignDeal(
-  dealId: string,
-  salesRepId: string
-): Promise<Deal | null> {
-  return updateDeal(dealId, { assignedTo: salesRepId });
-}
-
-/**
- * Update deal
+ * Update a deal
  */
 export async function updateDeal(
   id: string,
+  organizationId: string,
   data: Partial<Deal>
 ): Promise<Deal | null> {
-  await new Promise(resolve => setTimeout(resolve, 100));
-  const index = mockDeals.findIndex(d => d.id === id);
-  if (index === -1) return null;
-  
-  mockDeals[index] = { ...mockDeals[index], ...data };
-  return mockDeals[index];
-}
-
-/**
- * Get tasks for a user
- */
-export async function getTasks(assigneeId?: string): Promise<Task[]> {
-  await new Promise(resolve => setTimeout(resolve, 100));
-  if (assigneeId) {
-    return mockTasks.filter(t => t.assignee === assigneeId);
-  }
-  return [...mockTasks];
-}
-
-/**
- * Get pipeline summary
- */
-export async function getPipelineSummary(): Promise<{
-  totalValue: number;
-  dealsByStage: Record<string, number>;
-  avgProbability: number;
-}> {
-  const deals = await getDeals();
-  
-  const totalValue = deals.reduce((sum, d) => sum + d.value, 0);
-  const dealsByStage: Record<string, number> = {};
-  deals.forEach(d => {
-    dealsByStage[d.stage] = (dealsByStage[d.stage] || 0) + 1;
+  const dbDeal = await dealOperations.update(id, {
+    name: data.name,
+    value: data.value,
+    stage: data.stage,
+    probability: data.probability,
+    lead_id: data.leadId,
+    assigned_to: data.assignedTo,
   });
-  const avgProbability = deals.length > 0
-    ? deals.reduce((sum, d) => sum + d.probability, 0) / deals.length
-    : 0;
-  
-  return { totalValue, dealsByStage, avgProbability };
+  if (!dbDeal || dbDeal.organization_id !== organizationId) return null;
+  return toDeal(dbDeal);
+}
+
+/**
+ * Get all tasks for an organization
+ */
+export async function getTasks(organizationId: string): Promise<Task[]> {
+  const dbTasks = await taskOperations.getByOrganization(organizationId);
+  return dbTasks.map(toTask);
+}
+
+/**
+ * Create a new task
+ */
+export async function createTask(
+  organizationId: string,
+  data: {
+    title: string;
+    description?: string;
+    priority?: string;
+    assignee?: string;
+    dueDate?: string;
+  }
+): Promise<Task> {
+  const dbTask = await taskOperations.create(organizationId, {
+    title: data.title,
+    description: data.description,
+    status: 'pending',
+    priority: data.priority || 'medium',
+    assigned_to: data.assignee,
+    due_date: data.dueDate,
+  });
+  return toTask(dbTask);
+}
+
+/**
+ * Update a task
+ */
+export async function updateTask(
+  id: string,
+  organizationId: string,
+  data: Partial<Task>
+): Promise<Task | null> {
+  const dbTask = await taskOperations.update(id, {
+    title: data.title,
+    description: data.description,
+    status: data.status,
+    priority: data.priority,
+    assigned_to: data.assignee,
+    due_date: data.dueDate,
+  });
+  if (!dbTask || dbTask.organization_id !== organizationId) return null;
+  return toTask(dbTask);
+}
+
+/**
+ * Get CRM statistics for an organization
+ */
+export async function getCRMStats(organizationId: string): Promise<{
+  totalLeads: number;
+  totalDeals: number;
+  totalTasks: number;
+  pipelineValue: number;
+}> {
+  const [leads, deals, tasks] = await Promise.all([
+    getLeads(organizationId),
+    getDeals(organizationId),
+    getTasks(organizationId),
+  ]);
+
+  const pipelineValue = deals.reduce((sum, deal) => sum + (deal.value || 0), 0);
+
+  return {
+    totalLeads: leads.length,
+    totalDeals: deals.length,
+    totalTasks: tasks.length,
+    pipelineValue,
+  };
 }
 
 export default {
   getLeads,
   getLead,
+  createLead,
+  updateLead,
   getDeals,
   getDeal,
-  updateLead,
-  createTask,
-  assignDeal,
+  createDeal,
   updateDeal,
   getTasks,
-  getPipelineSummary,
+  createTask,
+  updateTask,
+  getCRMStats,
 };

@@ -43,9 +43,9 @@ const memoryStore: VectorEntry[] = [];
  * Create embedding using OpenAI
  */
 export async function createEmbedding(text: string): Promise<number[]> {
-  // Use the existing AI service
-  const { embedText } = await import('./ai-service');
-  const result = await embedText(text);
+  // Import from the existing AI service
+  const aiService = await import('../ai-service');
+  const result = await aiService.embedText(text);
   
   if (result.success && result.data) {
     return result.data.embedding;
