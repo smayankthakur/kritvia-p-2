@@ -199,6 +199,8 @@ export const pricingPlans: PricingPlan[] = [
     id: 'starter',
     name: 'Starter',
     price: '$999',
+    period: 'one-time',
+    href: '/contact',
     description: 'Perfect for small businesses getting started.',
     features: [
       'Up to 5 pages',
@@ -212,6 +214,8 @@ export const pricingPlans: PricingPlan[] = [
     id: 'professional',
     name: 'Professional',
     price: '$2,999',
+    period: 'one-time',
+    href: '/contact',
     description: 'For growing businesses needing more features.',
     features: [
       'Up to 15 pages',
@@ -228,6 +232,8 @@ export const pricingPlans: PricingPlan[] = [
     id: 'enterprise',
     name: 'Enterprise',
     price: 'Custom',
+    period: 'custom',
+    href: '/contact',
     description: 'Tailored solutions for large organizations.',
     features: [
       'Unlimited pages',

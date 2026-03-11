@@ -26,6 +26,7 @@ export interface AIResponse<T = unknown> {
   data?: T;
   error?: string;
   timestamp: number;
+  requestId?: string;
 }
 
 export interface DecisionRequest {

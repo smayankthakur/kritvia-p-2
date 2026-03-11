@@ -62,6 +62,7 @@ export interface DbDeal {
   probability?: number;
   lead_id?: string;
   contact_id?: string;
+  assigned_to?: string;
   closed_at?: string;
   created_at: string;
   updated_at: string;

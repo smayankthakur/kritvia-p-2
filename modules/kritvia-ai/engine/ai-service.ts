@@ -33,7 +33,7 @@ export interface AIResponseData {
 /**
  * Generate AI response using OpenAI
  */
-export async function generateAIResponse(request: AIRequest): Promise<AIResponse<AIResponseData>> {
+export async function generateAIResponse<T = AIResponseData>(request: AIRequest): Promise<AIResponse<T>> {
   const startTime = Date.now();
   
   // Check if API key is configured
@@ -98,7 +98,7 @@ export async function generateAIResponse(request: AIRequest): Promise<AIResponse
           totalTokens: data.usage?.total_tokens || 0,
         },
         finishReason: data.choices[0]?.finish_reason,
-      },
+      } as T,
     };
   } catch (error) {
     return {

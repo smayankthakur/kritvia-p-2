@@ -1,186 +1,297 @@
 'use client';
 
-import { useState } from 'react';
-import { DashboardLayout } from '@/components/dashboard/DashboardLayout';
-import { Card, CardContent, Button } from '@/components/ui';
-import { cn } from '@/lib/utils/cn';
+import React, { useState, useEffect } from 'react';
+import ChatInterface from '../../../modules/kritvia-ai/ui/ai-chat/chat-interface';
+import AgentDashboard from '../../../modules/kritvia-ai/ui/agent-dashboard';
+import { ActivityTimeline } from '../../../modules/kritvia-ai/ui/ai-activity-timeline';
 
-const aiTools = [
-  {
-    id: 'content-generator',
-    name: 'AI Content Generator',
-    description: 'Generate blog posts, marketing copy, and technical documentation with AI',
-    icon: '✍️',
-    color: 'from-blue-500/20 to-blue-600/10',
-    status: 'Active',
-    usage: { current: 450, limit: 1000 },
-    features: ['Blog Posts', 'Marketing Copy', 'Technical Docs', 'Email Templates'],
-  },
-  {
-    id: 'lead-analyzer',
-    name: 'AI Lead Analyzer',
-    description: 'Analyze leads, predict conversion probability, and score prospects',
-    icon: '🎯',
-    color: 'from-green-500/20 to-green-600/10',
-    status: 'Active',
-    usage: { current: 280, limit: 500 },
-    features: ['Lead Scoring', 'Conversion Prediction', 'Segment Analysis', 'CRM Sync'],
-  },
-  {
-    id: 'automation-builder',
-    name: 'AI Automation Builder',
-    description: 'Build intelligent workflows with AI-powered decision making',
-    icon: '🔄',
-    color: 'from-purple-500/20 to-purple-600/10',
-    status: 'Beta',
-    usage: { current: 45, limit: 100 },
-    features: ['Visual Builder', 'AI Decisions', 'Integration Hub', 'Schedule Triggers'],
-  },
-  {
-    id: 'support-bot',
-    name: 'AI Customer Support Bot',
-    description: 'Deploy an intelligent chatbot trained on your documentation',
-    icon: '💬',
-    color: 'from-orange-500/20 to-orange-600/10',
-    status: 'Coming Soon',
-    usage: { current: 0, limit: 0 },
-    features: ['Custom Training', 'Multi-channel', 'Human Handoff', 'Analytics'],
-  },
-];
+interface DashboardData {
+  summary: {
+    revenue: number;
+    revenueChange: string;
+    pipeline: number;
+    pipelineChange: string;
+    conversion: number;
+    conversionChange: string;
+  };
+  metrics: Array<{
+    metric: string;
+    value: number;
+    change?: string;
+    trend: string;
+  }>;
+  forecasts?: {
+    revenue: Array<{ period: string; predicted: number }>;
+  };
+}
 
 export default function AIToolsPage() {
-  const [activeTool, setActiveTool] = useState(aiTools[0]);
+  const [activeTab, setActiveTab] = useState('overview');
+  const [dashboardData, setDashboardData] = useState<DashboardData | null>(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    loadDashboardData();
+  }, []);
+
+  const loadDashboardData = async () => {
+    try {
+      const res = await fetch('/api/analytics/dashboard?organizationId=org_demo');
+      const data = await res.json();
+      if (data.success) {
+        setDashboardData(data.data);
+      }
+    } catch (error) {
+      console.error('Failed to load dashboard:', error);
+    }
+    setLoading(false);
+  };
+
+  const tools = [
+    {
+      id: 'analyst',
+      name: 'AI Business Analyst',
+      description: 'Analyze business data and generate insights',
+      icon: '📊',
+      status: 'active',
+    },
+    {
+      id: 'sales',
+      name: 'AI Sales Assistant',
+      description: 'Monitor pipeline and recommend actions',
+      icon: '💰',
+      status: 'active',
+    },
+    {
+      id: 'marketing',
+      name: 'AI Marketing Strategist',
+      description: 'Optimize campaigns and lead generation',
+      icon: '📢',
+      status: 'active',
+    },
+    {
+      id: 'operations',
+      name: 'AI Operations Monitor',
+      description: 'Track tasks and detect bottlenecks',
+      icon: '⚙️',
+      status: 'active',
+    },
+    {
+      id: 'forecast',
+      name: 'AI Forecast Engine',
+      description: 'Predict revenue and deal outcomes',
+      icon: '🔮',
+      status: 'active',
+    },
+    {
+      id: 'insights',
+      name: 'AI Insight Generator',
+      description: 'Auto-generate actionable insights',
+      icon: '💡',
+      status: 'active',
+    },
+  ];
 
   return (
-    <DashboardLayout>
-      <div className="space-y-6">
-        {/* Header */}
-        <div className="flex items-center justify-between">
-          <div>
-            <h1 className="text-2xl font-bold text-white">AI Tools</h1>
-            <p className="text-neutral-400">Powerful AI tools to accelerate your business</p>
+    <div className="min-h-screen bg-gray-50">
+      {/* Header */}
+      <header className="bg-white border-b">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+          <div className="flex items-center justify-between">
+            <div>
+              <h1 className="text-2xl font-bold text-gray-900">AI Tools</h1>
+              <p className="text-sm text-gray-500">Kritvia AI Control Center</p>
+            </div>
+            <div className="flex items-center gap-2">
+              <span className="px-3 py-1 bg-green-100 text-green-800 text-sm rounded-full">
+                ● AI Active
+              </span>
+            </div>
           </div>
         </div>
+      </header>
 
-        {/* Tools Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
-          {aiTools.map((tool) => (
-            <button
-              key={tool.id}
-              onClick={() => setActiveTool(tool)}
-              className={cn(
-                'text-left p-4 rounded-xl border transition-all',
-                activeTool.id === tool.id
-                  ? 'bg-neutral-800 border-primary-500/50 ring-1 ring-primary-500/30'
-                  : 'bg-neutral-900 border-neutral-800 hover:border-neutral-700',
-              )}
-            >
-              <div className="flex items-center justify-between mb-3">
-                <span className="text-2xl">{tool.icon}</span>
-                <span className={cn(
-                  'text-xs px-2 py-0.5 rounded-full',
-                  tool.status === 'Active' && 'bg-green-500/20 text-green-400',
-                  tool.status === 'Beta' && 'bg-yellow-500/20 text-yellow-400',
-                  tool.status === 'Coming Soon' && 'bg-neutral-500/20 text-neutral-400',
-                )}>{tool.status}</span>
-              </div>
-              <h3 className="font-semibold text-white mb-1">{tool.name}</h3>
-              <p className="text-xs text-neutral-500 line-clamp-2">{tool.description}</p>
-            </button>
-          ))}
-        </div>
-
-        {/* Active Tool Detail */}
-        <div className="grid lg:grid-cols-3 gap-6">
-          {/* Main Panel */}
-          <div className="lg:col-span-2">
-            <Card className="bg-neutral-900 border-neutral-800">
-              <CardContent className="p-6">
-                <div className="flex items-center gap-4 mb-6">
-                  <span className="text-4xl">{activeTool.icon}</span>
-                  <div>
-                    <h2 className="text-xl font-bold text-white">{activeTool.name}</h2>
-                    <p className="text-neutral-400 text-sm">{activeTool.description}</p>
-                  </div>
-                </div>
-
-                {/* Usage */}
-                {activeTool.limit > 0 && (
-                  <div className="mb-6 p-4 bg-neutral-800/50 rounded-xl">
-                    <div className="flex justify-between text-sm mb-2">
-                      <span className="text-neutral-400">Usage This Month</span>
-                      <span className="text-white">{activeTool.usage.current} / {activeTool.usage.limit}</span>
-                    </div>
-                    <div className="h-2 bg-neutral-700 rounded-full overflow-hidden">
-                      <div 
-                        className="h-full bg-gradient-to-r from-primary-500 to-secondary-500"
-                        style={{ width: `${(activeTool.usage.current / activeTool.usage.limit) * 100}%` }}
-                      />
-                    </div>
-                  </div>
-                )}
-
-                {/* Input Area */}
-                <div className="space-y-4">
-                  <textarea
-                    placeholder={`Enter your ${activeTool.name.toLowerCase()} prompt...`}
-                    className="w-full h-40 bg-neutral-800 border border-neutral-700 rounded-xl px-4 py-3 text-white placeholder-neutral-500 focus:outline-none focus:ring-2 focus:ring-primary-500 resize-none"
-                  />
-                  <div className="flex justify-between">
-                    <div className="flex gap-2">
-                      <button className="px-3 py-2 bg-neutral-800 border border-neutral-700 rounded-lg text-sm text-neutral-400 hover:text-white transition-colors">
-                        📎 Attach
-                      </button>
-                      <button className="px-3 py-2 bg-neutral-800 border border-neutral-700 rounded-lg text-sm text-neutral-400 hover:text-white transition-colors">
-                        📋 Templates
-                      </button>
-                    </div>
-                    <Button className="bg-primary-600 hover:bg-primary-500">
-                      Generate →
-                    </Button>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-
-          {/* Sidebar */}
-          <div className="space-y-4">
-            <Card className="bg-neutral-900 border-neutral-800">
-              <CardContent className="p-4">
-                <h3 className="font-semibold text-white mb-3">Features</h3>
-                <div className="space-y-2">
-                  {activeTool.features.map((feature) => (
-                    <div key={feature} className="flex items-center gap-2 text-sm text-neutral-400">
-                      <svg className="w-4 h-4 text-primary-500" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                      </svg>
-                      {feature}
-                    </div>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="bg-neutral-900 border-neutral-800">
-              <CardContent className="p-4">
-                <h3 className="font-semibold text-white mb-3">Quick Actions</h3>
-                <div className="space-y-2">
-                  <button className="w-full text-left px-3 py-2 text-sm text-neutral-400 hover:text-white hover:bg-neutral-800 rounded-lg transition-colors">
-                    📊 View Analytics
-                  </button>
-                  <button className="w-full text-left px-3 py-2 text-sm text-neutral-400 hover:text-white hover:bg-neutral-800 rounded-lg transition-colors">
-                    ⚙️ Configure
-                  </button>
-                  <button className="w-full text-left px-3 py-2 text-sm text-neutral-400 hover:text-white hover:bg-neutral-800 rounded-lg transition-colors">
-                    📜 View History
-                  </button>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
+      {/* Navigation Tabs */}
+      <div className="bg-white border-b">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <nav className="flex space-x-8">
+            {['overview', 'tools', 'agents', 'insights', 'automation'].map((tab) => (
+              <button
+                key={tab}
+                onClick={() => setActiveTab(tab)}
+                className={`py-4 px-1 border-b-2 font-medium text-sm capitalize ${
+                  activeTab === tab
+                    ? 'border-blue-500 text-blue-600'
+                    : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
+                }`}
+              >
+                {tab}
+              </button>
+            ))}
+          </nav>
         </div>
       </div>
-    </DashboardLayout>
+
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        {/* Overview Tab */}
+        {activeTab === 'overview' && (
+          <div className="space-y-6">
+            {/* Stats Cards */}
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+              <div className="bg-white rounded-lg shadow-sm border p-6">
+                <p className="text-sm text-gray-500">Revenue</p>
+                <p className="text-2xl font-bold text-gray-900">
+                  ${dashboardData?.summary.revenue.toLocaleString() || '0'}
+                </p>
+                <p className={`text-sm ${dashboardData?.summary.revenueChange?.startsWith('+') ? 'text-green-600' : 'text-red-600'}`}>
+                  {dashboardData?.summary.revenueChange || '0%'}
+                </p>
+              </div>
+              <div className="bg-white rounded-lg shadow-sm border p-6">
+                <p className="text-sm text-gray-500">Pipeline Value</p>
+                <p className="text-2xl font-bold text-gray-900">
+                  ${dashboardData?.summary.pipeline.toLocaleString() || '0'}
+                </p>
+                <p className={`text-sm ${dashboardData?.summary.pipelineChange?.startsWith('+') ? 'text-green-600' : 'text-red-600'}`}>
+                  {dashboardData?.summary.pipelineChange || '0%'}
+                </p>
+              </div>
+              <div className="bg-white rounded-lg shadow-sm border p-6">
+                <p className="text-sm text-gray-500">Conversion Rate</p>
+                <p className="text-2xl font-bold text-gray-900">
+                  {Math.round((dashboardData?.summary.conversion || 0) * 100)}%
+                </p>
+                <p className="text-sm text-gray-500">
+                  {dashboardData?.summary.conversionChange || '0%'}
+                </p>
+              </div>
+              <div className="bg-white rounded-lg shadow-sm border p-6">
+                <p className="text-sm text-gray-500">AI Agents</p>
+                <p className="text-2xl font-bold text-gray-900">4</p>
+                <p className="text-sm text-green-600">All active</p>
+              </div>
+            </div>
+
+            {/* Quick Actions */}
+            <div className="bg-white rounded-lg shadow-sm border p-6">
+              <h2 className="text-lg font-semibold text-gray-900 mb-4">Quick Actions</h2>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <button className="p-4 border rounded-lg hover:bg-gray-50 text-center">
+                  <span className="text-2xl block mb-2">💬</span>
+                  <span className="text-sm font-medium">Ask AI</span>
+                </button>
+                <button className="p-4 border rounded-lg hover:bg-gray-50 text-center">
+                  <span className="text-2xl block mb-2">📊</span>
+                  <span className="text-sm font-medium">Run Analysis</span>
+                </button>
+                <button className="p-4 border rounded-lg hover:bg-gray-50 text-center">
+                  <span className="text-2xl block mb-2">🔮</span>
+                  <span className="text-sm font-medium">View Forecasts</span>
+                </button>
+                <button className="p-4 border rounded-lg hover:bg-gray-50 text-center">
+                  <span className="text-2xl block mb-2">⚡</span>
+                  <span className="text-sm font-medium">Automate</span>
+                </button>
+              </div>
+            </div>
+
+            {/* AI Chat */}
+            <div className="bg-white rounded-lg shadow-sm border">
+              <div className="p-4 border-b">
+                <h2 className="text-lg font-semibold text-gray-900">AI Assistant</h2>
+                <p className="text-sm text-gray-500">Ask questions about your business</p>
+              </div>
+              <div className="h-80">
+                <ChatInterface />
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* Tools Tab */}
+        {activeTab === 'tools' && (
+          <div className="space-y-6">
+            <div className="bg-white rounded-lg shadow-sm border p-6">
+              <h2 className="text-lg font-semibold text-gray-900 mb-4">AI Tools</h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {tools.map((tool) => (
+                  <div key={tool.id} className="border rounded-lg p-6 hover:shadow-md transition-shadow">
+                    <div className="flex items-start justify-between">
+                      <div className="text-3xl">{tool.icon}</div>
+                      <span className={`px-2 py-1 text-xs rounded-full ${
+                        tool.status === 'active' 
+                          ? 'bg-green-100 text-green-800' 
+                          : 'bg-gray-100 text-gray-800'
+                      }`}>
+                        {tool.status}
+                      </span>
+                    </div>
+                    <h3 className="mt-4 text-lg font-medium text-gray-900">{tool.name}</h3>
+                    <p className="mt-2 text-sm text-gray-500">{tool.description}</p>
+                    <button className="mt-4 w-full px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 text-sm font-medium">
+                      Open Tool
+                    </button>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* Agents Tab */}
+        {activeTab === 'agents' && (
+          <div className="space-y-6">
+            <AgentDashboard />
+          </div>
+        )}
+
+        {/* Insights Tab */}
+        {activeTab === 'insights' && (
+          <div className="space-y-6">
+            <div className="bg-white rounded-lg shadow-sm border">
+              <div className="p-4 border-b">
+                <h2 className="text-lg font-semibold text-gray-900">AI Insights</h2>
+                <p className="text-sm text-gray-500">Generated insights and recommendations</p>
+              </div>
+              <div className="p-4 max-h-96 overflow-y-auto">
+                <ActivityTimeline maxItems={20} />
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* Automation Tab */}
+        {activeTab === 'automation' && (
+          <div className="space-y-6">
+            <div className="bg-white rounded-lg shadow-sm border p-6">
+              <h2 className="text-lg font-semibold text-gray-900 mb-4">Automation Center</h2>
+              
+              <div className="space-y-4">
+                {[
+                  { name: 'Lead Qualification', status: 'active', trigger: 'New lead created', action: 'Score and assign' },
+                  { name: 'Deal Follow-up', status: 'active', trigger: 'Deal stage changed', action: 'Create follow-up task' },
+                  { name: 'Churn Detection', status: 'active', trigger: 'Weekly analysis', action: 'Send alert' },
+                  { name: 'Revenue Report', status: 'scheduled', trigger: 'Daily at 9 AM', action: 'Generate report' },
+                ].map((automation) => (
+                  <div key={automation.name} className="flex items-center justify-between p-4 border rounded-lg">
+                    <div>
+                      <h3 className="font-medium text-gray-900">{automation.name}</h3>
+                      <p className="text-sm text-gray-500">{automation.trigger} → {automation.action}</p>
+                    </div>
+                    <span className={`px-2 py-1 text-xs rounded-full ${
+                      automation.status === 'active'
+                        ? 'bg-green-100 text-green-800'
+                        : 'bg-blue-100 text-blue-800'
+                    }`}>
+                      {automation.status}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        )}
+      </main>
+    </div>
   );
 }

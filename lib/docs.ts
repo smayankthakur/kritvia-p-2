@@ -183,8 +183,8 @@ export function buildNavigation(version: string = 'v1'): NavCategory[] {
   }
   
   // Sort items within each category
-  for (const category of categories.values()) {
-    category.items.sort((a, b) => a.order - b.order);
+  for (const category of Array.from(categories.values())) {
+    category.items.sort((a: NavItem, b: NavItem) => a.order - b.order);
   }
   
   return Array.from(categories.values()).sort((a, b) => a.order - b.order);

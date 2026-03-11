@@ -4,8 +4,6 @@
  * Specialized AI agents for different business functions.
  */
 
-import type { AgentConfig } from '../index';
-
 export * from './ceo-agent';
 export * from './sales-agent';
 export * from './marketing-agent';
