@@ -1,220 +1,262 @@
 /**
  * AI Memory System
  * 
- * Manages short-term and long-term memory for the AI.
+ * Enables Kritvia AI to remember business patterns and previous decisions.
+ * Provides long-term intelligence storage for contextual AI responses.
  */
 
+import { randomUUID } from 'crypto';
+
+// Types
 export interface AIMemory {
   id: string;
-  timestamp: number;
-  type: 'insight' | 'decision' | 'action' | 'conversation' | 'feedback';
-  data: Record<string, unknown>;
-  sessionId?: string;
-  importance: number; // 0-1
-}
-
-// In-memory storage (replace with database in production)
-const shortTermMemory: Map<string, AIMemory[]> = new Map();
-const longTermMemory: AIMemory[] = [];
-
-/**
- * Store memory
- */
-export function storeMemory(
-  memory: Omit<AIMemory, 'id' | 'timestamp'>
-): AIMemory {
-  const newMemory: AIMemory = {
-    ...memory,
-    id: crypto.randomUUID(),
-    timestamp: Date.now(),
+  organizationId: string;
+  type: 'insight' | 'decision' | 'pattern' | 'action';
+  context: Record<string, unknown>;
+  summary: string;
+  confidenceScore: number;
+  createdAt: number;
+  metadata?: {
+    query?: string;
+    response?: string;
+    category?: string;
+    tags?: string[];
   };
+}
 
-  // Determine storage type based on importance
-  if (memory.importance > 0.7 || memory.type === 'decision') {
-    // Long-term memory
-    longTermMemory.push(newMemory);
-  } else if (memory.sessionId) {
-    // Short-term memory (session-based)
-    const sessionMemories = shortTermMemory.get(memory.sessionId) || [];
-    sessionMemories.push(newMemory);
+// In-memory storage (would be replaced with database in production)
+const memoryStore: Map<string, AIMemory[]> = new Map();
+
+// AI Memory Service
+export class AIMemoryService {
+  /**
+   * Store a new memory
+   */
+  async storeMemory(
+    organizationId: string,
+    type: AIMemory['type'],
+    context: Record<string, unknown>,
+    summary: string,
+    confidenceScore: number,
+    metadata?: AIMemory['metadata']
+  ): Promise<AIMemory> {
+    const memory: AIMemory = {
+      id: randomUUID(),
+      organizationId,
+      type,
+      context,
+      summary,
+      confidenceScore,
+      createdAt: Date.now(),
+      metadata,
+    };
     
-    // Limit short-term memory to 50 items per session
-    if (sessionMemories.length > 50) {
-      sessionMemories.shift();
+    // Get existing memories or create new array
+    const orgMemories = memoryStore.get(organizationId) || [];
+    orgMemories.push(memory);
+    
+    // Limit stored memories per organization (keep last 100)
+    if (orgMemories.length > 100) {
+      orgMemories.shift();
     }
-    shortTermMemory.set(memory.sessionId, sessionMemories);
-  }
-
-  return newMemory;
-}
-
-/**
- * Retrieve memory
- */
-export function retrieveMemory(
-  sessionId: string,
-  types?: AIMemory['type'][],
-  limit: number = 10
-): AIMemory[] {
-  const sessionMemories = shortTermMemory.get(sessionId) || [];
-  
-  let filtered = sessionMemories;
-  
-  if (types && types.length > 0) {
-    filtered = sessionMemories.filter(m => types.includes(m.type));
+    
+    memoryStore.set(organizationId, orgMemories);
+    
+    return memory;
   }
   
-  return filtered.slice(-limit);
-}
-
-/**
- * Search memory
- */
-export function searchMemory(
-  query: string,
-  types?: AIMemory['type'][],
-  limit: number = 10
-): AIMemory[] {
-  // Search in long-term memory
-  let results = longTermMemory;
-  
-  if (types && types.length > 0) {
-    results = results.filter(m => types.includes(m.type));
+  /**
+   * Get relevant memories for a query
+   */
+  async getRelevantMemories(
+    organizationId: string,
+    query: string,
+    limit: number = 5
+  ): Promise<AIMemory[]> {
+    const orgMemories = memoryStore.get(organizationId) || [];
+    
+    // Simple keyword matching for relevance
+    const queryWords = query.toLowerCase().split(/\s+/);
+    
+    const scoredMemories = orgMemories.map(memory => {
+      let score = 0;
+      
+      // Check summary for query keywords
+      const summaryWords = memory.summary.toLowerCase().split(/\s+/);
+      for (const word of queryWords) {
+        if (summaryWords.includes(word)) {
+          score += 1;
+        }
+      }
+      
+      // Check context for relevant data
+      const contextStr = JSON.stringify(memory.context).toLowerCase();
+      for (const word of queryWords) {
+        if (contextStr.includes(word)) {
+          score += 0.5;
+        }
+      }
+      
+      // Boost recent memories
+      const ageInDays = (Date.now() - memory.createdAt) / (1000 * 60 * 60 * 24);
+      if (ageInDays < 7) score += 0.3;
+      if (ageInDays < 30) score += 0.1;
+      
+      // Confidence boost
+      score += memory.confidenceScore * 0.2;
+      
+      return { memory, score };
+    });
+    
+    // Sort by score and return top results
+    scoredMemories.sort((a, b) => b.score - a.score);
+    
+    return scoredMemories
+      .filter(s => s.score > 0)
+      .slice(0, limit)
+      .map(s => s.memory);
   }
   
-  // Simple keyword search
-  const queryLower = query.toLowerCase();
-  results = results.filter(m => 
-    JSON.stringify(m.data).toLowerCase().includes(queryLower)
-  );
+  /**
+   * Build memory context for AI prompts
+   */
+  buildMemoryContext(memories: AIMemory[]): string {
+    if (memories.length === 0) {
+      return 'No previous relevant memories found.';
+    }
+    
+    const sections = memories.map((memory, index) => {
+      const date = new Date(memory.createdAt).toLocaleDateString();
+      return `${index + 1}. [${memory.type.toUpperCase()}] ${date}
+   Summary: ${memory.summary}
+   Confidence: ${(memory.confidenceScore * 100).toFixed(0)}%`;
+    });
+    
+    return `## Previous Relevant Memories\n\n${sections.join('\n\n')}`;
+  }
   
-  return results.slice(-limit);
-}
-
-/**
- * Get recent insights
- */
-export function getRecentInsights(limit: number = 5): AIMemory[] {
-  return longTermMemory
-    .filter(m => m.type === 'insight')
-    .sort((a, b) => b.timestamp - a.timestamp)
-    .slice(0, limit);
-}
-
-/**
- * Get decision history
- */
-export function getDecisionHistory(limit: number = 10): AIMemory[] {
-  return longTermMemory
-    .filter(m => m.type === 'decision')
-    .sort((a, b) => b.timestamp - a.timestamp)
-    .slice(0, limit);
-}
-
-/**
- * Clear session memory
- */
-export function clearSessionMemory(sessionId: string): void {
-  shortTermMemory.delete(sessionId);
-}
-
-/**
- * Store conversation
- */
-export function storeConversation(
-  sessionId: string,
-  role: 'user' | 'assistant',
-  content: string,
-  metadata?: Record<string, unknown>
-): AIMemory {
-  return storeMemory({
-    type: 'conversation',
-    data: { role, content, ...metadata },
-    sessionId,
-    importance: 0.5,
-  });
-}
-
-/**
- * Store decision
- */
-export function storeDecision(
-  decision: string,
-  context: Record<string, unknown>,
-  confidence: number,
-  outcome?: Record<string, unknown>
-): AIMemory {
-  return storeMemory({
-    type: 'decision',
-    data: { decision, context, confidence, outcome },
-    importance: confidence,
-  });
-}
-
-/**
- * Store action result
- */
-export function storeAction(
-  action: string,
-  parameters: Record<string, unknown>,
-  result: Record<string, unknown>,
-  success: boolean
-): AIMemory {
-  return storeMemory({
-    type: 'action',
-    data: { action, parameters, result, success },
-    importance: success ? 0.6 : 0.8,
-  });
-}
-
-/**
- * Store feedback
- */
-export function storeFeedback(
-  targetId: string,
-  feedback: 'positive' | 'negative' | 'neutral',
-  comment?: string
-): AIMemory {
-  return storeMemory({
-    type: 'feedback',
-    data: { targetId, feedback, comment },
-    importance: feedback === 'negative' ? 0.9 : 0.5,
-  });
-}
-
-/**
- * Get memory statistics
- */
-export function getMemoryStats(): {
-  shortTermCount: number;
-  longTermCount: number;
-  byType: Record<string, number>;
-} {
-  let shortTermCount = 0;
-  shortTermMemory.forEach(m => shortTermCount += m.length);
+  /**
+   * Store insight from AI analysis
+   */
+  async storeInsight(
+    organizationId: string,
+    insight: string,
+    context: Record<string, unknown>,
+    confidenceScore: number
+  ): Promise<AIMemory> {
+    return this.storeMemory(
+      organizationId,
+      'insight',
+      context,
+      insight,
+      confidenceScore,
+      { category: 'ai-insight' }
+    );
+  }
   
-  const byType: Record<string, number> = {};
-  longTermMemory.forEach(m => {
-    byType[m.type] = (byType[m.type] || 0) + 1;
-  });
+  /**
+   * Store AI decision
+   */
+  async storeDecision(
+    organizationId: string,
+    decision: string,
+    reasoning: string,
+    context: Record<string, unknown>,
+    confidenceScore: number
+  ): Promise<AIMemory> {
+    return this.storeMemory(
+      organizationId,
+      'decision',
+      { ...context, reasoning },
+      decision,
+      confidenceScore,
+      { category: 'ai-decision' }
+    );
+  }
+  
+  /**
+   * Store detected pattern
+   */
+  async storePattern(
+    organizationId: string,
+    pattern: string,
+    context: Record<string, unknown>,
+    confidenceScore: number
+  ): Promise<AIMemory> {
+    return this.storeMemory(
+      organizationId,
+      'pattern',
+      context,
+      pattern,
+      confidenceScore,
+      { category: 'pattern-detection' }
+    );
+  }
+  
+  /**
+   * Store action taken
+   */
+  async storeAction(
+    organizationId: string,
+    action: string,
+    context: Record<string, unknown>,
+    result?: string
+  ): Promise<AIMemory> {
+    return this.storeMemory(
+      organizationId,
+      'action',
+      { ...context, result },
+      action,
+      1.0,
+      { category: 'user-action' }
+    );
+  }
+  
+  /**
+   * Get memory statistics
+   */
+  async getStats(organizationId: string): Promise<{
+    total: number;
+    byType: Record<string, number>;
+    oldest: number | null;
+    newest: number | null;
+  }> {
+    const orgMemories = memoryStore.get(organizationId) || [];
+    
+    const byType: Record<string, number> = {};
+    for (const memory of orgMemories) {
+      byType[memory.type] = (byType[memory.type] || 0) + 1;
+    }
+    
+    return {
+      total: orgMemories.length,
+      byType,
+      oldest: orgMemories.length > 0 ? Math.min(...orgMemories.map(m => m.createdAt)) : null,
+      newest: orgMemories.length > 0 ? Math.max(...orgMemories.map(m => m.createdAt)) : null,
+    };
+  }
+  
+  /**
+   * Clear all memories for an organization
+   */
+  async clear(organizationId: string): Promise<void> {
+    memoryStore.delete(organizationId);
+  }
+}
+
+// Export singleton
+export const aiMemoryService = new AIMemoryService();
+
+// Helper function to add memory context to AI requests
+export async function addMemoryToContext(
+  organizationId: string,
+  query: string
+): Promise<{ memoryContext: string; memoryCount: number }> {
+  const memories = await aiMemoryService.getRelevantMemories(organizationId, query);
+  const memoryContext = aiMemoryService.buildMemoryContext(memories);
   
   return {
-    shortTermCount,
-    longTermCount: longTermMemory.length,
-    byType,
+    memoryContext,
+    memoryCount: memories.length,
   };
 }
-
-export default {
-  storeMemory,
-  retrieveMemory,
-  searchMemory,
-  getRecentInsights,
-  getDecisionHistory,
-  clearSessionMemory,
-  storeConversation,
-  storeDecision,
-  storeAction,
-  storeFeedback,
-  getMemoryStats,
-};
