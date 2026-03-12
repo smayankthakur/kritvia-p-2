@@ -1,8 +1,7 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { Container, Section } from '@/components/ui';
-import { client } from '@/lib/sanity/client';
-import { getAllPostsQuery } from '@/lib/sanity/queries';
+import { getPosts } from '@/lib/sanity/queries';
 
 export const metadata: Metadata = {
   title: 'Blog — AI & Technology Insights | Kritvia',
@@ -16,8 +15,30 @@ interface Post {
   slug: { current: string };
   excerpt: string;
   publishedAt: string;
-  category?: { title: string; slug: { current: string } };
-  mainImage?: { asset: { url: string }; alt: string };
+  image?: {
+    alt: string;
+    asset: {
+      _id: string;
+      url: string;
+    };
+  };
+  author?: {
+    _id: string;
+    name: string;
+    slug: { current: string };
+    image?: {
+      alt: string;
+      asset: {
+        _id: string;
+        url: string;
+      };
+    };
+  };
+  category?: {
+    _id: string;
+    title: string;
+    slug: { current: string };
+  };
 }
 
 // Fallback posts for when CMS has no content
@@ -28,7 +49,7 @@ const FALLBACK_POSTS = [
     slug: { current: 'building-rag-systems' },
     excerpt: 'Everything you need to know about designing, building, and deploying RAG pipelines that perform reliably at enterprise scale.',
     publishedAt: '2026-03-01',
-    category: { title: 'AI/ML', slug: { current: 'ai-ml' } },
+    category: { _id: '1', title: 'AI/ML', slug: { current: 'ai-ml' } },
   },
   {
     _id: '2',
@@ -36,7 +57,7 @@ const FALLBACK_POSTS = [
     slug: { current: 'saas-multi-tenancy' },
     excerpt: 'The three architectural mistakes that haunt SaaS companies at scale, and how to avoid them from day one.',
     publishedAt: '2026-02-15',
-    category: { title: 'SaaS', slug: { current: 'saas' } },
+    category: { _id: '2', title: 'SaaS', slug: { current: 'saas' } },
   },
   {
     _id: '3',
@@ -44,7 +65,7 @@ const FALLBACK_POSTS = [
     slug: { current: 'enterprise-ai-2026' },
     excerpt: 'After 50+ enterprise AI projects, here\'s what we\'ve learned about what separates successful AI initiatives from expensive failures.',
     publishedAt: '2026-02-01',
-    category: { title: 'Strategy', slug: { current: 'strategy' } },
+    category: { _id: '3', title: 'Strategy', slug: { current: 'strategy' } },
   },
   {
     _id: '4',
@@ -52,7 +73,7 @@ const FALLBACK_POSTS = [
     slug: { current: 'kubernetes-cost-optimization' },
     excerpt: 'Practical techniques for reducing Kubernetes infrastructure costs through right-sizing, spot instances, and intelligent autoscaling.',
     publishedAt: '2026-01-20',
-    category: { title: 'Cloud', slug: { current: 'cloud' } },
+    category: { _id: '4', title: 'Cloud', slug: { current: 'cloud' } },
   },
   {
     _id: '5',
@@ -60,7 +81,7 @@ const FALLBACK_POSTS = [
     slug: { current: 'typescript-nextjs-patterns' },
     excerpt: 'Architectural patterns and TypeScript conventions that keep large Next.js codebases maintainable as teams and features grow.',
     publishedAt: '2026-01-10',
-    category: { title: 'Engineering', slug: { current: 'engineering' } },
+    category: { _id: '5', title: 'Engineering', slug: { current: 'engineering' } },
   },
   {
     _id: '6',
@@ -68,13 +89,13 @@ const FALLBACK_POSTS = [
     slug: { current: 'prompt-engineering-production' },
     excerpt: 'Advanced prompting strategies — chain-of-thought, few-shot learning, and structured outputs — for production AI applications.',
     publishedAt: '2025-12-20',
-    category: { title: 'AI/ML', slug: { current: 'ai-ml' } },
+    category: { _id: '6', title: 'AI/ML', slug: { current: 'ai-ml' } },
   },
 ];
 
-async function getPosts(): Promise<Post[]> {
+async function getPostsFromSanity(): Promise<Post[]> {
   try {
-    const posts = await client.fetch(getAllPostsQuery, { limit: 20 });
+    const posts = await getPosts();
     return posts && posts.length > 0 ? posts : FALLBACK_POSTS;
   } catch {
     return FALLBACK_POSTS;
@@ -90,7 +111,12 @@ function formatDate(dateStr: string): string {
 }
 
 export default async function BlogPage() {
-  const posts = await getPosts();
+  // Show loading state while fetching data
+  const postsPromise = getPostsFromSanity();
+  
+  // For simplicity in this example, we'll await directly
+  // In a real app, you might use React Suspense or a more sophisticated loading approach
+  const posts = await postsPromise;
   const featured = posts[0];
   const rest = posts.slice(1);
 

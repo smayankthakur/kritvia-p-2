@@ -11,6 +11,8 @@ import technology from './technology';
 import team from './team';
 import industry from './industry';
 import testimonial from './testimonial';
+import post from './post';
+import founder from './founder';
 
 export const schemaTypes = [
   blog,
@@ -26,4 +28,6 @@ export const schemaTypes = [
   team,
   industry,
   testimonial,
+  post,
+  founder,
 ];

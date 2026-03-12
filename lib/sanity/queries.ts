@@ -1,279 +1,254 @@
-import { groq } from 'next-sanity';
+import { groq } from 'next-sanity'
+import { client } from './client'
 
-// Blog queries
-export const getAllPostsQuery = groq`
-  *[_type == "blog"] | order(publishedAt desc) {
-    _id,
-    title,
-    slug,
-    excerpt,
-    publishedAt,
-    category->{title, slug},
-    author->{name, photo},
-    mainImage
-  }
-`;
+// Fetch all posts with essential fields
+export async function getPosts() {
+  return client.fetch(
+    groq`*[_type == "post" && defined(publishedAt)] | order(publishedAt desc) {
+      _id,
+      title,
+      slug,
+      excerpt,
+      publishedAt,
+      image {
+        alt,
+        asset->{
+          _id,
+          url
+        }
+      },
+      author->{
+        _id,
+        name,
+        slug,
+        image{
+          alt,
+          asset->{
+            _id,
+            url
+          }
+        }
+      },
+      category->{
+        _id,
+        title,
+        slug
+      }
+    }`
+  )
+}
 
-export const getPostBySlugQuery = groq`
-  *[_type == "blog" && slug.current == $slug][0] {
-    _id,
-    title,
-    slug,
-    excerpt,
-    publishedAt,
-    body,
-    category->{title, slug},
-    author->{name, bio, photo},
-    mainImage,
-    seo
-  }
-`;
+// Fetch all post slugs for generateStaticParams
+export async function getAllPostSlugs() {
+  return client.fetch(
+    groq`*[_type == "post" && defined(slug.current)]{
+      slug{
+        current
+      }
+    }`
+  )
+}
 
-export const getRecentPostsQuery = groq`
-  *[_type == "blog"] | order(publishedAt desc) [0...$limit] {
-    _id,
-    title,
-    slug,
-    excerpt,
-    publishedAt,
-    category->{title, slug},
-    mainImage
-  }
-`;
+// Fetch a single post by slug with essential fields
+export async function getPostBySlug(slug: string) {
+  return client.fetch(
+    groq`*[_type == "post" && slug.current == $slug][0]{
+      _id,
+      title,
+      slug,
+      excerpt,
+      content,
+      publishedAt,
+      image{
+        alt,
+        asset->{
+          _id,
+          url
+        }
+      },
+      author->{
+        _id,
+        name,
+        slug,
+        bio,
+        image{
+          alt,
+          asset->{
+            _id,
+            url
+          }
+        }
+      },
+      category->{
+        _id,
+        title,
+        slug,
+        description
+      }
+    }`,
+    { slug }
+  )
+}
 
-// Case Study queries
-export const getAllCaseStudiesQuery = groq`
-  *[_type == "caseStudy"] | order(_createdAt desc) {
-    _id,
-    title,
-    slug,
-    client,
-    industry,
-    summary,
-    results,
-    heroImage,
-    technologies
-  }
-`;
+// Fetch all products with essential fields
+export async function getProducts() {
+  return client.fetch(
+    groq`*[_type == "product" && published == true] | order(_createdAt desc) {
+      _id,
+      title,
+      slug,
+      tagline,
+      description,
+      price,
+      priceUnit,
+      featured,
+      image{
+        alt,
+        asset->{
+          _id,
+          url
+        }
+      },
+      features,
+      category->{
+        _id,
+        title,
+        slug
+      }
+    }`
+  )
+}
 
-export const getCaseStudyBySlugQuery = groq`
-  *[_type == "caseStudy" && slug.current == $slug][0] {
-    _id,
-    title,
-    slug,
-    client,
-    industry,
-    challenge,
-    solution,
-    results,
-    body,
-    heroImage,
-    technologies,
-    testimonial
-  }
-`;
+// Fetch all product slugs for generateStaticParams
+export async function getAllProductSlugs() {
+  return client.fetch(
+    groq`*[_type == "product" && defined(slug.current)]{
+      slug{
+        current
+      }
+    }`
+  )
+}
 
-// Service queries
-export const getAllServicesQuery = groq`
-  *[_type == "service"] | order(order asc) {
-    _id,
-    title,
-    slug,
-    tagline,
-    description,
-    icon,
-    features,
-    featured
-  }
-`;
+// Fetch a single product by slug with essential fields
+export async function getProductBySlug(slug: string) {
+  return client.fetch(
+    groq`*[_type == "product" && slug.current == $slug][0]{
+      _id,
+      title,
+      slug,
+      tagline,
+      description,
+      price,
+      priceUnit,
+      featured,
+      image{
+        alt,
+        asset->{
+          _id,
+          url
+        }
+      },
+      gallery[]{
+        alt,
+        asset->{
+          _id,
+          url
+        }
+      },
+      features,
+      body,
+      category->{
+        _id,
+        title,
+        slug
+      }
+    }`,
+    { slug }
+  )
+}
 
-export const getServiceBySlugQuery = groq`
-  *[_type == "service" && slug.current == $slug][0] {
-    _id,
-    title,
-    slug,
-    tagline,
-    description,
-    icon,
-    heroImage,
-    features,
-    benefits,
-    technologies,
-    content
-  }
-`;
+// Fetch all pages with essential fields
+export async function getPages() {
+  return client.fetch(
+    groq`*[_type == "page"]{
+      _id,
+      title,
+      slug,
+      subtitle,
+      description,
+      heroImage{
+        alt,
+        asset->{
+          _id,
+          url
+        }
+      },
+      seo{
+        seoTitle,
+        seoDescription,
+        seoKeywords
+      }
+    }`
+  )
+}
 
-// Solution queries
-export const getAllSolutionsQuery = groq`
-  *[_type == "solution"] | order(order asc) {
-    _id,
-    title,
-    slug,
-    tagline,
-    description,
-    icon,
-    featured
-  }
-`;
+// Fetch all page slugs for generateStaticParams
+export async function getAllPageSlugs() {
+  return client.fetch(
+    groq`*[_type == "page" && defined(slug.current)]{
+      slug{
+        current
+      }
+    }`
+  )
+}
 
-export const getSolutionBySlugQuery = groq`
-  *[_type == "solution" && slug.current == $slug][0] {
-    _id,
-    title,
-    slug,
-    tagline,
-    description,
-    icon,
-    heroImage,
-    useCases,
-    content,
-    relatedServices[]->{title, slug, icon},
-    relatedCaseStudies[]->{title, slug, client, heroImage}
-  }
-`;
+// Fetch a single page by slug with essential fields
+export async function getPageBySlug(slug: string) {
+  return client.fetch(
+    groq`*[_type == "page" && slug.current == $slug][0]{
+      _id,
+      title,
+      slug,
+      subtitle,
+      description,
+      heroImage{
+        alt,
+        asset->{
+          _id,
+          url
+        }
+      },
+      sections,
+      seo{
+        seoTitle,
+        seoDescription,
+        seoKeywords
+      }
+    }`,
+    { slug }
+  )
+}
 
-// Product queries
-export const getAllProductsQuery = groq`
-  *[_type == "product"] | order(_createdAt asc) {
-    _id,
-    title,
-    slug,
-    tagline,
-    description,
-    heroImage,
-    features
-  }
-`;
-
-export const getProductBySlugQuery = groq`
-  *[_type == "product" && slug.current == $slug][0] {
-    _id,
-    title,
-    slug,
-    tagline,
-    description,
-    heroImage,
-    features,
-    body,
-    screenshots
-  }
-`;
-
-// Technology queries
-export const getAllTechnologiesQuery = groq`
-  *[_type == "technology"] | order(order asc) {
-    _id,
-    name,
-    slug,
-    logo,
-    logoUrl,
-    description,
-    category,
-    featured
-  }
-`;
-
-export const getFeaturedTechnologiesQuery = groq`
-  *[_type == "technology" && featured == true] | order(order asc) {
-    _id,
-    name,
-    logo,
-    logoUrl,
-    category
-  }
-`;
-
-// Team queries
-export const getAllTeamMembersQuery = groq`
-  *[_type == "team"] | order(order asc) {
-    _id,
-    name,
-    role,
-    department,
-    bio,
-    photo,
-    linkedin,
-    twitter,
-    expertise,
-    featured
-  }
-`;
-
-export const getFeaturedTeamMembersQuery = groq`
-  *[_type == "team" && featured == true] | order(order asc) {
-    _id,
-    name,
-    role,
-    department,
-    bio,
-    photo,
-    linkedin,
-    twitter
-  }
-`;
-
-// Industry queries
-export const getAllIndustriesQuery = groq`
-  *[_type == "industry"] | order(order asc) {
-    _id,
-    title,
-    slug,
-    description,
-    icon,
-    heroImage
-  }
-`;
-
-export const getIndustryBySlugQuery = groq`
-  *[_type == "industry" && slug.current == $slug][0] {
-    _id,
-    title,
-    slug,
-    description,
-    icon,
-    heroImage,
-    challenges,
-    solutions,
-    content
-  }
-`;
-
-// Testimonial queries
-export const getAllTestimonialsQuery = groq`
-  *[_type == "testimonial"] | order(order asc) {
-    _id,
-    name,
-    role,
-    company,
-    photo,
-    quote,
-    rating,
-    companyLogo,
-    featured
-  }
-`;
-
-export const getFeaturedTestimonialsQuery = groq`
-  *[_type == "testimonial" && featured == true] | order(order asc) {
-    _id,
-    name,
-    role,
-    company,
-    photo,
-    quote,
-    rating,
-    companyLogo
-  }
-`;
-
-// Site settings
-export const getSiteSettingsQuery = groq`
-  *[_type == "siteSettings"][0] {
-    title,
-    description,
-    logo,
-    favicon,
-    socialLinks,
-    seo
-  }
-`;
+// Fetch founder information
+export async function getFounder() {
+  return client.fetch(
+    groq`*[_type == "founder"][0]{
+      _id,
+      name,
+      bio,
+      image{
+        alt,
+        asset->{
+          _id,
+          url
+        }
+      },
+      socials[]{
+        platform,
+        url
+      }
+    }`
+  )
+}
