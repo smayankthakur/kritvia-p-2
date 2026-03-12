@@ -252,3 +252,169 @@ export async function getFounder() {
     }`
   )
 }
+
+// Fetch landing page by slug
+export async function getLandingPageBySlug(slug: string) {
+  return client.fetch(
+    groq`*[_type == "landingPage" && slug.current == $slug][0]{
+      _id,
+      title,
+      slug,
+      hero,
+      features,
+      benefits,
+      pricing,
+      faq,
+      cta,
+      seo{
+        seoTitle,
+        seoDescription,
+        ogImage,
+        canonicalUrl
+      }
+    }`,
+    { slug }
+  )
+}
+
+// Fetch documentation by slug
+export async function getDocumentationBySlug(slug: string) {
+  return client.fetch(
+    groq`*[_type == "documentation" && slug.current == $slug][0]{
+      _id,
+      title,
+      slug,
+      category->{
+        _id,
+        title
+      },
+      content,
+      codeExamples,
+      seo{
+        seoTitle,
+        seoDescription,
+        ogImage,
+        canonicalUrl
+      }
+    }`,
+    { slug }
+  )
+}
+
+// Fetch all case studies
+export async function getCaseStudies() {
+  return client.fetch(
+    groq`*[_type == "caseStudy"]{
+      _id,
+      companyName,
+      logo{
+        alt,
+        asset->{
+          _id,
+          url
+        }
+      },
+      industry->{
+        _id,
+        title
+      },
+      problem,
+      solution,
+      results,
+      metrics,
+      testimonial
+    }`
+  )
+}
+
+// Fetch case study by slug
+export async function getCaseStudyBySlug(slug: string) {
+  return client.fetch(
+    groq`*[_type == "caseStudy" && slug.current == $slug][0]{
+      _id,
+      companyName,
+      logo{
+        alt,
+        asset->{
+          _id,
+          url
+        }
+      },
+      industry->{
+        _id,
+        title
+      },
+      problem,
+      solution,
+      results,
+      metrics,
+      testimonial
+    }`,
+    { slug }
+  )
+}
+
+// Fetch all testimonials
+export async function getTestimonials() {
+  return client.fetch(
+    groq`*[_type == "testimonial"]{
+      _id,
+      name,
+      company,
+      designation,
+      photo{
+        alt,
+        asset->{
+          _id,
+          url
+        }
+      },
+      quote,
+      rating
+    }`
+  )
+}
+
+// Fetch settings
+export async function getSettings() {
+  return client.fetch(
+    groq`*[_type == "settings"][0]{
+      _id,
+      siteTitle,
+      siteDescription,
+      logo{
+        alt,
+        asset->{
+          _id,
+          url
+        }
+      },
+      footerLinks[]{
+        title,
+        url
+      },
+      socialLinks[]{
+        platform,
+        url,
+        icon{
+          alt,
+          asset->{
+            _id,
+            url
+          }
+        }
+      },
+      announcementBar
+    }`
+  )
+}
+
+// Export for case studies query used in app/case-studies/page.tsx
+export const getAllCaseStudiesQuery = `*[_type == "caseStudy"] | order(publishedAt desc) {
+  _id,
+  title,
+  slug,
+  excerpt,
+  mainImage,
+  publishedAt
+}`

@@ -1,5 +1,5 @@
-import { PortableText, PortableTextFeatures } from '@portabletext/react';
-import { Image } from 'sanity';
+import { PortableText } from '@portabletext/react';
+import { urlFor } from '@/sanity/image';
 
 // Define which types we want to render
 const serializers = {
@@ -11,9 +11,8 @@ const serializers = {
         return <p>Invalid image</p>;
       }
       
-      // Construct image URL from Sanity asset reference
-      // In a real app, you'd use the Sanity image URL builder
-      const url = `https://cdn.sanity.io/images/nl1z2yzp/production/${value.asset._ref}.jpg`;
+      // Construct image URL from Sanity asset reference using the image URL builder
+      const url = urlFor(value.asset?._ref)?.url();
       
       return (
         <figure>
@@ -44,24 +43,16 @@ const serializers = {
   }
 };
 
-// Define which features we want to enable
-const features: PortableTextFeatures = {
-  // Enable all standard features
-  ...PortableTextFeatures,
-  // Add custom features if needed
-};
-
 export default function PortableTextRenderer({ value }: { value: any[] }) {
   if (!value || value.length === 0) {
     return <p className="text-neutral-400">No content available</p>;
   }
-
+  
   return (
     <div className="prose prose-lg:prose-xl neutral">
       <PortableText 
         value={value} 
-        features={features} 
-        serializers={serializers} 
+        components={serializers} 
       />
     </div>
   );

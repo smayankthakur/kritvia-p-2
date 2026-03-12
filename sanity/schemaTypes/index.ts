@@ -13,6 +13,9 @@ import industry from './industry';
 import testimonial from './testimonial';
 import post from './post';
 import founder from './founder';
+import landingPage from './landingPage';
+import documentation from './documentation';
+import settings from './settings';
 
 export const schemaTypes = [
   blog,
@@ -30,4 +33,7 @@ export const schemaTypes = [
   testimonial,
   post,
   founder,
+  landingPage,
+  documentation,
+  settings,
 ];
