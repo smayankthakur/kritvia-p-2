@@ -1,16 +1,18 @@
 import { groq } from 'next-sanity'
-import { client } from './client'
+import { fetch, fetchWithTag } from './live'
 
 // Fetch all posts with essential fields
 export async function getPosts() {
-  return client.fetch(
+  return fetch(
     groq`*[_type == "post" && defined(publishedAt)] | order(publishedAt desc) {
       _id,
       title,
       slug,
-      excerpt,
+      status,
       publishedAt,
-      image {
+      updatedAt,
+      excerpt,
+      featuredImage{
         alt,
         asset->{
           _id,
@@ -33,6 +35,11 @@ export async function getPosts() {
         _id,
         title,
         slug
+      },
+      seo{
+        seoTitle,
+        seoDescription,
+        seoKeywords
       }
     }`
   )
@@ -40,7 +47,7 @@ export async function getPosts() {
 
 // Fetch all post slugs for generateStaticParams
 export async function getAllPostSlugs() {
-  return client.fetch(
+  return fetch(
     groq`*[_type == "post" && defined(slug.current)]{
       slug{
         current
@@ -51,15 +58,16 @@ export async function getAllPostSlugs() {
 
 // Fetch a single post by slug with essential fields
 export async function getPostBySlug(slug: string) {
-  return client.fetch(
+  return fetch(
     groq`*[_type == "post" && slug.current == $slug][0]{
       _id,
       title,
       slug,
-      excerpt,
-      content,
+      status,
       publishedAt,
-      image{
+      updatedAt,
+      excerpt,
+      featuredImage{
         alt,
         asset->{
           _id,
@@ -70,7 +78,6 @@ export async function getPostBySlug(slug: string) {
         _id,
         name,
         slug,
-        bio,
         image{
           alt,
           asset->{
@@ -82,8 +89,12 @@ export async function getPostBySlug(slug: string) {
       category->{
         _id,
         title,
-        slug,
-        description
+        slug
+      },
+      seo{
+        seoTitle,
+        seoDescription,
+        seoKeywords
       }
     }`,
     { slug }
@@ -92,17 +103,20 @@ export async function getPostBySlug(slug: string) {
 
 // Fetch all products with essential fields
 export async function getProducts() {
-  return client.fetch(
-    groq`*[_type == "product" && published == true] | order(_createdAt desc) {
+  return fetch(
+    groq`*[_type == "product" && status == "published"] | order(_createdAt desc) {
       _id,
       title,
       slug,
+      status,
+      publishedAt,
+      updatedAt,
       tagline,
       description,
       price,
       priceUnit,
       featured,
-      image{
+      featuredImage{
         alt,
         asset->{
           _id,
@@ -114,6 +128,11 @@ export async function getProducts() {
         _id,
         title,
         slug
+      },
+      seo{
+        seoTitle,
+        seoDescription,
+        seoKeywords
       }
     }`
   )
@@ -121,7 +140,7 @@ export async function getProducts() {
 
 // Fetch all product slugs for generateStaticParams
 export async function getAllProductSlugs() {
-  return client.fetch(
+  return fetch(
     groq`*[_type == "product" && defined(slug.current)]{
       slug{
         current
@@ -132,7 +151,7 @@ export async function getAllProductSlugs() {
 
 // Fetch a single product by slug with essential fields
 export async function getProductBySlug(slug: string) {
-  return client.fetch(
+  return fetch(
     groq`*[_type == "product" && slug.current == $slug][0]{
       _id,
       title,
@@ -170,7 +189,7 @@ export async function getProductBySlug(slug: string) {
 
 // Fetch all pages with essential fields
 export async function getPages() {
-  return client.fetch(
+  return fetch(
     groq`*[_type == "page"]{
       _id,
       title,
@@ -195,7 +214,7 @@ export async function getPages() {
 
 // Fetch all page slugs for generateStaticParams
 export async function getAllPageSlugs() {
-  return client.fetch(
+  return fetch(
     groq`*[_type == "page" && defined(slug.current)]{
       slug{
         current
@@ -206,7 +225,7 @@ export async function getAllPageSlugs() {
 
 // Fetch a single page by slug with essential fields
 export async function getPageBySlug(slug: string) {
-  return client.fetch(
+  return fetch(
     groq`*[_type == "page" && slug.current == $slug][0]{
       _id,
       title,
@@ -233,7 +252,7 @@ export async function getPageBySlug(slug: string) {
 
 // Fetch founder information
 export async function getFounder() {
-  return client.fetch(
+  return fetch(
     groq`*[_type == "founder"][0]{
       _id,
       name,
@@ -255,7 +274,7 @@ export async function getFounder() {
 
 // Fetch landing page by slug
 export async function getLandingPageBySlug(slug: string) {
-  return client.fetch(
+  return fetch(
     groq`*[_type == "landingPage" && slug.current == $slug][0]{
       _id,
       title,
@@ -279,7 +298,7 @@ export async function getLandingPageBySlug(slug: string) {
 
 // Fetch documentation by slug
 export async function getDocumentationBySlug(slug: string) {
-  return client.fetch(
+  return fetch(
     groq`*[_type == "documentation" && slug.current == $slug][0]{
       _id,
       title,
@@ -303,7 +322,7 @@ export async function getDocumentationBySlug(slug: string) {
 
 // Fetch all case studies
 export async function getCaseStudies() {
-  return client.fetch(
+  return fetch(
     groq`*[_type == "caseStudy"]{
       _id,
       companyName,
@@ -329,7 +348,7 @@ export async function getCaseStudies() {
 
 // Fetch case study by slug
 export async function getCaseStudyBySlug(slug: string) {
-  return client.fetch(
+  return fetch(
     groq`*[_type == "caseStudy" && slug.current == $slug][0]{
       _id,
       companyName,
@@ -356,7 +375,7 @@ export async function getCaseStudyBySlug(slug: string) {
 
 // Fetch all testimonials
 export async function getTestimonials() {
-  return client.fetch(
+  return fetch(
     groq`*[_type == "testimonial"]{
       _id,
       name,
@@ -377,7 +396,7 @@ export async function getTestimonials() {
 
 // Fetch settings
 export async function getSettings() {
-  return client.fetch(
+  return fetch(
     groq`*[_type == "settings"][0]{
       _id,
       siteTitle,

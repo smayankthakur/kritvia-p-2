@@ -1,39 +1,43 @@
-import blog from './blog';
-import product from './product';
-import caseStudy from './caseStudy';
-import page from './page';
-import author from './author';
-import category from './category';
-import siteSettings from './siteSettings';
-import service from './service';
-import solution from './solution';
-import technology from './technology';
-import team from './team';
-import industry from './industry';
-import testimonial from './testimonial';
-import post from './post';
-import founder from './founder';
-import landingPage from './landingPage';
-import documentation from './documentation';
-import settings from './settings';
+import post from './content/post';
+import page from './content/page';
+import landingPage from './content/landingPage';
+import documentation from './content/documentation';
+import product from './business/product';
+import caseStudy from './business/caseStudy';
+import service from './business/service';
+import solution from './business/solution';
+import feature from './business/feature';
+import pricingPlan from './business/pricingPlan';
+import industry from './business/industry';
+import author from './system/author';
+import category from './system/category';
+import founder from './system/founder';
+import technology from './system/technology';
+import team from './system/team';
+import testimonial from './system/testimonial';
+import settings from './system/settings';
+import faq from './system/faq';
+import siteSettings from './system/siteSettings';
 
 export const schemaTypes = [
-  blog,
-  product,
-  caseStudy,
-  page,
-  author,
-  category,
-  siteSettings,
-  service,
-  solution,
-  technology,
-  team,
-  industry,
-  testimonial,
   post,
-  founder,
+  page,
   landingPage,
   documentation,
+  product,
+  caseStudy,
+  service,
+  solution,
+  feature,
+  pricingPlan,
+  industry,
+  author,
+  category,
+  founder,
+  technology,
+  team,
+  testimonial,
   settings,
+  faq,
+  siteSettings,
 ];

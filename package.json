@@ -12,13 +12,18 @@
     "generate-routes": "tsx scripts/generate-routes.ts"
   },
   "dependencies": {
+    "@langchain/core": "^1.1.32",
+    "@langchain/openai": "^1.2.13",
     "@portabletext/react": "^6.0.3",
+    "@project-lakechain/recursive-character-text-splitter": "^0.10.0",
     "@react-three/drei": "^9.122.0",
     "@react-three/fiber": "^8.18.0",
     "@sanity/client": "^6.29.1",
     "@sanity/image-url": "^1.0.2",
+    "@sanity/preview-kit": "^6.2.0",
     "@sanity/react-loader": "^2.0.7",
     "@sanity/vision": "^3.29.0",
+    "@supabase/supabase-js": "^2.99.1",
     "@vercel/analytics": "^1.6.1",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
@@ -31,6 +36,7 @@
     "next-mdx-remote": "^6.0.0",
     "next-sanity": "^7.1.4",
     "next-themes": "^0.4.6",
+    "openai": "^6.27.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "rehype": "^13.0.2",
@@ -43,6 +49,7 @@
     "styled-components": "^6.1.8",
     "tailwind-merge": "^2.2.1",
     "three": "^0.183.2",
+    "use-sync-external-store": "^1.2.0",
     "zod": "^3.22.4"
   },
   "devDependencies": {
