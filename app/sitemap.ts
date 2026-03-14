@@ -77,8 +77,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   })
 
   // Add dynamic routes
-  dynamicRoutes.forEach(dynamic => {
-    const generatedRoutes = dynamic.generator()
+  for (const dynamic of dynamicRoutes) {
+    const generatedRoutes = await dynamic.generator()
     generatedRoutes.forEach(route => {
       routes.push({
         url: BASE_URL + route,
@@ -87,7 +87,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         priority: 0.7,
       })
     })
-  })
+  }
 
   return routes
 }

@@ -1,6 +1,8 @@
 import { notFound } from 'next/navigation';
-import { getPageBySlug, getAllPageSlugs } from '@/lib/sanity/queries';
+import { sanityFetch } from '@/lib/sanity/fetch';
+import { getAllPageSlugs } from '@/lib/sanity/queries';
 import PageLoading from './loading';
+import { getImageUrl } from '@/lib/sanity/image';
 
 interface Page {
   _id: string;
@@ -37,12 +39,35 @@ export default async function PagePage({
 }: {
   params: { slug: string };
 }) {
-  // Show loading state while fetching data
-  const pagePromise = getPageBySlug(params.slug);
-  
-  // For simplicity in this example, we'll await directly
-  // In a real app, you might use React Suspense or a more sophisticated loading approach
-  const page = await pagePromise;
+   // Show loading state while fetching data
+   const pagePromise = sanityFetch({
+     query: `*[_type == "page" && slug.current == $slug][0]{
+       _id,
+       title,
+       slug,
+       subtitle,
+       description,
+       heroImage{
+         alt,
+         asset->{
+           _id,
+           url
+         }
+       },
+       sections,
+       seo{
+         seoTitle,
+         seoDescription,
+         seoKeywords
+       }
+     }`,
+     params: { slug: params.slug },
+     tags: ['page', params.slug]
+   });
+   
+   // For simplicity in this example, we'll await directly
+   // In a real app, you might use React Suspense or a more sophisticated loading approach
+   const page = await pagePromise;
 
   if (!page) {
     notFound();
@@ -51,15 +76,15 @@ export default async function PagePage({
   return (
     <div className="max-w-4xl mx-auto py-16">
       <div className="mb-8">
-        {page.heroImage && (
-          <div className="mb-6">
-            <img
-              src={page.heroImage.asset.url}
-              alt={page.heroImage.alt}
-              className="rounded-xl w-full h-64 object-cover"
-            />
-          </div>
-        )}
+         {page.heroImage && (
+           <div className="mb-6">
+             <img
+               src={getImageUrl(page.heroImage.asset, 1200, 675, 'webp')}
+               alt={page.heroImage.alt}
+               className="rounded-xl w-full h-64 object-cover"
+             />
+           </div>
+         )}
         <h1 className="text-4xl lg:text-5xl font-bold text-white mb-4">
           {page.title}
         </h1>

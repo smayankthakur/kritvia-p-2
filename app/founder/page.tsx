@@ -1,53 +1,113 @@
 import type { Metadata } from 'next'
+import { notFound } from 'next/navigation'
 import Image from 'next/image'
 import Link from 'next/link'
-import { founder } from '@/data/founder'
+import { sanityFetch } from '@/lib/sanity/fetch'
+import { getFounderQuery } from '@/lib/sanity/queries'
+import { getImageUrl } from '@/lib/sanity/image'
 
-export const metadata: Metadata = {
-  title: `${founder.name} — Founder of KRITVIA`,
-  description: `Learn about ${founder.name}, ${founder.title}. Discover the vision behind KRITVIA and the mission to transform digital infrastructure with AI-powered solutions.`,
-  openGraph: {
-    title: `${founder.name} — Founder of KRITVIA`,
-    description: founder.bio,
-    type: 'profile',
-    url: '/founder',
-    images: [
-      {
-        url: founder.image,
-        width: 600,
-        height: 600,
-        alt: founder.name
-      }
-    ]
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: `${founder.name} — Founder of KRITVIA`,
-    description: founder.bio,
-    images: [founder.image]
+interface Founder {
+  _id: string;
+  name: string;
+  title: string;
+  tagline: string;
+  bio: string;
+  shortBio: string;
+  mission: string;
+  vision: string;
+  website: string;
+  socials: {
+    linkedin?: string;
+    twitter?: string;
+    github?: string;
+  };
+  image: {
+    alt: string;
+    asset: {
+      _id: string;
+      url: string;
+    };
+  };
+  companies: Array<{
+    name: string;
+    role: string;
+    description: string;
+  }>;
+  achievements: string[];
+  authorityBadges: string[];
+  quote: string;
+}
+
+export async function generateMetadata() {
+  const founderData = await sanityFetch<Founder>({
+    query: getFounderQuery,
+    tags: ['founder']
+  });
+
+  if (!founderData) {
+    return {
+      title: 'Founder — KRITVIA',
+      description: 'Learn about the founder of KRITVIA.',
+    };
   }
+
+  return {
+    title: `${founderData.name} — Founder of KRITVIA`,
+    description: `Learn about ${founderData.name}, ${founderData.title}. Discover the vision behind KRITVIA and the mission to transform digital infrastructure with AI-powered solutions.`,
+    openGraph: {
+      title: `${founderData.name} — Founder of KRITVIA`,
+      description: founderData.bio,
+      type: 'profile',
+      url: '/founder',
+      images: [
+        {
+          url: founderData.image.asset.url,
+          width: 600,
+          height: 600,
+          alt: founderData.name
+        }
+      ]
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${founderData.name} — Founder of KRITVIA`,
+      description: founderData.bio,
+      images: [founderData.image.asset.url]
+    }
+  };
 }
 
-// Structured Data for SEO
-const jsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'Person',
-  name: founder.name,
-  jobTitle: 'Founder',
-  url: founder.website,
-  image: founder.image,
-  worksFor: {
-    '@type': 'Organization',
-    name: 'KRITVIA'
-  },
-  sameAs: [
-    founder.socials.linkedin,
-    founder.socials.twitter,
-    founder.socials.github
-  ].filter(Boolean)
-}
+export default async function FounderPage() {
+  // Fetch founder data from Sanity
+  const founderData = await sanityFetch<Founder>({
+    query: getFounderQuery,
+    tags: ['founder']
+  });
 
-export default function FounderPage() {
+  // Handle case where no founder data is found
+  if (!founderData) {
+    return notFound();
+  }
+
+  // Structured Data for SEO
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    name: founderData.name,
+    jobTitle: 'Founder',
+    url: founderData.website,
+    image: founderData.image.asset.url,
+    worksFor: {
+      '@type': 'Organization',
+      name: 'KRITVIA'
+    },
+    sameAs: [
+      founderData.socials.linkedin,
+      founderData.socials.twitter,
+      founderData.socials.github
+    ].filter(Boolean)
+  };
+
   return (
     <main className="bg-[#0A0A0A] min-h-screen">
       {/* Structured Data */}
@@ -70,8 +130,8 @@ export default function FounderPage() {
             <div className="relative order-2 lg:order-1">
               <div className="relative aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl">
                 <Image
-                  src={founder.image}
-                  alt={`${founder.name} - ${founder.title}`}
+                  src={getImageUrl(founderData.image, 800, 800, 'webp')}
+                  alt={`${founderData.name} - ${founderData.title}`}
                   fill
                   className="object-cover"
                   sizes="(max-width: 768px) 100vw, 50vw"
@@ -79,7 +139,7 @@ export default function FounderPage() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A]/50 via-transparent to-transparent" />
               </div>
-              
+
               {/* Decorative elements */}
               <div className="absolute -bottom-8 -right-8 w-40 h-40 bg-purple-500/20 rounded-full blur-[80px]" />
               <div className="absolute -top-8 -left-8 w-32 h-32 bg-blue-500/20 rounded-full blur-[60px]" />
@@ -93,11 +153,11 @@ export default function FounderPage() {
               </div>
 
               <h1 className="text-4xl lg:text-6xl font-bold text-white mb-4 leading-tight">
-                {founder.name}
+                {founderData.name}
               </h1>
-              
+
               <p className="text-xl lg:text-2xl text-purple-400 mb-6">
-                {founder.title}
+                {founderData.title}
               </p>
 
               <p className="text-lg text-slate-300 mb-8 leading-relaxed">
@@ -106,10 +166,10 @@ export default function FounderPage() {
 
               <div className="flex flex-col sm:flex-row gap-4">
                 <a
-                  href={founder.website}
+                  href={founderData.website}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center px-6 py-3 text-base font-semibold text-white bg-purple-600 hover:bg-purple-500 rounded-xl transition-all hover:scale-105"
+                  className="inline-flex items-center justify-center px-6 py-3 text-base font-semibold text-white bg-purple-600 hover:bg-purple-500 rounded-xl transition-colors hover:scale-105"
                 >
                   Visit Website
                   <svg className="w-4 h-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -128,16 +188,16 @@ export default function FounderPage() {
           <h2 className="text-3xl lg:text-4xl font-bold text-white mb-8">
             The <span className="text-purple-400">Story</span>
           </h2>
-          
+
           <div className="prose prose-invert prose-lg max-w-none">
             <p className="text-slate-300 mb-6 leading-relaxed">
-              {founder.bio}
+              {founderData.bio}
             </p>
             <p className="text-slate-300 mb-6 leading-relaxed">
-              With a passion for building transformative technology, {founder.name} founded KRITVIA with a clear vision: to democratize advanced technology and make it accessible to businesses of all sizes.
+              With a passion for building transformative technology, {founderData.name} founded KRITVIA with a clear vision: to democratize advanced technology and make it accessible to businesses of all sizes.
             </p>
             <p className="text-slate-300 mb-6 leading-relaxed">
-              The journey began with a simple belief—that every business deserves access to the same powerful tools that tech giants use. Today, KRITVIA serves {founder.companies[0]?.description || 'enterprises worldwide'}, turning that vision into reality.
+              The journey began with a simple belief—that every business deserves access to the same powerful tools that tech giants use. Today, KRITVIA serves {founderData.companies[0]?.description || 'enterprises worldwide'}, turning that vision into reality.
             </p>
           </div>
         </div>
@@ -149,7 +209,7 @@ export default function FounderPage() {
           <h2 className="text-3xl lg:text-4xl font-bold text-white mb-8">
             Vision & <span className="text-blue-400">Mission</span>
           </h2>
-          
+
           <div className="grid md:grid-cols-2 gap-8">
             <div className="p-8 rounded-2xl bg-white/5 border border-white/10">
               <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center mb-4">
@@ -159,7 +219,7 @@ export default function FounderPage() {
               </div>
               <h3 className="text-xl font-semibold text-white mb-3">Mission</h3>
               <p className="text-slate-400">
-                {founder.mission}
+                {founderData.mission}
               </p>
             </div>
 
@@ -172,7 +232,7 @@ export default function FounderPage() {
               </div>
               <h3 className="text-xl font-semibold text-white mb-3">Vision</h3>
               <p className="text-slate-400">
-                {founder.vision}
+                {founderData.vision}
               </p>
             </div>
           </div>
@@ -185,10 +245,10 @@ export default function FounderPage() {
           <h2 className="text-3xl lg:text-4xl font-bold text-white mb-8">
             Companies & <span className="text-cyan-400">Projects</span>
           </h2>
-          
+
           <div className="space-y-6">
-            {founder.companies.map((company, index) => (
-              <div 
+            {founderData.companies.map((company: { name: string; role: string; description: string }, index: number) => (
+              <div
                 key={company.name}
                 className="p-6 rounded-2xl bg-white/5 border border-white/10 hover:border-white/20 transition-all"
               >
@@ -220,10 +280,10 @@ export default function FounderPage() {
           <h2 className="text-3xl lg:text-4xl font-bold text-white mb-8">
             Key <span className="text-green-400">Achievements</span>
           </h2>
- className="grid          
+
           <div className="grid md:grid-cols-3 gap-6">
-            {founder.achievements.map((achievement, index) => (
-              <div 
+            {founderData.achievements.map((achievement: string, index: number) => (
+              <div
                 key={index}
                 className="p-6 rounded-2xl bg-white/5 border border-white/10"
               >
@@ -245,15 +305,15 @@ export default function FounderPage() {
       <section className="py-24 bg-gradient-to-b from-[#0A0A0A] to-[#050505]">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <blockquote className="text-2xl lg:text-3xl font-medium text-white mb-8 italic">
-            "{founder.quote}"
+            "{founderData.quote}"
           </blockquote>
-          
+
           <div className="flex justify-center">
             <a
-              href={founder.website}
+              href={founderData.website}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-white bg-purple-600 hover:bg-purple-500 rounded-xl transition-all hover:scale-105"
+              className="inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-white bg-purple-600 hover:bg-purple-500 rounded-xl transition-colors hover:scale-105"
             >
               Follow the Journey
               <svg className="w-5 h-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -282,13 +342,13 @@ export default function FounderPage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-white bg-purple-600 hover:bg-purple-500 rounded-xl transition-all hover:scale-105"
+              className="inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-white bg-purple-600 hover:bg-purple-500 rounded-xl transition-colors hover:scale-105"
             >
               Start Your Project
             </Link>
             <Link
               href="/about"
-              className="inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-white bg-white/5 hover:bg-white/10 border border-white/10 rounded-xl transition-all"
+              className="inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-white bg-white/5 hover:bg-white/10 border border-white/10 rounded-xl transition-colors"
             >
               Learn More About Us
             </Link>
@@ -296,5 +356,5 @@ export default function FounderPage() {
         </div>
       </section>
     </main>
-  )
+  );
 }

@@ -5,6 +5,8 @@
  * All systems must reference this registry for route information.
  */
 
+import { getAllPostSlugs, getAllProductSlugs, getAllDocumentationSlugs } from '@/lib/sanity/queries'
+
 export interface Route {
   slug: string
   title: string
@@ -13,6 +15,9 @@ export interface Route {
   hasCustomPage?: boolean
   keywords?: string[]
 }
+
+// Define the type for dynamic route generators
+export type DynamicRouteGenerator = () => Promise<string[]>
 
 // Complete route map for the platform
 export const routes: Route[] = [
@@ -141,4 +146,26 @@ export function getNavigationRoutes() {
 
 // Legacy exports for backward compatibility with sitemap.ts
 export const staticRoutes = routes.map(r => r.slug === '' ? '/' : '/' + r.slug)
-export const dynamicRoutes: { pattern: string; generator: () => string[] }[] = []
+export const dynamicRoutes: { pattern: string; generator: DynamicRouteGenerator }[] = [
+  {
+    pattern: '/blog/[slug]',
+    generator: async () => {
+      const slugs = await getAllPostSlugs();
+      return slugs.map((slug: { slug: { current: string } }) => `/blog/${slug.slug.current}`);
+    }
+  },
+  {
+    pattern: '/products/[slug]',
+    generator: async () => {
+      const slugs = await getAllProductSlugs();
+      return slugs.map((slug: { slug: { current: string } }) => `/products/${slug.slug.current}`);
+    }
+  },
+  {
+    pattern: '/docs/[...slug]',
+    generator: async () => {
+      const slugs = await getAllDocumentationSlugs();
+      return slugs.map((slug: { slug: string }) => `/docs/${slug.slug}`);
+    }
+  }
+]

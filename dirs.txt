@@ -1,0 +1,16 @@
+-p
+.git
+actions
+app
+components
+content
+data
+lib
+modules
+node_modules
+public
+sanity
+scripts
+services
+supabase
+types

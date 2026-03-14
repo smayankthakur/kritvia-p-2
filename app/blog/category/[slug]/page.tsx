@@ -1,17 +1,18 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { Container, Section } from '@/components/ui';
-import { client } from '@/lib/sanity/client';
-import { getPostsQuery } from '@/lib/sanity/queries';
+import { sanityFetch } from '@/lib/sanity/fetch';
+import { getPostsByCategory, getAllCategorySlugs } from '@/lib/sanity/queries';
 import { getImageUrl } from '@/lib/sanity/image';
 
 export const revalidate = 60;
 
-export const metadata: Metadata = {
-  title: 'Blog — AI & Technology Insights | Kritvia',
-  description:
-    'Expert insights on AI development, cloud architecture, SaaS engineering, and technology strategy from the Kritvia team.',
-};
+export async function generateStaticParams() {
+  const categories = await getAllCategorySlugs();
+  return categories.map((category: { slug: { current: string } }) => ({
+    slug: category.slug.current,
+  }));
+}
 
 interface Post {
   _id: string;
@@ -60,23 +61,45 @@ function formatDate(dateStr: string): string {
   });
 }
 
-export default async function BlogPage() {
-  const posts = await client.fetch(getPostsQuery);
+export default async function CategoryPage({ params }: { params: { slug: string } }) {
+  const categorySlug = params.slug;
+  const posts = await sanityFetch({
+    query: getPostsByCategory(categorySlug),
+    tags: ['posts', `category-${categorySlug}`]
+  });
 
-  if (posts.length === 0) {
+  if (!posts || posts.length === 0) {
     return (
       <Section className="bg-neutral-950">
         <Container>
           <p className="text-neutral-400 text-center py-12">
-            No blog posts available yet
+            No posts found for this category
           </p>
         </Container>
       </Section>
     );
   }
 
-  const featured = posts[0];
-  const rest = posts.slice(1);
+  // We need to get the category title for the page title and metadata
+  // We can fetch the category details separately or assume we have it from the posts? 
+  // For simplicity, we'll fetch the category details to get the title.
+  // However, to avoid an extra request, we can use the first post's category if available.
+  // But if there are no posts, we already handled that above.
+  // Let's fetch the category details for the metadata and page title.
+  // We don't have a direct function for getting a category by slug, so we'll create a GROQ query here.
+  // Alternatively, we can add a function in queries.ts for getting a category by slug.
+  // Since we are in the middle of the task, let's do a quick fetch for the category.
+
+  // We'll fetch the category details to get the title and description for the page.
+  const categoryDetails = await sanityFetch({
+    query: `*[_type == "category" && slug.current == $slug][0]{
+      _id,
+      title,
+      description
+    }`,
+    params: { slug: categorySlug },
+    tags: ['category', categorySlug]
+  });
 
   return (
     <>
@@ -85,77 +108,30 @@ export default async function BlogPage() {
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[size:48px_48px]" />
         <Container className="relative z-10">
           <div className="text-center max-w-3xl mx-auto pb-16">
-            <div className="inline-block px-3 py-1 rounded-full bg-primary-500/10 border border-primary-500/20 text-primary-400 text-xs font-semibold uppercase tracking-wider mb-6">
-              Blog
-            </div>
-            <h1 className="text-5xl lg:text-6xl font-bold text-white mb-4">
-              Insights from the{' '}
-              <span className="bg-gradient-to-r from-primary-400 to-secondary-400 bg-clip-text text-transparent">
-                Engineering Floor
-              </span>
-            </h1>
-            <p className="text-xl text-neutral-400">
-              Practical articles on AI, cloud architecture, and modern software engineering. No fluff, just what actually works in production.
-            </p>
+            {categoryDetails && (
+              <>
+                <div className="inline-block px-3 py-1 rounded-full bg-primary-500/10 border border-primary-500/20 text-primary-400 text-xs font-semibold uppercase tracking-wider mb-6">
+                  {categoryDetails.title}
+                </div>
+                <h1 className="text-5xl lg:text-6xl font-bold text-white mb-4">
+                  {categoryDetails.title} Posts
+                </h1>
+                {categoryDetails.description && (
+                  <p className="text-xl text-neutral-400">
+                    {categoryDetails.description}
+                  </p>
+                )}
+              </>
+            )}
           </div>
         </Container>
       </Section>
 
       <Section className="bg-neutral-950">
         <Container>
-          {/* Featured Post */}
-          {featured && (
-            <Link
-              href={`/blog/${featured.slug.current}`}
-              className="group block mb-12 bg-neutral-900 border border-neutral-800 rounded-2xl overflow-hidden hover:border-primary-700/50 transition-all"
-            >
-              <div className="p-8 lg:p-10">
-                {featured.featuredImage && (
-                  <div className="mb-6">
-                    <img
-                      src={getImageUrl(featured.featuredImage.asset, 800, 450, 'webp')}
-                      alt={featured.featuredImage.alt}
-                      className="rounded-xl w-full h-48 object-cover"
-                    />
-                  </div>
-                )}
-                <div className="flex items-center gap-3 mb-4">
-                  <span className="text-xs px-3 py-1 rounded-full bg-primary-500/10 border border-primary-500/20 text-primary-400 font-medium">
-                    Featured
-                  </span>
-                  {featured.category && (
-                    <span className="text-xs text-neutral-600">{featured.category.title}</span>
-                  )}
-                </div>
-                <h2 className="text-2xl lg:text-3xl font-bold text-white mb-4 group-hover:text-primary-300 transition-colors max-w-3xl">
-                  {featured.title}
-                </h2>
-                <p className="text-neutral-400 leading-relaxed mb-4 max-w-2xl">{featured.excerpt}</p>
-                <div className="flex items-center justify-between">
-                  <span className="text-sm text-neutral-600">{formatDate(featured.publishedAt)}</span>
-                  <span className="text-primary-400 text-sm font-medium group-hover:text-primary-300 transition-colors">
-                    Read article →
-                  </span>
-                </div>
-                {featured.author && (
-                  <div className="mt-4 flex items-center gap-3 text-sm text-neutral-500">
-                    {featured.author.image ? (
-                      <img
-                        src={getImageUrl(featured.author.image.asset, 40, 40, 'webp')}
-                        alt={featured.author.name}
-                        className="w-10 h-10 rounded-full object-cover"
-                      />
-                    ) : null}
-                    <span>{featured.author.name}</span>
-                  </div>
-                )}
-              </div>
-            </Link>
-          )}
-
           {/* Post Grid */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {rest.map((post: Post) => (
+            {posts.map((post: Post) => (
               <Link
                 key={post._id}
                 href={`/blog/${post.slug.current}`}

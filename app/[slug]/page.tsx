@@ -1,35 +1,46 @@
 import { Metadata } from 'next'
-import Link from 'next/link'
 import { notFound } from 'next/navigation'
+import Image from 'next/image'
+import Link from 'next/link'
 import { routes, getRouteBySlug, Route } from '@/lib/routes'
+import { sanityFetch } from '@/lib/sanity/fetch'
+import { getPageBySlug } from '@/lib/sanity/queries'
 
 interface PageProps {
   params: Promise<{ slug: string }>
 }
 
-// Generate static params for all routes
+// Generate static params for all pages
 export async function generateStaticParams() {
-  return routes
-    .filter(route => route.slug !== '') // Skip home page
-    .map((route) => ({
-      slug: route.slug,
-    }))
+  // We'll fetch all page slugs from Sanity
+  const slugs = await sanityFetch({
+    query: `*[_type == "page" && defined(slug.current)]{
+      slug{
+        current
+      }
+    }`,
+    tags: ['pages']
+  });
+  
+  return slugs.map((slug: { slug: { current: string } }) => ({
+    slug: slug.slug.current,
+  }));
 }
 
 // Generate metadata for each page
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = await params
-  const page = getRouteBySlug(slug)
-  
+  const page = await getPageBySlug(slug);
+
   if (!page) {
     return {
       title: 'Page Not Found | Kritvia',
     }
   }
-  
+
   return {
-    title: `${page.title} | Kritvia`,
-    description: page.description || `Learn more about ${page.title} on Kritvia's AI infrastructure platform.`,
+    title: `${page.seo?.seoTitle || page.title} | Kritvia`,
+    description: page.seo?.seoDescription || page.description || `Learn more about ${page.title} on Kritvia's AI infrastructure platform.`,
   }
 }
 
@@ -130,20 +141,39 @@ function PageContent({ page }: { page: Route }) {
 // Main page component
 export default async function DynamicPage({ params }: PageProps) {
   const { slug } = await params
-  const page = getRouteBySlug(slug)
   
-  // If no route found, show 404
-  if (!page) {
+  // Check if this is a static route that should use the registry
+  const staticRoutes = ['', 'about', 'services', 'solutions', 'products', 'case-studies', 'blog', 'research', 'pricing', 'contact', 
+    'company/about', 'company/team', 'company/careers', 'founder', 'platform', 'platform/ai-tools', 'platform/dashboard', 
+    'platform/developers', 'platform/invoices', 'platform/projects', 'platform/startup-builder', 'developers', 
+    'resources', 'resources/blog', 'resources/guides', 'resources/whitepapers', 'privacy', 'terms', 'status', 'changelog', 
+    'community', 'security', 'compliance', 'legal/privacy', 'legal/terms'];
+  
+  if (staticRoutes.includes(slug)) {
+    // For static routes, we still want to fetch from Sanity but fall back to registry content if needed
+    const page = await getPageBySlug(slug);
+    
+    if (page) {
+      return <PageContent page={page} />;
+    }
+    
+    // Fall back to registry content
+    const route = getRouteBySlug(slug)
+    if (route) {
+      return <PageContent page={route} />
+    }
+    
+    // If neither Sanity nor registry has the page, show 404
     notFound()
   }
   
-  // If page has custom implementation, redirect to it
-  // This is for pages that exist in /app as static pages
-  if (page.hasCustomPage) {
-    // Import and render the custom page
-    // This would need dynamic import based on slug
-    // For now, we render the template
+  // For dynamic routes, fetch from Sanity
+  const page = await getPageBySlug(slug);
+
+  // If no page found, show 404
+  if (!page) {
+    notFound()
   }
-  
+
   return <PageContent page={page} />
 }
