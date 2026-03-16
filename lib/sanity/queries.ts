@@ -427,6 +427,41 @@ export async function getProducts() {
   )
 }
 
+// Export raw GROQ query for direct client usage
+export const getProductsQuery = groq`*[_type == "product" && status == "published"] | order(_createdAt desc) {
+  _id,
+  title,
+  slug,
+  status,
+  publishedAt,
+  updatedAt,
+  tagline,
+  description,
+  price,
+  priceUnit,
+  featured,
+  featuredImage{
+    alt,
+    asset->{
+      _id,
+      url
+    }
+  },
+  features,
+  category->{
+    _id,
+    title,
+    slug
+  },
+  seo{
+    seoTitle,
+    seoDescription,
+    seoKeywords
+  },
+  icon,
+  gradient
+}`
+
 // Fetch all product slugs for generateStaticParams
 export async function getAllProductSlugs() {
   return fetch(

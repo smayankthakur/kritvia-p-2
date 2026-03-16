@@ -1,9 +1,9 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { Container, Section } from '@/components/ui';
-import { client } from '@/lib/sanity/client';
+import { sanityFetch } from '@/lib/sanity/fetch';
 import { getPostsQuery } from '@/lib/sanity/queries';
-import { getImageUrl } from '@/lib/sanity/image';
+import { urlFor } from '@/lib/sanity/image';
 
 export const revalidate = 60;
 
@@ -61,7 +61,10 @@ function formatDate(dateStr: string): string {
 }
 
 export default async function BlogPage() {
-  const posts = await client.fetch(getPostsQuery);
+  const posts = await sanityFetch({
+    query: getPostsQuery,
+    tags: ['posts']
+  });
 
   if (posts.length === 0) {
     return (
@@ -110,15 +113,15 @@ export default async function BlogPage() {
               className="group block mb-12 bg-neutral-900 border border-neutral-800 rounded-2xl overflow-hidden hover:border-primary-700/50 transition-all"
             >
               <div className="p-8 lg:p-10">
-                {featured.featuredImage && (
-                  <div className="mb-6">
-                    <img
-                      src={getImageUrl(featured.featuredImage.asset, 800, 450, 'webp')}
-                      alt={featured.featuredImage.alt}
-                      className="rounded-xl w-full h-48 object-cover"
-                    />
-                  </div>
-                )}
+                 {featured.featuredImage && (
+                   <div className="mb-6">
+                     <img
+                       src={urlFor(featured.featuredImage.asset, { width: 800, height: 450, format: 'webp' })}
+                       alt={featured.featuredImage.alt}
+                       className="rounded-xl w-full h-48 object-cover"
+                     />
+                   </div>
+                 )}
                 <div className="flex items-center gap-3 mb-4">
                   <span className="text-xs px-3 py-1 rounded-full bg-primary-500/10 border border-primary-500/20 text-primary-400 font-medium">
                     Featured
@@ -139,13 +142,13 @@ export default async function BlogPage() {
                 </div>
                 {featured.author && (
                   <div className="mt-4 flex items-center gap-3 text-sm text-neutral-500">
-                    {featured.author.image ? (
-                      <img
-                        src={getImageUrl(featured.author.image.asset, 40, 40, 'webp')}
-                        alt={featured.author.name}
-                        className="w-10 h-10 rounded-full object-cover"
-                      />
-                    ) : null}
+                 {featured.author.image ? (
+                       <img
+                         src={urlFor(featured.author.image.asset, { width: 40, height: 40, format: 'webp' })}
+                         alt={featured.author.name}
+                         className="w-10 h-10 rounded-full object-cover"
+                       />
+                     ) : null}
                     <span>{featured.author.name}</span>
                   </div>
                 )}
@@ -166,32 +169,32 @@ export default async function BlogPage() {
                     {post.category.title}
                   </span>
                 )}
-                {post.featuredImage && (
-                  <div className="mb-4">
-                    <img
-                      src={getImageUrl(post.featuredImage.asset, 800, 450, 'webp')}
-                      alt={post.featuredImage.alt}
-                      className="rounded-xl w-full h-48 object-cover"
-                    />
-                  </div>
-                )}
+                 {post.featuredImage && (
+                   <div className="mb-4">
+                     <img
+                       src={urlFor(post.featuredImage.asset, { width: 800, height: 450, format: 'webp' })}
+                       alt={post.featuredImage.alt}
+                       className="rounded-xl w-full h-48 object-cover"
+                     />
+                   </div>
+                 )}
                 <h3 className="text-lg font-bold text-white mb-2 group-hover:text-primary-300 transition-colors leading-snug flex-1">
                   {post.title}
                 </h3>
                 <p className="text-neutral-500 text-sm leading-relaxed mb-4 line-clamp-3">{post.excerpt}</p>
                 <div className="mt-auto flex items-center gap-3 text-xs text-neutral-600">
-                  {post.author && (
-                    <>
-                      {post.author.image ? (
-                        <img
-                          src={getImageUrl(post.author.image.asset, 32, 32, 'webp')}
-                          alt={post.author.name}
-                          className="w-8 h-8 rounded-full object-cover"
-                        />
-                      ) : null}
-                      <span>{post.author.name}</span>
-                    </>
-                  )}
+                   {post.author && (
+                     <>
+                       {post.author.image ? (
+                         <img
+                           src={urlFor(post.author.image.asset, { width: 32, height: 32, format: 'webp' })}
+                           alt={post.author.name}
+                           className="w-8 h-8 rounded-full object-cover"
+                         />
+                       ) : null}
+                       <span>{post.author.name}</span>
+                     </>
+                   )}
                   <span>{formatDate(post.publishedAt)}</span>
                 </div>
               </Link>

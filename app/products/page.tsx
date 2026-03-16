@@ -3,7 +3,7 @@ import { Container, Section, Grid, Card, CardContent, Button } from '@/component
 import Link from 'next/link';
 import { sanityFetch } from '@/lib/sanity/fetch';
 import { getProductsQuery } from '@/lib/sanity/queries';
-import { getImageUrl } from '@/lib/sanity/image';
+import { urlFor } from '@/lib/sanity/image';
 
 export const revalidate = 60;
 
@@ -41,6 +41,7 @@ export default async function ProductsPage() {
     query: getProductsQuery,
     tags: ['products']
   });
+}
 
   if (!products || products.length === 0) {
     return (
@@ -84,15 +85,15 @@ export default async function ProductsPage() {
                 <CardContent className="p-12">
                   <div className="grid md:grid-cols-2 gap-12 items-center">
                      <div>
-                       {product.featuredImage && (
-                         <div className="mb-6">
-                           <img
-                             src={getImageUrl(product.featuredImage.asset, 96, 96, 'webp')}
-                             alt={product.featuredImage.alt}
-                             className="w-24 h-24 object-contain"
-                           />
-                         </div>
-                       )}
+                        {product.featuredImage && (
+                          <div className="mb-6">
+                            <img
+                              src={urlFor(product.featuredImage.asset, { width: 96, height: 96, format: 'webp' })}
+                              alt={product.featuredImage.alt}
+                              className="w-24 h-24 object-contain"
+                            />
+                          </div>
+                        )}
                        <h2 className="text-3xl font-bold text-white mb-2">
                          {product.title}
                        </h2>
