@@ -21,30 +21,8 @@ interface SearchResult {
 export function SearchModal({ isOpen, onClose }: SearchModalProps) {
   const [query, setQuery] = useState('')
   const [results, setResults] = useState<SearchResult[]>([])
+  const [loading, setLoading] = useState(false)
   const inputRef = useRef<HTMLInputElement>(null)
-
-  // Build searchable content
-  const searchableContent: SearchResult[] = [
-    // Main nav items
-    ...mainNavigation.map(item => ({
-      title: item.name,
-      description: item.description || '',
-      href: item.href,
-      category: 'Navigation',
-    })),
-    // Mega menu items
-    ...Object.entries(megaMenus).flatMap(([key, menu]) => [
-      ...menu.sections.flatMap(section =>
-        section.items.map(item => ({
-          title: item.name,
-          description: item.description || '',
-          href: item.href,
-          category: menu.title,
-          icon: item.icon,
-        }))
-      ),
-    ]),
-  ]
 
   useEffect(() => {
     if (isOpen && inputRef.current) {
@@ -69,19 +47,65 @@ export function SearchModal({ isOpen, onClose }: SearchModalProps) {
     return () => document.removeEventListener('keydown', handleKeyDown)
   }, [isOpen, onClose])
 
+  // Debounced search function
   useEffect(() => {
     if (!query.trim()) {
       setResults([])
       return
     }
 
-    const lowerQuery = query.toLowerCase()
-    const filtered = searchableContent.filter(
-      item =>
-        item.title.toLowerCase().includes(lowerQuery) ||
-        item.description.toLowerCase().includes(lowerQuery)
-    )
-    setResults(filtered.slice(0, 8))
+    const handleSearch = async () => {
+      setLoading(true)
+      try {
+        const res = await fetch(`/api/search?q=${encodeURIComponent(query)}`)
+        if (!res.ok) {
+          throw new Error('Search failed')
+        }
+        const data = await res.json()
+        
+        // Transform API results to match our SearchResult interface
+        const transformedResults: SearchResult[] = [
+          ...(data.posts || []).map(post => ({
+            title: post.title,
+            description: post.excerpt || '',
+            href: `/blog/${post.slug.current}`,
+            category: 'Posts',
+            icon: '📝'
+          })),
+          ...(data.products || []).map(product => ({
+            title: product.title,
+            description: product.tagline || product.description || '',
+            href: `/products/${product.slug.current}`,
+            category: 'Products',
+            icon: '📦'
+          })),
+          ...(data.documentation || []).map(doc => ({
+            title: doc.title,
+            description: doc.excerpt || '',
+            href: `/docs/${doc.slug.current}`,
+            category: 'Documentation',
+            icon: '📚'
+          })),
+          ...(data.pages || []).map(page => ({
+            title: page.title,
+            description: page.description || page.subtitle || '',
+            href: `/${page.slug.current}`,
+            category: 'Pages',
+            icon: '📄'
+          }))
+        ]
+        
+        setResults(transformedResults.slice(0, 8))
+      } catch (error) {
+        console.error('Search error:', error)
+        setResults([])
+      } finally {
+        setLoading(false)
+      }
+    }
+
+    const debounceHandler = setTimeout(handleSearch, 300)
+    return () => clearTimeout(debounceHandler)
   }, [query])
 
   return (
