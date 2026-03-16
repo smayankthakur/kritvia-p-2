@@ -3,8 +3,9 @@ import { sanityFetch } from '@/lib/sanity/fetch';
 import { getPostBySlugQuery, getAllPostSlugs, getRelatedPosts } from '@/lib/sanity/queries';
 import BlogPostLoading from './loading';
 import PortableTextRenderer from '@/components/PortableTextRenderer';
-import { getImageUrl } from '@/lib/sanity/image';
+import { urlFor } from '@/lib/sanity/image';
 import Link from 'next/link';
+import { generateBlogPostJsonLd } from '@/lib/seo/metadata';
 
 interface Post {
   _id: string;
@@ -65,27 +66,27 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   }
 
    return {
-     title: `${post.title} — Kritvia`,
-     description: post.excerpt || 'Expert insights on AI, cloud architecture, and technology strategy from Kritvia.',
-     openGraph: {
-       title: `${post.title} — Kritvia`,
-       description: post.excerpt || 'Expert insights on AI, cloud architecture, and technology strategy from Kritvia.',
-       images: [
-         {
-           url: getImageUrl(post.image.asset, 1200, 630, 'webp'),
-           width: 1200,
-           height: 630,
-           alt: post.image.alt
-         }
-       ]
-     },
-     twitter: {
-       card: 'summary_large_image',
-       title: `${post.title} — Kritvia`,
-       description: post.excerpt || 'Expert insights on AI, cloud architecture, and technology strategy from Kritvia.',
-       images: [getImageUrl(post.image.asset, 1200, 630, 'webp')]
-     }
-   };
+      title: `${post.title} — Kritvia`,
+      description: post.excerpt || 'Expert insights on AI, cloud architecture, and technology strategy from Kritvia.',
+      openGraph: {
+        title: `${post.title} — Kritvia`,
+        description: post.excerpt || 'Expert insights on AI, cloud architecture, and technology strategy from Kritvia.',
+        images: [
+          {
+            url: urlFor(post.image.asset, { width: 1200, height: 630, format: 'webp' }),
+            width: 1200,
+            height: 630,
+            alt: post.image.alt
+          }
+        ]
+      },
+      twitter: {
+        card: 'summary_large_image',
+        title: `${post.title} — Kritvia`,
+        description: post.excerpt || 'Expert insights on AI, cloud architecture, and technology strategy from Kritvia.',
+        images: [urlFor(post.image.asset, { width: 1200, height: 630, format: 'webp' })]
+      }
+    };
 }
 
 export default async function BlogPostPage({
@@ -135,14 +136,14 @@ export default async function BlogPostPage({
           {post.title}
         </h1>
          {post.image && (
-          <div className="mb-8">
-            <img
-              src={getImageUrl(post.image.asset, 1200, 675, 'webp')}
-              alt={post.image.alt}
-              className="rounded-xl w-full h-96 object-cover"
-            />
-          </div>
-        )}
+           <div className="mb-8">
+             <img
+               src={urlFor(post.image.asset, { width: 1200, height: 675, format: 'webp' })}
+               alt={post.image.alt}
+               className="rounded-xl w-full h-96 object-cover"
+             />
+           </div>
+         )}
       </header>
 
       <div className="text-neutral-300">
@@ -167,32 +168,32 @@ export default async function BlogPostPage({
                     {relatedPost.category.title}
                   </span>
                 )}
-                {relatedPost.featuredImage && (
-                  <div className="mb-4">
-                    <img
-                      src={getImageUrl(relatedPost.featuredImage.asset, 800, 450, 'webp')}
-                      alt={relatedPost.featuredImage.alt}
-                      className="rounded-xl w-full h-48 object-cover"
-                    />
-                  </div>
-                )}
+                 {relatedPost.featuredImage && (
+                   <div className="mb-4">
+                     <img
+                       src={urlFor(relatedPost.featuredImage.asset, { width: 800, height: 450, format: 'webp' })}
+                       alt={relatedPost.featuredImage.alt}
+                       className="rounded-xl w-full h-48 object-cover"
+                     />
+                   </div>
+                 )}
                 <h3 className="text-lg font-bold text-white mb-2 group-hover:text-primary-300 transition-colors leading-snug flex-1">
                   {relatedPost.title}
                 </h3>
                 <p className="text-neutral-500 text-sm leading-relaxed mb-4 line-clamp-3">{relatedPost.excerpt}</p>
                 <div className="mt-auto flex items-center gap-3 text-xs text-neutral-600">
-                  {relatedPost.author && (
-                    <>
-                      {relatedPost.author.image ? (
-                        <img
-                          src={getImageUrl(relatedPost.author.image.asset, 32, 32, 'webp')}
-                          alt={relatedPost.author.name}
-                          className="w-8 h-8 rounded-full object-cover"
-                        />
-                      ) : null}
-                      <span>{relatedPost.author.name}</span>
-                    </>
-                  )}
+                       {relatedPost.author && (
+                         <>
+                           {relatedPost.author.image ? (
+                             <img
+                               src={urlFor(relatedPost.author.image.asset, { width: 32, height: 32, format: 'webp' })}
+                               alt={relatedPost.author.name}
+                               className="w-8 h-8 rounded-full object-cover"
+                             />
+                           ) : null}
+                           <span>{relatedPost.author.name}</span>
+                         </>
+                       )}
                   <span>{new Date(relatedPost.publishedAt).toLocaleDateString('en-US', {
                     month: 'short',
                     day: 'numeric',
@@ -207,15 +208,15 @@ export default async function BlogPostPage({
 
       <footer className="mt-12 pt-8 border-t border-neutral-800">
         <div className="flex items-center gap-4">
-           <div className="flex-shrink-0">
-             {post.author.image ? (
-               <img
-                 src={getImageUrl(post.author.image.asset, 80, 80, 'webp')}
-                 alt={post.author.image.alt}
-                 className="w-16 h-16 rounded-full object-cover border-2 border-primary-500"
-               />
-             ) : null}
-           </div>
+            <div className="flex-shrink-0">
+              {post.author.image ? (
+                <img
+                  src={urlFor(post.author.image.asset, { width: 80, height: 80, format: 'webp' })}
+                  alt={post.author.image.alt}
+                  className="w-16 h-16 rounded-full object-cover border-2 border-primary-500"
+                />
+              ) : null}
+            </div>
           <div>
             <h3 className="font-semibold text-white mb-1">
               {post.author.name}

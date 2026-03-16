@@ -3,7 +3,7 @@ import { sanityFetch } from '@/lib/sanity/fetch';
 import { getProductBySlug, getProductBySlugQuery, getAllProductSlugs, getRelatedProducts } from '@/lib/sanity/queries';
 import ProductLoading from './loading';
 import PortableTextRenderer from '@/components/PortableTextRenderer';
-import { getImageUrl } from '@/lib/sanity/image';
+import { urlFor } from '@/lib/sanity/image';
 import Link from 'next/link';
 
 interface Product {

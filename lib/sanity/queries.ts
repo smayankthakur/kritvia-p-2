@@ -1017,7 +1017,7 @@ export async function getSettings() {
           }
         }
       }
-    }
+    }`
   )
 }
 

@@ -83,6 +83,57 @@ export function generateWebPageJsonLd({
 }
 
 /**
+ * Generate JSON-LD structured data for an Article
+ * @param article - Article data
+ * @returns JSON-LD object
+ */
+export function generateArticleJsonLd(article: {
+  title: string
+  description: string
+  image?: {
+    asset: {
+      url: string
+    }
+    alt: string
+  }
+  author?: {
+    name: string
+  }
+  publishedAt?: string
+  slug?: { current: string }
+}) {
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://kritvia.com'
+  const url = article.slug ? `${baseUrl}/article/${article.slug.current}` : `${baseUrl}/article`
+
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: article.title,
+    description: article.description,
+    image: article.image?.asset?.url,
+    author: article.author
+      ? {
+          '@type': 'Person',
+          name: article.author.name,
+        }
+      : undefined,
+    datePublished: article.publishedAt,
+    publisher: {
+      '@type': 'Organization',
+      name: 'Kritvia',
+      logo: {
+        '@type': 'ImageObject',
+        url: `${baseUrl}/logo.png`,
+      },
+    },
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': url,
+    },
+  } as Record<string, any>
+}
+
+/**
  * Generate JSON-LD structured data for a BlogPosting
  * @param post - Blog post data
  * @returns JSON-LD object
@@ -177,6 +228,84 @@ export function generateProductJsonLd(product: {
 }
 
 /**
+ * Generate JSON-LD structured data for a BreadcrumbList
+ * @param breadcrumbs - Array of breadcrumb items { name, href }
+ * @returns JSON-LD object
+ */
+export function generateBreadcrumbJsonLd(breadcrumbs: {
+  items: Array<{
+    name: string
+    href: string
+  }>
+}) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: breadcrumbs.items.map((item, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      name: item.name,
+      item: item.href,
+    })),
+  } as Record<string, any>
+}
+
+/**
+ * Generate JSON-LD structured data for an Organization
+ * @param organization - Organization data
+ * @returns JSON-LD object
+ */
+export function generateOrganizationJsonLd(organization: {
+  name: string
+  description?: string
+  url?: string
+  logo?: string
+  sameAs?: Array<string>
+}) {
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://kritvia.com'
+  
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: organization.name,
+    description: organization.description,
+    url: organization.url || baseUrl,
+    logo: organization.logo || `${baseUrl}/logo.png`,
+    sameAs: organization.sameAs,
+  } as Record<string, any>
+}
+
+/**
+ * Generate JSON-LD structured data for a WebSite
+ * @param website - Website data
+ * @returns JSON-LD object
+ */
+export function generateWebSiteJsonLd(website: {
+  name: string
+  description?: string
+  url?: string
+  potentialAction?: {
+    target: string
+    'query-input': string
+  }
+}) {
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://kritvia.com'
+  
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: website.name,
+    description: website.description,
+    url: website.url || baseUrl,
+    potentialAction: website.potentialAction || {
+      '@type': 'SearchAction',
+      target: `${website.url || baseUrl}/search?q={search_term_string}`,
+      'query-input': 'required name=search_term_string',
+    },
+  } as Record<string, any>
+}
+
+/**
  * Generate JSON-LD structured data for a Documentation page
  * @param doc - Documentation data
  * @returns JSON-LD object
@@ -238,7 +367,7 @@ export function generateBlogPostMetadata(post: {
 /**
  * Generate SEO metadata for products
  * @param product - Product data
- * @returns Metadata object
+ * * @returns Metadata object
  */
 export function generateProductMetadata(product: {
   title: string
