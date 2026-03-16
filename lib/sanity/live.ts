@@ -40,8 +40,29 @@ export async function fetchWithTag<T = any>(
   })
 }
 
+/**
+ * Fetch data with Sanity-specific caching and revalidation features
+ * @param options Query options including query, params, and tags
+ * @returns Query result with automatic draft mode handling and tag-based revalidation
+ */
+export async function sanityFetch<T = any>({
+  query,
+  params = {},
+  tags = []
+}: {
+  query: string
+  params?: Record<string, any>
+  tags?: string[]
+}) {
+  const clientInstance = await getClient()
+  return clientInstance.fetch<T>(query, params, { 
+    next: { tags } 
+  })
+}
+
 export default {
   getClient,
   fetch,
-  fetchWithTag
+  fetchWithTag,
+  sanityFetch
 }

@@ -473,6 +473,106 @@ export async function getAllProductSlugs() {
   )
 }
 
+// Fetch site settings
+export async function getSettings() {
+  return fetch(
+    groq`*[_type == "siteSettings"][0]{
+      title,
+      description,
+      logo{
+        alt,
+        asset->{
+          _id,
+          url
+        }
+      },
+      socialLinks,
+      mainNavigation[]{
+        _id,
+        title,
+        slug{
+          current
+        },
+        url,
+        isExternal,
+        openInNewTab
+      },
+      footerNavigation[]{
+        _id,
+        title,
+        slug{
+          current
+        },
+        url,
+        isExternal,
+        openInNewTab
+      },
+      announcementBar,
+      seo{
+        seoTitle,
+        seoDescription,
+        seoKeywords,
+        ogImage{
+          alt,
+          asset->{
+            _id,
+            url
+          }
+        },
+        canonicalUrl
+      }
+    }`
+  )
+}
+
+// Export raw GROQ query for direct client usage
+export const getSettingsQuery = groq`*[_type == "siteSettings"][0]{
+  title,
+  description,
+  logo{
+    alt,
+    asset->{
+      _id,
+      url
+    }
+  },
+  socialLinks,
+  mainNavigation[]{
+    _id,
+    title,
+    slug{
+      current
+    },
+    url,
+    isExternal,
+    openInNewTab
+  },
+  footerNavigation[]{
+    _id,
+    title,
+    slug{
+      current
+    },
+    url,
+    isExternal,
+    openInNewTab
+  },
+  announcementBar,
+  seo{
+    seoTitle,
+    seoDescription,
+    seoKeywords,
+    ogImage{
+      alt,
+      asset->{
+        _id,
+        url
+      }
+    },
+    canonicalUrl
+  }
+}`
+
 // Fetch a single product by slug with essential fields
 export async function getProductBySlug(slug: string) {
   return fetch(
@@ -861,13 +961,12 @@ export async function getTestimonials() {
   )
 }
 
-// Fetch settings
+// Fetch site settings
 export async function getSettings() {
   return fetch(
-    groq`*[_type == "settings"][0]{
-      _id,
-      siteTitle,
-      siteDescription,
+    groq`*[_type == "siteSettings"][0]{
+      title,
+      description,
       logo{
         alt,
         asset->{
@@ -875,25 +974,108 @@ export async function getSettings() {
           url
         }
       },
-      footerLinks[]{
+      socialLinks,
+      mainNavigation[]{
+        _id,
         title,
-        url
-      },
-      socialLinks[]{
-        platform,
+        slug{
+          current
+        },
         url,
-        icon{
+        isExternal,
+        openInNewTab
+      },
+      footerNavigation[]{
+        _id,
+        title,
+        slug{
+          current
+        },
+        url,
+        isExternal,
+        openInNewTab
+      },
+      seo{
+        siteTitle,
+        siteDescription,
+        ogImage{
+          alt,
+          asset->{
+            _id,
+            url
+          }
+        },
+        twitterHandle,
+        facebookPageUrl,
+        instagramPageUrl,
+        linkedinPageUrl,
+        defaultOgImage{
           alt,
           asset->{
             _id,
             url
           }
         }
-      },
-      announcementBar
-    }`
+      }
+    }
   )
 }
+
+// Export raw GROQ query for direct client usage
+export const getSettingsQuery = groq`*[_type == "siteSettings"][0]{
+  title,
+  description,
+  logo{
+    alt,
+    asset->{
+      _id,
+      url
+    }
+  },
+  socialLinks,
+  mainNavigation[]{
+    _id,
+    title,
+    slug{
+      current
+    },
+    url,
+    isExternal,
+    openInNewTab
+  },
+  footerNavigation[]{
+    _id,
+    title,
+    slug{
+      current
+    },
+    url,
+    isExternal,
+    openInNewTab
+  },
+  seo{
+    siteTitle,
+    siteDescription,
+    ogImage{
+      alt,
+      asset->{
+        _id,
+        url
+      }
+    },
+    twitterHandle,
+    facebookPageUrl,
+    instagramPageUrl,
+    linkedinPageUrl,
+    defaultOgImage{
+      alt,
+      asset->{
+        _id,
+        url
+      }
+    }
+  }
+}`
 
 // Export for case studies query used in app/case-studies/page.tsx
 export const getAllCaseStudiesQuery = `*[_type == "caseStudy"] | order(publishedAt desc) {

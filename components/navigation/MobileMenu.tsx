@@ -3,14 +3,20 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import { motion, AnimatePresence } from 'framer-motion'
-import { mobileNavigation, megaMenus, type NavItem } from '@/lib/navigation'
+import type { NavItem } from '@/sanity/types'
 
 interface MobileMenuProps {
   isOpen: boolean
   onClose: () => void
+  navigationItems: Array<{
+    name: string
+    href: string
+    megaMenu?: boolean
+    description?: string
+  }>
 }
 
-export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
+export function MobileMenu({ isOpen, onClose, navigationItems }: MobileMenuProps) {
   const [expandedItem, setExpandedItem] = useState<string | null>(null)
 
   const toggleExpand = (name: string) => {
@@ -44,7 +50,10 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
                 <div className="w-8 h-8 bg-gradient-to-br from-purple-500 to-blue-500 rounded-lg flex items-center justify-center">
                   <span className="text-white font-bold text-sm">K</span>
                 </div>
-                <span className="text-white font-semibold text-lg">Kritvia</span>
+                <span className="text-white font-semibold text-lg">
+                  {/* Title will be passed from settings in the future */}
+                  Kritvia
+                </span>
               </Link>
               <button
                 onClick={onClose}
@@ -60,9 +69,9 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
             {/* Navigation Items */}
             <nav className="p-4">
               <ul className="space-y-2">
-                {mobileNavigation.map((item) => {
-                  const megaMenuKey = item.name.toLowerCase()
-                  const hasSubMenu = megaMenus[megaMenuKey]?.sections?.length > 0
+                {navigationItems.map((item) => {
+                  // For now, we'll treat all items as having no submenu since we don't have the full structure from settings
+                  const hasSubMenu = false // item.megaMenu || false
                   const isExpanded = expandedItem === item.name
 
                   return (
@@ -94,31 +103,7 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
                                 className="overflow-hidden"
                               >
                                 <div className="pl-4 py-2 space-y-1">
-                                  {megaMenus[megaMenuKey]?.sections?.map((section, sectionIndex) => (
-                                    <div key={sectionIndex}>
-                                      <p className="text-xs font-semibold text-slate-500 uppercase tracking-wider px-3 py-2">
-                                        {section.title}
-                                      </p>
-                                      {section.items.map((subItem, subIndex) => (
-                                        <Link
-                                          key={subIndex}
-                                          href={subItem.href}
-                                          onClick={onClose}
-                                          className="flex items-center gap-3 p-3 text-slate-400 hover:text-white hover:bg-white/5 rounded-lg transition-colors"
-                                        >
-                                          {subItem.icon && (
-                                            <span className="text-lg">{subItem.icon}</span>
-                                          )}
-                                          <div>
-                                            <p className="text-sm font-medium">{subItem.name}</p>
-                                            {subItem.description && (
-                                              <p className="text-xs text-slate-500 mt-0.5">{subItem.description}</p>
-                                            )}
-                                          </div>
-                                        </Link>
-                                      ))}
-                                    </div>
-                                  ))}
+                                  {/* We would map through submenu items here if we had them from settings */}
                                 </div>
                               </motion.div>
                             )}

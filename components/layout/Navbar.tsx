@@ -5,17 +5,45 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { cn } from '@/lib/utils/cn'
-import { mainNavigation, type NavItem } from '@/lib/navigation'
+import type { NavItem } from '@/sanity/types'
 import { MegaMenu } from '@/components/navigation/MegaMenu'
 import { MobileMenu } from '@/components/navigation/MobileMenu'
 import { SearchModal } from '@/components/navigation/SearchModal'
 
-export function Navbar() {
+interface NavbarProps {
+  settings?: {
+    mainNavigation?: Array<{
+      _id: string
+      title: string
+      slug: { current: string }
+      url: string
+      isExternal: boolean
+      openInNewTab: boolean
+    }>
+  }
+}
+
+export function Navbar({ settings }: NavbarProps) {
   const [isScrolled, setIsScrolled] = useState(false)
   const [activeMenu, setActiveMenu] = useState<string | null>(null)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [searchOpen, setSearchOpen] = useState(false)
   const pathname = usePathname()
+
+  // Use settings navigation or fallback to hardcoded navigation
+  const navigationItems = settings?.mainNavigation?.map(item => ({
+    name: item.title,
+    href: item.isExternal ? item.url : item.url.startsWith('/') ? item.url : `/${item.url}`,
+    description: '',
+    megaMenu: false, // We'll determine this based on whether it has children in the future
+  })) || [
+    { name: 'Products', href: '/products', megaMenu: true, description: 'Our product suite' },
+    { name: 'Solutions', href: '/solutions', megaMenu: true, description: 'Business solutions' },
+    { name: 'Industries', href: '/industries', megaMenu: true, description: 'Industry solutions' },
+    { name: 'Developers', href: '/platform/developers', megaMenu: true, description: 'Developer resources' },
+    { name: 'Resources', href: '/resources', megaMenu: true, description: 'Learning & insights' },
+    { name: 'Pricing', href: '/pricing', description: 'View pricing' },
+  ]
 
   useEffect(() => {
     const handleScroll = () => {
@@ -43,7 +71,7 @@ export function Navbar() {
     return () => document.removeEventListener('keydown', handleKeyDown)
   }, [])
 
-  const handleMouseEnter = (item: NavItem) => {
+  const handleMouseEnter = (item: { name: string; megaMenu?: boolean }) => {
     if (item.megaMenu) {
       setActiveMenu(item.name)
     }
@@ -69,19 +97,21 @@ export function Navbar() {
             <Link href="/" className="flex items-center gap-2 group">
               <div className="relative w-9 h-9">
                 <Image
-                  src="/logo.png"
-                  alt="Kritvia"
+                  src={settings?.logo?.asset?.url || '/logo.png'}
+                  alt={settings?.title || 'Kritvia'}
                   width={36}
                   height={36}
                   className="object-contain"
                   priority
                 />
               </div>
-              <span className="text-lg font-bold text-white hidden sm:block">Kritvia</span>
+              <span className="text-lg font-bold text-white hidden sm:block">
+                {settings?.title || 'Kritvia'}
+              </span>
             </Link>
 
             <nav className="hidden lg:flex items-center gap-1" role="navigation">
-              {mainNavigation.map((item) => (
+              {navigationItems.map((item) => (
                 <div
                   key={item.name}
                   className="relative"
@@ -153,12 +183,14 @@ export function Navbar() {
         <MegaMenu
           activeMenu={activeMenu}
           onClose={() => setActiveMenu(null)}
+          navigationItems={navigationItems}
         />
       </header>
 
       <MobileMenu
         isOpen={mobileMenuOpen}
         onClose={() => setMobileMenuOpen(false)}
+        navigationItems={navigationItems}
       />
 
       <SearchModal
