@@ -1,3 +1,5 @@
+"use client";
+
 import { motion } from "framer-motion";
 import { Badge } from "../ui/Badge";
 import { Button } from "../ui/Button";
@@ -104,8 +106,8 @@ export default function Hero() {
           className="mt-12 text-center text-sm text-gray-500"
         >
           Built for founders, teams, and scaling companies
-        </motion.div>
-      </div>
-    </section>
-  );
+         </motion.div>
+       </div>
+     </section>
+    );
 }

@@ -65,7 +65,7 @@ TabsContentComponent.displayName = TabsPrimitive.Content.displayName;
 
 export {
   Tabs,
-  TabsList: TabsListComponent,
-  TabsTrigger: TabsTriggerComponent,
-  TabsContent: TabsContentComponent,
+  TabsListComponent as TabsList,
+  TabsTriggerComponent as TabsTrigger,
+  TabsContentComponent as TabsContent,
 };
