@@ -1,3 +1,5 @@
+"use client";
+
 import { motion } from "framer-motion";
 import { Tabs } from "../ui/Tabs";
 import { TabsList } from "../ui/Tabs";

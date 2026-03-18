@@ -1,6 +1,6 @@
-import Sidebar from "@/app/components/dashboard/Sidebar";
-import TopNav from "@/app/components/dashboard/TopNav";
-import Overview from "@/app/components/dashboard/Overview";
+import Sidebar from "@/components/dashboard/Sidebar";
+import TopNav from "@/components/dashboard/TopNav";
+import Overview from "@/components/dashboard/Overview";
 
 export default function Dashboard() {
   return (
