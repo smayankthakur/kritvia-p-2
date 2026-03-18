@@ -1,0 +1,52 @@
+import { z } from 'zod';
+import { ReasoningEngine } from '../engine/reasoning';
+import { Planner } from '../engine/planner';
+import { Executor } from '../engine/executor';
+import { CRMTool } from '../tools/crm.tool';
+import { AnalyticsTool } from '../tools/analytics.tool';
+import { OperationsPrompt } from '../prompts/operations.prompt';
+
+export class OperationsAgent {
+  private reasoning: ReasoningEngine;
+  private planner: Planner;
+  private executor: Executor;
+  private crmTool: CRMTool;
+  private analyticsTool: AnalyticsTool;
+  private prompt: OperationsPrompt;
+
+  constructor() {
+    this.reasoning = new ReasoningEngine();
+    this.planner = new Planner();
+    this.executor = new Executor();
+    this.crmTool = new CRMTool();
+    this.analyticsTool = new AnalyticsTool();
+    this.prompt = new OperationsPrompt();
+  }
+
+  async analyze(input: z.infer<typeof OperationsAgentInputSchema>) {
+    const prompt = this.prompt.getAnalysisPrompt(input);
+    const reasoningResult = await this.reasoning.reason(prompt);
+    
+    // Decide if we need to use tools
+    if (reasoningResult.needsTools) {
+      const plan = this.planner.createPlan(reasoningResult, [this.crmTool, this.analyticsTool]);
+      const toolResults = await this.executor.executePlan(plan);
+      return this.synthesize(reasoningResult, toolResults);
+    }
+    
+    return reasoningResult;
+  }
+
+  private synthesize(reasoningResult: any, toolResults: any[]) {
+    // Combine reasoning and tool results
+    return {
+      ...reasoningResult,
+      toolResults,
+    };
+  }
+}
+
+const OperationsAgentInputSchema = z.object({
+  query: z.string(),
+  context: z.record(z.any()).optional(),
+});

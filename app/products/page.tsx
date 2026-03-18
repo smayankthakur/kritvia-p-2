@@ -41,7 +41,6 @@ export default async function ProductsPage() {
     query: getProductsQuery,
     tags: ['products']
   });
-}
 
   if (!products || products.length === 0) {
     return (
@@ -80,7 +79,7 @@ export default async function ProductsPage() {
       <Section>
         <Container>
           <Grid cols={1} gap="xl">
-            {products.map((product) => (
+            {products.map((product: Product) => (
               <Card key={product._id} id={product.slug.current}>
                 <CardContent className="p-12">
                   <div className="grid md:grid-cols-2 gap-12 items-center">
@@ -107,7 +106,7 @@ export default async function ProductsPage() {
                        </p>
                        {product.features.length > 0 && (
                          <ul className="space-y-3 mb-8">
-                           {product.features.map((feature) => (
+                           {product.features.map((feature: string) => (
                              <li key={feature} className="flex items-center gap-3 text-slate-300">
                                <svg className="w-5 h-5 text-primary-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                                  <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
@@ -124,27 +123,27 @@ export default async function ProductsPage() {
                      <div className={`aspect-square bg-gradient-to-br ${product.gradient || 'from-purple-500 to-pink-500'} rounded-2xl flex items-center justify-center opacity-80`}>
                        <span className="text-9xl opacity-50">{product.icon || '🧠'}</span>
                      </div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </Grid>
-        </Container>
-      </Section>
+                   </div>
+                 </CardContent>
+               </Card>
+             ))}
+           </Grid>
+         </Container>
+       </Section>
 
-      <Section variant="muted">
-        <Container>
-          <div className="text-center">
-            <h2 className="text-3xl font-bold text-white mb-4">Need a custom solution?</h2>
-            <p className="text-lg text-slate-400 mb-8 max-w-2xl mx-auto">
-              We also offer custom product development tailored to your specific business requirements.
-            </p>
-            <Link href="/contact">
-              <Button>Contact Sales</Button>
-            </Link>
-          </div>
-        </Container>
-      </Section>
-    </>
+       <Section variant="muted">
+         <Container>
+           <div className="text-center">
+             <h2 className="text-3xl font-bold text-white mb-4">Need a custom solution?</h2>
+             <p className="text-lg text-slate-400 mb-8 max-w-2xl mx-auto">
+               We also offer custom product development tailored to your specific business requirements.
+             </p>
+             <Link href="/contact">
+               <Button>Contact Sales</Button>
+             </Link>
+           </div>
+         </Container>
+       </Section>
+     </>
   );
 }
