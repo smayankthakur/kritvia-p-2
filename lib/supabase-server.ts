@@ -2,12 +2,31 @@ import { createClient } from '@supabase/supabase-js'
 import { createServerClient, type CookieOptions } from '@supabase/ssr'
 import { cookies } from 'next/headers'
 
+// Lazy initialization for environment variables
+function getSupabaseUrl(): string {
+  if (!process.env.NEXT_PUBLIC_SUPABASE_URL) {
+    throw new Error('Missing NEXT_PUBLIC_SUPABASE_URL')
+  }
+  return process.env.NEXT_PUBLIC_SUPABASE_URL
+}
+
+function getSupabaseAnonKey(): string {
+  if (!process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY) {
+    throw new Error('Missing NEXT_PUBLIC_SUPABASE_ANON_KEY')
+  }
+  return process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
+}
+
+function getServiceRoleKey(): string | undefined {
+  return process.env.SUPABASE_SERVICE_ROLE_KEY
+}
+
 // Server-side Supabase client for API routes
 
 // Admin client - use only in server-side API routes (bypasses RLS)
 export const supabaseAdmin = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL!,
-  process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+  getSupabaseUrl(),
+  getServiceRoleKey() || getSupabaseAnonKey()
 )
 
 // Create a server client that respects RLS
@@ -15,8 +34,8 @@ export async function createServerSupabase() {
   const cookieStore = await cookies()
 
   return createServerClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
+    getSupabaseUrl(),
+    getSupabaseAnonKey(),
     {
       cookies: {
         getAll() {

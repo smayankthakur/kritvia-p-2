@@ -1,210 +1,72 @@
-<<<<<<< HEAD
-=======
 "use client";
 
->>>>>>> 8c88b573be037840ce560e58b824b8cff510d717
 import { motion } from "framer-motion";
+
+const features = [
+  {
+    title: "AI-Powered CRM",
+    description: "Intelligent customer relationship management with predictive insights",
+    icon: "🤖"
+  },
+  {
+    title: "Smart Automation",
+    description: "Automate repetitive tasks with AI-driven workflows",
+    icon: "⚡"
+  },
+  {
+    title: "Lead Intelligence",
+    description: "AI scoring and prioritization of your leads",
+    icon: "🎯"
+  },
+  {
+    title: "Pipeline Analytics",
+    description: "Real-time insights into your sales pipeline",
+    icon: "📊"
+  },
+  {
+    title: "Team Collaboration",
+    description: "Work together seamlessly with shared dashboards",
+    icon: "👥"
+  },
+  {
+    title: "Custom Integrations",
+    description: "Connect with 1000+ apps through our extensive API",
+    icon: "🔗"
+  }
+];
 
 export default function Features() {
   return (
-<<<<<<< HEAD
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, delay: 0.2 }}
       className="py-20 bg-white"
     >
-      <div className="max-w-4xl mx-auto px-6">
+      <div className="max-w-6xl mx-auto px-6">
         <h2 className="mb-12 text-3xl font-bold text-center text-gray-900">
           Powerful Features to Transform Your Business
         </h2>
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="bg-gray-50 rounded-xl shadow-sm p-6 flex flex-col items-center text-center border border-gray-100"
-          >
-            <div className="mb-6 w-16 h-16 mx-auto bg-gradient-to-r from-indigo-100 to-purple-100 flex items-center justify-center rounded-xl">
-              <svg className="w-8 h-8 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 2a.5.5 0 01-.5-.5h1a.5.5 0 010 1H12zm0 4a1 1 0 100-2 1 1 0 000 2z" />
-              </svg>
-            </div>
-            <h3 className="mb-4 text-xl font-semibold text-gray-900">
-              CRM & Sales Management
-            </h3>
-            <p className="text-gray-600">
-              Manage leads, track deals, and automate follow-ups with intelligent
-              CRM that learns from your sales patterns.
-            </p>
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="bg-gray-50 rounded-xl shadow-sm p-6 flex flex-col items-center text-center border border-gray-100"
-          >
-            <div className="mb-6 w-16 h-16 mx-auto bg-gradient-to-r from-indigo-100 to-purple-100 flex items-center justify-center rounded-xl">
-              <svg className="w-8 h-8 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 2a.5.5 0 01-.5-.5h1a.5.5 0 010 1H12zm0 4a1 1 0 100-2 1 1 0 000 2z" />
-              </svg>
-            </div>
-            <h3 className="mb-4 text-xl font-semibold text-gray-900">
-              Marketing Automation
-            </h3>
-            <p className="text-gray-600">
-              Create, schedule, and optimize multi-channel campaigns with AI-driven
-              personalization and real-time performance tracking.
-            </p>
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0.5 }}
-            className="bg-gray-50 rounded-xl shadow-sm p-6 flex flex-col items-center text-center border border-gray-100"
-          >
-            <div className="mb-6 w-16 h-16 mx-auto bg-gradient-to-r from-indigo-100 to-purple-100 flex items-center justify-center rounded-xl">
-              <svg className="w-8 h-8 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 2a.5.5 0 01-.5-.5h1a.5.5 0 010 1H12zm0 4a1 1 0 100-2 1 1 0 000 2z" />
-              </svg>
-            </div>
-            <h3 className="mb-4 text-xl font-semibold text-gray-900">
-              Operations & Workflow
-            </h3>
-            <p className="text-gray-600">
-              Streamline operations with customizable workflows, automated task
-              management, and real-time collaboration tools.
-            </p>
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0.6 }}
-            className="bg-gray-50 rounded-xl shadow-sm p-6 flex flex-col items-center text-center border border-gray-100"
-          >
-            <div className="mb-6 w-16 h-16 mx-auto bg-gradient-to-r from-indigo-100 to-purple-100 flex items-center justify-center rounded-xl">
-              <svg className="w-8 h-8 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 2a.5.5 0 01-.5-.5h1a.5.5 0 010 1H12zm0 4a1 1 0 100-2 1 1 0 000 2z" />
-              </svg>
-            </div>
-            <h3 className="mb-4 text-xl font-semibold text-gray-900">
-              AI Agents & Assistants
-            </h3>
-            <p className="text-gray-600">
-              Deploy specialized AI agents for sales, support, marketing, and
-              operations that work 24/7 to boost productivity and accuracy.
-            </p>
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0.7 }}
-            className="bg-gray-50 rounded-xl shadow-sm p-6 flex flex-col items-center text-center border border-gray-100"
-          >
-            <div className="mb-6 w-16 h-16 mx-auto bg-gradient-to-r from-indigo-100 to-purple-100 flex items-center justify-center rounded-xl">
-              <svg className="w-8 h-8 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 2a.5.5 0 01-.5-.5h1a.5.5 0 010 1H12zm0 4a1 1 0 100-2 1 1 0 000 2z" />
-              </svg>
-            </div>
-            <h3 className="mb-4 text-xl font-semibold text-gray-900">
-              Analytics & Intelligence
-            </h3>
-            <p className="text-gray-600">
-              Get deep insights with predictive analytics, custom dashboards, and
-              AI-powered recommendations for data-driven decisions.
-            </p>
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0.8 }}
-            className="bg-gray-50 rounded-xl shadow-sm p-6 flex flex-col items-center text-center border border-gray-100"
-          >
-            <div className="mb-6 w-16 h-16 mx-auto bg-gradient-to-r from-indigo-100 to-purple-100 flex items-center justify-center rounded-xl">
-              <svg className="w-8 h-8 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 2a.5.5 0 01-.5-.5h1a.5.5 0 010 1H12zm0 4a1 1 0 100-2 1 1 0 000 2z" />
-              </svg>
-            </div>
-            <h3 className="mb-4 text-xl font-semibold text-gray-900">
-              Integrations & API
-            </h3>
-            <p className="text-gray-600">
-              Connect with 1000+ apps and services through our extensive
-              integration library and robust API for seamless data flow.
-            </p>
-          </motion.div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {features.map((feature, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              className="p-6 border border-gray-200 rounded-xl hover:shadow-lg transition-shadow"
+            >
+              <div className="text-4xl mb-4">{feature.icon}</div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                {feature.title}
+              </h3>
+              <p className="text-gray-600">
+                {feature.description}
+              </p>
+            </motion.div>
+          ))}
         </div>
       </div>
     </motion.div>
-=======
-    <section className="py-16">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <motion.div 
-          initial={{ y: 20, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: 0.2, duration: 0.8 }}
-          className="text-center mb-12"
-        >
-          <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">
-            Features → Outcomes (Not Features)
-          </h2>
-          <p className="text-lg text-gray-300 max-w-2xl mx-auto">
-            Replace your entire stack with intelligent automation that drives real business results.
-          </p>
-        </motion.div>
-        
-        <motion.div 
-          initial={{ y: 20, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: 0.4, duration: 0.8 }}
-          className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4"
-        >
-          {/* Close More Deals Automatically */}
-          <div className="bg-black/40 backdrop-blur rounded-2xl border border-white/10 p-6 text-center hover:bg-black/50 transition-all duration-300">
-            <div className="h-10 w-10 mx-auto mb-4 bg-gradient-to-r from-violet-500 to-blue-500 rounded-lg flex items-center justify-center text-xs font-bold text-white">
-              📈
-            </div>
-            <h3 className="font-semibold text-white mb-3">Close More Deals Automatically</h3>
-            <p className="text-sm text-gray-300">
-              AI identifies high-intent leads and automates follow-ups to increase conversion rates by 40%.
-            </p>
-          </div>
-          
-          {/* Run Marketing on Autopilot */}
-          <div className="bg-black/40 backdrop-blur rounded-2xl border border-white/10 p-6 text-center hover:bg-black/50 transition-all duration-300">
-            <div className="h-10 w-10 mx-auto mb-4 bg-gradient-to-r from-violet-500 to-blue-500 rounded-lg flex items-center justify-center text-xs font-bold text-white">
-              🤖
-            </div>
-            <h3 className="font-semibold text-white mb-3">Run Marketing on Autopilot</h3>
-            <p className="text-sm text-gray-300">
-              Campaigns optimize themselves based on real-time performance data, reducing CAC by 35%.
-            </p>
-          </div>
-          
-          {/* Get Daily Business Insights */}
-          <div className="bg-black/40 backdrop-blur rounded-2xl border border-white/10 p-6 text-center hover:bg-black/50 transition-all duration-300">
-            <div className="h-10 w-10 mx-auto mb-4 bg-gradient-to-r from-violet-500 to-blue-500 rounded-lg flex items-center justify-center text-xs font-bold text-white">
-              💡
-            </div>
-            <h3 className="font-semibold text-white mb-3">Get Daily Business Insights</h3>
-            <p className="text-sm text-gray-300">
-              Receive proactive insights and recommendations delivered every morning to your inbox.
-            </p>
-          </div>
-          
-          {/* Replace Your Entire Stack */}
-          <div className="bg-black/40 backdrop-blur rounded-2xl border border-white/10 p-6 text-center hover:bg-black/50 transition-all duration-300">
-            <div className="h-10 w-10 mx-auto mb-4 bg-gradient-to-r from-violet-500 to-blue-500 rounded-lg flex items-center justify-center text-xs font-bold text-white">
-              🔄
-            </div>
-            <h3 className="font-semibold text-white mb-3">Replace Your Entire Stack</h3>
-            <p className="text-sm text-gray-300">
-              One system that handles CRM, marketing, analytics, and operations — eliminating tool sprawl.
-            </p>
-          </div>
-        </motion.div>
-      </div>
-    </section>
->>>>>>> 8c88b573be037840ce560e58b824b8cff510d717
   );
 }

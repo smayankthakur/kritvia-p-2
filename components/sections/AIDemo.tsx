@@ -1,237 +1,61 @@
-<<<<<<< HEAD
+"use client";
+
+import { useState } from "react";
 import { motion } from "framer-motion";
+import { Button } from "@/app/components/ui/Button";
 
 export default function AIDemo() {
+  const [isLoading, setIsLoading] = useState(false);
+  const [response, setResponse] = useState<string | null>(null);
+
+  const handleDemo = async () => {
+    setIsLoading(true);
+    // Simulate AI response
+    setTimeout(() => {
+      setResponse("Based on your data, I recommend focusing on high-value leads in the 'Contacted' stage. Your conversion rate could improve by 25% with automated follow-ups.");
+      setIsLoading(false);
+    }, 1500);
+  };
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8, delay: 0.2 }}
-      className="py-20 bg-white"
+      transition={{ duration: 0.8 }}
+      className="py-20 bg-indigo-900 text-white"
     >
-      <div className="max-w-4xl mx-auto px-6">
-        <h2 className="mb-12 text-3xl font-bold text-center text-gray-900">
-          See Kritvia AI in Action
+      <div className="max-w-4xl mx-auto px-6 text-center">
+        <h2 className="mb-6 text-3xl font-bold">
+          Try Kritvia AI
         </h2>
-        <div className="bg-gray-50 rounded-xl shadow-sm p-8 border border-gray-100">
-          <div className="space-y-6">
-            <div className="flex items-center space-x-4">
-              <div className="w-12 h-12 bg-gradient-to-r from-indigo-100 to-purple-100 rounded-xl flex items-center justify-center">
-                <svg className="w-6 h-6 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m2 0a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-              </div>
-              <div>
-                <h3 className="mb-2 text-xl font-semibold text-gray-900">
-                  Lead Scoring Assistant
-                </h3>
-                <p className="text-gray-600">
-                  Watch as our AI analyzes lead data and automatically scores
-                  prospects based on conversion likelihood.
-                </p>
-              </div>
-            </div>
-            <div className="flex items-center space-x-4">
-              <div className="w-12 h-12 bg-gradient-to-r from-indigo-100 to-purple-100 rounded-xl flex items-center justify-center">
-                <svg className="w-6 h-6 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3" />
-                </svg>
-              </div>
-              <div>
-                <h3 className="mb-2 text-xl font-semibold text-gray-900">
-                  Campaign Optimizer
-                </h3>
-                <p className="text-gray-600">
-                  See how the AI adjusts marketing campaigns in real-time for
-                  maximum ROI based on engagement metrics.
-                </p>
-              </div>
-            </div>
-            <div className="flex items-center space-x-4">
-              <div className="w-12 h-12 bg-gradient-to-r from-indigo-100 to-purple-100 rounded-xl flex items-center justify-center">
-                <svg className="w-6 h-6 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l3 3m0 0l3-3m-3 3V9" />
-                </svg>
-              </div>
-              <div>
-                <h3 className="mb-2 text-xl font-semibold text-gray-900">
-                  Operations Coordinator
-                </h3>
-                <p className="text-gray-600">
-                  Observe the AI managing workflows, assigning tasks, and
-                  predicting bottlenecks before they occur.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div className="mt-6 text-center">
-            <button className="px-6 py-3 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white font-medium rounded-lg transition-all duration-300 transform hover:-translate-y-1">
-              Try Interactive Demo
-            </button>
-          </div>
+        <p className="mb-8 text-indigo-200">
+          See how AI can transform your business in seconds
+        </p>
+        
+        <div className="bg-white/10 backdrop-blur rounded-xl p-6 mb-6">
+          {response ? (
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              className="text-lg"
+            >
+              {response}
+            </motion.p>
+          ) : (
+            <p className="text-indigo-300">
+              Click the button to get an AI-powered business insight
+            </p>
+          )}
         </div>
+
+        <Button
+          onClick={handleDemo}
+          disabled={isLoading}
+          className="bg-white text-indigo-900 hover:bg-gray-100"
+        >
+          {isLoading ? "Analyzing..." : "Get AI Insight"}
+        </Button>
       </div>
     </motion.div>
-=======
-"use client";
-
-import { motion } from "framer-motion";
-import { Button } from "../ui/Button";
-
-export default function AIDemo() {
-  return (
-    <section className="py-16 bg-black/50">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <motion.div 
-          initial={{ y: 20, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: 0.2, duration: 0.8 }}
-          className="text-center mb-12"
-        >
-          <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">
-            Ask Your Business Anything
-          </h2>
-          <p className="text-lg text-gray-300 max-w-2xl mx-auto">
-            Get instant insights and actions from your AI operating system.
-          </p>
-        </motion.div>
-        
-        <motion.div 
-          initial={{ y: 20, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: 0.4, duration: 0.8 }}
-          className="bg-black/40 backdrop-blur rounded-2xl border border-white/10"
-        >
-          <div className="p-6 lg:p-12">
-            {/* Chat header */}
-            <div className="flex items-center space-x-3 mb-6 pb-3 border-b border-white/5">
-              <div className="h-8 w-8 bg-gradient-to-r from-violet-500 to-blue-500 rounded-lg flex items-center justify-center text-xs font-bold text-white">
-                AI
-              </div>
-              <div className="space-y-1">
-                <h3 className="font-semibold text-white">Kritvia Assistant</h3>
-                <p className="text-sm text-gray-400">Ready to help you run your business</p>
-              </div>
-            </div>
-            
-            {/* Chat messages */}
-            <div className="space-y-4 mb-6">
-              {/* User message */}
-              <div className="flex items-start">
-                <div className="flex-shrink-0 h-3 w-3 bg-blue-500 rounded-full mt-1"></div>
-                <div className="ml-3">
-                  <p className="text-sm text-gray-300 bg-white/10 rounded-lg px-4 py-2 max-w-xs">
-                    Why did sales drop last week?
-                  </p>
-                </div>
-              </div>
-              
-              {/* AI response */}
-              <div className="flex items-start">
-                <div className="flex-shrink-0 h-3 w-3 bg-violet-500 rounded-full mt-1"></div>
-                <div className="ml-3 space-y-2">
-                  <p className="text-sm text-gray-300 bg-white/10 rounded-lg px-4 py-2 max-w-xl">
-                    Our AI analyzed your funnel and found a 23% drop in lead-to-opportunity conversion. The main issue is delayed follow-ups on webinar leads.
-                  </p>
-                  <div className="flex items-center space-x-3 text-xs text-gray-400">
-                    <div className="h-2 w-2 bg-green-500 rounded-full"></div>
-                    <span>Suggested actions:</span>
-                  </div>
-                  <div className="flex flex-wrap gap-2 mt-1">
-                    <button className="bg-white/10 hover:bg-white/20 text-xs text-gray-300 px-3 py-1 rounded hover:text-white transition-colors">
-                      Schedule follow-ups
-                    </button>
-                    <button className="bg-white/10 hover:bg-white/20 text-xs text-gray-300 px-3 py-1 rounded hover:text-white transition-colors">
-                      Launch retargeting
-                    </button>
-                  </div>
-                </div>
-              </div>
-              
-              {/* User message */}
-              <div className="flex items-start">
-                <div className="flex-shrink-0 h-3 w-3 bg-blue-500 rounded-full mt-1"></div>
-                <div className="ml-3">
-                  <p className="text-sm text-gray-300 bg-white/10 rounded-lg px-4 py-2 max-w-xs">
-                    Show top converting leads
-                  </p>
-                </div>
-              </div>
-              
-              {/* AI response */}
-              <div className="flex items-start">
-                <div className="flex-shrink-0 h-3 w-3 bg-violet-500 rounded-full mt-1"></div>
-                <div className="ml-3 space-y-2">
-                  <p className="text-sm text-gray-300 bg-white/10 rounded-lg px-4 py-2 max-w-xl">
-                    Here are your top 5 leads with 90%+ conversion probability: Enterprise Corp ($45K), StartupX ($12K), Growth Inc ($28K), TechSolutions ($33K), InnovateLtd ($19K).
-                  </p>
-                  <div className="flex items-center space-x-3 text-xs text-gray-400">
-                    <div className="h-2 w-2 bg-green-500 rounded-full"></div>
-                    <span>Suggested actions:</span>
-                  </div>
-                  <div className="flex flex-wrap gap-2 mt-1">
-                    <button className="bg-white/10 hover:bg-white/20 text-xs text-gray-300 px-3 py-1 rounded hover:text-white transition-colors">
-                      Send personalized emails
-                    </button>
-                    <button className="bg-white/10 hover:bg-white/20 text-xs text-gray-300 px-3 py-1 rounded hover:text-white transition-colors">
-                      Schedule calls
-                    </button>
-                  </div>
-                </div>
-              </div>
-              
-              {/* User message */}
-              <div className="flex items-start">
-                <div className="flex-shrink-0 h-3 w-3 bg-blue-500 rounded-full mt-1"></div>
-                <div className="ml-3">
-                  <p className="text-sm text-gray-300 bg-white/10 rounded-lg px-4 py-2 max-w-xs">
-                    What should I do next?
-                  </p>
-                </div>
-              </div>
-              
-              {/* AI response */}
-              <div className="flex items-start">
-                <div className="flex-shrink-0 h-3 w-3 bg-violet-500 rounded-full mt-1"></div>
-                <div className="ml-3 space-y-2">
-                  <p className="text-sm text-gray-300 bg-white/10 rounded-lg px-4 py-2 max-w-xl">
-                    Schedule follow-ups with 3 high-intent leads from the webinar list and launch a retargeting campaign for visitors who viewed pricing but didn't convert.
-                  </p>
-                  <div className="flex items-center space-x-3 text-xs text-gray-400">
-                    <div className="h-2 w-2 bg-green-500 rounded-full"></div>
-                    <span>Suggested actions:</span>
-                  </div>
-                  <div className="flex flex-wrap gap-2 mt-1">
-                    <button className="bg-white/10 hover:bg-white/20 text-xs text-gray-300 px-3 py-1 rounded hover:text-white transition-colors">
-                      Execute now
-                    </button>
-                    <button className="bg-white/10 hover:bg-white/20 text-xs text-gray-300 px-3 py-1 rounded hover:text-white transition-colors">
-                      Review plan
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-            {/* Input area */}
-            <div className="flex items-center space-x-3 pt-4 border-t border-white/5">
-              <div className="flex-1">
-                <input
-                  type="text"
-                  placeholder="Ask Kritvia about your business..."
-                  className="w-full bg-transparent border-none text-gray-300 placeholder-gray-400 focus:outline-none focus:ring-0"
-                />
-              </div>
-              <Button 
-                className="bg-gradient-to-r from-violet-500 to-blue-500 hover:from-violet-600 hover:to-blue-600 text-white font-medium px-6 py-2 rounded-lg"
-              >
-                Send
-              </Button>
-            </div>
-          </div>
-        </motion.div>
-      </div>
-    </section>
->>>>>>> 8c88b573be037840ce560e58b824b8cff510d717
   );
 }

@@ -40,6 +40,13 @@ export interface Deal {
   updated_at: string
 }
 
+export interface DashboardMetrics {
+  totalLeads: number
+  totalDeals: number
+  totalRevenue: number
+  conversionRate: number
+}
+
 export interface AIConversation {
   id: string
   user_id: string

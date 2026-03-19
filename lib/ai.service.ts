@@ -1,15 +1,24 @@
 import OpenAI from 'openai'
 
-// Initialize OpenAI client
-const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY,
-})
+// Lazy-initialize OpenAI client
+let openai: OpenAI | null = null
+
+function getOpenAIClient(): OpenAI {
+  if (!openai) {
+    openai = new OpenAI({
+      apiKey: process.env.OPENAI_API_KEY,
+    })
+  }
+  return openai
+}
 
 // AI Service class for modular AI operations
 export class AIService {
   // Send a chat message to AI
   async chat(prompt: string, context?: string): Promise<string> {
     try {
+      const client = getOpenAIClient()
+      
       const messages: OpenAI.Chat.ChatCompletionMessageParam[] = [
         {
           role: 'system',
@@ -27,7 +36,7 @@ ${context ? `Context: ${context}` : ''}`,
         },
       ]
 
-      const response = await openai.chat.completions.create({
+      const response = await client.chat.completions.create({
         model: 'gpt-4o',
         messages,
         temperature: 0.7,

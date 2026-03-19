@@ -1,10 +1,10 @@
-import Sidebar from "@/components/dashboard/Sidebar";
-import TopNav from "@/components/dashboard/TopNav";
-import Overview from "@/components/dashboard/Overview";
+import Sidebar from "@/app/components/dashboard/Sidebar";
+import TopNav from "@/app/components/dashboard/TopNav";
+import Overview from "@/app/components/dashboard/Overview";
 
 export default function Dashboard() {
   return (
-    <div className="flex h-screen bg-gray-50 dark:bg-gray-900">
+    <div className="flex h-screen bg-gray-50">
       <Sidebar />
       <div className="flex-1 flex flex-col">
         <TopNav />
