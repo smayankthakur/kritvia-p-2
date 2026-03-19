@@ -302,9 +302,9 @@ export default function Navbar() {
       </div>
 
       {/* Trust Signal - Desktop */}
-      <div className="hidden lg:block absolute -bottom-8 left-0 right-0 text-center">
+      {/* <div className="hidden lg:block absolute -bottom-8 left-0 right-0 text-center">
         <p className="text-xs text-slate-500">Used by 500+ growing businesses • No credit card required</p>
-      </div>
+      </div> */}
     </nav>
   );
 }

@@ -1,77 +1,84 @@
-import { createServerClient, type CookieOptions } from '@supabase/ssr'
-import { NextResponse, type NextRequest } from 'next/server'
+import { NextResponse } from 'next/server'
+import type { NextRequest } from 'next/server'
+import { supabaseServer } from './lib/supabase/supabase-server'
+import { rateLimiter } from './lib/redis/rateLimiter'
 
-// Protected routes that require authentication
-const protectedRoutes = ['/dashboard', '/leads', '/deals', '/ai', '/settings']
-
-// Public routes that should redirect to dashboard if already logged in
-const publicRoutes = ['/login', '/signup']
-
-export async function proxy(request: NextRequest) {
-  const response = NextResponse.next({
-    request: {
-      headers: request.headers,
-    },
-  })
-
-  // Skip auth check if env vars not set (for development)
-  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL
-  const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
-
-  if (!supabaseUrl || !supabaseAnonKey) {
-    console.warn('Supabase env vars not set, skipping auth middleware')
-    return response
-  }
-
-  const supabase = createServerClient(
-    supabaseUrl,
-    supabaseAnonKey,
-    {
-      cookies: {
-        getAll() {
-          return request.cookies.getAll()
-        },
-        setAll(cookiesToSet: { name: string; value: string; options?: CookieOptions }[]) {
-          cookiesToSet.forEach(({ name, value, options }) => {
-            request.cookies.set(name, value)
-            response.cookies.set(name, value, options)
-          })
-        },
-      },
-    }
-  )
-
-  // Refresh session if expired
-  const { data: { user } } = await supabase.auth.getUser()
-
+// This function can be marked `async` if using `await` inside
+export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl
 
-  // Check if accessing protected route without auth
-  const isProtectedRoute = protectedRoutes.some(route => pathname.startsWith(route))
-  const isPublicRoute = publicRoutes.some(route => pathname.startsWith(route))
-
-  if (isProtectedRoute && !user) {
-    const redirectUrl = new URL('/login', request.url)
-    redirectUrl.searchParams.set('redirect', pathname)
-    return NextResponse.redirect(redirectUrl)
+  // Skip middleware for static files and next internals
+  if (
+    pathname.startsWith('/_next') ||
+    pathname.startsWith('/api/') ||
+    pathname.startsWith('/static') ||
+    pathname.startsWith('/favicon.ico') ||
+    pathname.startsWith('/vercel.svg')
+  ) {
+    return NextResponse.next()
   }
 
-  // Redirect to dashboard if accessing public auth routes while logged in
-  if (isPublicRoute && user) {
-    return NextResponse.redirect(new URL('/dashboard', request.url))
+  // Apply rate limiting to specific API routes
+  if (pathname.startsWith('/api/ai/')) {
+    const ip = request.ip ?? '127.0.0.1'
+    const limit = await rateLimiter(ip, '/api/ai', 20, 60) // 20 requests per minute
+    if (!limit.success) {
+      return new NextResponse('Too Many Requests', { status: 429 })
+    }
   }
 
-  return response
+  // Auth middleware for protected routes
+  if (
+    pathname.startsWith('/dashboard') ||
+    pathname.startsWith('/api/users') ||
+    pathname.startsWith('/api/leads') ||
+    pathname.startsWith('/api/payments') ||
+    pathname.startsWith('/api/webhooks') // Webhooks are public, but we might want to verify signatures separately
+  ) {
+    // For webhooks, we don't validate the user, we validate the signature in the route handler
+    if (pathname.startsWith('/api/webhooks')) {
+      return NextResponse.next()
+    }
+
+    const token = request.cookies.get('sb-access-token')?.value || request.cookies.get('sb-refresh-token')?.value
+
+    if (!token) {
+      const url = request.nextUrl.clone()
+      url.pathname = '/login'
+      return NextResponse.redirect(url)
+    }
+
+    try {
+      // Verify the token with Supabase
+      const { data: { user }, error } = await supabaseServer.auth.getUser(token)
+      if (error || !user) {
+        const url = request.nextUrl.clone()
+        url.pathname = '/login'
+        return NextResponse.redirect(url)
+      }
+
+      // Optionally, you can attach the user to the request for use in route handlers
+      // request.headers.set('x-user-id', user.id)
+    } catch (error) {
+      const url = request.nextUrl.clone()
+      url.pathname = '/login'
+      return NextResponse.redirect(url)
+    }
+  }
+
+  return NextResponse.next()
 }
 
+// See "Matching Paths" below to learn more
 export const config = {
   matcher: [
-    '/dashboard/:path*',
-    '/leads/:path*',
-    '/deals/:path*',
-    '/ai/:path*',
-    '/settings/:path*',
-    '/login/:path*',
-    '/signup/:path*',
+    /*
+     * Match all request paths except for the ones starting with:
+     * - _next/static (static files)
+     * - _next/image (image optimization files)
+     * - favicon.ico (favicon file)
+     * Feel free to modify this pattern to include more paths.
+     */
+    '/((?!_next/static|_next/image|favicon.ico|vercel.svg).*)',
   ],
 }
