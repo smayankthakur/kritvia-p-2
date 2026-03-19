@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { motion } from "framer-motion";
 
 export default function BlogPage() {
   const posts = [
@@ -27,23 +26,15 @@ export default function BlogPage() {
   ];
 
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8, delay: 0.2 }}
-      className="py-20 bg-gray-50"
-    >
+    <div className="py-20 bg-gray-50">
       <div className="max-w-4xl mx-auto px-6">
         <h2 className="mb-12 text-3xl font-bold text-center text-gray-900">
           Blog
         </h2>
         <div className="grid gap-8 md:grid-cols-2">
           {posts.map((post) => (
-            <motion.div
+            <div
               key={post.slug}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
               className="bg-white rounded-xl shadow-sm overflow-hidden border border-gray-100 hover:shadow-lg transition-shadow"
             >
               <Link href={`/blog/${post.slug}`} className="block">
@@ -66,10 +57,10 @@ export default function BlogPage() {
                   </div>
                 </div>
               </Link>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 }

@@ -7,7 +7,7 @@ const protectedRoutes = ['/dashboard', '/leads', '/deals', '/ai', '/settings']
 // Public routes that should redirect to dashboard if already logged in
 const publicRoutes = ['/login', '/signup']
 
-export async function middleware(request: NextRequest) {
+export async function proxy(request: NextRequest) {
   const response = NextResponse.next({
     request: {
       headers: request.headers,
