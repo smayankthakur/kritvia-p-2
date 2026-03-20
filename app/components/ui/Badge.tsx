@@ -1,32 +1,27 @@
-import * as React from "react";
+import * as React from "react"
 
-import { cn } from "../../../lib/utils";
-
-const badgeVariants = {
-  default: "border-transparent bg-primary text-primary-foreground hover:bg-primary/80",
-  secondary: "border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80",
-  destructive: "border-transparent bg-destructive text-destructive-foreground hover:bg-destructive/80",
-  outline: "border-input hover:bg-accent hover:text-accent-foreground",
-};
-
-interface BadgeProps extends React.HTMLAttributes<HTMLDivElement> {
-  variant?: keyof typeof badgeVariants;
-  className?: string;
+export interface BadgeProps extends React.HTMLAttributes<HTMLDivElement> {
+  variant?: "default" | "secondary" | "destructive" | "outline" | "success" | "warning"
 }
 
-const Badge = React.forwardRef<HTMLDivElement, BadgeProps>(
-  ({ className, variant = "default", ...props }, ref) => (
+function Badge({ className, variant = "default", ...props }: BadgeProps) {
+  const variants = {
+    default: "bg-purple-600/20 text-purple-400 border-purple-600/30",
+    secondary: "bg-slate-800 text-slate-300 border-slate-700",
+    destructive: "bg-red-600/20 text-red-400 border-red-600/30",
+    outline: "border border-slate-700 text-slate-300",
+    success: "bg-green-600/20 text-green-400 border-green-600/30",
+    warning: "bg-yellow-600/20 text-yellow-400 border-yellow-600/30",
+  }
+
+  return (
     <div
-      ref={ref}
-      className={cn(
-        "inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2",
-        badgeVariants[variant],
-        className
-      )}
+      className={`inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-purple-500 ${
+        variants[variant]
+      } ${className || ""}`}
       {...props}
     />
   )
-);
-Badge.displayName = "Badge";
+}
 
-export { Badge };
+export { Badge }

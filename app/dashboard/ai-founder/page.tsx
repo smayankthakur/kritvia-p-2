@@ -1,9 +1,9 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
-import { Button } from '@/components/ui/button'
-import { Badge } from '@/components/ui/badge'
+import { Card, CardContent, CardHeader, CardTitle } from '@/app/components/ui/Card'
+import { Button } from '@/app/components/ui/Button'
+import { Badge } from '@/app/components/ui/Badge'
 import { 
   Brain, 
   TrendingUp, 
@@ -117,3 +117,10 @@ export default function AIFounderDashboard() {
             <h1 className="text-3xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
               AI Founder Mode
             </h1>
+            <p className="text-slate-400 mt-1">Autonomous business insights for your company</p>
+          </div>
+          <div className="space-x-4">
+            <Button variant="outline">Export Report</Button>
+            <Button>Settings</Button>
+          </div>
+        </div>
