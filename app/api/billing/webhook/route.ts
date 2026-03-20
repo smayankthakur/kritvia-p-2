@@ -3,6 +3,9 @@ import { createServerSupabase } from '@/lib/supabase-server'
 import { constructWebhookEvent, getPlanFromPriceId } from '@/lib/stripe'
 import { logger } from '@/lib/logger'
 
+// Force runtime execution - prevents Next.js from evaluating at build time
+export const dynamic = 'force-dynamic'
+
 export async function POST(request: NextRequest) {
   try {
     const body = await request.text()
