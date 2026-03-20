@@ -375,9 +375,8 @@ export default function PaymentSettingsPage() {
             ))}
             
             <div className="flex items-center justify-between pt-2">
-              <Label htmlFor="isPrimary">Set as primary gateway</Label>
+              <Label>Set as primary gateway</Label>
               <Switch
-                id="isPrimary"
                 checked={isPrimary}
                 onCheckedChange={setIsPrimary}
               />
