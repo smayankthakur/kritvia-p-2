@@ -1,12 +1,17 @@
 import OpenAI from 'openai'
+import { safeEnv } from './env'
 
 // Lazy-initialize OpenAI client
 let openai: OpenAI | null = null
 
 function getOpenAIClient(): OpenAI {
   if (!openai) {
+    const env = safeEnv()
+    if (!env.OPENAI_API_KEY) {
+      throw new Error('Missing OPENAI_API_KEY environment variable')
+    }
     openai = new OpenAI({
-      apiKey: process.env.OPENAI_API_KEY,
+      apiKey: env.OPENAI_API_KEY,
     })
   }
   return openai

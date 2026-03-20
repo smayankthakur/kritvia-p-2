@@ -5,11 +5,21 @@
 
 import OpenAI from 'openai'
 import { aggregateData, getLeads, getHighIntentLeads, type AggregatedData, type Lead } from './data-intelligence'
+import { safeEnv } from '@/lib/env'
 
-// Initialize OpenAI
-const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY,
-})
+// Lazy initialization
+let openai: OpenAI | null = null
+
+const getOpenAI = (): OpenAI => {
+  if (!openai) {
+    const env = safeEnv()
+    if (!env.OPENAI_API_KEY) {
+      throw new Error('Missing OPENAI_API_KEY')
+    }
+    openai = new OpenAI({ apiKey: env.OPENAI_API_KEY })
+  }
+  return openai
+}
 
 // Insight types
 export interface Insight {
@@ -83,7 +93,7 @@ ${data.dropoffPoints.map((d) => `- ${d.page}: ${d.count}`).join('\n')}
 `
 
     // Call OpenAI
-    const completion = await openai.chat.completions.create({
+    const completion = await getOpenAI().chat.completions.create({
       model: 'gpt-4o',
       messages: [
         { role: 'system', content: INSIGHT_SYSTEM_PROMPT },
@@ -135,7 +145,7 @@ Lead Profile:
 - Notes: ${lead.notes || 'None'}
 `
 
-    const completion = await openai.chat.completions.create({
+    const completion = await getOpenAI().chat.completions.create({
       model: 'gpt-4o',
       messages: [
         { role: 'system', content: INSIGHT_SYSTEM_PROMPT },
@@ -285,7 +295,7 @@ export async function generateGrowthStrategy(): Promise<string> {
   try {
     const data = await aggregateData()
 
-    const completion = await openai.chat.completions.create({
+    const completion = await getOpenAI().chat.completions.create({
       model: 'gpt-4o',
       messages: [
         {

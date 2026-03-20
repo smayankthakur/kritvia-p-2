@@ -4,9 +4,26 @@
  */
 
 import Stripe from 'stripe'
+import { safeEnv } from './env'
 
-// Initialize Stripe
-const stripe = process.env.STRIPE_SECRET_KEY ? new Stripe(process.env.STRIPE_SECRET_KEY) : null
+// Lazy initialization
+let stripeInstance: Stripe | null = null
+
+const getStripe = (): Stripe | null => {
+  if (stripeInstance) {
+    return stripeInstance
+  }
+  
+  const env = safeEnv()
+  
+  if (!env.STRIPE_SECRET_KEY) {
+    console.warn('STRIPE_SECRET_KEY not configured')
+    return null
+  }
+  
+  stripeInstance = new Stripe(env.STRIPE_SECRET_KEY)
+  return stripeInstance
+}
 
 // Plan definitions
 export const PLANS = {
@@ -78,7 +95,9 @@ export async function createCheckoutSession(
   successUrl: string,
   cancelUrl: string
 ) {
+  const stripe = getStripe()
   if (!stripe) return null
+  
   return await stripe.checkout.sessions.create({
     customer: customerId || undefined,
     payment_method_types: ['card'],
@@ -92,13 +111,17 @@ export async function createCheckoutSession(
 
 // Create customer
 export async function createCustomer(email: string, name: string, workspaceId: string) {
+  const stripe = getStripe()
   if (!stripe) return null
+  
   return await stripe.customers.create({ email, name, metadata: { workspace_id: workspaceId } })
 }
 
 // Create portal session
 export async function createPortalSession(customerId: string, returnUrl: string) {
+  const stripe = getStripe()
   if (!stripe) return null
+  
   return await stripe.billingPortal.sessions.create({ customer: customerId, return_url: returnUrl })
 }
 
@@ -112,9 +135,23 @@ export function getPlanFromPriceId(priceId: string): PlanType | null {
 
 // Get workspace subscription
 export async function getWorkspaceSubscription(workspaceId: string) {
+  const env = safeEnv()
+  
+  if (!env.NEXT_PUBLIC_SUPABASE_URL || !env.NEXT_PUBLIC_SUPABASE_ANON_KEY) {
+    return null
+  }
+  
   const { createClient } = await import('@supabase/supabase-js')
-  const supabase = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL!, process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!)
+  const supabase = createClient(env.NEXT_PUBLIC_SUPABASE_URL, env.NEXT_PUBLIC_SUPABASE_ANON_KEY)
+  
   return await supabase.from('subscriptions').select('*').eq('workspace_id', workspaceId).in('status', ['active', 'trialing']).single()
 }
 
-export default { PLANS, createCheckoutSession, createCustomer, createPortalSession, getPlanFromPriceId, getWorkspaceSubscription }
+export default { 
+  PLANS, 
+  createCheckoutSession, 
+  createCustomer, 
+  createPortalSession, 
+  getPlanFromPriceId, 
+  getWorkspaceSubscription 
+}

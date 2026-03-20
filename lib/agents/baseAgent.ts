@@ -4,11 +4,21 @@
  */
 
 import OpenAI from 'openai'
+import { safeEnv } from '@/lib/env'
 
-// Initialize OpenAI
-const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY,
-})
+// Lazy initialization
+let openai: OpenAI | null = null
+
+const getOpenAI = (): OpenAI => {
+  if (!openai) {
+    const env = safeEnv()
+    if (!env.OPENAI_API_KEY) {
+      throw new Error('Missing OPENAI_API_KEY')
+    }
+    openai = new OpenAI({ apiKey: env.OPENAI_API_KEY })
+  }
+  return openai
+}
 
 // Agent types
 export type AgentName = 'ceo' | 'sales' | 'marketing'
@@ -61,7 +71,7 @@ export abstract class BaseAgent {
    */
   protected async reason(prompt: string): Promise<string> {
     try {
-      const completion = await openai.chat.completions.create({
+      const completion = await getOpenAI().chat.completions.create({
         model: 'gpt-4o',
         messages: [
           { role: 'system', content: this.systemPrompt },
