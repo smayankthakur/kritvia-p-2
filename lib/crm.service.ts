@@ -137,22 +137,43 @@ export async function getDashboardMetrics(userId: string): Promise<DashboardMetr
     .eq('user_id', userId)
 
   // Get revenue (closed won deals)
-  const { data: deals } = await supabase
+  const { data: wonDeals } = await supabase
     .from('deals')
     .select('value')
     .eq('user_id', userId)
-    .eq('stage', 'closed_won')
+    .eq('status', 'won')
 
-  const totalRevenue = deals?.reduce((sum, d) => sum + (d.value || 0), 0) || 0
+  const totalRevenue = wonDeals?.reduce((sum, d) => sum + (d.value || 0), 0) || 0
+
+  // Get active deals (not closed)
+  const { data: allDeals } = await supabase
+    .from('deals')
+    .select('stage, status')
+    .eq('user_id', userId)
+
+  const activeDeals = allDeals?.filter(d => d.stage !== 'closed').length || 0
+  const wonDealsCount = wonDeals?.length || 0
 
   // Calculate conversion rate
-  const conversionRate = totalLeads ? ((totalDeals || 0) / totalLeads) * 100 : 0
+  const conversionRate = totalLeads ? (wonDealsCount / totalLeads) * 100 : 0
+
+  // Get pending tasks
+  const { data: tasks } = await supabase
+    .from('tasks')
+    .select('status')
+    .eq('user_id', userId)
+    .neq('status', 'done')
+
+  const pendingTasks = tasks?.length || 0
 
   return {
     totalLeads: totalLeads || 0,
     totalDeals: totalDeals || 0,
+    activeDeals,
+    wonDeals: wonDealsCount,
     totalRevenue,
     conversionRate: Math.round(conversionRate * 10) / 10,
+    pendingTasks,
   }
 }
 

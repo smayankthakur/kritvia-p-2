@@ -64,13 +64,13 @@ export async function POST(request: NextRequest) {
     const body = await request.json()
     const { title, description, priority, due_date, status } = taskSchema.parse(body)
 
-    // Create the task for the user
+    // Create the task for the user (convert undefined to null for DB)
     const task = await CRMService.createTask({
       user_id: user.id,
       title,
-      description,
+      description: description ?? null,
       priority,
-      due_date,
+      due_date: due_date ?? null,
       status,
     })
 

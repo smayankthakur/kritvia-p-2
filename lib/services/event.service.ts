@@ -1,7 +1,14 @@
 import { supabaseServer } from '@/lib/supabase/supabase-server'
-import { Database } from '@/lib/types/database'
 
-type Event = Database['public']['Tables']['events']['Row']
+// Event type definition
+export interface Event {
+  id: string
+  user_id: string
+  type: string
+  action: string
+  metadata?: Record<string, unknown>
+  timestamp: string
+}
 
 export class EventService {
   // Log an event
@@ -16,21 +23,8 @@ export class EventService {
     return data
   }
 
-  // Get events for a company (via user's company)
+  // Get events for a user
   static async getEventsByUserId(userId: string): Promise<Event[]> {
-    // First get the user's company
-    const { data: userData, error: userError } = await supabaseServer
-      .from('users')
-      .select('company_id')
-      .eq('id', userId)
-      .single()
-
-    if (userError) throw userError
-    if (!userData?.company_id) {
-      return []
-    }
-
-    // Get events for the user (since events are tied to user_id)
     const { data, error } = await supabaseServer
       .from('events')
       .select('*')
@@ -43,8 +37,6 @@ export class EventService {
 
   // Get events for a company by company_id (by checking metadata)
   static async getEventsByCompanyId(companyId: string): Promise<Event[]> {
-    // We'll assume that when we log events, we store the company_id in metadata as { company_id: '...' }
-    // Then we can query by metadata->>company_id
     const { data, error } = await supabaseServer
       .from('events')
       .select('*')

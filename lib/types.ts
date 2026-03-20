@@ -1,9 +1,15 @@
-// Database types for Supabase
+// Database types for Supabase - aligned with actual DB schema
 
 export type LeadStatus = 'new' | 'contacted' | 'qualified' | 'lost'
-export type DealStage = 'new' | 'contacted' | 'proposal' | 'negotiation' | 'closed_won' | 'closed_lost'
+// DealStage: pipeline stages - aligned with DB (stage column)
+export type DealStage = 'lead' | 'qualified' | 'proposal' | 'negotiation' | 'closed'
+// DealStatus: win/loss status - aligned with DB (status column)
+export type DealStatus = 'open' | 'won' | 'lost'
 export type Plan = 'free' | 'starter' | 'pro' | 'enterprise'
+export type TaskStatus = 'todo' | 'in_progress' | 'done'
+export type TaskPriority = 'low' | 'medium' | 'high'
 
+// User types
 export interface User {
   id: string
   email: string
@@ -14,6 +20,7 @@ export interface User {
   updated_at: string
 }
 
+// Lead types
 export interface Lead {
   id: string
   user_id: string
@@ -28,25 +35,45 @@ export interface Lead {
   updated_at: string
 }
 
+// Deal types - aligned with database schema
 export interface Deal {
   id: string
   user_id: string
+  company_id?: string
   title: string
   value: number
   stage: DealStage
+  status: DealStatus  // Added: won/lost status
   lead_id?: string
   notes?: string
   created_at: string
   updated_at: string
 }
 
+// Task types
+export interface Task {
+  id: string
+  user_id: string
+  title: string
+  description?: string
+  priority: TaskPriority
+  status: TaskStatus
+  due_date?: string
+  created_at: string
+}
+
+// Dashboard metrics
 export interface DashboardMetrics {
   totalLeads: number
   totalDeals: number
+  activeDeals: number
+  wonDeals: number
   totalRevenue: number
   conversionRate: number
+  pendingTasks: number
 }
 
+// AI types
 export interface AIConversation {
   id: string
   user_id: string
@@ -76,10 +103,8 @@ export interface ApiResponse<T> {
   error?: string
 }
 
-// Dashboard metrics
-export interface DashboardMetrics {
-  totalLeads: number
-  totalDeals: number
-  totalRevenue: number
-  conversionRate: number
-}
+// Helper functions for type-safe comparisons
+export const isClosedDeal = (stage: DealStage): boolean => stage === 'closed'
+export const isWonDeal = (status: DealStatus): boolean => status === 'won'
+export const isLostDeal = (status: DealStatus): boolean => status === 'lost'
+export const isTaskCompleted = (status: TaskStatus): boolean => status === 'done'

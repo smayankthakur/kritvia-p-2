@@ -3,6 +3,7 @@ import { NextRequest } from 'next/server'
 import { getCurrentUser } from '@/lib/auth-context'
 import { EventService } from '@/lib/services/event.service'
 import { CRMService } from '@/lib/services/crm.service'
+import { isClosedDeal, isWonDeal, isTaskCompleted } from '@/lib/types/database'
 
 export async function GET(request: NextRequest) {
   try {
@@ -35,11 +36,12 @@ export async function GET(request: NextRequest) {
 
     // Calculate metrics
     const totalLeads = leads.length
-    const activeDeals = deals.filter(deal => 
-      deal.stage !== 'closed_won' && deal.stage !== 'closed_lost'
-    ).length
     
-    const wonDeals = deals.filter(deal => deal.stage === 'closed_won')
+    // Active deals are those NOT closed
+    const activeDeals = deals.filter(deal => !isClosedDeal(deal.stage)).length
+    
+    // Won deals have status = 'won'
+    const wonDeals = deals.filter(deal => isWonDeal(deal.status))
     const totalRevenue = wonDeals.reduce((sum, deal) => sum + (deal.value || 0), 0)
     
     const conversionRate = totalLeads > 0 
@@ -48,7 +50,7 @@ export async function GET(request: NextRequest) {
     
     const recentEvents = events.slice(0, 5) // Last 5 events
     const pendingTasks = tasks.filter(task => 
-      task.status !== 'completed'
+      !isTaskCompleted(task.status)
     ).length
 
     const metrics = {

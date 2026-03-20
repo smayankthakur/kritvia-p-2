@@ -313,17 +313,15 @@ export async function cleanupOldLogs(daysToKeep: number = 30): Promise<number> {
   // Cleanup safety logs
   const { count: safetyCount } = await supabase
     .from('ai_safety_logs')
-    .delete({ count: 'exact' })
+    .delete()
     .lt('created_at', cutoffDate.toISOString())
-    .select('*', { count: 'exact', head: true })
-  
+    
   // Cleanup old events
   const { count: eventCount } = await supabase
     .from('ai_autonomous_events')
-    .delete({ count: 'exact' })
+    .delete()
     .lt('created_at', cutoffDate.toISOString())
     .eq('processed', true)
-    .select('*', { count: 'exact', head: true })
   
   return (safetyCount || 0) + (eventCount || 0)
 }

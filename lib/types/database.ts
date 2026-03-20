@@ -3,9 +3,19 @@ import { SupabaseClient, createClient } from '@supabase/supabase-js'
 // Database type definitions based on the actual Supabase schema
 
 export type LeadStatus = 'new' | 'contacted' | 'qualified' | 'lost'
-export type DealStage = 'lead' | 'proposal' | 'negotiation' | 'closed'
-export type DealStatus = 'open' | 'won' | 'lost'
+// DealStage: pipeline stages (what phase the deal is in)
+export type DealStage = 'lead' | 'qualified' | 'proposal' | 'negotiation' | 'closed'
+export type DealStatus = 'open' | 'won' | 'lost' // Whether deal was won or lost
+
+// Task status types
 export type TaskStatus = 'todo' | 'in_progress' | 'done'
+
+// Helper type guard for closed deals
+export const isClosedDeal = (stage: DealStage): boolean => stage === 'closed'
+export const isWonDeal = (status: DealStatus): boolean => status === 'won'
+export const isLostDeal = (status: DealStatus): boolean => status === 'lost'
+export const isTaskCompleted = (status: TaskStatus): boolean => status === 'done'
+
 export type TaskPriority = 'low' | 'medium' | 'high'
 export type UserRole = 'admin' | 'member'
 export type UserPlan = 'starter' | 'pro' | 'enterprise'

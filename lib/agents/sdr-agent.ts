@@ -250,6 +250,64 @@ export async function sendOutreach(
   workspaceId: string
 ): Promise<{ success: boolean; messageId?: string; error?: string }> {
   try {
+    // Get lead email
+    const { data: lead } = await supabase
+      .from('leads')
+      .select('email, name')
+      .eq('id', leadId)
+      .single()
+
+    if (!lead) {
+      return { success: false, error: 'Lead not found' }
+    }
+
+    // Get workspace for sender info
+    const { data: workspace } = await supabase
+      .from('workspaces')
+      .select('name, settings')
+      .eq('id', workspaceId)
+      .single()
+
+    // Send real email using nodemailer
+    const nodemailer = await import('nodemailer')
+    
+    const transporter = nodemailer.createTransport({
+      host: 'smtp.gmail.com',
+      port: 587,
+      secure: false,
+      auth: {
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASS,
+      },
+    })
+
+    const mailOptions = {
+      from: `"${workspace?.name || 'Kritvia'}" <${process.env.EMAIL_USER}>`,
+      to: lead.email,
+      subject: message.subject,
+      text: message.body,
+      html: `<p>${message.body.replace(/\n/g, '<br>')}</p>`,
+    }
+
+    let emailSent = false
+    let emailError: Error | null = null
+
+    // Try sending email up to 3 times
+    for (let attempt = 0; attempt < 3 && !emailSent; attempt++) {
+      try {
+        await transporter.sendMail(mailOptions)
+        emailSent = true
+      } catch (err) {
+        emailError = err as Error
+        await new Promise(resolve => setTimeout(resolve, 1000 * (attempt + 1)))
+      }
+    }
+
+    if (!emailSent) {
+      console.error('Email send failed:', emailError)
+      // Still store in DB even if email fails
+    }
+
     // Store outreach in database
     const { data, error } = await supabase
       .from('outreach_sequences')
@@ -258,8 +316,9 @@ export async function sendOutreach(
         workspace_id: workspaceId,
         message: `${message.subject}\n\n${message.body}`,
         channel: message.channel,
-        status: 'sent',
+        status: emailSent ? 'sent' : 'failed',
         score: scoreLeadByICP({ id: leadId }),
+        sent_at: emailSent ? new Date().toISOString() : null,
       })
       .select()
       .single()
@@ -270,12 +329,16 @@ export async function sendOutreach(
     await supabase.from('agent_decisions').insert({
       agent_type: 'sdr',
       decision_type: 'send_outreach',
-      context: { lead_id: leadId, channel: message.channel },
+      context: { lead_id: leadId, channel: message.channel, email_sent: emailSent },
       decision: { subject: message.subject, preview: message.body.substring(0, 100) },
       confidence: 0.85,
     })
 
-    return { success: true, messageId: data?.id }
+    return { 
+      success: emailSent, 
+      messageId: data?.id,
+      error: emailSent ? undefined : 'Email failed but stored in queue'
+    }
   } catch (error) {
     console.error('Error sending outreach:', error)
     return { success: false, error: String(error) }
