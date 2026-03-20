@@ -21,10 +21,7 @@ export async function POST(request: NextRequest) {
 
     const baseUrl = process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000'
     
-    const portalUrl = await createPortalSession({
-      customerId,
-      returnUrl: `${baseUrl}/settings`,
-    })
+    const portalUrl = await createPortalSession(customerId)
 
     if (!portalUrl) {
       return errorResponse('Failed to create portal session', 'PORTAL_ERROR', 500)

@@ -40,7 +40,7 @@ export async function POST(request: NextRequest) {
       userId: user.id, 
       planId, 
       interval,
-      sessionId: session.sessionId 
+      sessionId: session.id 
     })
 
     return successResponse({ url: session.url })

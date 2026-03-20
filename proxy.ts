@@ -4,7 +4,7 @@ import { supabaseServer } from './lib/supabase/supabase-server'
 import { rateLimiter } from './lib/redis/rateLimiter'
 
 // This function can be marked `async` if using `await` inside
-export async function middleware(request: NextRequest) {
+export async function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl
 
   // Skip middleware for static files and next internals
@@ -20,7 +20,12 @@ export async function middleware(request: NextRequest) {
 
   // Apply rate limiting to specific API routes
   if (pathname.startsWith('/api/ai/')) {
-    const ip = request.ip ?? '127.0.0.1'
+    // Get IP address from headers (works with Vercel/proxies)
+    const ip = 
+      request.headers.get('x-forwarded-for')?.split(',')[0] || 
+      request.headers.get('x-real-ip') || 
+      '127.0.0.1'
+    
     const limit = await rateLimiter(ip, '/api/ai', 20, 60) // 20 requests per minute
     if (!limit.success) {
       return new NextResponse('Too Many Requests', { status: 429 })
