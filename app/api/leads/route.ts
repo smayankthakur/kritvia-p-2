@@ -3,8 +3,17 @@ import type { NextRequest } from 'next/server'
 import { z } from 'zod'
 import { supabaseServer } from '@/lib/supabase/supabase-server'
 import { getCurrentUser } from '@/lib/auth-context'
-import { leadSchema } from '@/lib/validation/lead'
+import { CRMService } from '@/lib/services/crm.service'
 import { rateLimiter } from '@/lib/redis/rateLimiter'
+
+// Update the lead schema to include source and status
+const leadSchema = z.object({
+  name: z.string(),
+  email: z.string().email(),
+  phone: z.string().optional(),
+  source: z.string().optional(),
+  status: z.enum(['new', 'contacted', 'qualified', 'lost']).default('new'),
+})
 
 export async function GET(request: NextRequest) {
   try {
@@ -25,16 +34,14 @@ export async function GET(request: NextRequest) {
       return new NextResponse('Too Many Requests', { status: 429 })
     }
 
-    const { data: leads, error } = await supabaseServer
-      .from('leads')
-      .select('*')
-      .eq('user_id', user.id)
-      .order('created_at', { ascending: false })
-
-    if (error) {
-      console.error('Error fetching leads:', error)
-      return NextResponse.json({ error: 'Internal server error' }, { status: 500 })
+    // Get the user's company
+    const company = await CRMService.getCompanyByUserId(user.id)
+    if (!company) {
+      return NextResponse.json({ error: 'Company not found' }, { status: 404 })
     }
+
+    // Fetch leads for the company
+    const leads = await CRMService.getLeadsByCompanyId(company.id)
 
     return NextResponse.json({ success: true, data: leads })
   } catch (error) {
@@ -63,25 +70,23 @@ export async function POST(request: NextRequest) {
     }
 
     const body = await request.json()
-    const { name, email, phone } = leadSchema.parse(body)
+    const { name, email, phone, source, status } = leadSchema.parse(body)
 
-    const { data: lead, error } = await supabaseServer
-      .from('leads')
-      .insert({
-        user_id: user.id,
-        name,
-        email,
-        phone,
-      })
-      .select()
-      .single()
-
-    if (error) {
-      console.error('Error creating lead:', error)
-      return NextResponse.json({ error: 'Internal server error' }, { status: 500 })
+    // Get the user's company
+    const company = await CRMService.getCompanyByUserId(user.id)
+    if (!company) {
+      return NextResponse.json({ error: 'Company not found' }, { status: 404 })
     }
 
-    // TODO: Send email notification for new lead (optional)
+    // Create the lead for the company
+    const lead = await CRMService.createLead({
+      company_id: company.id,
+      name,
+      email,
+      phone: phone ?? null,
+      source: source ?? null,
+      status,
+    })
 
     return NextResponse.json({ success: true, data: lead })
   } catch (error) {

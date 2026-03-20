@@ -35,7 +35,7 @@ export default function Footer() {
               <span className="text-white font-bold text-xl">Kritvia</span>
             </Link>
             <p className="text-slate-400 text-sm mb-6 max-w-sm">
-              The AI Business Operating System that transforms your leads, deals, and revenue. 
+              The AI Business Operating System that transforms your leads, deals, and revenue.
               Built for Indian businesses, powered by AI.
             </p>
             <div className="flex gap-4">
@@ -80,7 +80,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="mt-12 pt-8 border-t border-slate-800/50 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-slate-500 text-sm">
-            © {currentYear} Kritvia by SitelYT. All rights reserved.
+            © {currentYear} Kritvia by Sitelytc. All rights reserved.
           </p>
           <div className="flex items-center gap-6">
             <span className="text-slate-500 text-sm">
